@@ -1,3 +1,13 @@
+# Implemented State
+
+- Status: implemented
+- Implemented date: 2026-05-23
+- Delivered summary: FigJam/Jam export evidence was reviewed and promoted into canonical documentation for current portal, payment, Box, Outlook, WhatsApp, job-sheet, SOP, and provider-routing context; source manifests were updated for the Jam derivatives and archived plan lifecycle.
+- Verification performed: `python tools\verify_scaffold.py`, manifest consistency checks, Jam export file count check, and targeted checks for `.obsidian` ignore/removal from tracking.
+- Follow-up work moved elsewhere: Future portal/payment/WhatsApp automation, vendor/security governance, and implementation of optional metadata/routing fields remain in roadmap tickets and contract follow-up work.
+
+---
+
 # Whiteboard Evidence Capture And Documentation Update Plan
 
 ## Summary
@@ -14,7 +24,7 @@ Do not save extracted derivatives back into `collisionrelateddocs/`. That folder
 | --- | --- | --- |
 | Figma connector retry and whiteboard inspection | completed | Authenticated connector was available after retry; board URL was inspected with `get_figjam`. |
 | Local `.jam` image/data export | completed | 44 embedded images, thumbnail, metadata JSON, image index, Figma inspection summary, and contact sheets were saved under `docs/data/jam_exports/`. |
-| Canonical documentation promotion | planned | The remaining target docs still need the wider workflow updates listed below. |
+| Canonical documentation promotion | completed | Target docs were updated with the workflow context listed below while keeping automation scope in future tickets. |
 
 ## Jam Export Evidence Reviewed
 

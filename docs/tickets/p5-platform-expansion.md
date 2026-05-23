@@ -17,11 +17,11 @@
 - Status: parked-planned.
 - Owner: TBD.
 - Created: 2026-05-23.
-- Sources: `phase7_expanded_markdown_plan/original_items/07_05_customer_self_service_portal.md`, `07_06_api_for_external_partners.md`.
+- Sources: `phase7_expanded_markdown_plan/original_items/07_05_customer_self_service_portal.md`, `07_06_api_for_external_partners.md`, `archive/plans/implemented/2026-05-23-implemented-figmaplan.md`, `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/figma_inspection.md`.
 - Dependencies: Operational Core, security model, external access approval.
 - Expected outputs: option paper and ADR before implementation.
-- Acceptance criteria: no external access until auth, audit, retention, and data minimisation are approved.
-- Verification: security review and API tests.
+- Acceptance criteria: no external access until auth, audit, retention, and data minimisation are approved; current website portal and payment evidence may inform the design, but external portal/API/payment automation stays parked until governance approval.
+- Verification: security review, API tests, and governance sign-off on the portal/payment scope guardrail.
 - Archive target: `archive/plans/implemented/` or `archive/plans/superseded/`.
 
 ## P5-003 Data Warehouse And Historical Mining
@@ -48,3 +48,14 @@
 - Verification: partner sandbox tests and security review.
 - Archive target: `archive/plans/implemented/` or `archive/plans/superseded/`.
 
+## P5-005 Portal, Payment, And Messaging Automation Governance
+
+- Status: parked-planned.
+- Owner: TBD.
+- Created: 2026-05-23.
+- Sources: `archive/plans/implemented/2026-05-23-implemented-figmaplan.md`, `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/figma_inspection.md`, `docs/architecture/future_system_convergence.md`.
+- Dependencies: P1 metadata capture, P3 intake/storage boundaries, governance approval.
+- Expected outputs: ADR and controls for any future external portal/API/payment automation or WhatsApp/send automation.
+- Acceptance criteria: no implementation starts until privacy, retention, vendor, payment, and operator-approval controls are agreed; current evidence capture remains distinct from autonomous external actions.
+- Verification: governance approval package and updated risk documentation.
+- Archive target: `archive/plans/implemented/` or `archive/plans/superseded/`.

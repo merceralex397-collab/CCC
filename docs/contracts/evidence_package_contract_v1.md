@@ -20,6 +20,12 @@ Preferred folder name is reviewed `case_po`. If not available, use `work_item_id
 | Companion report | when available | Valuation/service report or other supporting PDF. |
 | Notes | when available | Staff or source notes. |
 | Manifest | yes | Machine-readable package metadata and checksums. |
+| Website uploaded images | when source is portal | Preserve all uploaded repair-estimate images exactly as submitted. |
+| `Invoice.pdf` | when source is portal/payment | Preserve generated invoice evidence alongside the request package. |
+| `Summary.txt` | when source is portal/payment | Preserve form-data summary created for the request package. |
+| Source form data | when source is portal | Preserve request fields such as contact, VRM, comments, and timestamps in the manifest/package. |
+| Payment and portal metadata | when source is portal | Preserve status evidence such as portal submission id, paid/pending state, and chaser flag if recorded. |
+| Box folder reference | when available | Preserve the Box folder URL/id that ties the package back to operational storage. |
 
 ## Image Ordering Rule
 
@@ -46,4 +52,8 @@ If staff cannot identify preview images, package generation must record a warnin
 - `eva_export_id` when present;
 - `warnings`;
 - `storage_status`.
-
+- `source_channel`;
+- `portal_submission_id`;
+- `payment_status`;
+- `payment_chaser_sent`;
+- `box_folder_url`.

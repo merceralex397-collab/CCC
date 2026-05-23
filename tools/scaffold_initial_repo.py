@@ -89,6 +89,8 @@ def slugify(value: str) -> str:
 def classify(path: Path) -> str:
     parts = path.relative_to(ROOT).parts
     first = parts[0] if parts else ""
+    if len(parts) >= 3 and parts[0] == "docs" and parts[1] == "data" and parts[2] == "jam_exports":
+        return "normalized-derivative"
     if len(parts) >= 3 and parts[0] == "docs" and parts[1] == "reference" and parts[2] in {"generated-packs", "test-context"}:
         return "generated-reference"
     if first in RAW_SOURCE_PREFIXES:
@@ -125,6 +127,7 @@ def source_group(path: Path) -> str:
 
 def extraction_plan(path: Path) -> tuple[str, str, str]:
     ext = path.suffix.lower()
+    path_str = rel(path)
     if path.name == "source_manifest.csv":
         return "generated-csv", "complete", ""
     if ext == ".md":
@@ -152,6 +155,8 @@ def extraction_plan(path: Path) -> tuple[str, str, str]:
     if ext == ".zip":
         return "zip-entry-list", "partial-review-required", "ZIP contents are inventoried but not recursively promoted"
     if ext == ".jam":
+        if path_str == "collisionrelateddocs/collision_releated/Collision Engineers Whiteboard.jam":
+            return "jam-zip-image-export + Figma get_figjam", "partial-review-required", ""
         return "blocked", "blocked", "Google Jamboard format needs manual export/review"
     return "not-applicable", "not-applicable", ""
 
@@ -288,7 +293,7 @@ def write_companion(path: Path, record: dict[str, str]) -> None:
 
 
 def iter_files() -> list[Path]:
-    ignored_parts = {".git", "__pycache__", ".pytest_cache"}
+    ignored_parts = {".git", ".obsidian", "__pycache__", ".pytest_cache"}
     files = []
     for path in ROOT.rglob("*"):
         if not path.is_file():

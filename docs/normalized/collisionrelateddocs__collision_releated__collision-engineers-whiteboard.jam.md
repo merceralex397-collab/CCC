@@ -3,12 +3,15 @@
 - Raw source: `collisionrelateddocs/collision_releated/Collision Engineers Whiteboard.jam`
 - SHA256: `710a56041e42fb4755838bd90944b2f69d1c8ba819bea0fd030f21f1e5c2fa31`
 - Extraction method: local `.jam` ZIP image export plus Figma `get_figjam` inspection
-- Extraction confidence: partial-review-required
+- Extraction confidence: reviewed-derivative
 - Figma board: https://www.figma.com/board/klGsJGOEG41oP459EbH0ea/Collision-Engineers-Whiteboard?t=1uUOSUp9VtqVuFtN-6
 - Figma file key: `klGsJGOEG41oP459EbH0ea`
 - Export folder: `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/`
+- Metadata JSON: `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/jam_meta.json`
 - Image index: `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/image_index.csv`
 - Figma inspection summary: `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/figma_inspection.md`
+- Contact sheets: `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/contact_sheets/whiteboard-images-01.jpg` through `whiteboard-images-08.jpg`
+- Thumbnail derivative: `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/images/thumbnail.png`
 
 This companion is a derivative working copy. The raw source remains the source of truth and must stay unchanged.
 
@@ -19,13 +22,15 @@ The `.jam` archive contains:
 | Entry | Notes |
 | --- | --- |
 | `canvas.fig` | Binary FigJam canvas data. Not treated as reliable text source directly. |
-| `thumbnail.png` | Exported to the whiteboard image export folder. |
+| `thumbnail.png` | Exported as the derivative thumbnail and cross-listed in `image_index.csv`. |
 | `meta.json` | Exported to `jam_meta.json`; original export timestamp is `2026-05-22T08:29:55.387Z`. |
 | `images/` | 44 embedded image assets exported as `frame-001.png` through `frame-044.png`. |
 
+The export bundle reviewed for this companion consists of 56 derivative files total: 44 embedded image frames, 1 thumbnail, 1 metadata JSON, 1 image index CSV, 1 Figma inspection summary, and 8 contact sheets.
+
 ## Figma Inspection Additions
 
-The connected Figma board was inspected successfully after the board URL was supplied. The node tree confirms and extends the local image review:
+The connected Figma board was inspected successfully after the board URL was supplied. Figma inspection status is `completed` in `jam_meta.json`, and the node tree confirms and extends the local image review:
 
 - Admin intake splits email into instruction, vehicle images, or query.
 - WhatsApp is also a first-class source for images and queries.
@@ -56,7 +61,14 @@ The exported frames include evidence for:
 - EVA setup guide screenshots;
 - `Closed Files` lifecycle evidence.
 
-See `image_index.csv` for per-image dimensions, hashes, archive entries, categories, and descriptions.
+See `image_index.csv` for per-image dimensions, hashes, archive entries, categories, and descriptions. The contact sheets provide quick visual QA across all 44 embedded images, while `thumbnail.png` preserves the whole-board layout for orientation.
+
+## Concise Evidence Summary
+
+- Current intake/status evidence is multi-channel: Outlook, website portal/payment status, WhatsApp, Box, and local network folders all appear in the reviewed derivatives.
+- The website repair-estimate workflow is current operational evidence, not just a future idea, but portal/payment automation remains outside parser MVP scope.
+- Job-sheet operations are explicit in the evidence: `NOT READY YET`, `READY TO SET UP`, `Create Folder`, local network links, `Move Up`, and `Move Down`.
+- Provider-routing evidence covers fee-note/report-delivery exceptions and query ownership, including `QDOS`, `QCL`, `AX`, `FW`, `OAK`, and `ALS`.
 
 ## Documentation Implications
 

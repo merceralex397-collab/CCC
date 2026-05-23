@@ -8,14 +8,15 @@ Collision Engineers do not do personal injury or KADOE work. Those workflows are
 
 ## Current Workflow
 
-1. Instructions arrive by email in three Outlook mailboxes.
-2. Staff enter details into the CE Job Sheet.
-3. Staff chase vehicle damage images when absent.
-4. Once instructions and images are available, staff enter the case into EVA.
-5. Staff add mileage, valuation evidence, Experian/adverse-history checks, and inspection address where required.
-6. Images must be added in a required order.
-7. Case evidence is stored in Box by case/PO number.
-8. The case is handed to an engineer.
+1. Instructions and status evidence currently arrive through multiple channels, including three Outlook mailboxes, the website repair-estimate portal, and WhatsApp.
+2. Staff enter details into the CE Job Sheet and keep blocked cases visible as `NOT READY YET` or `READY TO SET UP` according to the evidence available.
+3. Staff chase vehicle damage images or other missing information when absent, including email or WhatsApp follow-up according to provider/garage practice.
+4. Website repair-estimate submissions can add current evidence such as payment status, `Invoice.pdf`, `Summary.txt`, uploaded images, and Box folder references.
+5. Once instructions and images are available, staff enter the case into EVA.
+6. Staff add mileage, valuation evidence, Experian/adverse-history checks, and inspection address where required.
+7. Images must be added in a required order.
+8. Case evidence is stored in Box by case/PO number, with local network folders and closure backups used operationally where relevant.
+9. The case is handed to an engineer.
 
 ## MVP Requirements
 
@@ -25,3 +26,4 @@ Collision Engineers do not do personal injury or KADOE work. Those workflows are
 - Track missing images/instructions as blockers.
 - Generate validated EVA-ready output.
 - Preserve raw evidence and source traceability.
+- Preserve current source/evidence context from Outlook, website portal/payment status, WhatsApp, Box, and local folder references without making portal/payment automation part of parser MVP.

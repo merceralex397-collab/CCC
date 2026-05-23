@@ -43,9 +43,9 @@
 - Created: 2026-05-23.
 - Sources: `docs/contracts/provider_principal_config_contract_v1.md`, `ce_system_plans_enhanced/12_WORK_PACKAGE_PROVIDER_SETTINGS_AND_MIGRATION.md`, `phase7_expanded_markdown_plan/additional_items/08_02_provider_principal_configuration_library.md`.
 - Dependencies: P0-003, P0-006, state-store decision.
-- Expected outputs: provider/principal admin screens, versioning, activation/rollback, alias management, detection phrase and rule editing.
-- Acceptance criteria: provider-admin role can create draft config, validate against corpus examples, activate, and roll back with audit events.
-- Verification: provider config regression checks and audit event assertions.
+- Expected outputs: provider/principal admin screens, versioning, activation/rollback, alias management, detection phrase and rule editing, plus optional provider routing metadata controls for `delivery_channel`, `query_owner`, `reply_to_handler`, `reply_all`, `cc_list`, `fee_note_handling`, `garage_figures_rule`, `missing_info_chase_limit`, and `special_case_notes`.
+- Acceptance criteria: provider-admin role can create draft config, validate against corpus examples, activate, and roll back with audit events; optional routing metadata and fee-note exceptions for `QDOS`, `QCL`, `AX`, `FW`, `OAK`, and `ALS` can be recorded without making them parser-required or authorizing portal/payment/WhatsApp automation in P1.
+- Verification: provider config regression checks, audit event assertions, and schema/UI checks confirming the optional routing metadata fields and fee-note exceptions are supported.
 - Archive target: `archive/plans/implemented/`.
 
 ## P1-005 Work Item And Review Queue
@@ -53,11 +53,11 @@
 - Status: planned.
 - Owner: TBD.
 - Created: 2026-05-23.
-- Sources: `docs/contracts/work_item_contract_v1.md`, `docs/contracts/review_audit_event_contract_v1.md`, `phase7_expanded_markdown_plan/additional_items/08_04_human_review_queue_and_exception_sla.md`.
+- Sources: `docs/contracts/work_item_contract_v1.md`, `docs/contracts/review_audit_event_contract_v1.md`, `phase7_expanded_markdown_plan/additional_items/08_04_human_review_queue_and_exception_sla.md`, `archive/plans/implemented/2026-05-23-implemented-figmaplan.md`, `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/figma_inspection.md`.
 - Dependencies: state-store decision, P1-001.
-- Expected outputs: work item lifecycle, missing-info states, review/correction workflow, audit event persistence.
-- Acceptance criteria: staff can move cases through draft, missing evidence/instruction, parsed, in review, ready for export, exported, packaged, blocked, archived.
-- Verification: lifecycle tests, correction/audit tests, blocked-state tests.
+- Expected outputs: work item lifecycle, missing-info states, review/correction workflow, audit event persistence, and optional metadata capture for source channel, Box/local folder references, and current payment/portal evidence.
+- Acceptance criteria: staff can move cases through draft, missing evidence/instruction, parsed, in review, ready for export, exported, packaged, blocked, archived; work items can record `source_channel`, `source_category`, `source_labels`, `portal_submission_id`, `payment_status`, `payment_chaser_sent`, `box_folder_url`, `box_folder_stage`, `local_network_folder_url`, and `closed_file_reason` without making those fields parser-required or authorizing portal/payment/WhatsApp automation in P1.
+- Verification: lifecycle tests, correction/audit tests, blocked-state tests, and schema checks confirming the full optional metadata field set is accepted but not required.
 - Archive target: `archive/plans/implemented/`.
 
 ## P1-006 EVA JSON Export
@@ -77,10 +77,9 @@
 - Status: planned.
 - Owner: TBD.
 - Created: 2026-05-23.
-- Sources: `docs/contracts/evidence_package_contract_v1.md`, `docs/contracts/storage_adapter_contract_v1.md`, `ce_system_plans_enhanced/08_WORK_PACKAGE_BOX_STORAGE_AND_FILES.md`.
+- Sources: `docs/contracts/evidence_package_contract_v1.md`, `docs/contracts/storage_adapter_contract_v1.md`, `ce_system_plans_enhanced/08_WORK_PACKAGE_BOX_STORAGE_AND_FILES.md`, `archive/plans/implemented/2026-05-23-implemented-figmaplan.md`, `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/figma_inspection.md`.
 - Dependencies: P1-005, P1-006.
-- Expected outputs: local package folder and manifest.
-- Acceptance criteria: package includes originals, original email when available, images, EVA JSON when generated, companion report when available, notes, checksums, and image preview ordering decision.
-- Verification: package manifest tests; image order tests; checksum tests.
+- Expected outputs: local package folder and manifest, with support for current website repair-estimate evidence such as uploaded images, `Invoice.pdf`, `Summary.txt`, source form data, and Box references when that intake channel is the source.
+- Acceptance criteria: package includes originals, original email when available, images, EVA JSON when generated, companion report when available, notes, checksums, image preview ordering decision, and optional website/Box metadata where relevant; P1 does not add autonomous external sends or payment processing.
+- Verification: package manifest tests, image order tests, checksum tests, and fixture coverage for portal-originated package metadata.
 - Archive target: `archive/plans/implemented/`.
-
