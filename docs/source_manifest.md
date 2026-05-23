@@ -1,17 +1,17 @@
 # Source Manifest
 
 - Generated: 2026-05-23
-- Total files inventoried: 575
+- Total files inventoried: 632
 - Full machine-readable inventory: `docs/source_manifest.csv` and `docs/source_manifest.json`
 
 ## Status Counts
 
 | Status | Count |
 | --- | ---: |
-| active-plan | 80 |
+| active-plan | 81 |
 | generated-reference | 186 |
 | implemented | 1 |
-| normalized-derivative | 153 |
+| normalized-derivative | 209 |
 | parked | 4 |
 | raw-source | 151 |
 
@@ -31,7 +31,7 @@
 | collisionrelateddocs/claudechat.md | 1 |
 | collisionrelateddocs/claudechatnormalized.md | 1 |
 | collisionrelateddocs/collision_releated | 12 |
-| docs | 216 |
+| docs | 273 |
 | generated-packs/ce_phase4_agents_reviewed_plan | 16 |
 | generated-packs/ce_system_plans_enhanced | 14 |
 | generated-packs/cedocumentmapper_rebuild_plan_pack_all_zips | 6 |
@@ -49,14 +49,16 @@
 
 | Extension | Count |
 | --- | ---: |
-| .csv | 2 |
+| .csv | 3 |
 | .doc | 40 |
 | .docx | 21 |
 | .jam | 1 |
-| .json | 10 |
-| .md | 398 |
+| .jpg | 8 |
+| .json | 11 |
+| .md | 400 |
 | .msg | 15 |
 | .pdf | 64 |
+| .png | 45 |
 | .py | 12 |
 | .toml | 1 |
 | .txt | 2 |
@@ -83,7 +85,7 @@
 | `collisionrelateddocs/collision_releated/Backup of CE Job Sheet 260429.xlsm` | raw-source | .xlsm | 434882 | `a52b5df2a131c1b00866f478ebba20150070a3af25915acd8c05a41b2d0b983b` | `docs/normalized/collisionrelateddocs__collision_releated__backup-of-ce-job-sheet-260429.xlsm.md` | openpyxl is not available |
 | `collisionrelateddocs/collision_releated/Backup of Conditional Formatting 260202.txt` | raw-source | .txt | 559 | `4c5169b1abf1c4332cd785f4353dbc5dd4910b0253e2b1669109b95d518cf506` | `docs/normalized/collisionrelateddocs__collision_releated__backup-of-conditional-formatting-260202.txt.md` |  |
 | `collisionrelateddocs/collision_releated/CE Communication Style & Tone Profile.docx` | raw-source | .docx | 20527 | `1878ee75ee0dd2054778b0e173a3d1681d14e9a76268a6b0a8d9dea255ffe846` | `docs/normalized/collisionrelateddocs__collision_releated__ce-communication-style-tone-profile.docx.md` | python-docx is not available in the active runtime |
-| `collisionrelateddocs/collision_releated/Collision Engineers Whiteboard.jam` | raw-source | .jam | 3358536 | `710a56041e42fb4755838bd90944b2f69d1c8ba819bea0fd030f21f1e5c2fa31` | `docs/normalized/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam.md` | Google Jamboard format needs manual export/review |
+| `collisionrelateddocs/collision_releated/Collision Engineers Whiteboard.jam` | raw-source | .jam | 3358536 | `710a56041e42fb4755838bd90944b2f69d1c8ba819bea0fd030f21f1e5c2fa31` | `docs/normalized/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam.md` | Canvas binary not directly text parsed; embedded images and Figma node text exported for human review |
 | `collisionrelateddocs/collision_releated/EVA User Guide.pdf` | raw-source | .pdf | 1008214 | `155c3095d3dcf9965740c81c96d9fc21b9c22e78d1ff1af73c7a59d837118b56` | `docs/normalized/collisionrelateddocs__collision_releated__eva-user-guide.pdf.md` | pypdf is not available in the active runtime |
 | `collisionrelateddocs/collision_releated/evaapidocs.pdf` | raw-source | .pdf | 4922103 | `fb6c66f4dcdc2452ef477f79881ffd675d4c14aa077f681a4351638033e9d7d5` | `docs/normalized/collisionrelateddocs__collision_releated__evaapidocs.pdf.md` | pypdf is not available in the active runtime |
 | `collisionrelateddocs/collision_releated/handover.docx` | raw-source | .docx | 217648 | `9873bdd8f79bc76534a4108fac70c708fee7d5f07ab28500831727f22213e673` | `docs/normalized/collisionrelateddocs__collision_releated__handover.docx.md` | python-docx is not available in the active runtime |
@@ -267,7 +269,7 @@
 | `docs/normalized/collisionrelateddocs__collision_releated__backup-of-ce-job-sheet-260429.xlsm.md` | normalized-derivative | .md | 16040 | `7e01bd3f365167cc978ac69f085e464084b2df68e9bf17c807b39656d23ee68d` |  |  |
 | `docs/normalized/collisionrelateddocs__collision_releated__backup-of-conditional-formatting-260202.txt.md` | normalized-derivative | .md | 1021 | `3d69790b95d353dcbe9b6bca1bdd3f6ceff4e56bcf633b35245666b13e229614` |  |  |
 | `docs/normalized/collisionrelateddocs__collision_releated__ce-communication-style-tone-profile.docx.md` | normalized-derivative | .md | 4503 | `23bf8a701291c2123ed64671e0114215b4188fbf883335840aa9e6e24b7c2111` |  |  |
-| `docs/normalized/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam.md` | normalized-derivative | .md | 564 | `94cd021c829807763f4a940c2eadd003c35ad826f8198b4c09faa3b1e6e721e5` |  |  |
+| `docs/normalized/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam.md` | normalized-derivative | .md | 4619 | `7eed41b6befea64fbcdb97c60a6f0278372210150312c1c36faaaf8a348a3f4a` |  |  |
 | `docs/normalized/collisionrelateddocs__collision_releated__eva-user-guide.pdf.md` | normalized-derivative | .md | 7500 | `97f7b7a7b21bd3369c39f6cabfbfa1a9196162f58b6db0828037966d7088c415` |  |  |
 | `docs/normalized/collisionrelateddocs__collision_releated__evaapidocs.pdf.md` | normalized-derivative | .md | 97500 | `69474d071d0419b2a79e42ff96ae33277602ac22442af6af9538eab2e6b08e64` |  |  |
 | `docs/normalized/collisionrelateddocs__collision_releated__handover.docx.md` | normalized-derivative | .md | 15421 | `5acfc8a8f56b5819e7f155e814c5db1059b92ccaa6fe613686f06df8365c6960` |  |  |
@@ -644,3 +646,60 @@
 | `tests/test_scaffold_contracts.py` | active-plan | .py | 1041 | `8e734fe0f59926baae916844d2877ba6e1bfd3717ec26ce7c03c2675c65e6448` |  |  |
 | `tools/scaffold_initial_repo.py` | active-plan | .py | 71260 | `88878a39b152d7ec1cb472d48cce7ea29b208b661e926ccfb4bf7c6f4a4e1e94` |  |  |
 | `tools/verify_scaffold.py` | active-plan | .py | 9732 | `53c64ab6be9adcc0320082010676243ea767ebdd9c0ccb5608200b210e087ca0` |  |  |
+| `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/contact_sheets/whiteboard-images-01.jpg` | normalized-derivative | .jpg | 165146 | `187a9d0657715c2ad031800415cb81057687c8bb14092a41c77518f59983c05c` |  |  |
+| `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/contact_sheets/whiteboard-images-02.jpg` | normalized-derivative | .jpg | 127422 | `5acc025603fb00c8ef91c58a912f43fd54270a5f62964766d9b9f8d8eb400090` |  |  |
+| `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/contact_sheets/whiteboard-images-03.jpg` | normalized-derivative | .jpg | 138775 | `885eb6d1750046992552eabad6f3978b41c48e5a986595730d1e1a907cdd7491` |  |  |
+| `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/contact_sheets/whiteboard-images-04.jpg` | normalized-derivative | .jpg | 166138 | `0f589e0f563fac4b2b0e58b9348e8d5258c5a2d1118bbe3b88e17fd0445c560c` |  |  |
+| `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/contact_sheets/whiteboard-images-05.jpg` | normalized-derivative | .jpg | 156455 | `30835e8d1046f49022783a4a496469c5c25ea3edd67674ed5a211c0c06672d8c` |  |  |
+| `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/contact_sheets/whiteboard-images-06.jpg` | normalized-derivative | .jpg | 215830 | `ddda61a0fe3856b410f19492c0792c4a53339dd82970f04866beb5c189df6928` |  |  |
+| `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/contact_sheets/whiteboard-images-07.jpg` | normalized-derivative | .jpg | 130007 | `0a53fb648609f5d6ea464014e45119bc92b4dbcc6e8cfa9974011811b50313c0` |  |  |
+| `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/contact_sheets/whiteboard-images-08.jpg` | normalized-derivative | .jpg | 98568 | `3902c36d89c4c7bbc127583f2a1667ded314123cfe8006eb9d063110c42d4566` |  |  |
+| `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/figma_inspection.md` | normalized-derivative | .md | 3512 | `fc279db4cddb92859523d4db92a59a8fdd3bfe22270669f7f80d79395ba4e191` |  |  |
+| `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/image_index.csv` | normalized-derivative | .csv | 18958 | `f8041a6077d1666e9fb43c9d3608d3d2f68a66367d1b383a4c5c19f77fea5fad` |  |  |
+| `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/images/frame-001.png` | normalized-derivative | .png | 22498 | `2370be8087b4b4e286b59cee39e58818cbc8632cf5c7b27750a59997f50e96d9` |  |  |
+| `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/images/frame-002.png` | normalized-derivative | .png | 6614 | `d0d00fa667507beb75ea27c8a51a614ed22c096b8a628d4478e18bcb41c50446` |  |  |
+| `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/images/frame-003.png` | normalized-derivative | .png | 55859 | `cc9f54748567cc482a4b8cc9528a9d502e0767dc85fba7fbbdedfcb3283cf806` |  |  |
+| `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/images/frame-004.png` | normalized-derivative | .png | 6419 | `e3c9c586233499ba05eb1f71f63cf4dce8373250a69d0d145cb4bd68ceb28a5d` |  |  |
+| `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/images/frame-005.png` | normalized-derivative | .png | 53898 | `038b63707f366a5c805596b620441fb77dcbb69759ef85c4e68a53106de0b9c9` |  |  |
+| `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/images/frame-006.png` | normalized-derivative | .png | 22379 | `eafdc800d2cd9e811749d5fa9798671a3cfd80662dfe0de6315d9d298ebbcc8a` |  |  |
+| `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/images/frame-007.png` | normalized-derivative | .png | 23274 | `45f8c8f8947439b748ba797f7927d0cc7066d552240e58c056a6d42f112ea470` |  |  |
+| `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/images/frame-008.png` | normalized-derivative | .png | 13122 | `ec0c94e4f779dd3b4324c3fa082281a572521d9c535743aa770c83ebaf64eada` |  |  |
+| `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/images/frame-009.png` | normalized-derivative | .png | 14241 | `b9a714f9fbd6737304cd58c51f28b15215489b3027b9e762844a400e216377d5` |  |  |
+| `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/images/frame-010.png` | normalized-derivative | .png | 48348 | `90a7713d88e39751a455de3ab192905a18f551b941d15e5db87dc7badf087320` |  |  |
+| `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/images/frame-011.png` | normalized-derivative | .png | 67254 | `f6d011439a3c2512f15658d3b64492f89283daecad75cd00222378e046fa1e2f` |  |  |
+| `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/images/frame-012.png` | normalized-derivative | .png | 2958 | `902055de8ecb08d397cb226c3d933ebd4cec6c84b4f4ac194a81c9fb41482378` |  |  |
+| `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/images/frame-013.png` | normalized-derivative | .png | 15491 | `8653fd49dcc4767ede74be9c2ef3b0a89c87681ad335e90b94da8984bc51ae8c` |  |  |
+| `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/images/frame-014.png` | normalized-derivative | .png | 21441 | `033cd8ac8a55eaec4bae024e59e9a0cb3dc74d8876843906d19be50902535649` |  |  |
+| `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/images/frame-015.png` | normalized-derivative | .png | 27346 | `bee678a53d4b82042f468e1a3097524b2cda9731e05fc5aa57216c48d310f430` |  |  |
+| `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/images/frame-016.png` | normalized-derivative | .png | 18477 | `2e85f202506914b8a0609e6f0b12f1a78c30f71b65ac62d53899043c74ff5c19` |  |  |
+| `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/images/frame-017.png` | normalized-derivative | .png | 41299 | `30b27d9718de13e206c67849a5d3a82f0202aa7116571163e03f64ea9d658d1f` |  |  |
+| `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/images/frame-018.png` | normalized-derivative | .png | 18318 | `9e7253de8331aa5524844892e9484aeeacb994ca3dd7cdf3759056e70a02cd5c` |  |  |
+| `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/images/frame-019.png` | normalized-derivative | .png | 7840 | `7fc38daa6eee04f932ccde8c62b03df604d42e075455d81eb4408d6ae02589dd` |  |  |
+| `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/images/frame-020.png` | normalized-derivative | .png | 199792 | `e7247be45911c46905343473e4c57b9f6ed7a450563d19c508c2d9652c2c63e2` |  |  |
+| `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/images/frame-021.png` | normalized-derivative | .png | 39153 | `6eef368915051c907da8531957cd8c0a029594acb3804c9301be14c468806d2e` |  |  |
+| `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/images/frame-022.png` | normalized-derivative | .png | 49072 | `fc49f31d6dd30a8404a48361ba10f0d6c1fb839e1271f3d2bfd253ee0718edab` |  |  |
+| `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/images/frame-023.png` | normalized-derivative | .png | 48306 | `6aed6bc188c4ad52f24bde5a398ecd2be7d8fb115550901937430ab5c4c55c67` |  |  |
+| `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/images/frame-024.png` | normalized-derivative | .png | 2628 | `86becfe49b41739919ad50597877c17d041edc89567a05d8a14e271c035f2f8b` |  |  |
+| `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/images/frame-025.png` | normalized-derivative | .png | 2061 | `762194e0d919698b50cedd50e8756e8c35a170ef1dd46fab2e03c12e00fb5ca6` |  |  |
+| `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/images/frame-026.png` | normalized-derivative | .png | 105787 | `92a84f8e27f6d0d6a231872286a35a52834171f71b1a78690c0b328453b9923e` |  |  |
+| `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/images/frame-027.png` | normalized-derivative | .png | 180925 | `6905a063a43f76fe9bddd1899603f58011520b8d1a2233df38215e973eec8a07` |  |  |
+| `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/images/frame-028.png` | normalized-derivative | .png | 16618 | `01039929cbddfb193d88b155aee12c9ef144081ca5efd0bf22371b2813d9b7da` |  |  |
+| `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/images/frame-029.png` | normalized-derivative | .png | 9468 | `0c3393c9a68b8e3b4961aa975f78f49ba3167cb76dc3a8068d9da9ed6b90a609` |  |  |
+| `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/images/frame-030.png` | normalized-derivative | .png | 32997 | `699936d82f1177bfe6f2c470b6843f926d27a2d971ab0712eb9c83cea6552b83` |  |  |
+| `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/images/frame-031.png` | normalized-derivative | .png | 96232 | `51f3aef17fb2cb6f5d35059168440f55ba259b06482b890306942ad7caf9b912` |  |  |
+| `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/images/frame-032.png` | normalized-derivative | .png | 93037 | `1b013215aa46738a7bafedfcd9e33207b85f72bdc3e40565db419969d50d3ebb` |  |  |
+| `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/images/frame-033.png` | normalized-derivative | .png | 266208 | `f425404517e6415fb098f0a94d2ec677308b6eb2fc3cb496a3cc6e3eb53866b8` |  |  |
+| `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/images/frame-034.png` | normalized-derivative | .png | 90764 | `b967d227a6e395eb46f416ea07c87d53d33d922f64ce3c1ca0fc540f3c50aa45` |  |  |
+| `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/images/frame-035.png` | normalized-derivative | .png | 227532 | `b5add0a41f17c7c01af2b3e4bf6ff10ff72d20ed362ab380721245ffee1165e6` |  |  |
+| `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/images/frame-036.png` | normalized-derivative | .png | 98679 | `49602ee6710593eca3f52bd28123662ad32d48a99c297a313f7205df12354faa` |  |  |
+| `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/images/frame-037.png` | normalized-derivative | .png | 28011 | `23df20e192d10f449a25d3ccdfaa589cf99af556af8026b9b880c8b3f079b7cb` |  |  |
+| `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/images/frame-038.png` | normalized-derivative | .png | 20178 | `69c9d481bc2c6f2f8534ff8ccd51abe3fac05be2347a1c325e5db886b98844b4` |  |  |
+| `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/images/frame-039.png` | normalized-derivative | .png | 46488 | `8401eea6fbeed0a6dec69952335f977665cda121a568aeaa023c6b09b856c93e` |  |  |
+| `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/images/frame-040.png` | normalized-derivative | .png | 66331 | `d6101fffe9d114f06e342d923d125123c3b7b667341344955111002b5c3ced2b` |  |  |
+| `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/images/frame-041.png` | normalized-derivative | .png | 77611 | `1103e096dcd18bd5b9afd87a034df26bc6fa7606fb44aa64f96702b661251533` |  |  |
+| `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/images/frame-042.png` | normalized-derivative | .png | 177106 | `23ec93435c74b88aff43a4f93e41d5628d31580964b907ae0586b4eadcbae8cd` |  |  |
+| `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/images/frame-043.png` | normalized-derivative | .png | 113236 | `f67ca78918264ca9758c226eee1fc0452bf33ec4157d7592f23531be927cfde8` |  |  |
+| `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/images/frame-044.png` | normalized-derivative | .png | 303051 | `4a4fa9ee109330b29936a6eb1637bb4632417e556c2c0d773ff5e37bc889d82d` |  |  |
+| `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/images/thumbnail.png` | normalized-derivative | .png | 10547 | `d0fbecf0577031364def7b4c68cc85e4c3e7d3b6a9f8f0c27cc5bdf4f86f44db` |  |  |
+| `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/jam_meta.json` | normalized-derivative | .json | 1109 | `e329f2badeb2d6f463a06132a5d0979c3a7bb21ff05e227611f284899f0b6514` |  |  |
+| `docs/plans/figmaplan.md` | active-plan | .md | 5569 | `29791fa23ed2a340186b0a5213eafbbdbe7227e8deb2eec24ab83b2da695fb0b` |  |  |
