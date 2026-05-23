@@ -1,0 +1,15 @@
+EVA_FIELD_ORDER = [
+    "work_provider",
+    "vrm",
+    "vehicle_model",
+    "claimant_name",
+    "reference",
+    "incident_date",
+    "instruction_date",
+    "inspection_date",
+    "inspection_address",
+    "accident_circumstances",
+    "vat_status",
+    "mileage",
+    "mileage_unit",
+]
