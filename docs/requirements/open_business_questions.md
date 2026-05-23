@@ -12,5 +12,5 @@
 * Which state store should back Operational Core: SQLite for local MVP, Postgres for shared app, or another approved store?
 * What exact EVA JSON field names and import behaviours must be confirmed against live EVA?
 * What retention period is required for source files, package manifests, audit events, and generated exports?
-* Which uncovered/anomalous principals should be implemented first after the 26 presets: `ACSP`, `OAK/AX`, `WOODLANDS`, or another all-provider priority order?
+* Which uncovered/anomalous principals should be implemented first after the 26 presets: `ACSP`, `OAK/AX`, `WOODLANDS`, or another all-provider priority order? User comment: Any that we have test documents for
 
