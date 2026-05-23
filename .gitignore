@@ -23,3 +23,5 @@ node_modules/
 .DS_Store
 Thumbs.db
 .obsidian
+/.obsidian
+.obsidian/workspace.json
