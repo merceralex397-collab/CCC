@@ -12,7 +12,7 @@ The legacy CE Document Mapper contains useful provider rules and behaviours but 
 
 ## Decision
 
-Build a ground-up parser core that is compatible with the current mapper's useful behaviours. Use the legacy mapper and `collisionrelateddocs/claudechat.md` as behavioural oracle evidence, not as the architecture to preserve.
+Build a ground-up parser core that is compatible with the current mapper's useful behaviours. Use the legacy mapper and `docs/reference/raw/collisionrelateddocs/claudechat.md` as behavioural oracle evidence, not as the architecture to preserve.
 
 ## Consequences
 

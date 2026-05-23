@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "updated": "2026-05-23",
+  "entry_points": {
+    "human_index": "docs/docs_index.md",
+    "machine_map": "docs/repo_map.json",
+    "source_manifest": "docs/source_manifest.md",
+    "roadmap": "docs/roadmap.md"
+  },
+  "plans": {
+    "index": "docs/plans/_index.md",
+    "operational_core": {
+      "root": "docs/plans/operational-core",
+      "source_synthesis": "docs/plans/operational-core/source_synthesis.md",
+      "parser_mvp_plan": "docs/plans/operational-core/parser-mvp/plan.md",
+      "tickets": "docs/plans/operational-core/tickets",
+      "implemented_archive": "docs/plans/operational-core/archived_plans/implemented",
+      "superseded_archive": "docs/plans/operational-core/archived_plans/superseded"
+    },
+    "repository_restructure": "docs/plans/operational-core/archived_plans/implemented/2026-05-23-implemented-repository-restructure.md"
+  },
+  "reference": {
+    "index": "docs/reference/_index.md",
+    "raw_evidence": "docs/reference/raw/collisionrelateddocs",
+    "normalized_companions": "docs/reference/normalized",
+    "reference_data": "docs/reference/data",
+    "provider_coverage_matrix": "docs/reference/data/provider_coverage_matrix.md",
+    "original_planning": "docs/reference/originalplanning",
+    "original_planning_index": "docs/reference/originalplanning_index.md",
+    "test_context": "docs/reference/test-context"
+  },
+  "active_docs": {
+    "architecture": "docs/architecture",
+    "contracts": "docs/contracts",
+    "decisions": "docs/decisions",
+    "requirements": "docs/requirements",
+    "operations": "docs/operations",
+    "security": "docs/security",
+    "glossary": "docs/glossary.md"
+  },
+  "rules": {
+    "raw_evidence": "Do not edit files under docs/reference/raw/collisionrelateddocs in place.",
+    "reference_material": "Reference material is not active scope unless promoted into plans, tickets, architecture, contracts, or decisions.",
+    "manifest": "Update docs/source_manifest.md, docs/source_manifest.csv, and docs/source_manifest.json whenever source files, generated companions, active docs, or archives change."
+  }
+}

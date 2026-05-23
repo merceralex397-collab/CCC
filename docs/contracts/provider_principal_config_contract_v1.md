@@ -73,6 +73,6 @@ Operational routing should also support current reply/CC handling, fee-note/repo
 
 ## Sources
 
-- `collisionrelateddocs/Settings Backup/providers.json`
-- `docs/data/provider_coverage_matrix.md`
-- `docs/reference/generated-packs/ce_system_plans_enhanced/ce_system_plans_enhanced/12_WORK_PACKAGE_PROVIDER_SETTINGS_AND_MIGRATION.md`
+- `docs/reference/raw/collisionrelateddocs/Settings Backup/providers.json`
+- `docs/reference/data/provider_coverage_matrix.md`
+- `docs/reference/originalplanning/ce_system_plans_enhanced/ce_system_plans_enhanced/12_WORK_PACKAGE_PROVIDER_SETTINGS_AND_MIGRATION.md`

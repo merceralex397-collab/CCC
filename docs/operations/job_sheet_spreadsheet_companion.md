@@ -2,9 +2,9 @@
 
 ## Sources
 
-- `collisionrelateddocs/collision_releated/Backup of CE Job Sheet 260429.xlsm`
-- `collisionrelateddocs/collision_releated/Backup of CE Job Sheet 260309.xlsm`
-- `collisionrelateddocs/collision_releated/Mapped Principals.xlsx`
+- `docs/reference/raw/collisionrelateddocs/collision_releated/Backup of CE Job Sheet 260429.xlsm`
+- `docs/reference/raw/collisionrelateddocs/collision_releated/Backup of CE Job Sheet 260309.xlsm`
+- `docs/reference/raw/collisionrelateddocs/collision_releated/Mapped Principals.xlsx`
 
 ## Observed Workbook Structure
 
@@ -49,10 +49,10 @@ The `Garages` sheet is an inspection-address/contact lookup. It contains garage 
 
 ## Jam Evidence References
 
-- `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/figma_inspection.md`
-- `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/image_index.csv`
-- `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/images/frame-016.png`
-- `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/images/frame-023.png`
-- `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/images/frame-025.png`
-- `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/images/frame-041.png`
-- `docs/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/images/frame-042.png`
+- `docs/reference/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/figma_inspection.md`
+- `docs/reference/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/image_index.csv`
+- `docs/reference/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/images/frame-016.png`
+- `docs/reference/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/images/frame-023.png`
+- `docs/reference/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/images/frame-025.png`
+- `docs/reference/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/images/frame-041.png`
+- `docs/reference/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/images/frame-042.png`

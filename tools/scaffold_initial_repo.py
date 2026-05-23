@@ -32,9 +32,10 @@ except Exception:  # pragma: no cover - reported in generated docs
 ROOT = Path(__file__).resolve().parents[1]
 TODAY = date.today().isoformat()
 
-RAW_SOURCE_PREFIXES = {
-    "collisionrelateddocs": "raw-source",
-}
+RAW_SOURCE_ROOT = ("docs", "reference", "raw", "collisionrelateddocs")
+REFERENCE_DATA_ROOT = ("docs", "reference", "data")
+NORMALIZED_ROOT = ("docs", "reference", "normalized")
+ARCHIVED_PLANS_ROOT = ("docs", "plans", "operational-core", "archived_plans")
 
 GENERATED_REFERENCE_PREFIXES = {
     "originalplans_output",
@@ -57,6 +58,25 @@ GENERATED_PACK_FOLDERS = [
     "collision_engineers_bulk_data_research_pack",
     "cedocumentmapper_rebuild_plan_pack_all_zips",
 ]
+
+IGNORED_MANIFEST_PARTS = {
+    ".git",
+    ".obsidian",
+    ".pytest_cache",
+    "__pycache__",
+    ".mypy_cache",
+    ".ruff_cache",
+    ".venv",
+    "venv",
+    "env",
+    "outputs",
+    "tmp",
+    "dist",
+    "build",
+    "node_modules",
+}
+IGNORED_MANIFEST_NAMES = {".DS_Store", "Thumbs.db"}
+IGNORED_MANIFEST_SUFFIXES = {".pyc", ".pyo", ".pyd", ".log", ".tmp", ".bak"}
 
 TEXT_EXTENSIONS = {".md", ".txt", ".json"}
 RAW_DOC_EXTENSIONS = {".pdf", ".docx", ".doc", ".DOC", ".msg", ".xlsm", ".xlsx", ".jam", ".zip"}
@@ -89,18 +109,20 @@ def slugify(value: str) -> str:
 def classify(path: Path) -> str:
     parts = path.relative_to(ROOT).parts
     first = parts[0] if parts else ""
-    if len(parts) >= 3 and parts[0] == "docs" and parts[1] == "data" and parts[2] == "jam_exports":
+    if parts[: len(RAW_SOURCE_ROOT)] == RAW_SOURCE_ROOT:
+        return "raw-source"
+    if parts[: len(NORMALIZED_ROOT)] == NORMALIZED_ROOT:
         return "normalized-derivative"
-    if len(parts) >= 3 and parts[0] == "docs" and parts[1] == "reference" and parts[2] in {"generated-packs", "test-context"}:
+    if parts[: len(REFERENCE_DATA_ROOT)] == REFERENCE_DATA_ROOT:
+        return "normalized-derivative"
+    if len(parts) >= 3 and parts[0] == "docs" and parts[1] == "reference" and parts[2] in {"originalplanning", "test-context"}:
         return "generated-reference"
-    if first in RAW_SOURCE_PREFIXES:
-        return RAW_SOURCE_PREFIXES[first]
+    if parts[: len(ARCHIVED_PLANS_ROOT)] == ARCHIVED_PLANS_ROOT:
+        return "implemented" if "implemented" in parts else "superseded"
     if first in GENERATED_REFERENCE_PREFIXES:
         return "generated-reference"
     if first in TEST_CONTEXT_PREFIXES:
         return "generated-reference"
-    if first == "archive":
-        return "implemented" if "implemented" in parts else "superseded"
     if first in {"docs", "src", "tests", "tools"}:
         return "active-plan" if path.suffix.lower() in {".md", ".py", ".json", ".toml"} else "normalized-derivative"
     if path.name == "initrepoplan.md":
@@ -114,14 +136,22 @@ def source_group(path: Path) -> str:
     parts = path.relative_to(ROOT).parts
     if not parts:
         return "unknown"
-    if len(parts) >= 4 and parts[0] == "docs" and parts[1] == "reference" and parts[2] == "generated-packs":
-        return f"generated-packs/{parts[3]}"
+    if parts[: len(RAW_SOURCE_ROOT)] == RAW_SOURCE_ROOT:
+        if len(parts) > len(RAW_SOURCE_ROOT):
+            return f"raw-evidence/{parts[len(RAW_SOURCE_ROOT)]}"
+        return "raw-evidence"
+    if parts[: len(NORMALIZED_ROOT)] == NORMALIZED_ROOT:
+        return "normalized"
+    if parts[: len(REFERENCE_DATA_ROOT)] == REFERENCE_DATA_ROOT:
+        if len(parts) > len(REFERENCE_DATA_ROOT):
+            return f"data/{parts[len(REFERENCE_DATA_ROOT)]}"
+        return "data"
+    if parts[: len(ARCHIVED_PLANS_ROOT)] == ARCHIVED_PLANS_ROOT:
+        return "archived_plans"
+    if len(parts) >= 4 and parts[0] == "docs" and parts[1] == "reference" and parts[2] == "originalplanning":
+        return f"originalplanning/{parts[3]}"
     if len(parts) >= 4 and parts[0] == "docs" and parts[1] == "reference" and parts[2] == "test-context":
         return f"test-context/{parts[3]}"
-    if parts[0] == "collisionrelateddocs":
-        if len(parts) > 1:
-            return f"collisionrelateddocs/{parts[1]}"
-        return "collisionrelateddocs"
     return parts[0]
 
 
@@ -155,16 +185,17 @@ def extraction_plan(path: Path) -> tuple[str, str, str]:
     if ext == ".zip":
         return "zip-entry-list", "partial-review-required", "ZIP contents are inventoried but not recursively promoted"
     if ext == ".jam":
-        if path_str == "collisionrelateddocs/collision_releated/Collision Engineers Whiteboard.jam":
+        if path_str == "docs/reference/raw/collisionrelateddocs/collision_releated/Collision Engineers Whiteboard.jam":
             return "jam-zip-image-export + Figma get_figjam", "partial-review-required", ""
         return "blocked", "blocked", "Google Jamboard format needs manual export/review"
     return "not-applicable", "not-applicable", ""
 
 
 def companion_path_for(path: Path) -> str:
-    if not rel(path).startswith("collisionrelateddocs/"):
+    if not rel(path).startswith("docs/reference/raw/collisionrelateddocs/"):
         return ""
-    return f"docs/normalized/{slugify(rel(path))}.md"
+    raw_relative = rel(path).removeprefix("docs/reference/raw/")
+    return f"docs/reference/normalized/{slugify(raw_relative)}.md"
 
 
 def extract_pdf(path: Path) -> tuple[str, str]:
@@ -292,14 +323,28 @@ def write_companion(path: Path, record: dict[str, str]) -> None:
     write_text(companion, metadata + "\n\n" + body)
 
 
+def is_ignored_manifest_artifact(path: Path) -> bool:
+    parts = path.relative_to(ROOT).parts
+    if set(parts) & IGNORED_MANIFEST_PARTS:
+        return True
+    if any(part.endswith(".egg-info") for part in parts):
+        return True
+    name = path.name
+    if name == ".env.example":
+        return False
+    if name == ".env" or name.startswith(".env."):
+        return True
+    if name in IGNORED_MANIFEST_NAMES:
+        return True
+    return any(name.endswith(suffix) for suffix in IGNORED_MANIFEST_SUFFIXES)
+
+
 def iter_files() -> list[Path]:
-    ignored_parts = {".git", ".obsidian", "__pycache__", ".pytest_cache"}
     files = []
     for path in ROOT.rglob("*"):
         if not path.is_file():
             continue
-        parts = set(path.relative_to(ROOT).parts)
-        if parts & ignored_parts:
+        if is_ignored_manifest_artifact(path):
             continue
         files.append(path)
     return sorted(files, key=lambda p: rel(p).lower())
@@ -308,7 +353,7 @@ def iter_files() -> list[Path]:
 def build_manifest() -> list[dict[str, str]]:
     records = []
     for path in iter_files():
-        if rel(path).startswith("docs/normalized/"):
+        if rel(path).startswith("docs/reference/normalized/"):
             status = "normalized-derivative"
             method = "generated-companion"
             confidence = "derived"
@@ -339,8 +384,6 @@ def build_manifest() -> list[dict[str, str]]:
 def safe_move_directory(source: Path, target: Path) -> None:
     if not source.exists():
         return
-    if target.exists():
-        return
     source_resolved = source.resolve()
     target_parent = target.parent.resolve()
     root_resolved = ROOT.resolve()
@@ -348,26 +391,66 @@ def safe_move_directory(source: Path, target: Path) -> None:
         raise RuntimeError(f"Refusing to move source outside workspace: {source_resolved}")
     if not str(target_parent).lower().startswith(str(root_resolved).lower()):
         raise RuntimeError(f"Refusing to move target outside workspace: {target_parent}")
-    target.parent.mkdir(parents=True, exist_ok=True)
-    shutil.move(str(source), str(target))
+    if target.exists():
+        if not source.is_dir() or not target.is_dir():
+            raise RuntimeError(f"Refusing to overwrite existing path during move: {target}")
+        for child in sorted(source.iterdir(), key=lambda item: item.name.lower()):
+            destination = target / child.name
+            if destination.exists():
+                if child.is_dir() and destination.is_dir():
+                    safe_move_directory(child, destination)
+                else:
+                    raise RuntimeError(f"Refusing to overwrite existing path during merge: {destination}")
+            else:
+                shutil.move(str(child), str(destination))
+        try:
+            source.rmdir()
+        except OSError as exc:
+            raise RuntimeError(f"Could not remove merged source directory {source}: {exc}") from exc
+    else:
+        target.parent.mkdir(parents=True, exist_ok=True)
+        shutil.move(str(source), str(target))
+
+
+def remove_empty_directory(path: Path) -> None:
+    if not path.exists():
+        return
+    resolved = path.resolve()
+    root_resolved = ROOT.resolve()
+    if not str(resolved).lower().startswith(str(root_resolved).lower()):
+        raise RuntimeError(f"Refusing to remove directory outside workspace: {resolved}")
+    if not path.is_dir():
+        raise RuntimeError(f"Expected directory for cleanup: {path}")
+    try:
+        path.rmdir()
+    except OSError:
+        return
 
 
 def organize_reference_packs() -> None:
+    safe_move_directory(ROOT / "collisionrelateddocs", ROOT / "docs/reference/raw/collisionrelateddocs")
+    safe_move_directory(ROOT / "docs/normalized", ROOT / "docs/reference/normalized")
+    safe_move_directory(ROOT / "docs/data", ROOT / "docs/reference/data")
+    safe_move_directory(ROOT / "archive/plans", ROOT / "docs/plans/operational-core/archived_plans")
+    remove_empty_directory(ROOT / "archive")
+    safe_move_directory(ROOT / "docs/planning", ROOT / "docs/plans/operational-core")
+    safe_move_directory(ROOT / "docs/tickets", ROOT / "docs/plans/operational-core/tickets")
     for folder in GENERATED_PACK_FOLDERS:
-        safe_move_directory(ROOT / folder, ROOT / "docs/reference/generated-packs" / folder)
+        safe_move_directory(ROOT / folder, ROOT / "docs/reference/originalplanning" / folder)
+    safe_move_directory(ROOT / "docs/reference/generated-packs", ROOT / "docs/reference/originalplanning")
     safe_move_directory(ROOT / "testprojectcontext", ROOT / "docs/reference/test-context/testprojectcontext")
 
 
 def write_generated_pack_index() -> None:
     rows = []
-    for base in [ROOT / "docs/reference/generated-packs", ROOT / "docs/reference/test-context"]:
+    for base in [ROOT / "docs/reference/originalplanning", ROOT / "docs/reference/test-context"]:
         if not base.exists():
             continue
         for folder in sorted([item for item in base.iterdir() if item.is_dir()], key=lambda p: p.name.lower()):
             file_count = sum(1 for item in folder.rglob("*") if item.is_file())
             rows.append((folder.name, rel(folder), file_count))
     lines = [
-        "# Generated Pack Index",
+        "# Original Planning Index",
         "",
         "Generated and historical planning packs are reference-only unless promoted into an active ticket or canonical doc.",
         "",
@@ -376,7 +459,7 @@ def write_generated_pack_index() -> None:
     ]
     for name, path, file_count in rows:
         lines.append(f"| `{escape_md(name)}` | `{escape_md(path)}` | {file_count} | generated-reference |")
-    write_text(ROOT / "docs/reference/generated_packs_index.md", "\n".join(lines))
+    write_text(ROOT / "docs/reference/originalplanning_index.md", "\n".join(lines))
 
 
 def write_manifest(records: list[dict[str, str]]) -> None:
@@ -451,7 +534,7 @@ def normalize_code(value: Any) -> str:
 
 
 def provider_config_rows() -> list[dict[str, str]]:
-    path = ROOT / "collisionrelateddocs/Settings Backup/providers.json"
+    path = ROOT / "docs/reference/raw/collisionrelateddocs/Settings Backup/providers.json"
     data = load_json(path)
     rows = []
     for provider in data["providers"]:
@@ -525,7 +608,7 @@ def read_mapped_principals(path: Path) -> tuple[list[str], dict[str, str]]:
 
 
 def write_provider_matrix() -> None:
-    output = ROOT / "docs/data/provider_coverage_matrix.csv"
+    output = ROOT / "docs/reference/data/provider_coverage_matrix.csv"
     output.parent.mkdir(parents=True, exist_ok=True)
     parser_rows = provider_config_rows()
     parser_names = {normalize_code(row["provider_name"]) for row in parser_rows}
@@ -533,8 +616,8 @@ def write_provider_matrix() -> None:
     covered_codes = parser_names | parser_codes
 
     wb_paths = [
-        ROOT / "collisionrelateddocs/collision_releated/Backup of CE Job Sheet 260429.xlsm",
-        ROOT / "collisionrelateddocs/collision_releated/Backup of CE Job Sheet 260309.xlsm",
+        ROOT / "docs/reference/raw/collisionrelateddocs/collision_releated/Backup of CE Job Sheet 260429.xlsm",
+        ROOT / "docs/reference/raw/collisionrelateddocs/collision_releated/Backup of CE Job Sheet 260309.xlsm",
     ]
     principal_by_code: dict[str, dict[str, str]] = {}
     for wb_path in wb_paths:
@@ -547,7 +630,7 @@ def write_provider_matrix() -> None:
     for wb_path in wb_paths:
         actual_jobs.update(read_actual_jobs(wb_path))
 
-    mapped, lost = read_mapped_principals(ROOT / "collisionrelateddocs/collision_releated/Mapped Principals.xlsx")
+    mapped, lost = read_mapped_principals(ROOT / "docs/reference/raw/collisionrelateddocs/collision_releated/Mapped Principals.xlsx")
     all_codes = set(covered_codes) | set(principal_by_code) | set(actual_jobs) | set(mapped) | set(lost)
     rows = []
     for code in sorted(c for c in all_codes if c):
@@ -594,10 +677,10 @@ def write_provider_matrix() -> None:
         "# Provider Coverage Matrix",
         "",
         f"- Generated: {TODAY}",
-        "- Parser source: `collisionrelateddocs/Settings Backup/providers.json`",
+        "- Parser source: `docs/reference/raw/collisionrelateddocs/Settings Backup/providers.json`",
         "- Job-sheet sources: `Backup of CE Job Sheet 260429.xlsm`, `Backup of CE Job Sheet 260309.xlsm`",
         "- Mapped-principals source: `Mapped Principals.xlsx`",
-        "- Full matrix: `docs/data/provider_coverage_matrix.csv`",
+        "- Full matrix: `docs/reference/data/provider_coverage_matrix.csv`",
         "",
         "## Summary",
         "",
@@ -635,7 +718,7 @@ def write_provider_matrix() -> None:
             f"| `{row['code']}` | {escape_md(row['principal_name'])} | {escape_md(row['inbox'])} | {escape_md(row['instructions'])} | {escape_md(row['drag_into_eva'])} |"
         )
     md.extend(["", "## Mapped-Only Uncovered Codes", "", ", ".join(f"`{r['code']}`" for r in mapped_only) or "None"])
-    write_text(ROOT / "docs/data/provider_coverage_matrix.md", "\n".join(md))
+    write_text(ROOT / "docs/reference/data/provider_coverage_matrix.md", "\n".join(md))
 
 
 def write_spreadsheet_flow_doc() -> None:
@@ -644,9 +727,9 @@ def write_spreadsheet_flow_doc() -> None:
 
     ## Sources
 
-    - `collisionrelateddocs/collision_releated/Backup of CE Job Sheet 260429.xlsm`
-    - `collisionrelateddocs/collision_releated/Backup of CE Job Sheet 260309.xlsm`
-    - `collisionrelateddocs/collision_releated/Mapped Principals.xlsx`
+    - `docs/reference/raw/collisionrelateddocs/collision_releated/Backup of CE Job Sheet 260429.xlsm`
+    - `docs/reference/raw/collisionrelateddocs/collision_releated/Backup of CE Job Sheet 260309.xlsm`
+    - `docs/reference/raw/collisionrelateddocs/collision_releated/Mapped Principals.xlsx`
 
     ## Observed Workbook Structure
 
@@ -690,30 +773,39 @@ def write_static_docs() -> None:
 
         ## Current Scope
 
-        The active MVP is parser-first:
+        The first programme milestone is the Operational Core MVP. The parser is the first executable MVP inside it:
 
         - shared Python parser core;
         - non-technical office-staff UI;
         - equivalent CLI for automation and AI-agent usage;
+        - provider/principal admin;
+        - work-item and review queue;
         - provider configuration and coverage tracking;
         - EVA-ready JSON/payload validation;
-        - initial Box evidence-package integration planning;
+        - Box-ready evidence-package generation;
         - raw-source preservation with normalized Markdown/metadata companions.
 
         Collision Engineers do not do personal injury or KADOE work. Those workflows must not be planned into CCC.
 
         ## Source Of Truth
 
-        Raw operational files under `collisionrelateddocs/` remain immutable source evidence. Generated plan packs are reference-only unless promoted into canonical docs or tickets. The current canonical entry points are:
+        Raw operational files under `docs/reference/raw/collisionrelateddocs/` remain immutable source evidence. Generated plan packs are reference-only unless promoted into canonical docs or tickets. The current canonical entry points are:
 
+        - `docs/docs_index.md`
+        - `docs/repo_map.json`
         - `docs/source_manifest.md`
         - `docs/roadmap.md`
+        - `docs/plans/_index.md`
+        - `docs/plans/operational-core/source_synthesis.md`
+        - `docs/plans/operational-core/parser-mvp/plan.md`
         - `docs/architecture/`
         - `docs/contracts/`
+        - `docs/decisions/`
+        - `docs/plans/operational-core/tickets/backlog_index.md`
         - `docs/requirements/`
-        - `docs/data/provider_coverage_matrix.md`
-        - `docs/reference/generated_packs_index.md`
-        - `archive/plans/implemented/`
+        - `docs/reference/data/provider_coverage_matrix.md`
+        - `docs/reference/originalplanning_index.md`
+        - `docs/plans/operational-core/archived_plans/implemented/`
 
         ## Local Verification
 
@@ -723,6 +815,8 @@ def write_static_docs() -> None:
         $py='C:\\Users\\PC\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe'
         & $py tools/verify_scaffold.py
         ```
+
+        The verifier checks the promoted planning scaffold, provider coverage evidence, decision docs, parser MVP plan coverage, and source-manifest integrity.
         """,
     )
     write_text(
@@ -730,10 +824,21 @@ def write_static_docs() -> None:
         """
         # AGENTS.md
 
+        ## Navigation
+
+        - Start with `docs/docs_index.md` for human-readable navigation and `docs/repo_map.json` for machine-readable path routing.
+        - Active programme planning lives under `docs/plans/operational-core/`.
+        - Current parser MVP implementation work lives at `docs/plans/operational-core/parser-mvp/plan.md`.
+        - Active tickets live under `docs/plans/operational-core/tickets/`.
+        - Implemented or superseded plans live under `docs/plans/operational-core/archived_plans/`.
+        - Raw evidence lives under `docs/reference/raw/collisionrelateddocs/`.
+        - Normalized companions and extracted data live under `docs/reference/normalized/` and `docs/reference/data/`.
+        - Generated or historical planning packs live under `docs/reference/originalplanning/` and are reference-only unless promoted.
+
         ## Repository Hygiene
 
-        - Treat `collisionrelateddocs/` raw files as immutable evidence. Do not edit, rename destructively, overwrite, or normalize in place.
-        - Keep generated derivatives under `docs/normalized/`, `docs/data/`, or another documented derivative path.
+        - Treat `docs/reference/raw/collisionrelateddocs/` raw files as immutable evidence. Do not edit, rename destructively, overwrite, or normalize in place.
+        - Keep generated derivatives under `docs/reference/normalized/`, `docs/reference/data/`, or another documented derivative path.
         - Update `docs/source_manifest.md`, `docs/source_manifest.csv`, and `docs/source_manifest.json` whenever source files, generated companions, active docs, or archives change.
         - Keep `README.md`, `docs/roadmap.md`, `docs/architecture/`, `docs/contracts/`, `docs/requirements/`, and `docs/glossary.md` current with behavior-changing work.
         - Do not commit secrets, API keys, tokens, OAuth material, mailbox credentials, or provider credentials. Run the scaffold verification and a targeted secret scan before any commit or push.
@@ -743,9 +848,9 @@ def write_static_docs() -> None:
 
         ## Planning And Ticket Lifecycle
 
-        - Every active plan or ticket must include status, owner, created date, last reviewed date, source links, roadmap milestone, acceptance criteria, verification required, and supersedes/superseded-by fields.
-        - When a plan or ticket is implemented, move it to `archive/plans/implemented/`, rename it with the completion date, and add an implemented-state block at the top.
-        - Superseded or merged plans go to `archive/plans/superseded/` with a pointer to the replacement doc or ticket.
+        - Every active plan or ticket must include status, owner, created date, last reviewed date, source links, roadmap milestone, dependencies, expected outputs, acceptance criteria, verification required, archive target, and supersedes/superseded-by fields.
+        - When a plan or ticket is implemented, move it to `docs/plans/operational-core/archived_plans/implemented/`, rename it with the completion date, and add an implemented-state block at the top.
+        - Superseded or merged plans go to `docs/plans/operational-core/archived_plans/superseded/` with a pointer to the replacement doc or ticket.
         - Generated plan packs are reference material unless explicitly promoted into active docs or tickets.
 
         ## Parser Rules
@@ -753,7 +858,7 @@ def write_static_docs() -> None:
         - Keep UI and CLI thin. Both must call the same parser core and share validation/export contracts.
         - Do not import the legacy `cedocumentmapper` monolith wholesale. Reference it for behavior and migrate requirements deliberately.
         - Parser output must pass canonical schema validation before EVA-specific output.
-        - Provider coverage must be tracked in `docs/data/provider_coverage_matrix.md` before adding or changing provider rules.
+        - Provider coverage must be tracked in `docs/reference/data/provider_coverage_matrix.md` before adding or changing provider rules.
         - Any cloud OCR/document-intelligence path requires privacy, cost, data-residency, and vendor review before use.
 
         ## Verification
@@ -762,6 +867,144 @@ def write_static_docs() -> None:
         - For this scaffold, run `tools/verify_scaffold.py`.
         - If pytest or external parser dependencies are not installed, document that instead of claiming test coverage from unavailable tools.
         """,
+    )
+    write_text(
+        ROOT / "docs/docs_index.md",
+        """
+        # Documentation Index
+
+        This is the primary human navigation file for CCC documentation.
+
+        ## Quick Start
+
+        - Product scope and current milestone: `README.md` and `docs/roadmap.md`.
+        - Active programme plan: `docs/plans/operational-core/source_synthesis.md`.
+        - Parser MVP plan: `docs/plans/operational-core/parser-mvp/plan.md`.
+        - Active backlog: `docs/plans/operational-core/tickets/backlog_index.md`.
+        - Agent path map: `docs/repo_map.json`.
+        - Full source inventory: `docs/source_manifest.md`, `docs/source_manifest.csv`, and `docs/source_manifest.json`.
+
+        ## Active Work
+
+        | Area | Path | Use |
+        | --- | --- | --- |
+        | Plans | `docs/plans/_index.md` | Active plan workspaces and archived plans. |
+        | Operational Core | `docs/plans/operational-core/` | Current programme plan, parser MVP plan, and tickets. |
+        | Architecture | `docs/architecture/` | System architecture and programme boundaries. |
+        | Contracts | `docs/contracts/` | Versioned schemas and integration contracts. |
+        | Decisions | `docs/decisions/` | ADRs and option papers. |
+        | Requirements | `docs/requirements/` | Business requirements and open questions. |
+        | Operations | `docs/operations/` | Runbooks, monitoring, release, rollback, and spreadsheet companion notes. |
+        | Security | `docs/security/` | Data map, vendor register, DPIA, safety review, and API security. |
+
+        ## Reference Material
+
+        | Area | Path | Use |
+        | --- | --- | --- |
+        | Raw evidence | `docs/reference/raw/collisionrelateddocs/` | Immutable source files. Do not edit in place. |
+        | Normalized companions | `docs/reference/normalized/` | Generated Markdown companions for raw evidence. |
+        | Reference data | `docs/reference/data/` | Provider matrix and extracted Jam/FigJam derivatives. |
+        | Original planning | `docs/reference/originalplanning/` | Historical/generated planning packs; reference-only unless promoted. |
+        | Test context | `docs/reference/test-context/` | Historical test repositories and context packs. |
+
+        ## Quality Rules
+
+        - Update `docs/source_manifest.*` when source files, generated companions, active docs, or archives change.
+        - Promote ideas from reference material into `docs/plans/operational-core/tickets/` before treating them as active scope.
+        - Keep raw evidence immutable and create derivatives under `docs/reference/normalized/` or `docs/reference/data/`.
+        - Run `python tools/verify_scaffold.py` after documentation structure changes.
+        """,
+    )
+    write_text(
+        ROOT / "docs/plans/_index.md",
+        """
+        # Plans Index
+
+        `docs/plans/` contains active plan workspaces and plan archives.
+
+        | Plan Area | Path | Status |
+        | --- | --- | --- |
+        | Operational Core | `docs/plans/operational-core/` | active programme workspace |
+        | Repository Restructure | `docs/plans/operational-core/archived_plans/implemented/2026-05-23-implemented-repository-restructure.md` | implemented |
+
+        ## Operational Core Layout
+
+        - `docs/plans/operational-core/source_synthesis.md` maps reference material into canonical outputs.
+        - `docs/plans/operational-core/parser-mvp/plan.md` is the current parser MVP implementation plan.
+        - `docs/plans/operational-core/tickets/` contains active phased tickets.
+        - `docs/plans/operational-core/archived_plans/implemented/` contains completed plans.
+        - `docs/plans/operational-core/archived_plans/superseded/` contains superseded or merged plans.
+        """,
+    )
+    write_text(
+        ROOT / "docs/reference/_index.md",
+        """
+        # Reference Index
+
+        `docs/reference/` contains source evidence, generated derivatives, historical planning, and test-context material.
+
+        | Area | Path | Status |
+        | --- | --- | --- |
+        | Raw evidence | `docs/reference/raw/collisionrelateddocs/` | immutable source evidence |
+        | Normalized companions | `docs/reference/normalized/` | generated derivatives |
+        | Reference data | `docs/reference/data/` | generated/reference datasets and exports |
+        | Original planning | `docs/reference/originalplanning/` | generated historical planning packs |
+        | Test context | `docs/reference/test-context/` | historical test repositories/context packs |
+
+        Generated and historical material is not active scope unless promoted into architecture, contracts, decisions, or `docs/plans/operational-core/tickets/`.
+        """,
+    )
+    write_text(
+        ROOT / "docs/repo_map.json",
+        json.dumps(
+            {
+                "version": 1,
+                "updated": TODAY,
+                "entry_points": {
+                    "human_index": "docs/docs_index.md",
+                    "machine_map": "docs/repo_map.json",
+                    "source_manifest": "docs/source_manifest.md",
+                    "roadmap": "docs/roadmap.md",
+                },
+                "plans": {
+                    "index": "docs/plans/_index.md",
+                    "operational_core": {
+                        "root": "docs/plans/operational-core",
+                        "source_synthesis": "docs/plans/operational-core/source_synthesis.md",
+                        "parser_mvp_plan": "docs/plans/operational-core/parser-mvp/plan.md",
+                        "tickets": "docs/plans/operational-core/tickets",
+                        "implemented_archive": "docs/plans/operational-core/archived_plans/implemented",
+                        "superseded_archive": "docs/plans/operational-core/archived_plans/superseded",
+                    },
+                    "repository_restructure": "docs/plans/operational-core/archived_plans/implemented/2026-05-23-implemented-repository-restructure.md",
+                },
+                "reference": {
+                    "index": "docs/reference/_index.md",
+                    "raw_evidence": "docs/reference/raw/collisionrelateddocs",
+                    "normalized_companions": "docs/reference/normalized",
+                    "reference_data": "docs/reference/data",
+                    "provider_coverage_matrix": "docs/reference/data/provider_coverage_matrix.md",
+                    "original_planning": "docs/reference/originalplanning",
+                    "original_planning_index": "docs/reference/originalplanning_index.md",
+                    "test_context": "docs/reference/test-context",
+                },
+                "active_docs": {
+                    "architecture": "docs/architecture",
+                    "contracts": "docs/contracts",
+                    "decisions": "docs/decisions",
+                    "requirements": "docs/requirements",
+                    "operations": "docs/operations",
+                    "security": "docs/security",
+                    "glossary": "docs/glossary.md",
+                },
+                "rules": {
+                    "raw_evidence": "Do not edit files under docs/reference/raw/collisionrelateddocs in place.",
+                    "reference_material": "Reference material is not active scope unless promoted into plans, tickets, architecture, contracts, or decisions.",
+                    "manifest": "Update docs/source_manifest.md, docs/source_manifest.csv, and docs/source_manifest.json whenever source files, generated companions, active docs, or archives change.",
+                },
+            },
+            indent=2,
+        ),
     )
     write_text(
         ROOT / ".gitignore",
@@ -851,13 +1094,13 @@ def write_static_docs() -> None:
 
         1. Build the shared parser core under `src/ccc_parser/`.
         2. Expose equivalent UI and CLI surfaces over the same parser core.
-        3. Load current provider presets from `collisionrelateddocs/Settings Backup/providers.json`.
+        3. Load current provider presets from `docs/reference/raw/collisionrelateddocs/Settings Backup/providers.json`.
         4. Add canonical parser result models and EVA export contract boundaries.
         5. Add verification scripts and tests.
 
         ## P2 - Provider Coverage And Golden Tests
 
-        1. Maintain `docs/data/provider_coverage_matrix.md`.
+        1. Maintain `docs/reference/data/provider_coverage_matrix.md`.
         2. Prioritize the 26 current parser presets.
         3. Separate live job-sheet uncovered principals from historical/mapped-only codes.
         4. Add golden fixtures and expected outputs for each provider.
@@ -1030,7 +1273,7 @@ def write_static_docs() -> None:
 
         ## Export Requirements
 
-        - Preserve the field order and shape represented by `collisionrelateddocs/Final Format Example 02.json`.
+        - Preserve the field order and shape represented by `docs/reference/raw/collisionrelateddocs/Final Format Example 02.json`.
         - Export only after required parser warnings are reviewed.
         - Include source audit metadata outside the EVA payload when EVA does not support it.
         - Keep image ordering requirements separate from field JSON: first two preview images, then all images including the first two again.
@@ -1256,7 +1499,7 @@ def write_static_docs() -> None:
         """,
     )
     write_text(
-        ROOT / "docs/tickets/README.md",
+        ROOT / "docs/plans/operational-core/tickets/README.md",
         """
         # Tickets
 
@@ -1274,7 +1517,7 @@ def write_static_docs() -> None:
         - verification required;
         - supersedes/superseded-by fields.
 
-        Completed tickets move to `archive/plans/implemented/` with an implemented-state block.
+        Completed tickets move to `docs/plans/operational-core/archived_plans/implemented/` with an implemented-state block.
         """,
     )
 
@@ -1415,7 +1658,7 @@ def write_parser_scaffold() -> None:
         from .providers import detect_provider, load_provider_presets
 
 
-        DEFAULT_PROVIDER_CONFIG = Path("collisionrelateddocs/Settings Backup/providers.json")
+        DEFAULT_PROVIDER_CONFIG = Path("docs/reference/raw/collisionrelateddocs/Settings Backup/providers.json")
 
 
         def file_sha256(path: Path) -> str:
@@ -1621,26 +1864,33 @@ def write_parser_scaffold() -> None:
         ROOT / "tests/test_scaffold_contracts.py",
         """
         from pathlib import Path
+        import sys
+
+        ROOT = Path(__file__).resolve().parents[1]
+        sys.path.insert(0, str(ROOT))
 
         from ccc_parser.core import ParserCore
         from ccc_parser.exporters import EVA_FIELD_ORDER
         from ccc_parser.providers import load_provider_presets
         from ccc_parser.ui.app import ParserUiController
-
-
-        ROOT = Path(__file__).resolve().parents[1]
-
+        import tools.scaffold_initial_repo as scaffold
 
         def test_provider_config_loads_current_presets():
-            presets = load_provider_presets(ROOT / "collisionrelateddocs/Settings Backup/providers.json")
+            presets = load_provider_presets(ROOT / "docs/reference/raw/collisionrelateddocs/Settings Backup/providers.json")
             assert len(presets) == 26
             names = {preset.name for preset in presets}
             assert "ALISON" in names
             assert "TEN" in names
 
 
+        def test_parser_core_default_provider_config_loads_current_presets(monkeypatch):
+            monkeypatch.chdir(ROOT)
+            core = ParserCore()
+            assert len(core.providers) == 26
+
+
         def test_ui_controller_and_cli_share_parser_core():
-            core = ParserCore(ROOT / "collisionrelateddocs/Settings Backup/providers.json")
+            core = ParserCore(ROOT / "docs/reference/raw/collisionrelateddocs/Settings Backup/providers.json")
             controller = ParserUiController(core)
             assert controller.core is core
 
@@ -1649,6 +1899,40 @@ def write_parser_scaffold() -> None:
             assert EVA_FIELD_ORDER[:4] == ["work_provider", "vrm", "vehicle_model", "claimant_name"]
             assert "inspection_address" in EVA_FIELD_ORDER
             assert "mileage" in EVA_FIELD_ORDER
+
+
+        def test_scaffold_manifest_ignores_local_artifacts(monkeypatch, tmp_path):
+            monkeypatch.setattr(scaffold, "ROOT", tmp_path)
+            (tmp_path / "README.md").write_text("# Test\\n", encoding="utf-8")
+            (tmp_path / ".env").write_text("SECRET=value\\n", encoding="utf-8")
+            (tmp_path / ".env.example").write_text("SECRET=\\n", encoding="utf-8")
+            (tmp_path / ".venv").mkdir()
+            (tmp_path / ".venv" / "artifact.py").write_text("ignored\\n", encoding="utf-8")
+            (tmp_path / "tmp").mkdir()
+            (tmp_path / "tmp" / "scratch.txt").write_text("ignored\\n", encoding="utf-8")
+            (tmp_path / "debug.log").write_text("ignored\\n", encoding="utf-8")
+
+            paths = {record["path"] for record in scaffold.build_manifest()}
+
+            assert "README.md" in paths
+            assert ".env.example" in paths
+            assert ".env" not in paths
+            assert ".venv/artifact.py" not in paths
+            assert "tmp/scratch.txt" not in paths
+            assert "debug.log" not in paths
+
+
+        def test_scaffold_archive_migration_removes_empty_legacy_root(monkeypatch, tmp_path):
+            monkeypatch.setattr(scaffold, "ROOT", tmp_path)
+            legacy_plan = tmp_path / "archive" / "plans" / "implemented" / "done.md"
+            legacy_plan.parent.mkdir(parents=True)
+            legacy_plan.write_text("# Done\\n", encoding="utf-8")
+
+            scaffold.organize_reference_packs()
+
+            migrated = tmp_path / "docs" / "plans" / "operational-core" / "archived_plans" / "implemented" / "done.md"
+            assert migrated.exists()
+            assert not (tmp_path / "archive").exists()
         """,
     )
     write_text(
@@ -1658,6 +1942,7 @@ def write_parser_scaffold() -> None:
 
         import csv
         import json
+        import subprocess
         import sys
         from pathlib import Path
 
@@ -1674,28 +1959,266 @@ def write_parser_scaffold() -> None:
             ".gitignore",
             ".gitattributes",
             "pyproject.toml",
+            "docs/docs_index.md",
+            "docs/repo_map.json",
             "docs/source_manifest.md",
             "docs/source_manifest.csv",
             "docs/roadmap.md",
+            "docs/plans/_index.md",
+            "docs/plans/operational-core/archived_plans/implemented/2026-05-23-implemented-repository-restructure.md",
             "docs/architecture/overview.md",
+            "docs/architecture/programme_architecture.md",
+            "docs/architecture/mvp_interlock.md",
+            "docs/architecture/governance_security.md",
+            "docs/architecture/future_system_convergence.md",
             "docs/architecture/parser_ui_cli.md",
+            "docs/plans/operational-core/source_synthesis.md",
+            "docs/plans/operational-core/parser-mvp/plan.md",
             "docs/contracts/parser_result_v1.md",
             "docs/contracts/eva_export_contract.md",
+            "docs/contracts/eva_export_contract_v1.md",
             "docs/contracts/storage_adapter_contract.md",
-            "docs/data/provider_coverage_matrix.md",
-            "docs/reference/generated_packs_index.md",
+            "docs/contracts/storage_adapter_contract_v1.md",
+            "docs/contracts/work_item_contract_v1.md",
+            "docs/contracts/provider_principal_config_contract_v1.md",
+            "docs/contracts/review_audit_event_contract_v1.md",
+            "docs/contracts/evidence_package_contract_v1.md",
+            "docs/contracts/extraction_adapter_contract_v1.md",
+            "docs/decisions/0003-operational-core-mvp.md",
+            "docs/decisions/0004-ground-up-compatible-parser-rebuild.md",
+            "docs/decisions/0005-shared-internal-app-local-accounts.md",
+            "docs/decisions/0006-box-package-before-live-upload.md",
+            "docs/decisions/0007-deterministic-first-parser.md",
+            "docs/decisions/0008-private-real-corpus-only.md",
+            "docs/decisions/options/ui_platform_options.md",
+            "docs/decisions/options/backend_stack_options.md",
+            "docs/decisions/options/state_store_options.md",
+            "docs/decisions/options/cloud_document_intelligence_options.md",
+            "docs/plans/operational-core/tickets/backlog_index.md",
+            "docs/plans/operational-core/tickets/p0-foundation.md",
+            "docs/plans/operational-core/tickets/p1-operational-core-mvp.md",
+            "docs/plans/operational-core/tickets/p2-parser-hardening-provider-parity.md",
+            "docs/plans/operational-core/tickets/p3-integrations-storage-eva-intake.md",
+            "docs/plans/operational-core/tickets/p4-intelligence-engineer-communications.md",
+            "docs/plans/operational-core/tickets/p5-platform-expansion.md",
+            "docs/reference/data/provider_coverage_matrix.md",
+            "docs/reference/originalplanning_index.md",
+            "docs/reference/_index.md",
             "docs/security/source_safety_review.md",
+            "docs/security/data_map.md",
+            "docs/security/dpia_vendor_governance.md",
+            "docs/security/vendor_register.md",
+            "docs/security/api_security_standard.md",
+            "docs/operations/release_and_rollback.md",
+            "docs/operations/monitoring_runbooks.md",
+            "docs/operations/runbooks/outlook-intake-stopped.md",
+            "docs/operations/runbooks/box-upload-failure.md",
+            "docs/operations/runbooks/eva-rejected-payload.md",
             "src/ccc_parser/core.py",
             "src/ccc_parser/cli.py",
             "src/ccc_parser/ui/app.py",
             "tests/test_scaffold_contracts.py",
-            "archive/plans/implemented/2026-05-23-implemented-initrepoplan.md",
+            "docs/plans/operational-core/archived_plans/implemented/2026-05-23-implemented-initrepoplan.md",
+            "docs/plans/operational-core/archived_plans/superseded/.gitkeep",
         ]
+
+        GENERATED_PACKS = [
+            "ce_phase4_agents_reviewed_plan",
+            "ce_system_plans_enhanced",
+            "cedocumentmapper_rebuild_plan_pack_all_zips",
+            "collision_engineers_ai_tools_plans_markdown",
+            "collision_engineers_bulk_data_research_pack",
+            "originalplans_output",
+            "phase7_expanded_markdown_plan",
+            "testprojectcontext",
+        ]
+
+        RESEARCH_DOCS = [
+            "docs/research/gptdeepresearch.md",
+            "docs/research/gptevadeepresearch.md",
+            "docs/research/siderpdf.md",
+        ]
+
+        PROVIDER_PRESETS = [
+            "ALISON",
+            "ALS",
+            "AMS",
+            "AX",
+            "BC",
+            "BLACK",
+            "CNX (Engineers)",
+            "DFD",
+            "EVA (Engineers)",
+            "FW (Garage)",
+            "FW (Solicitor)",
+            "HDUK",
+            "KBS",
+            "KERR",
+            "KMR",
+            "MP (Branded)",
+            "MP (Simple)",
+            "OAK",
+            "PCH (Lawshield)",
+            "PCH (Performance)",
+            "QCL",
+            "QDOS",
+            "RJS",
+            "SBL",
+            "SWAN",
+            "TEN",
+        ]
+
+        PARSER_PLAN_TERMS = [
+            "PDF",
+            "DOCX",
+            "DOC",
+            "MSG",
+            "EML",
+            "images",
+            "batch",
+            "PyMuPDF",
+            "pdfplumber",
+            "pypdf",
+            "OCR only",
+            "DD/MM/YYYY",
+            "six-line",
+            "EVA JSON field order",
+            "UI/CLI",
+            "deterministic-first",
+            "private real corpus",
+        ]
+
+        PLAN_METADATA_TERMS = [
+            "Status:",
+            "Owner:",
+            "Created:",
+            "Last reviewed:",
+            "Source links:",
+            "Roadmap milestone:",
+            "Dependencies:",
+            "Expected outputs:",
+            "Acceptance criteria:",
+            "Verification required:",
+            "Archive target:",
+            "Supersedes:",
+            "Superseded-by:",
+        ]
+
+        FALLBACK_IGNORED_MANIFEST_PARTS = {
+            ".git",
+            ".obsidian",
+            ".pytest_cache",
+            "__pycache__",
+            ".mypy_cache",
+            ".ruff_cache",
+            ".venv",
+            "venv",
+            "env",
+            "outputs",
+            "tmp",
+            "dist",
+            "build",
+            "node_modules",
+        }
+        FALLBACK_IGNORED_MANIFEST_NAMES = {".DS_Store", "Thumbs.db"}
+        FALLBACK_IGNORED_MANIFEST_SUFFIXES = {".pyc", ".pyo", ".pyd", ".log", ".tmp", ".bak"}
 
 
         def require(condition: bool, message: str) -> None:
             if not condition:
                 raise SystemExit(message)
+
+
+        def read_doc(path: str) -> str:
+            return (ROOT / path).read_text(encoding="utf-8")
+
+
+        def require_terms(text: str, terms: list[str], context: str) -> None:
+            missing = [term for term in terms if term not in text]
+            require(not missing, f"{context} missing terms: {missing}")
+
+
+        def is_fallback_ignored_manifest_artifact(path: Path) -> bool:
+            parts = path.relative_to(ROOT).parts
+            if set(parts) & FALLBACK_IGNORED_MANIFEST_PARTS:
+                return True
+            if any(part.endswith(".egg-info") for part in parts):
+                return True
+            name = path.name
+            if name == ".env.example":
+                return False
+            if name == ".env" or name.startswith(".env."):
+                return True
+            if name in FALLBACK_IGNORED_MANIFEST_NAMES:
+                return True
+            return any(name.endswith(suffix) for suffix in FALLBACK_IGNORED_MANIFEST_SUFFIXES)
+
+
+        def manifest_candidate_paths() -> list[str]:
+            try:
+                result = subprocess.run(
+                    ["git", "ls-files", "--cached", "--others", "--exclude-standard", "-z"],
+                    cwd=ROOT,
+                    check=True,
+                    capture_output=True,
+                    text=True,
+                )
+            except (OSError, subprocess.CalledProcessError):
+                candidates = []
+                for path in ROOT.rglob("*"):
+                    if path.is_file() and not is_fallback_ignored_manifest_artifact(path):
+                        candidates.append(path.relative_to(ROOT).as_posix())
+                return sorted(candidates)
+
+            candidates = []
+            for relative in result.stdout.split("\\0"):
+                if not relative:
+                    continue
+                path = ROOT / relative
+                if path.is_file():
+                    candidates.append(Path(relative).as_posix())
+            return sorted(set(candidates))
+
+
+        def require_scope_guardrails() -> None:
+            allowed_markers = [
+                "out of scope",
+                "must not",
+                "does not plan",
+                "do not plan",
+                "do not add",
+                "no personal injury",
+                "no pi",
+                "not plan",
+                "confirm no",
+            ]
+            checked_roots = [
+                "README.md",
+                "AGENTS.md",
+                "docs/architecture",
+                "docs/contracts",
+                "docs/decisions",
+                "docs/plans/operational-core",
+                "docs/plans",
+                "docs/roadmap.md",
+                "docs/security",
+                "docs/plans/operational-core/tickets",
+            ]
+            files: list[Path] = []
+            for item in checked_roots:
+                path = ROOT / item
+                if path.is_file():
+                    files.append(path)
+                elif path.is_dir():
+                    files.extend(path.rglob("*.md"))
+            bad_lines: list[str] = []
+            for path in files:
+                for line_number, line in enumerate(path.read_text(encoding="utf-8").splitlines(), start=1):
+                    lowered = line.lower()
+                    if "personal injury" in lowered or "kadoe" in lowered:
+                        if not any(marker in lowered for marker in allowed_markers):
+                            bad_lines.append(f"{path.relative_to(ROOT).as_posix()}:{line_number}: {line}")
+            require(not bad_lines, "Personal injury/KADOE references must be explicit out-of-scope guardrails: " + repr(bad_lines[:5]))
 
 
         def main() -> int:
@@ -1715,24 +2238,102 @@ def write_parser_scaffold() -> None:
             still_root = [path for path in ambiguous_roots if (ROOT / path).exists()]
             require(not still_root, f"Generated/reference packs still at repository root: {still_root}")
 
-            providers = load_provider_presets(ROOT / "collisionrelateddocs/Settings Backup/providers.json")
+            legacy_roots = [
+                "archive",
+                "collisionrelateddocs",
+                "docs/planning",
+                "docs/tickets",
+                "docs/normalized",
+                "docs/data",
+                "docs/reference/generated-packs",
+            ]
+            still_legacy = [path for path in legacy_roots if (ROOT / path).exists()]
+            require(not still_legacy, f"Legacy documentation roots still exist: {still_legacy}")
+
+            doubled_path_prefixes = [
+                "docs/reference/raw/" + "docs/reference/raw",
+                "docs/reference/data/jam_exports/" + "docs/reference/raw",
+            ]
+            doubled_path_hits: list[str] = []
+            for path in ROOT.rglob("*"):
+                if not path.is_file():
+                    continue
+                if set(path.relative_to(ROOT).parts) & {".git", ".obsidian", ".pytest_cache", "__pycache__"}:
+                    continue
+                rel_path = path.relative_to(ROOT).as_posix()
+                if rel_path.startswith("docs/reference/raw/collisionrelateddocs/"):
+                    continue
+                if path.suffix.lower() in {".png", ".jpg", ".jpeg", ".pdf", ".doc", ".docx", ".msg", ".xlsm", ".xlsx", ".jam", ".zip"}:
+                    continue
+                text = path.read_text(encoding="utf-8")
+                if any(prefix in text for prefix in doubled_path_prefixes):
+                    doubled_path_hits.append(rel_path)
+            require(not doubled_path_hits, f"Doubled migrated path prefixes found: {doubled_path_hits[:10]}")
+
+            providers = load_provider_presets(ROOT / "docs/reference/raw/collisionrelateddocs/Settings Backup/providers.json")
             require(len(providers) == 26, f"Expected 26 providers, got {len(providers)}")
+            provider_names = {provider.name for provider in providers}
+            require(provider_names == set(PROVIDER_PRESETS), f"Provider preset names changed: {sorted(provider_names)}")
 
             manifest_rows = list(csv.DictReader((ROOT / "docs/source_manifest.csv").open(encoding="utf-8")))
-            require(any(row["path"].startswith("collisionrelateddocs/Instructions/") for row in manifest_rows), "Instruction corpus missing from manifest")
-            require(any(row["normalized_companion"] for row in manifest_rows if row["path"].startswith("collisionrelateddocs/")), "No normalized companions recorded")
+            require(any(row["path"].startswith("docs/reference/raw/collisionrelateddocs/Instructions/") for row in manifest_rows), "Instruction corpus missing from manifest")
+            require(any(row["normalized_companion"] for row in manifest_rows if row["path"].startswith("docs/reference/raw/collisionrelateddocs/")), "No normalized companions recorded")
 
-            matrix_rows = list(csv.DictReader((ROOT / "docs/data/provider_coverage_matrix.csv").open(encoding="utf-8")))
+            matrix_rows = list(csv.DictReader((ROOT / "docs/reference/data/provider_coverage_matrix.csv").open(encoding="utf-8")))
             require(any(row["code"] == "ACSP" and row["parser_covered"] == "no" for row in matrix_rows), "ACSP uncovered status missing")
             require(any(row["code"] == "WOODLANDS" and row["parser_covered"] == "no" for row in matrix_rows), "WOODLANDS uncovered status missing")
 
-            plan_text = (ROOT / "archive/plans/implemented/2026-05-23-implemented-initrepoplan.md").read_text(encoding="utf-8")
+            plan_text = (ROOT / "docs/plans/operational-core/archived_plans/implemented/2026-05-23-implemented-initrepoplan.md").read_text(encoding="utf-8")
             require("Status: implemented" in plan_text, "Archived initrepoplan missing implemented status")
 
-            core = ParserCore(ROOT / "collisionrelateddocs/Settings Backup/providers.json")
+            synthesis_text = read_doc("docs/plans/operational-core/source_synthesis.md")
+            require_terms(synthesis_text, GENERATED_PACKS, "Source synthesis")
+            require_terms(synthesis_text, RESEARCH_DOCS, "Source synthesis")
+
+            parser_plan = read_doc("docs/plans/operational-core/parser-mvp/plan.md")
+            require_terms(parser_plan, PLAN_METADATA_TERMS, "Parser MVP plan metadata")
+            require_terms(parser_plan, PROVIDER_PRESETS, "Parser MVP plan")
+            require_terms(parser_plan, PARSER_PLAN_TERMS, "Parser MVP plan")
+
+            for plan_file in [
+                "docs/plans/operational-core/source_synthesis.md",
+                "docs/plans/operational-core/tickets/backlog_index.md",
+            ]:
+                require_terms(read_doc(plan_file), PLAN_METADATA_TERMS, f"{plan_file} metadata")
+
+            for ticket_file in [
+                "docs/plans/operational-core/tickets/p0-foundation.md",
+                "docs/plans/operational-core/tickets/p1-operational-core-mvp.md",
+                "docs/plans/operational-core/tickets/p2-parser-hardening-provider-parity.md",
+                "docs/plans/operational-core/tickets/p3-integrations-storage-eva-intake.md",
+                "docs/plans/operational-core/tickets/p4-intelligence-engineer-communications.md",
+                "docs/plans/operational-core/tickets/p5-platform-expansion.md",
+            ]:
+                ticket_text = read_doc(ticket_file)
+                require_terms(
+                    ticket_text,
+                    PLAN_METADATA_TERMS,
+                    ticket_file,
+                )
+
+            require_scope_guardrails()
+
+            core = ParserCore(ROOT / "docs/reference/raw/collisionrelateddocs/Settings Backup/providers.json")
             require(len(core.providers) == 26, "ParserCore did not load providers")
 
-            json.loads((ROOT / "docs/source_manifest.json").read_text(encoding="utf-8"))
+            manifest_json_rows = json.loads((ROOT / "docs/source_manifest.json").read_text(encoding="utf-8"))
+            require(len(manifest_json_rows) == len(manifest_rows), "Source manifest CSV/JSON row counts differ")
+            manifest_paths = {row["path"] for row in manifest_rows}
+            json_paths = {row["path"] for row in manifest_json_rows}
+            require(json_paths == manifest_paths, "Source manifest CSV/JSON path sets differ")
+            require(all(path in manifest_paths for path in REQUIRED_PATHS), "Source manifest missing required active docs")
+            stale_manifest_paths = [path for path in manifest_paths if not (ROOT / path).exists()]
+            require(not stale_manifest_paths, f"Source manifest includes missing files: {stale_manifest_paths[:10]}")
+            missing_from_manifest: list[str] = []
+            for relative in manifest_candidate_paths():
+                if relative not in manifest_paths:
+                    missing_from_manifest.append(relative)
+            require(not missing_from_manifest, f"Files missing from source manifest: {missing_from_manifest[:10]}")
             print("Scaffold verification passed")
             return 0
 
@@ -1761,7 +2362,7 @@ def archive_plan() -> None:
         ---
         """
     ).strip()
-    archive = ROOT / f"archive/plans/implemented/{TODAY}-implemented-initrepoplan.md"
+    archive = ROOT / f"docs/plans/operational-core/archived_plans/implemented/{TODAY}-implemented-initrepoplan.md"
     write_text(archive, status + "\n\n" + content)
     src.unlink()
 

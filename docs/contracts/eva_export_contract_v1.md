@@ -18,7 +18,7 @@ Export must fail or require review when:
 
 ## Field Order
 
-The EVA JSON field order must match `collisionrelateddocs/Final Format Example 02.json` and be covered by golden tests. Any extra CCC audit metadata must be stored outside the EVA payload if EVA does not support it.
+The EVA JSON field order must match `docs/reference/raw/collisionrelateddocs/Final Format Example 02.json` and be covered by golden tests. Any extra CCC audit metadata must be stored outside the EVA payload if EVA does not support it.
 
 ## Image Rules
 
@@ -34,7 +34,7 @@ Direct Sentry submission is future work. Current research shows the API docs are
 
 ## Sources
 
-- `collisionrelateddocs/Final Format Example 02.json`
+- `docs/reference/raw/collisionrelateddocs/Final Format Example 02.json`
 - `docs/research/gptevadeepresearch.md`
 - `docs/contracts/parser_result_v1.md`
 

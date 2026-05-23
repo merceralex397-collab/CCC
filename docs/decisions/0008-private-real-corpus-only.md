@@ -12,7 +12,7 @@ The current parser problem is defined by real Collision Engineers documents. Syn
 
 ## Decision
 
-The authoritative test data for parser parity is the private real corpus under `collisionrelateddocs/` and its normalized companions. Redacted or synthetic fixtures may be added later for public CI, but they must not replace private corpus tests.
+The authoritative test data for parser parity is the private real corpus under `docs/reference/raw/collisionrelateddocs/` and its normalized companions. Redacted or synthetic fixtures may be added later for public CI, but they must not replace private corpus tests.
 
 ## Consequences
 

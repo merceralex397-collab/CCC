@@ -7,7 +7,7 @@ from .models import ParserResult, ParserWarning
 from .providers import detect_provider, load_provider_presets
 
 
-DEFAULT_PROVIDER_CONFIG = Path("collisionrelateddocs/Settings Backup/providers.json")
+DEFAULT_PROVIDER_CONFIG = Path("docs/reference/raw/collisionrelateddocs/Settings Backup/providers.json")
 
 
 def file_sha256(path: Path) -> str:

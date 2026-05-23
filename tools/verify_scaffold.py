@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import csv
 import json
+import subprocess
 import sys
 from pathlib import Path
 
@@ -18,17 +19,21 @@ REQUIRED_PATHS = [
     ".gitignore",
     ".gitattributes",
     "pyproject.toml",
+    "docs/docs_index.md",
+    "docs/repo_map.json",
     "docs/source_manifest.md",
     "docs/source_manifest.csv",
     "docs/roadmap.md",
+    "docs/plans/_index.md",
+    "docs/plans/operational-core/archived_plans/implemented/2026-05-23-implemented-repository-restructure.md",
     "docs/architecture/overview.md",
     "docs/architecture/programme_architecture.md",
     "docs/architecture/mvp_interlock.md",
     "docs/architecture/governance_security.md",
     "docs/architecture/future_system_convergence.md",
     "docs/architecture/parser_ui_cli.md",
-    "docs/planning/source_synthesis.md",
-    "docs/plans/parser_mvp_implementation_plan.md",
+    "docs/plans/operational-core/source_synthesis.md",
+    "docs/plans/operational-core/parser-mvp/plan.md",
     "docs/contracts/parser_result_v1.md",
     "docs/contracts/eva_export_contract.md",
     "docs/contracts/eva_export_contract_v1.md",
@@ -49,15 +54,16 @@ REQUIRED_PATHS = [
     "docs/decisions/options/backend_stack_options.md",
     "docs/decisions/options/state_store_options.md",
     "docs/decisions/options/cloud_document_intelligence_options.md",
-    "docs/tickets/backlog_index.md",
-    "docs/tickets/p0-foundation.md",
-    "docs/tickets/p1-operational-core-mvp.md",
-    "docs/tickets/p2-parser-hardening-provider-parity.md",
-    "docs/tickets/p3-integrations-storage-eva-intake.md",
-    "docs/tickets/p4-intelligence-engineer-communications.md",
-    "docs/tickets/p5-platform-expansion.md",
-    "docs/data/provider_coverage_matrix.md",
-    "docs/reference/generated_packs_index.md",
+    "docs/plans/operational-core/tickets/backlog_index.md",
+    "docs/plans/operational-core/tickets/p0-foundation.md",
+    "docs/plans/operational-core/tickets/p1-operational-core-mvp.md",
+    "docs/plans/operational-core/tickets/p2-parser-hardening-provider-parity.md",
+    "docs/plans/operational-core/tickets/p3-integrations-storage-eva-intake.md",
+    "docs/plans/operational-core/tickets/p4-intelligence-engineer-communications.md",
+    "docs/plans/operational-core/tickets/p5-platform-expansion.md",
+    "docs/reference/data/provider_coverage_matrix.md",
+    "docs/reference/originalplanning_index.md",
+    "docs/reference/_index.md",
     "docs/security/source_safety_review.md",
     "docs/security/data_map.md",
     "docs/security/dpia_vendor_governance.md",
@@ -72,7 +78,8 @@ REQUIRED_PATHS = [
     "src/ccc_parser/cli.py",
     "src/ccc_parser/ui/app.py",
     "tests/test_scaffold_contracts.py",
-    "archive/plans/implemented/2026-05-23-implemented-initrepoplan.md",
+    "docs/plans/operational-core/archived_plans/implemented/2026-05-23-implemented-initrepoplan.md",
+    "docs/plans/operational-core/archived_plans/superseded/.gitkeep",
 ]
 
 GENERATED_PACKS = [
@@ -141,6 +148,41 @@ PARSER_PLAN_TERMS = [
     "private real corpus",
 ]
 
+PLAN_METADATA_TERMS = [
+    "Status:",
+    "Owner:",
+    "Created:",
+    "Last reviewed:",
+    "Source links:",
+    "Roadmap milestone:",
+    "Dependencies:",
+    "Expected outputs:",
+    "Acceptance criteria:",
+    "Verification required:",
+    "Archive target:",
+    "Supersedes:",
+    "Superseded-by:",
+]
+
+FALLBACK_IGNORED_MANIFEST_PARTS = {
+    ".git",
+    ".obsidian",
+    ".pytest_cache",
+    "__pycache__",
+    ".mypy_cache",
+    ".ruff_cache",
+    ".venv",
+    "venv",
+    "env",
+    "outputs",
+    "tmp",
+    "dist",
+    "build",
+    "node_modules",
+}
+FALLBACK_IGNORED_MANIFEST_NAMES = {".DS_Store", "Thumbs.db"}
+FALLBACK_IGNORED_MANIFEST_SUFFIXES = {".pyc", ".pyo", ".pyd", ".log", ".tmp", ".bak"}
+
 
 def require(condition: bool, message: str) -> None:
     if not condition:
@@ -154,6 +196,48 @@ def read_doc(path: str) -> str:
 def require_terms(text: str, terms: list[str], context: str) -> None:
     missing = [term for term in terms if term not in text]
     require(not missing, f"{context} missing terms: {missing}")
+
+
+def is_fallback_ignored_manifest_artifact(path: Path) -> bool:
+    parts = path.relative_to(ROOT).parts
+    if set(parts) & FALLBACK_IGNORED_MANIFEST_PARTS:
+        return True
+    if any(part.endswith(".egg-info") for part in parts):
+        return True
+    name = path.name
+    if name == ".env.example":
+        return False
+    if name == ".env" or name.startswith(".env."):
+        return True
+    if name in FALLBACK_IGNORED_MANIFEST_NAMES:
+        return True
+    return any(name.endswith(suffix) for suffix in FALLBACK_IGNORED_MANIFEST_SUFFIXES)
+
+
+def manifest_candidate_paths() -> list[str]:
+    try:
+        result = subprocess.run(
+            ["git", "ls-files", "--cached", "--others", "--exclude-standard", "-z"],
+            cwd=ROOT,
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+    except (OSError, subprocess.CalledProcessError):
+        candidates = []
+        for path in ROOT.rglob("*"):
+            if path.is_file() and not is_fallback_ignored_manifest_artifact(path):
+                candidates.append(path.relative_to(ROOT).as_posix())
+        return sorted(candidates)
+
+    candidates = []
+    for relative in result.stdout.split("\0"):
+        if not relative:
+            continue
+        path = ROOT / relative
+        if path.is_file():
+            candidates.append(Path(relative).as_posix())
+    return sorted(set(candidates))
 
 
 def require_scope_guardrails() -> None:
@@ -174,11 +258,11 @@ def require_scope_guardrails() -> None:
         "docs/architecture",
         "docs/contracts",
         "docs/decisions",
-        "docs/planning",
+        "docs/plans/operational-core",
         "docs/plans",
         "docs/roadmap.md",
         "docs/security",
-        "docs/tickets",
+        "docs/plans/operational-core/tickets",
     ]
     files: list[Path] = []
     for item in checked_roots:
@@ -214,53 +298,102 @@ def main() -> int:
     still_root = [path for path in ambiguous_roots if (ROOT / path).exists()]
     require(not still_root, f"Generated/reference packs still at repository root: {still_root}")
 
-    providers = load_provider_presets(ROOT / "collisionrelateddocs/Settings Backup/providers.json")
+    legacy_roots = [
+        "archive",
+        "collisionrelateddocs",
+        "docs/planning",
+        "docs/tickets",
+        "docs/normalized",
+        "docs/data",
+        "docs/reference/generated-packs",
+    ]
+    still_legacy = [path for path in legacy_roots if (ROOT / path).exists()]
+    require(not still_legacy, f"Legacy documentation roots still exist: {still_legacy}")
+
+    doubled_path_prefixes = [
+        "docs/reference/raw/" + "docs/reference/raw",
+        "docs/reference/data/jam_exports/" + "docs/reference/raw",
+    ]
+    doubled_path_hits: list[str] = []
+    for path in ROOT.rglob("*"):
+        if not path.is_file():
+            continue
+        if set(path.relative_to(ROOT).parts) & {".git", ".obsidian", ".pytest_cache", "__pycache__"}:
+            continue
+        rel_path = path.relative_to(ROOT).as_posix()
+        if rel_path.startswith("docs/reference/raw/collisionrelateddocs/"):
+            continue
+        if path.suffix.lower() in {".png", ".jpg", ".jpeg", ".pdf", ".doc", ".docx", ".msg", ".xlsm", ".xlsx", ".jam", ".zip"}:
+            continue
+        text = path.read_text(encoding="utf-8")
+        if any(prefix in text for prefix in doubled_path_prefixes):
+            doubled_path_hits.append(rel_path)
+    require(not doubled_path_hits, f"Doubled migrated path prefixes found: {doubled_path_hits[:10]}")
+
+    providers = load_provider_presets(ROOT / "docs/reference/raw/collisionrelateddocs/Settings Backup/providers.json")
     require(len(providers) == 26, f"Expected 26 providers, got {len(providers)}")
     provider_names = {provider.name for provider in providers}
     require(provider_names == set(PROVIDER_PRESETS), f"Provider preset names changed: {sorted(provider_names)}")
 
     manifest_rows = list(csv.DictReader((ROOT / "docs/source_manifest.csv").open(encoding="utf-8")))
-    require(any(row["path"].startswith("collisionrelateddocs/Instructions/") for row in manifest_rows), "Instruction corpus missing from manifest")
-    require(any(row["normalized_companion"] for row in manifest_rows if row["path"].startswith("collisionrelateddocs/")), "No normalized companions recorded")
+    require(any(row["path"].startswith("docs/reference/raw/collisionrelateddocs/Instructions/") for row in manifest_rows), "Instruction corpus missing from manifest")
+    require(any(row["normalized_companion"] for row in manifest_rows if row["path"].startswith("docs/reference/raw/collisionrelateddocs/")), "No normalized companions recorded")
 
-    matrix_rows = list(csv.DictReader((ROOT / "docs/data/provider_coverage_matrix.csv").open(encoding="utf-8")))
+    matrix_rows = list(csv.DictReader((ROOT / "docs/reference/data/provider_coverage_matrix.csv").open(encoding="utf-8")))
     require(any(row["code"] == "ACSP" and row["parser_covered"] == "no" for row in matrix_rows), "ACSP uncovered status missing")
     require(any(row["code"] == "WOODLANDS" and row["parser_covered"] == "no" for row in matrix_rows), "WOODLANDS uncovered status missing")
 
-    plan_text = (ROOT / "archive/plans/implemented/2026-05-23-implemented-initrepoplan.md").read_text(encoding="utf-8")
+    plan_text = (ROOT / "docs/plans/operational-core/archived_plans/implemented/2026-05-23-implemented-initrepoplan.md").read_text(encoding="utf-8")
     require("Status: implemented" in plan_text, "Archived initrepoplan missing implemented status")
 
-    synthesis_text = read_doc("docs/planning/source_synthesis.md")
+    synthesis_text = read_doc("docs/plans/operational-core/source_synthesis.md")
     require_terms(synthesis_text, GENERATED_PACKS, "Source synthesis")
     require_terms(synthesis_text, RESEARCH_DOCS, "Source synthesis")
 
-    parser_plan = read_doc("docs/plans/parser_mvp_implementation_plan.md")
+    parser_plan = read_doc("docs/plans/operational-core/parser-mvp/plan.md")
+    require_terms(parser_plan, PLAN_METADATA_TERMS, "Parser MVP plan metadata")
     require_terms(parser_plan, PROVIDER_PRESETS, "Parser MVP plan")
     require_terms(parser_plan, PARSER_PLAN_TERMS, "Parser MVP plan")
 
+    for plan_file in [
+        "docs/plans/operational-core/source_synthesis.md",
+        "docs/plans/operational-core/tickets/backlog_index.md",
+    ]:
+        require_terms(read_doc(plan_file), PLAN_METADATA_TERMS, f"{plan_file} metadata")
+
     for ticket_file in [
-        "docs/tickets/p0-foundation.md",
-        "docs/tickets/p1-operational-core-mvp.md",
-        "docs/tickets/p2-parser-hardening-provider-parity.md",
-        "docs/tickets/p3-integrations-storage-eva-intake.md",
-        "docs/tickets/p4-intelligence-engineer-communications.md",
-        "docs/tickets/p5-platform-expansion.md",
+        "docs/plans/operational-core/tickets/p0-foundation.md",
+        "docs/plans/operational-core/tickets/p1-operational-core-mvp.md",
+        "docs/plans/operational-core/tickets/p2-parser-hardening-provider-parity.md",
+        "docs/plans/operational-core/tickets/p3-integrations-storage-eva-intake.md",
+        "docs/plans/operational-core/tickets/p4-intelligence-engineer-communications.md",
+        "docs/plans/operational-core/tickets/p5-platform-expansion.md",
     ]:
         ticket_text = read_doc(ticket_file)
         require_terms(
             ticket_text,
-            ["Status:", "Owner:", "Created:", "Sources:", "Dependencies:", "Expected outputs:", "Acceptance criteria:", "Verification:", "Archive target:"],
+            PLAN_METADATA_TERMS,
             ticket_file,
         )
 
     require_scope_guardrails()
 
-    core = ParserCore(ROOT / "collisionrelateddocs/Settings Backup/providers.json")
+    core = ParserCore(ROOT / "docs/reference/raw/collisionrelateddocs/Settings Backup/providers.json")
     require(len(core.providers) == 26, "ParserCore did not load providers")
 
-    json.loads((ROOT / "docs/source_manifest.json").read_text(encoding="utf-8"))
+    manifest_json_rows = json.loads((ROOT / "docs/source_manifest.json").read_text(encoding="utf-8"))
+    require(len(manifest_json_rows) == len(manifest_rows), "Source manifest CSV/JSON row counts differ")
     manifest_paths = {row["path"] for row in manifest_rows}
+    json_paths = {row["path"] for row in manifest_json_rows}
+    require(json_paths == manifest_paths, "Source manifest CSV/JSON path sets differ")
     require(all(path in manifest_paths for path in REQUIRED_PATHS), "Source manifest missing required active docs")
+    stale_manifest_paths = [path for path in manifest_paths if not (ROOT / path).exists()]
+    require(not stale_manifest_paths, f"Source manifest includes missing files: {stale_manifest_paths[:10]}")
+    missing_from_manifest: list[str] = []
+    for relative in manifest_candidate_paths():
+        if relative not in manifest_paths:
+            missing_from_manifest.append(relative)
+    require(not missing_from_manifest, f"Files missing from source manifest: {missing_from_manifest[:10]}")
     print("Scaffold verification passed")
     return 0
 

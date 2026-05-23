@@ -67,5 +67,5 @@ These fields capture current operational context from Outlook, website portal, W
 
 ## Sources
 
-- `docs/reference/generated-packs/phase7_expanded_markdown_plan/phase7_expanded_markdown_plan/additional_items/08_01_work_item_state_store_and_job_sheet_replacement.md`
-- `docs/reference/generated-packs/ce_system_plans_enhanced/ce_system_plans_enhanced/05_WORK_PACKAGE_DATA_MODEL_AND_WORKFLOW.md`
+- `docs/reference/originalplanning/phase7_expanded_markdown_plan/phase7_expanded_markdown_plan/additional_items/08_01_work_item_state_store_and_job_sheet_replacement.md`
+- `docs/reference/originalplanning/ce_system_plans_enhanced/ce_system_plans_enhanced/05_WORK_PACKAGE_DATA_MODEL_AND_WORKFLOW.md`

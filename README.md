@@ -20,20 +20,23 @@ Collision Engineers do not do personal injury or KADOE work. Those workflows mus
 
 ## Source Of Truth
 
-Raw operational files under `collisionrelateddocs/` remain immutable source evidence. Generated plan packs are reference-only unless promoted into canonical docs or tickets. The current canonical entry points are:
+Raw operational files under `docs/reference/raw/collisionrelateddocs/` remain immutable source evidence. Generated plan packs are reference-only unless promoted into canonical docs or tickets. The current canonical entry points are:
 
+- `docs/docs_index.md`
+- `docs/repo_map.json`
 - `docs/source_manifest.md`
 - `docs/roadmap.md`
-- `docs/planning/source_synthesis.md`
-- `docs/plans/parser_mvp_implementation_plan.md`
+- `docs/plans/_index.md`
+- `docs/plans/operational-core/source_synthesis.md`
+- `docs/plans/operational-core/parser-mvp/plan.md`
 - `docs/architecture/`
 - `docs/contracts/`
 - `docs/decisions/`
-- `docs/tickets/backlog_index.md`
+- `docs/plans/operational-core/tickets/backlog_index.md`
 - `docs/requirements/`
-- `docs/data/provider_coverage_matrix.md`
-- `docs/reference/generated_packs_index.md`
-- `archive/plans/implemented/`
+- `docs/reference/data/provider_coverage_matrix.md`
+- `docs/reference/originalplanning_index.md`
+- `docs/plans/operational-core/archived_plans/implemented/`
 
 ## Local Verification
 

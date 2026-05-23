@@ -2,7 +2,7 @@
 
 The first programme milestone is the Operational Core MVP: parser, provider/principal admin, work-item/review queue, EVA-ready export, and Box-ready package generation. Parser is still the first executable MVP inside that wider milestone.
 
-Detailed tickets live in `docs/tickets/backlog_index.md`.
+Detailed tickets live in `docs/plans/operational-core/tickets/backlog_index.md`.
 
 ## P0 - Planning, Contracts, And Foundation
 

@@ -38,7 +38,7 @@ Parser remains the first executable MVP inside that wider core because parsed in
 
 | Boundary | Rule |
 | --- | --- |
-| Source preservation | Raw `collisionrelateddocs/` evidence stays immutable. Normalized Markdown companions are reference aids, not replacements. |
+| Source preservation | Raw `docs/reference/raw/collisionrelateddocs/` evidence stays immutable. Normalized Markdown companions are reference aids, not replacements. |
 | Extraction | Parser core produces canonical parser results with provenance, confidence, and validation warnings. |
 | Provider rules | Provider/principal configuration is editable through an audited admin UI and versioned before activation. |
 | Work item | Work items track lifecycle, missing information, review status, EVA export status, and package status. |
