@@ -25,10 +25,10 @@
 
 ## Documentation Sync Rules
 
-- At the start of any substantial task, check `docs/docs_index.md`, `docs/repo_map.json`, `docs/roadmap.md`, the owning workspace `plan.md`, active tickets, relevant ADRs/contracts, and source evidence before changing files.
+- At the start of any task, check `docs/docs_index.md`, `docs/repo_map.json`, `docs/roadmap.md`, the owning workspace `plan.md`, active tickets, relevant ADRs/contracts, and source evidence before changing files.
 - At the start of parser work, also check `docs/plans/parser-extraction/parser-mvp/plan.md`, `docs/plans/parser-extraction/parser-mvp/adjacent-parser-and-inspection-location-review.md`, `docs/reference/adjacent_repositories.md`, and the provider/corpus sources named by the parser plan.
 - `docs/roadmap.md` must show both the full programme plan and the current project position. Update its Current Status section whenever the active phase, milestone, blockers, or next action changes.
-- On completion of any large task, update the owning plan/ticket, `docs/roadmap.md`, `docs/docs_index.md`, `docs/repo_map.json`, and any affected architecture, contract, decision, requirement, operations, security, or glossary docs.
+- On completion of any task, update the owning plan/ticket, `docs/roadmap.md`, `docs/docs_index.md`, `docs/repo_map.json`, and any affected architecture, contract, decision, requirement, operations, security, or glossary docs.
 - If docs, generated companions, active plans, tickets, archives, or source inventories change, regenerate `docs/source_manifest.md`, `docs/source_manifest.csv`, and `docs/source_manifest.json`.
 - A task that changes behavior, scope, status, roadmap position, source ownership, or verification requirements is not complete until the relevant documentation and manifests are updated or the omission is explicitly documented.
 

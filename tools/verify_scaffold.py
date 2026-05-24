@@ -28,6 +28,7 @@ REQUIRED_PATHS = [
     "docs/plans/roadmap.md",
     "docs/plans/workspace_ownership_matrix.md",
     "docs/plans/initial-repo-setup/README.md",
+    "docs/plans/initial-repo-setup/local-repo-task-start-skill-plan.md",
     "docs/plans/initial-repo-setup/documentation-scaffold/plan.md",
     "docs/plans/initial-repo-setup/documentation-scaffold/plans-folder-expansion-plan.md",
     "docs/plans/initial-repo-setup/reference-audit/all-ideas-plan.md",

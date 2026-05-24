@@ -11,6 +11,7 @@ This is the primary human navigation file for CCC documentation.
 - Operational Core coordination: `docs/plans/operational-core/README.md`.
 - Active programme source map: `docs/plans/operational-core/source_synthesis.md`.
 - Approved folder taxonomy source: `docs/plans/initial-repo-setup/documentation-scaffold/plans-folder-expansion-plan.md`.
+- Local repo task-start skill plan and install record: `docs/plans/initial-repo-setup/local-repo-task-start-skill-plan.md`.
 - Parser MVP plan: `docs/plans/parser-extraction/parser-mvp/plan.md`.
 - Parser MVP evidence and divergence review: `docs/plans/parser-extraction/parser-mvp/adjacent-parser-and-inspection-location-review.md`.
 - Active backlog before ticket relocation: `docs/plans/operational-core/tickets/backlog_index.md`.
@@ -49,7 +50,7 @@ See `docs/plans/_index.md` for the full active workspace table. Each workspace h
 ## Quality Rules
 
 - At task start, read the roadmap, repo map, owning workspace plan, active tickets, and relevant source evidence before changing files.
-- At completion of any large task, update `docs/roadmap.md`, the owning plan/ticket, `docs/docs_index.md`, `docs/repo_map.json`, affected key docs, and `docs/source_manifest.*`.
+- At completion of any task, update `docs/roadmap.md`, the owning plan/ticket, `docs/docs_index.md`, `docs/repo_map.json`, affected key docs, and `docs/source_manifest.*`.
 - Update `docs/source_manifest.*` when source files, generated companions, active docs, or archives change.
 - Promote ideas from reference material into an owning workspace before treating them as active implementation scope.
 - Keep raw evidence immutable and create derivatives under `docs/reference/normalized/` or `docs/reference/data/`.

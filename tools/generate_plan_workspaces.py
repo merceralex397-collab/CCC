@@ -1006,15 +1006,15 @@ def write_programme_roadmap() -> None:
 
     ## Current Status
 
-    Current position: Section 0 - Taxonomy And Planning Scaffold, final pre-parser documentation and handoff alignment.
+    Current position: Section 0 complete for parser readiness. The next implementation phase is Section 2 parser MVP execution under `docs/plans/parser-extraction/parser-mvp/plan.md`.
 
-    Current milestone: make the repository documentation, roadmap, source manifests, workspace ownership, and parser handoff rules reliable enough for parser MVP implementation to start from a known baseline.
+    Current milestone: begin parser MVP implementation from the committed documentation baseline, using the parser MVP plan, adjacent parser review, provider sources, and local repo task-start skill.
 
-    Parser implementation status: not started. The active parser MVP plan is `docs/plans/parser-extraction/parser-mvp/plan.md`; the operational-core parser path is only a compatibility stub.
+    Parser implementation status: ready to start; parser code work has not started in this phase. The active parser MVP plan is `docs/plans/parser-extraction/parser-mvp/plan.md`; the operational-core parser path is only a compatibility stub.
 
-    Pre-parser readiness gates: repository documentation lifecycle rules must be explicit, this Current Status section must be up to date, source manifests must match the working tree, scaffold verification and scaffold contract tests must pass, and parser work should start from a committed/pushed documentation baseline.
+    Pre-parser readiness gates: repository documentation lifecycle rules are explicit, this Current Status section is up to date, source manifests match the working tree, scaffold verification and scaffold contract tests pass, and parser work should start from a committed/pushed documentation baseline.
 
-    Optional pre-parser action: decide whether to create a portable task-start/navigation skill before parser implementation. This is not a parser blocker unless the project requires the same task-start checklist to be enforced outside this repository's `AGENTS.md`.
+    Local repo skill status: installed at `C:/Users/PC/.codex/skills/ccc-repo-task-start` and planned/evaluated in `docs/plans/initial-repo-setup/local-repo-task-start-skill-plan.md`. This local development skill is separate from `docs/plans/agent-skills/`, which is reserved for production Collision Engineers skills.
 
     ## Source Basis
 
@@ -1225,6 +1225,7 @@ def write_indexes() -> None:
         - Operational Core coordination: `docs/plans/operational-core/README.md`.
         - Active programme source map: `docs/plans/operational-core/source_synthesis.md`.
         - Approved folder taxonomy source: `docs/plans/initial-repo-setup/documentation-scaffold/plans-folder-expansion-plan.md`.
+        - Local repo task-start skill plan and install record: `docs/plans/initial-repo-setup/local-repo-task-start-skill-plan.md`.
         - Parser MVP plan: `docs/plans/parser-extraction/parser-mvp/plan.md`.
         - Parser MVP evidence and divergence review: `docs/plans/parser-extraction/parser-mvp/adjacent-parser-and-inspection-location-review.md`.
         - Active backlog before ticket relocation: `docs/plans/operational-core/tickets/backlog_index.md`.
@@ -1263,7 +1264,7 @@ def write_indexes() -> None:
         ## Quality Rules
 
         - At task start, read the roadmap, repo map, owning workspace plan, active tickets, and relevant source evidence before changing files.
-        - At completion of any large task, update `docs/roadmap.md`, the owning plan/ticket, `docs/docs_index.md`, `docs/repo_map.json`, affected key docs, and `docs/source_manifest.*`.
+        - At completion of any task, update `docs/roadmap.md`, the owning plan/ticket, `docs/docs_index.md`, `docs/repo_map.json`, affected key docs, and `docs/source_manifest.*`.
         - Update `docs/source_manifest.*` when source files, generated companions, active docs, or archives change.
         - Promote ideas from reference material into an owning workspace before treating them as active implementation scope.
         - Keep raw evidence immutable and create derivatives under `docs/reference/normalized/` or `docs/reference/data/`.
@@ -1290,6 +1291,7 @@ def write_indexes() -> None:
                 "root": "docs/plans/initial-repo-setup",
                 "readme": "docs/plans/initial-repo-setup/README.md",
                 "documentation_scaffold": "docs/plans/initial-repo-setup/documentation-scaffold",
+                "local_repo_task_start_skill_plan": "docs/plans/initial-repo-setup/local-repo-task-start-skill-plan.md",
                 "reference_audit": "docs/plans/initial-repo-setup/reference-audit",
                 "tickets": "docs/plans/initial-repo-setup/tickets",
                 "implemented_archive": "docs/plans/initial-repo-setup/archived_plans/implemented",

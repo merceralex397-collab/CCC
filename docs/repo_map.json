@@ -18,6 +18,7 @@
       "root": "docs/plans/initial-repo-setup",
       "readme": "docs/plans/initial-repo-setup/README.md",
       "documentation_scaffold": "docs/plans/initial-repo-setup/documentation-scaffold",
+      "local_repo_task_start_skill_plan": "docs/plans/initial-repo-setup/local-repo-task-start-skill-plan.md",
       "reference_audit": "docs/plans/initial-repo-setup/reference-audit",
       "tickets": "docs/plans/initial-repo-setup/tickets",
       "implemented_archive": "docs/plans/initial-repo-setup/archived_plans/implemented",
