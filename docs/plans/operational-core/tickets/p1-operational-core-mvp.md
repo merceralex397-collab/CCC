@@ -34,7 +34,7 @@
 - Owner: TBD.
 - Created: 2026-05-23.
 - Last reviewed: 2026-05-23.
-- Source links: `docs/plans/operational-core/parser-mvp/plan.md`, `docs/research/siderpdf.md`, `ce_system_plans_enhanced/06_WORK_PACKAGE_DOCUMENT_MAPPER_AND_EXTRACTION.md`.
+- Source links: `docs/plans/parser-extraction/parser-mvp/plan.md`, `docs/research/siderpdf.md`, `ce_system_plans_enhanced/06_WORK_PACKAGE_DOCUMENT_MAPPER_AND_EXTRACTION.md`.
 - Roadmap milestone: P1 Operational Core MVP.
 - Dependencies: P0-002, P0-003, P0-004.
 - Expected outputs: parser core, extraction adapters, provider detection, mapping rule engine, canonical parser result output.
@@ -66,7 +66,7 @@
 - Owner: TBD.
 - Created: 2026-05-23.
 - Last reviewed: 2026-05-23.
-- Source links: `docs/architecture/parser_ui_cli.md`, `docs/plans/operational-core/parser-mvp/plan.md`.
+- Source links: `docs/architecture/parser_ui_cli.md`, `docs/plans/parser-extraction/parser-mvp/plan.md`.
 - Roadmap milestone: P1 Operational Core MVP.
 - Dependencies: P1-001.
 - Expected outputs: CLI commands for parse, validate, export EVA JSON, package evidence, batch runs, and machine-readable warnings.
@@ -139,3 +139,4 @@
 - Archive target: `docs/plans/operational-core/archived_plans/implemented/`.
 - Supersedes: none.
 - Superseded-by: none.
+

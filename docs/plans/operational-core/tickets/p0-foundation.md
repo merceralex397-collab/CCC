@@ -83,7 +83,7 @@
 - Source links: `docs/research/siderpdf.md`, `docs/research/gptdeepresearch.md`, `cedocumentmapper_rebuild_plan_pack_all_zips/`, `docs/reference/raw/collisionrelateddocs/claudechat.md`.
 - Roadmap milestone: P0 Foundation.
 - Dependencies: P0-002, P0-003.
-- Expected outputs: `docs/plans/operational-core/parser-mvp/plan.md`.
+- Expected outputs: `docs/plans/parser-extraction/parser-mvp/plan.md`.
 - Acceptance criteria: plan covers PDF, DOCX, DOC, MSG/EML, images, batches, all 26 provider presets, UI/CLI parity, deterministic-first extraction, EVA export gates, image package rules, private corpus tests, and known legacy behaviours.
 - Verification required: scaffold verifier checks parser-plan coverage terms and provider list.
 - Archive target: `docs/plans/operational-core/archived_plans/implemented/` after parser MVP is implemented and plan is marked implemented.
@@ -121,3 +121,4 @@
 - Archive target: `docs/plans/operational-core/archived_plans/implemented/`.
 - Supersedes: none.
 - Superseded-by: none.
+

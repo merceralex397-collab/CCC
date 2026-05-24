@@ -5,46 +5,53 @@
 | Plan Area | Path | Status |
 | --- | --- | --- |
 | Initial Repo Setup | `docs/plans/initial-repo-setup/` | active pre-code planning workspace |
-| Operational Core | `docs/plans/operational-core/` | active cross-workspace coordination workspace |
-| Workspace Expansion Plan | `docs/plans/initial-repo-setup/documentation-scaffold/plans-folder-expansion-plan.md` | implemented 2026-05-24 |
-| Repository Restructure | `docs/plans/initial-repo-setup/archived_plans/implemented/2026-05-23-implemented-repository-restructure.md` | implemented |
+| Operational Core | `docs/plans/operational-core/` | active first-slice coordination workspace |
+| Programme Roadmap | `docs/plans/roadmap.md` | active roadmap mirror |
+| Workspace Ownership Matrix | `docs/plans/workspace_ownership_matrix.md` | active ownership and source matrix |
+| Workspace Expansion Plan | `docs/plans/initial-repo-setup/documentation-scaffold/plans-folder-expansion-plan.md` | approved taxonomy source |
 
-## Initial Repo Setup Layout
-
-- `docs/plans/initial-repo-setup/documentation-scaffold/` captures repository setup and documentation scaffold planning.
-- `docs/plans/initial-repo-setup/reference-audit/` captures exhaustive reference-derived idea inventories.
-- `docs/plans/initial-repo-setup/tickets/` contains pre-code setup tickets.
-- `docs/plans/initial-repo-setup/archived_plans/` contains implemented or superseded setup plans.
-
-## Operational Core Layout
-
-- `docs/plans/operational-core/source_synthesis.md` maps reference material into canonical outputs.
-- `docs/plans/operational-core/tickets/backlog_index.md` is the cross-workspace coordination index.
-- `docs/plans/operational-core/tickets/p0-p5-*.md` are tombstones pointing to owning workspaces.
-- `docs/plans/operational-core/parser-mvp/plan.md` is a stub — active plan is at `docs/plans/parser-extraction/parser-mvp/plan.md`.
-- `docs/plans/operational-core/archived_plans/` contains completed or superseded plans.
-
-## Active Domain Workspaces
+## Active Planning Workspaces
 
 | Area | Path | Owns |
 | --- | --- | --- |
-| Unified Platform | `docs/plans/unified-platform/` | Mature end-to-end platform and convergence roadmap. |
-| Automation Centre | `docs/plans/automation-centre/` | Deterministic automation model, workflows, retries, exception routing, and automation KPIs. |
-| Parser Extraction | `docs/plans/parser-extraction/` | Parser, extraction adapters, mapper compatibility, OCR fallback, and corpus regression. |
-| Case Workflow State | `docs/plans/case-workflow-state/` | Work item state, review queue, audit stream, missing-info state, duplicate and historical search. |
-| Provider Principal Config | `docs/plans/provider-principal-config/` | Provider, principal, garage, routing, and provider-admin planning. |
-| Intake Storage Integrations | `docs/plans/intake-storage-integrations/` | Outlook, Box, EVA/Sentry, website/WhatsApp metadata, and spreadsheet bridge adapters. |
-| Evidence Estimate Review | `docs/plans/evidence-estimate-review/` | Evidence, image quality, estimate parsing, ABP review, duplicate/reused evidence, and damage workbench planning. |
-| Vehicle Valuation Data | `docs/plans/vehicle-valuation-data/` | Vehicle intelligence, DVLA/DVSA, MOT data, valuation evidence, salvage, mileage, and identity planning. |
-| Engineer Communications | `docs/plans/engineer-communications/` | Engineer pack, templates, report drafting support, status summaries, and communication workflows. |
-| AI Agents | `docs/plans/ai-agents/` | Controlled workflow agents and agent-vs-automation boundaries. |
-| MCP And Tooling | `docs/plans/mcp-and-tooling/` | MCP servers, internal tool adapters, registry, schemas, audit, rate limits, and security gateway. |
-| Agent Skills | `docs/plans/agent-skills/` | Reusable drafting, summary, RAG, valuation, communication, and training skills. |
-| AI Platform Tools | `docs/plans/ai-platform-tools/` | Model evaluation, prompt governance, datasets, AI feedback loops, and policy implementation. |
-| User Experience Interfaces | `docs/plans/user-experience-interfaces/` | Staff, engineer, admin, parser, review, dashboard, portal/front-door, and accessibility planning. |
-| Finance Billing | `docs/plans/finance-billing/` | Invoice, fee-note, payment status, chaser metadata, approvals, and payment automation option papers. |
-| Governance Security | `docs/plans/governance-security/` | DPIA, vendor governance, privacy, PII redaction, data licensing, expert-boundary, and API security planning. |
-| Operations Quality | `docs/plans/operations-quality/` | Test corpus, regression harness, release/rollback, monitoring, runbooks, rollout, and decommissioning. |
-| Analytics Data Platform | `docs/plans/analytics-data-platform/` | Operations analytics, data warehouse, EVA mining, data quality, risk indicators, scheduling, and BI. |
-| External Platform Partners | `docs/plans/external-platform-partners/` | Customer portal, partner API, insurer integrations, Audatex partnerships, and partner access controls. |
-| Product Business | `docs/plans/product-business/` | Discovery, ROI, client pitch, conservative positioning, objection handling, and defensibility. |
+| Unified Platform | `docs/plans/unified-platform/` | Mature end-to-end CCC platform planning and convergence roadmap. |
+| Automation Centre | `docs/plans/automation-centre/` | Deterministic automation architecture, operating cadence, and reusable workflow patterns. |
+| Parser Extraction | `docs/plans/parser-extraction/` | Parser, document extraction, CE Document Mapper evolution, and extraction-regression planning. |
+| Case Workflow State | `docs/plans/case-workflow-state/` | Canonical work-item state, review queue, audit stream, missing-info state, and historical search planning. |
+| Provider Principal Config | `docs/plans/provider-principal-config/` | Provider, principal, garage, routing, and provider-rule lifecycle planning. |
+| Intake Storage Integrations | `docs/plans/intake-storage-integrations/` | Intake channels, source capture, storage adapters, EVA/Sentry adapters, and transitional spreadsheet bridge planning. |
+| Evidence Estimate Review | `docs/plans/evidence-estimate-review/` | Evidence matching, image review, estimate parsing, ABP review, and damage workbench planning. |
+| Vehicle Valuation Data | `docs/plans/vehicle-valuation-data/` | Vehicle identity, DVLA/DVSA, MOT, mileage, valuation evidence, salvage, and vehicle-history support. |
+| Engineer Communications | `docs/plans/engineer-communications/` | Engineer pack, template, reporting, status, and communication workflow planning. |
+| AI Agents | `docs/plans/ai-agents/` | Bounded workflow agents that orchestrate approved tools and portable skills under permission and approval gates. |
+| MCP And Tooling | `docs/plans/mcp-and-tooling/` | MCP servers, internal tool adapters, registry, schemas, gateway controls, and safe tool discovery planning. |
+| Agent Skills | `docs/plans/agent-skills/` | Portable reusable staff/engineer skills with prompt/version/evaluation lifecycle and cross-AI portability. |
+| AI Platform Tools | `docs/plans/ai-platform-tools/` | Shared AI substrate behind tools, skills, and agents. |
+| User Experience Interfaces | `docs/plans/user-experience-interfaces/` | Human-facing screen, workflow, and interaction design across staff, engineer, admin, and front-door surfaces. |
+| Finance Billing | `docs/plans/finance-billing/` | Finance, invoice, fee-note, payment-status, payment evidence, and billing automation option planning. |
+| Governance Security | `docs/plans/governance-security/` | Cross-programme governance, security, privacy, vendor, licensing, audit, and expert-boundary planning. |
+| Operations Quality | `docs/plans/operations-quality/` | Shared QA, release, rollout, monitoring, support, regression, and decommissioning planning. |
+| Analytics Data Platform | `docs/plans/analytics-data-platform/` | Data, analytics, historical mining, BI, data quality, and continuous improvement planning. |
+| External Platform Partners | `docs/plans/external-platform-partners/` | External-facing systems, customer/partner portals, partner APIs, insurer integrations, Audatex partnerships, and partner access controls. |
+| Product Business | `docs/plans/product-business/` | Business framing, discovery, ROI/KPI tracking, client positioning, objections, and defensibility planning. |
+
+## Existing Workspace Layout
+
+- `docs/plans/initial-repo-setup/` captures repo setup, documentation scaffold, source evidence handling, and exhaustive reference-derived idea planning.
+- `docs/plans/operational-core/` coordinates first-slice MVP dependencies across owning workspaces.
+- `docs/plans/parser-extraction/parser-mvp/plan.md` is the active parser MVP plan. `docs/plans/operational-core/parser-mvp/plan.md` is preserved only as a compatibility stub for historical links and scaffold checks.
+
+## Standard Workspace Layout
+
+Each top-level workspace uses:
+
+```text
+README.md
+plan.md
+source_map.md
+roadmap.md
+tickets/README.md
+option-papers/README.md
+archived_plans/implemented/
+archived_plans/superseded/
+```

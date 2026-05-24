@@ -7,7 +7,7 @@ import textwrap
 
 
 ROOT = Path(__file__).resolve().parents[1]
-TODAY = "2026-05-23"
+TODAY = "2026-05-24"
 
 
 @dataclass(frozen=True)
@@ -106,14 +106,15 @@ WORKSPACES: list[Workspace] = [
         ],
         dependencies=["provider-principal-config", "operations-quality", "governance-security", "user-experience-interfaces"],
         evidence=[
-            Evidence("docs/plans/operational-core/parser-mvp/plan.md", "Current parser MVP implementation plan pending physical relocation."),
+            Evidence("docs/plans/parser-extraction/parser-mvp/plan.md", "Active parser MVP implementation plan."),
+            Evidence("docs/plans/parser-extraction/parser-mvp/adjacent-parser-and-inspection-location-review.md", "Adjacent parser comparison, inspection-location decision register, and EVA/Sentry lookup constraint."),
             Evidence("docs/decisions/0004-ground-up-compatible-parser-rebuild.md", "Accepted ground-up compatible parser rebuild decision."),
             Evidence("docs/decisions/0007-deterministic-first-parser.md", "Accepted deterministic-first parser decision."),
             Evidence("docs/reference/originalplanning/ce_system_plans_enhanced/ce_system_plans_enhanced/06_WORK_PACKAGE_DOCUMENT_MAPPER_AND_EXTRACTION.md", "Document Mapper and extraction work package."),
             Evidence("docs/contracts/extraction_adapter_contract_v1.md", "Versioned extraction adapter contract."),
         ],
         roadmap=[
-            ("S1", ["Move active parser MVP planning here, then deliver deterministic parser core and shared UI/CLI service behavior."]),
+            ("S1", ["Maintain active parser MVP planning here, then deliver deterministic parser core and shared UI/CLI service behavior."]),
             ("S2", ["Harden extraction adapters, provider corpus coverage, export blockers, and UI/CLI parity."]),
             ("S3-S4", ["Evaluate OCR/cloud fallback and AI extraction only behind governance and measurable regression evidence."]),
         ],
@@ -613,7 +614,22 @@ WORKSPACES: list[Workspace] = [
 
 def write_text(path: Path, content: str) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(textwrap.dedent(content).strip() + "\n", encoding="utf-8")
+    text = textwrap.dedent(content).strip()
+    if not text:
+        path.write_text("", encoding="utf-8")
+        return
+    first_nonempty = next((line for line in text.splitlines() if line.strip()), "")
+    if first_nonempty.startswith("#"):
+        lines = []
+        for line in text.splitlines():
+            if line.startswith("        "):
+                lines.append(line[8:])
+            elif line.startswith("    "):
+                lines.append(line[4:])
+            else:
+                lines.append(line)
+        text = "\n".join(lines)
+    path.write_text(text + "\n", encoding="utf-8")
 
 
 def bullets(items: list[str]) -> str:
@@ -625,6 +641,74 @@ def evidence_table(evidence: list[Evidence]) -> str:
     for item in evidence:
         rows.append(f"| `{item.path}` | {item.note} |")
     return "\n".join(rows)
+
+
+DEPENDENCY_NOTES = {
+    "all workspaces": "Governance/security owns cross-programme risk, data, vendor, licensing, audit, and expert-boundary gates for every workspace.",
+    "agent-skills": "Portable skills must stay separate from runtime orchestration and cite approved skill prompts/evaluation examples.",
+    "ai-agents": "Workflow agents can only call approved tools/skills under permission, audit, and human-approval boundaries.",
+    "ai-platform-tools": "AI-assisted behavior needs model/prompt governance, evaluation data, redaction, and run logging before expansion.",
+    "analytics-data-platform": "Analytics must consume reviewed canonical events and approved data products, not raw operational side effects.",
+    "automation-centre": "Deterministic automation owns triggers, retries, idempotency, queues, and exception routing used by domain workflows.",
+    "case-workflow-state": "Work-item state, review status, blockers, audit events, and approvals are the operational source of truth.",
+    "evidence-estimate-review": "Evidence and estimate findings must be reviewable, source-linked, and bounded away from final expert conclusions.",
+    "external-platform-partners": "External access, partner APIs, portals, and insurer/estimating-system partnerships require option papers and governance gates.",
+    "finance-billing": "Payment, invoice, fee-note, and overdue workflows need finance approval and cannot be hidden inside parser or intake automation.",
+    "governance-security": "Privacy, vendor, retention, licensing, expert-boundary, API security, and autonomous-action controls must be approved before activation.",
+    "intake-storage-integrations": "Outlook, Box, EVA/Sentry, website/WhatsApp, and spreadsheet bridges own live system boundaries and source capture.",
+    "mcp-and-tooling": "MCP/tool exposure must wrap approved adapters with schemas, auth, audit, rate limits, and gateway controls.",
+    "operational-core": "Operational Core coordinates the first executable slice and points specialist work to its owning workspace.",
+    "operations-quality": "Release, rollback, regression, monitoring, runbooks, pilot, support, and decommissioning gates must be explicit.",
+    "parser-extraction": "Extraction work must preserve CE Document Mapper behavior, deterministic rules, canonical schema, and regression coverage.",
+    "product-business": "Commercial framing, discovery, objections, ROI, and independence wording shape priority without owning implementation.",
+    "provider-principal-config": "Provider/principal presets, routing, aliases, and admin workflows must stay separate from parser mechanics.",
+    "unified-platform": "Mature platform convergence coordinates system-wide sequencing and decommissioning only after parity and rollback evidence.",
+    "user-experience-interfaces": "Human-facing surfaces must use shared domain contracts and keep UI thin over parser/work-item services.",
+    "vehicle-valuation-data": "Vehicle facts and valuation evidence need licensing, confidence, provenance, and human review boundaries.",
+}
+
+
+def source_links(evidence: list[Evidence]) -> str:
+    return ", ".join(f"`{item.path}`" for item in evidence)
+
+
+def todo_table(workspace: Workspace) -> str:
+    sources = "<br>".join(f"`{item.path}`" for item in workspace.evidence)
+    rows = [
+        "| Todo area | Specific source evidence | Required coordination | Acceptance check |",
+        "| --- | --- | --- | --- |",
+    ]
+    for item in workspace.owns:
+        rows.append(
+            "| "
+            + " | ".join(
+                [
+                    f"- [ ] {item}",
+                    sources,
+                    ", ".join(f"`{dependency}`" for dependency in workspace.dependencies),
+                    "Promoted ticket or option paper cites source evidence, names dependencies, and does not duplicate an excluded owner.",
+                ]
+            )
+            + " |"
+        )
+    return "\n".join(rows)
+
+
+def dependency_table(workspace: Workspace) -> str:
+    rows = ["| Workspace | Why it must be coordinated |", "| --- | --- |"]
+    for dependency in workspace.dependencies:
+        rows.append(f"| `{dependency}` | {DEPENDENCY_NOTES.get(dependency, 'Coordinate source ownership, sequencing, acceptance criteria, and verification before ticket promotion.')} |")
+    return "\n".join(rows)
+
+
+def roadmap_plan_sections(workspace: Workspace) -> str:
+    sections: list[str] = []
+    for phase, items in workspace.roadmap:
+        sections.append(f"### {phase}")
+        sections.append("")
+        sections.extend(f"- [ ] {item}" for item in items)
+        sections.append("")
+    return "\n".join(sections).strip()
 
 
 def write_workspace(workspace: Workspace) -> None:
@@ -653,6 +737,12 @@ def write_workspace(workspace: Workspace) -> None:
 
         {workspace.purpose}
 
+        ## Main Plan
+
+        - Detailed workspace plan: `plan.md`
+        - Source map: `source_map.md`
+        - Workspace roadmap: `roadmap.md`
+
         ## Owns
 
         {bullets(workspace.owns)}
@@ -675,6 +765,69 @@ def write_workspace(workspace: Workspace) -> None:
         - Put vendor, privacy, external-access, autonomous-send, payment, AI/RAG, cloud OCR, and partner/API decisions in `option-papers/` first.
         - Archive implemented or superseded work under this workspace's `archived_plans/`.
         - Keep raw evidence immutable; cite source paths instead of copying raw content.
+        """,
+    )
+    write_text(
+        root / "plan.md",
+        f"""
+        # {workspace.title} Plan
+
+        Date: {TODAY}
+        Status: active workspace plan
+        Owner: unassigned
+        Created: {TODAY}
+        Last reviewed: {TODAY}
+        Source links: {source_links(workspace.evidence)}
+        Roadmap milestone: Whole-programme roadmap
+        Dependencies: {", ".join(workspace.dependencies)}
+        Expected outputs: source-backed todos, scoped tickets, option papers, roadmap updates, and archive records for `{workspace.path}/`
+        Acceptance criteria: each todo is promoted only with source citations, dependency links, ownership boundaries, verification, and governance/operations gates where required
+        Verification required: `python tools/verify_scaffold.py`
+        Archive target: `{workspace.path}/archived_plans/implemented/`
+        Supersedes: none
+        Superseded-by: none
+
+        ## Planning Decision
+
+        `{workspace.path}/` is a separate active workspace. It owns the items listed below and must coordinate with its dependency workspaces before any item becomes an implementation ticket.
+
+        ## Citeable Evidence
+
+        {evidence_table(workspace.evidence)}
+
+        ## Todo Areas
+
+        {todo_table(workspace)}
+
+        ## Sequential Plan
+
+        {roadmap_plan_sections(workspace)}
+
+        ## Dependency Cross-Check
+
+        {dependency_table(workspace)}
+
+        ## Non-Overlap Rules
+
+        The workspace explicitly does not own:
+
+        {bullets(workspace.not_own)}
+
+        If a proposed ticket touches one of those exclusions, link to the owning workspace and keep this workspace as a supporting dependency only.
+
+        ## Source Ownership Rules
+
+        - Cite the source paths above in every promoted ticket, option paper, or roadmap change.
+        - Use `source_map.md` to explain how the evidence supports the workspace boundary.
+        - Keep generated and historical planning packs reference-only until a scoped ticket or option paper promotes them.
+        - Do not edit raw evidence under `docs/reference/raw/collisionrelateddocs/`; create derivatives only under documented derivative paths.
+
+        ## Promotion Gates
+
+        - Use `tickets/` for implementation-ready work with acceptance criteria and verification.
+        - Use `option-papers/` before vendor, privacy, external access, autonomous send, payment automation, AI/RAG, cloud OCR/document intelligence, commercial data, or partner/API work.
+        - Link governance/security approval where privacy, vendor, retention, licensing, expert-boundary, API security, or autonomous-action risk exists.
+        - Link operations-quality approval where release, rollback, regression, monitoring, runbook, support, pilot, or decommissioning evidence is needed.
         """,
     )
     write_text(
@@ -827,14 +980,18 @@ def write_programme_roadmap() -> None:
         "docs/reference/test-context/testprojectcontext/collision_project_context_pack/collision_project_context_pack/14_IMPLEMENTATION_ROADMAP.md",
         "docs/reference/originalplanning/phase7_expanded_markdown_plan/phase7_expanded_markdown_plan/02_prioritised_roadmap.md",
     ]
-    roadmap = """
+    workspace_entry_rows = "\n".join(
+        f"| `{workspace.path}/` | `{workspace.path}/plan.md` | {workspace.purpose} |"
+        for workspace in WORKSPACES
+    )
+    roadmap = f"""
     # Roadmap
 
-    Date: 2026-05-23
+    Date: 2026-05-24
     Status: active programme roadmap
     Owner: unassigned
-    Created: 2026-05-23
-    Last reviewed: 2026-05-23
+    Created: 2026-05-24
+    Last reviewed: 2026-05-24
     Source links: `docs/plans/initial-repo-setup/reference-audit/all-ideas-plan.md`, `docs/plans/initial-repo-setup/documentation-scaffold/plans-folder-expansion-plan.md`, `docs/plans/operational-core/source_synthesis.md`, `docs/architecture/future_system_convergence.md`, `docs/reference/test-context/testprojectcontext/collision_project_context_pack/collision_project_context_pack/14_IMPLEMENTATION_ROADMAP.md`, `docs/reference/originalplanning/phase7_expanded_markdown_plan/phase7_expanded_markdown_plan/02_prioritised_roadmap.md`
     Roadmap milestone: Whole-programme roadmap
     Dependencies: source manifest, workspace source maps, governance/security gates, operations-quality gates
@@ -847,6 +1004,18 @@ def write_programme_roadmap() -> None:
 
     CCC starts with vehicle-damage instruction parsing and evidence preparation, then expands through controlled workflow, integrations, intelligence, AI/tooling, external ecosystem, analytics, and mature platform convergence. Collision Engineers do not do personal injury or KADOE work; those workflows remain out of scope.
 
+    ## Current Status
+
+    Current position: Section 0 - Taxonomy And Planning Scaffold, final pre-parser documentation and handoff alignment.
+
+    Current milestone: make the repository documentation, roadmap, source manifests, workspace ownership, and parser handoff rules reliable enough for parser MVP implementation to start from a known baseline.
+
+    Parser implementation status: not started. The active parser MVP plan is `docs/plans/parser-extraction/parser-mvp/plan.md`; the operational-core parser path is only a compatibility stub.
+
+    Pre-parser readiness gates: repository documentation lifecycle rules must be explicit, this Current Status section must be up to date, source manifests must match the working tree, scaffold verification and scaffold contract tests must pass, and parser work should start from a committed/pushed documentation baseline.
+
+    Optional pre-parser action: decide whether to create a portable task-start/navigation skill before parser implementation. This is not a parser blocker unless the project requires the same task-start checklist to be enforced outside this repository's `AGENTS.md`.
+
     ## Source Basis
 
     | Source | Why it is used |
@@ -857,6 +1026,12 @@ def write_programme_roadmap() -> None:
     | `docs/architecture/future_system_convergence.md` | Convergence spine and scope guardrails for future modules. |
     | `docs/reference/test-context/testprojectcontext/collision_project_context_pack/collision_project_context_pack/14_IMPLEMENTATION_ROADMAP.md` | Incremental delivery strategy from discovery through expansion. |
     | `docs/reference/originalplanning/phase7_expanded_markdown_plan/phase7_expanded_markdown_plan/02_prioritised_roadmap.md` | Longer-horizon platform, portal, analytics, partner, and governance sequencing. |
+
+    ## Workspace Plan Entry Points
+
+    | Workspace | Detailed plan | Purpose |
+    | --- | --- | --- |
+    {workspace_entry_rows}
 
     ## Section 0 - Taxonomy And Planning Scaffold
 
@@ -878,7 +1053,7 @@ def write_programme_roadmap() -> None:
 
     Owning workspaces: `parser-extraction`, `provider-principal-config`, `operations-quality`, `user-experience-interfaces`.
 
-    - Move parser MVP planning into `parser-extraction` during ticket relocation.
+    - Maintain active parser MVP planning in `parser-extraction`; the old operational-core parser path is only a compatibility stub.
     - Preserve current CE Document Mapper behavior, all 26 provider presets, deterministic-first parsing, and private real corpus tests.
     - Split provider/principal, garage, routing, provider-admin, and provider coverage work into `provider-principal-config`.
     - Establish regression harness and release gates before broad automation.
@@ -975,7 +1150,7 @@ def write_programme_roadmap() -> None:
         "| --- | --- | --- | --- |\n"
         + "\n".join(
             "| `{}` | {} | {} | {} |".format(
-                workspace.path,
+                f"{workspace.path}/",
                 "; ".join(workspace.owns),
                 "; ".join(workspace.not_own),
                 "; ".join(f"`{item.path}`" for item in workspace.evidence[:3]),
@@ -1016,7 +1191,7 @@ def write_indexes() -> None:
 
         - `docs/plans/initial-repo-setup/` captures repo setup, documentation scaffold, source evidence handling, and exhaustive reference-derived idea planning.
         - `docs/plans/operational-core/` coordinates first-slice MVP dependencies across owning workspaces.
-        - `docs/plans/operational-core/parser-mvp/plan.md` remains the current parser MVP plan until the parser ticket relocation step moves it to `docs/plans/parser-extraction/`.
+        - `docs/plans/parser-extraction/parser-mvp/plan.md` is the active parser MVP plan. `docs/plans/operational-core/parser-mvp/plan.md` is preserved only as a compatibility stub for historical links and scaffold checks.
 
         ## Standard Workspace Layout
 
@@ -1024,6 +1199,7 @@ def write_indexes() -> None:
 
         ```text
         README.md
+        plan.md
         source_map.md
         roadmap.md
         tickets/README.md
@@ -1049,7 +1225,8 @@ def write_indexes() -> None:
         - Operational Core coordination: `docs/plans/operational-core/README.md`.
         - Active programme source map: `docs/plans/operational-core/source_synthesis.md`.
         - Approved folder taxonomy source: `docs/plans/initial-repo-setup/documentation-scaffold/plans-folder-expansion-plan.md`.
-        - Parser MVP plan: `docs/plans/operational-core/parser-mvp/plan.md`.
+        - Parser MVP plan: `docs/plans/parser-extraction/parser-mvp/plan.md`.
+        - Parser MVP evidence and divergence review: `docs/plans/parser-extraction/parser-mvp/adjacent-parser-and-inspection-location-review.md`.
         - Active backlog before ticket relocation: `docs/plans/operational-core/tickets/backlog_index.md`.
         - Agent path map: `docs/repo_map.json`.
         - Full source inventory: `docs/source_manifest.md`, `docs/source_manifest.csv`, and `docs/source_manifest.json`.
@@ -1060,7 +1237,8 @@ def write_indexes() -> None:
         | --- | --- | --- |
         | Plans | `docs/plans/_index.md` | Active plan workspaces and archived plans. |
         | Initial Repo Setup | `docs/plans/initial-repo-setup/` | Pre-code repository setup, documentation scaffold, and exhaustive reference idea planning. |
-        | Operational Core | `docs/plans/operational-core/` | First-slice coordination, source synthesis, and active backlog before ticket relocation. |
+        | Operational Core | `docs/plans/operational-core/` | First-slice coordination, source synthesis, and cross-workspace backlog routing. |
+        | Parser Extraction | `docs/plans/parser-extraction/` | Active parser MVP, extraction rules, provider-rule execution, parser parity, and regression planning. |
         | Architecture | `docs/architecture/` | System architecture and programme boundaries. |
         | Contracts | `docs/contracts/` | Versioned schemas and integration contracts. |
         | Decisions | `docs/decisions/` | ADRs and option papers. |
@@ -1084,6 +1262,8 @@ def write_indexes() -> None:
 
         ## Quality Rules
 
+        - At task start, read the roadmap, repo map, owning workspace plan, active tickets, and relevant source evidence before changing files.
+        - At completion of any large task, update `docs/roadmap.md`, the owning plan/ticket, `docs/docs_index.md`, `docs/repo_map.json`, affected key docs, and `docs/source_manifest.*`.
         - Update `docs/source_manifest.*` when source files, generated companions, active docs, or archives change.
         - Promote ideas from reference material into an owning workspace before treating them as active implementation scope.
         - Keep raw evidence immutable and create derivatives under `docs/reference/normalized/` or `docs/reference/data/`.
@@ -1119,7 +1299,7 @@ def write_indexes() -> None:
                 "root": "docs/plans/operational-core",
                 "readme": "docs/plans/operational-core/README.md",
                 "source_synthesis": "docs/plans/operational-core/source_synthesis.md",
-                "parser_mvp_plan_current": "docs/plans/operational-core/parser-mvp/plan.md",
+                "parser_mvp_plan_stub": "docs/plans/operational-core/parser-mvp/plan.md",
                 "tickets": "docs/plans/operational-core/tickets",
                 "implemented_archive": "docs/plans/operational-core/archived_plans/implemented",
                 "superseded_archive": "docs/plans/operational-core/archived_plans/superseded",
@@ -1128,6 +1308,7 @@ def write_indexes() -> None:
                 workspace.slug.replace("-", "_"): {
                     "root": workspace.path,
                     "readme": f"{workspace.path}/README.md",
+                    "plan": f"{workspace.path}/plan.md",
                     "source_map": f"{workspace.path}/source_map.md",
                     "roadmap": f"{workspace.path}/roadmap.md",
                     "tickets": f"{workspace.path}/tickets",
@@ -1136,6 +1317,10 @@ def write_indexes() -> None:
                     "superseded_archive": f"{workspace.path}/archived_plans/superseded",
                 }
                 for workspace in WORKSPACES
+            },
+            "active_parser_mvp": {
+                "plan": "docs/plans/parser-extraction/parser-mvp/plan.md",
+                "evidence_review": "docs/plans/parser-extraction/parser-mvp/adjacent-parser-and-inspection-location-review.md",
             },
         },
         "reference": {

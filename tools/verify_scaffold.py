@@ -25,6 +25,8 @@ REQUIRED_PATHS = [
     "docs/source_manifest.csv",
     "docs/roadmap.md",
     "docs/plans/_index.md",
+    "docs/plans/roadmap.md",
+    "docs/plans/workspace_ownership_matrix.md",
     "docs/plans/initial-repo-setup/README.md",
     "docs/plans/initial-repo-setup/documentation-scaffold/plan.md",
     "docs/plans/initial-repo-setup/documentation-scaffold/plans-folder-expansion-plan.md",
@@ -42,6 +44,10 @@ REQUIRED_PATHS = [
     "docs/architecture/parser_ui_cli.md",
     "docs/plans/operational-core/source_synthesis.md",
     "docs/plans/operational-core/parser-mvp/plan.md",
+    "docs/plans/parser-extraction/parser-mvp/plan.md",
+    "docs/plans/parser-extraction/parser-mvp/adjacent-parser-and-inspection-location-review.md",
+    "docs/plans/initial-repo-setup/tickets/p0-repo-navigation-and-parser-handoff-alignment.md",
+    "docs/plans/parser-extraction/tickets/p0-parser-mvp-plan-enhancement-and-adjacent-evidence.md",
     "docs/contracts/parser_result_v1.md",
     "docs/contracts/eva_export_contract.md",
     "docs/contracts/eva_export_contract_v1.md",
@@ -128,6 +134,21 @@ PLANNED_WORKSPACE_TERMS = [
     "docs/plans/external-platform-partners/",
     "docs/plans/product-business/",
 ]
+
+WORKSPACE_REQUIRED_SUFFIXES = [
+    "README.md",
+    "plan.md",
+    "source_map.md",
+    "roadmap.md",
+    "tickets/README.md",
+    "option-papers/README.md",
+    "archived_plans/implemented/.gitkeep",
+    "archived_plans/superseded/.gitkeep",
+]
+
+for workspace_path in PLANNED_WORKSPACE_TERMS:
+    workspace_root = workspace_path.rstrip("/")
+    REQUIRED_PATHS.extend(f"{workspace_root}/{suffix}" for suffix in WORKSPACE_REQUIRED_SUFFIXES)
 
 PROVIDER_PRESETS = [
     "ALISON",
@@ -388,8 +409,24 @@ def main() -> int:
         "Plans folder expansion coverage",
     )
     require_terms(read_doc("docs/plans/_index.md"), PLANNED_WORKSPACE_TERMS, "Plans index planned workspaces")
+    require_terms(read_doc("docs/plans/roadmap.md"), PLANNED_WORKSPACE_TERMS, "Plans roadmap workspaces")
+    require_terms(read_doc("docs/plans/workspace_ownership_matrix.md"), PLANNED_WORKSPACE_TERMS, "Workspace ownership matrix")
 
-    parser_plan = read_doc("docs/plans/operational-core/parser-mvp/plan.md")
+    for workspace_path in PLANNED_WORKSPACE_TERMS:
+        workspace_root = workspace_path.rstrip("/")
+        for plan_file in ["README.md", "plan.md", "source_map.md", "roadmap.md"]:
+            relative = f"{workspace_root}/{plan_file}"
+            plan_text = read_doc(relative)
+            require_terms(plan_text, PLAN_METADATA_TERMS, f"{relative} metadata")
+            require("Source links:" in plan_text, f"{relative} missing source links")
+            if plan_file == "plan.md":
+                require_terms(
+                    plan_text,
+                    ["## Todo Areas", "## Dependency Cross-Check", "## Non-Overlap Rules", "## Source Ownership Rules"],
+                    f"{relative} plan detail",
+                )
+
+    parser_plan = read_doc("docs/plans/parser-extraction/parser-mvp/plan.md")
     require_terms(parser_plan, PLAN_METADATA_TERMS, "Parser MVP plan metadata")
     require_terms(parser_plan, PROVIDER_PRESETS, "Parser MVP plan")
     require_terms(parser_plan, PARSER_PLAN_TERMS, "Parser MVP plan")

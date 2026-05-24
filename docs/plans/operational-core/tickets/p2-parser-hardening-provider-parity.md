@@ -78,7 +78,7 @@
 - Owner: TBD.
 - Created: 2026-05-23.
 - Last reviewed: 2026-05-23.
-- Source links: `docs/architecture/parser_ui_cli.md`, `docs/plans/operational-core/parser-mvp/plan.md`.
+- Source links: `docs/architecture/parser_ui_cli.md`, `docs/plans/parser-extraction/parser-mvp/plan.md`.
 - Roadmap milestone: P2 Parser Hardening And Provider Parity.
 - Dependencies: P1-002, P1-003.
 - Expected outputs: shared service API, parity checklist, accessibility/usability fixes, batch progress/error reporting.
@@ -87,3 +87,4 @@
 - Archive target: `docs/plans/operational-core/archived_plans/implemented/`.
 - Supersedes: none.
 - Superseded-by: none.
+

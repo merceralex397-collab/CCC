@@ -1,28 +1,62 @@
-# Engineer Communications Workspace
+# Engineer Communications Planning
+
+Date: 2026-05-24
+Status: active planning workspace
+Owner: unassigned
+Created: 2026-05-24
+Last reviewed: 2026-05-24
+Source links: `docs/reference/originalplanning/ce_system_plans_enhanced/ce_system_plans_enhanced/11_WORK_PACKAGE_ENGINEER_PACK_AND_REPORTING.md`, `docs/reference/originalplanning/phase7_expanded_markdown_plan/phase7_expanded_markdown_plan/additional_items/08_06_engineer_pack_generator_and_template_manager.md`, `docs/reference/originalplanning/phase7_expanded_markdown_plan/phase7_expanded_markdown_plan/additional_items/08_09_communications_chaser_and_status_drafting.md`, `docs/reference/originalplanning/collision_engineers_ai_tools_plans_markdown/17_engineer_pack_generator.md`
+Roadmap milestone: Whole-programme roadmap
+Dependencies: case-workflow-state, agent-skills, user-experience-interfaces, governance-security
+Expected outputs: source-backed roadmap, scoped tickets, option papers, and archived plans for `docs/plans/engineer-communications/`
+Acceptance criteria: every promoted item in this workspace cites source evidence and states cross-workspace dependencies
+Verification required: `python tools/verify_scaffold.py`
+Archive target: `docs/plans/engineer-communications/archived_plans/implemented/`
+Supersedes: none
+Superseded-by: none
 
 ## Purpose
 
-This workspace owns all planning for engineer pack generation, communication templates, report drafting support, missing-information chasers, status summaries, and outgoing communication workflows.
+Engineer pack, template, reporting, status, and communication workflow planning.
 
-## Scope Rules
+## Main Plan
 
-- Staff must approve every outgoing message — no autonomous email or WhatsApp send in any phase without separate governance approval.
-- Personal injury and KADOE are out of scope.
-- Engineer packs are generated from reviewed work items and package metadata — no unreviewed AI assertions in the pack.
+- Detailed workspace plan: `plan.md`
+- Source map: `source_map.md`
+- Workspace roadmap: `roadmap.md`
 
-## Evidence Sources
+## Owns
 
-| Source | Key Facts |
+- engineer pack generation workflow
+- template manager and report-support workflow
+- missing-info and status communication workflow
+- communications approval, audit, and handoff patterns
+
+## Does Not Own
+
+- portable natural-language skill specs
+- expert judgement or final report conclusions
+- external channel automation without separate approval
+
+## Citeable Source Evidence
+
+| Source | Planning evidence |
 | --- | --- |
-| `docs/reference/originalplanning/phase7_expanded_markdown_plan/additional_items/08_06_engineer_pack_generator_and_template_manager.md` | Engineer pack generator and template manager design. |
-| `docs/reference/originalplanning/ce_system_plans_enhanced/11_WORK_PACKAGE_ENGINEER_PACK_AND_REPORTING.md` | Engineer pack and reporting requirements. |
-| `docs/reference/originalplanning/ce_phase4_agents_reviewed_plan/04_missing_information_and_communication.md` | Missing-information state and communication design. |
-| `docs/reference/originalplanning/collision_engineers_ai_tools_plans_markdown/15_missing_info_checker_and_chaser_drafter.md` | Missing info checker and chaser drafter. |
-| `docs/reference/originalplanning/collision_engineers_ai_tools_plans_markdown/19_ce_style_communications_skill.md` | CE style communications skill. |
+| `docs/reference/originalplanning/ce_system_plans_enhanced/ce_system_plans_enhanced/11_WORK_PACKAGE_ENGINEER_PACK_AND_REPORTING.md` | Engineer pack and reporting work package. |
+| `docs/reference/originalplanning/phase7_expanded_markdown_plan/phase7_expanded_markdown_plan/additional_items/08_06_engineer_pack_generator_and_template_manager.md` | Engineer pack generator and template manager plan. |
+| `docs/reference/originalplanning/phase7_expanded_markdown_plan/phase7_expanded_markdown_plan/additional_items/08_09_communications_chaser_and_status_drafting.md` | Communications chaser and status drafting plan. |
+| `docs/reference/originalplanning/collision_engineers_ai_tools_plans_markdown/17_engineer_pack_generator.md` | Engineer pack generator skill/tool plan. |
 
-## Workspace Layout
+## Cross-Workspace Dependencies
 
-- `README.md` — this file
-- `tickets/` — active tickets
-- `option-papers/` — unresolved decisions
-- `archived_plans/` — implemented and superseded plans
+- case-workflow-state
+- agent-skills
+- user-experience-interfaces
+- governance-security
+
+## Planning Rules
+
+- Promote work into `tickets/` only after scope, dependencies, acceptance criteria, verification, and governance gates are explicit.
+- Put vendor, privacy, external-access, autonomous-send, payment, AI/RAG, cloud OCR, and partner/API decisions in `option-papers/` first.
+- Archive implemented or superseded work under this workspace's `archived_plans/`.
+- Keep raw evidence immutable; cite source paths instead of copying raw content.

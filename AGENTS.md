@@ -5,7 +5,7 @@
 - Start with `docs/docs_index.md` for human-readable navigation and `docs/repo_map.json` for machine-readable path routing.
 - Initial repository setup and exhaustive reference-derived idea planning live under `docs/plans/initial-repo-setup/`.
 - Active programme planning lives under `docs/plans/operational-core/`.
-- Current parser MVP implementation work lives at `docs/plans/operational-core/parser-mvp/plan.md`.
+- Current parser MVP implementation work lives at `docs/plans/parser-extraction/parser-mvp/plan.md`; `docs/plans/operational-core/parser-mvp/plan.md` is only a compatibility stub.
 - Active tickets live under `docs/plans/operational-core/tickets/`.
 - Implemented or superseded plans live under the owning workspace's `archived_plans/`.
 - Raw evidence lives under `docs/reference/raw/collisionrelateddocs/`.
@@ -22,6 +22,15 @@
 - Preserve unrelated local configuration, auth state, MCP settings, and user files.
 - Use `rg` or `rg --files` first for search. Use structured parsers for JSON, spreadsheets, DOCX, and PDFs when available.
 - Use `apply_patch` for manual edits. Do not create or edit files with shell write tricks.
+
+## Documentation Sync Rules
+
+- At the start of any substantial task, check `docs/docs_index.md`, `docs/repo_map.json`, `docs/roadmap.md`, the owning workspace `plan.md`, active tickets, relevant ADRs/contracts, and source evidence before changing files.
+- At the start of parser work, also check `docs/plans/parser-extraction/parser-mvp/plan.md`, `docs/plans/parser-extraction/parser-mvp/adjacent-parser-and-inspection-location-review.md`, `docs/reference/adjacent_repositories.md`, and the provider/corpus sources named by the parser plan.
+- `docs/roadmap.md` must show both the full programme plan and the current project position. Update its Current Status section whenever the active phase, milestone, blockers, or next action changes.
+- On completion of any large task, update the owning plan/ticket, `docs/roadmap.md`, `docs/docs_index.md`, `docs/repo_map.json`, and any affected architecture, contract, decision, requirement, operations, security, or glossary docs.
+- If docs, generated companions, active plans, tickets, archives, or source inventories change, regenerate `docs/source_manifest.md`, `docs/source_manifest.csv`, and `docs/source_manifest.json`.
+- A task that changes behavior, scope, status, roadmap position, source ownership, or verification requirements is not complete until the relevant documentation and manifests are updated or the omission is explicitly documented.
 
 ## Planning And Ticket Lifecycle
 

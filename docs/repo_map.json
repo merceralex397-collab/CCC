@@ -1,14 +1,18 @@
 {
-  "version": 1,
-  "updated": "2026-05-23",
+  "version": 2,
+  "updated": "2026-05-24",
   "entry_points": {
     "human_index": "docs/docs_index.md",
     "machine_map": "docs/repo_map.json",
     "source_manifest": "docs/source_manifest.md",
-    "roadmap": "docs/roadmap.md"
+    "roadmap": "docs/roadmap.md",
+    "plans_index": "docs/plans/_index.md",
+    "workspace_ownership_matrix": "docs/plans/workspace_ownership_matrix.md"
   },
   "plans": {
     "index": "docs/plans/_index.md",
+    "roadmap": "docs/plans/roadmap.md",
+    "workspace_ownership_matrix": "docs/plans/workspace_ownership_matrix.md",
     "workspace_expansion_plan": "docs/plans/initial-repo-setup/documentation-scaffold/plans-folder-expansion-plan.md",
     "initial_repo_setup": {
       "root": "docs/plans/initial-repo-setup",
@@ -21,35 +25,239 @@
     },
     "operational_core": {
       "root": "docs/plans/operational-core",
+      "readme": "docs/plans/operational-core/README.md",
       "source_synthesis": "docs/plans/operational-core/source_synthesis.md",
-      "parser_mvp_plan": "docs/plans/operational-core/parser-mvp/plan.md",
+      "parser_mvp_plan_stub": "docs/plans/operational-core/parser-mvp/plan.md",
       "tickets": "docs/plans/operational-core/tickets",
       "implemented_archive": "docs/plans/operational-core/archived_plans/implemented",
       "superseded_archive": "docs/plans/operational-core/archived_plans/superseded"
     },
-    "planned_workspaces": {
-      "unified_platform": "docs/plans/unified-platform",
-      "automation_centre": "docs/plans/automation-centre",
-      "parser_extraction": "docs/plans/parser-extraction",
-      "case_workflow_state": "docs/plans/case-workflow-state",
-      "provider_principal_config": "docs/plans/provider-principal-config",
-      "intake_storage_integrations": "docs/plans/intake-storage-integrations",
-      "evidence_estimate_review": "docs/plans/evidence-estimate-review",
-      "vehicle_valuation_data": "docs/plans/vehicle-valuation-data",
-      "engineer_communications": "docs/plans/engineer-communications",
-      "ai_agents": "docs/plans/ai-agents",
-      "mcp_and_tooling": "docs/plans/mcp-and-tooling",
-      "agent_skills": "docs/plans/agent-skills",
-      "ai_platform_tools": "docs/plans/ai-platform-tools",
-      "user_experience_interfaces": "docs/plans/user-experience-interfaces",
-      "finance_billing": "docs/plans/finance-billing",
-      "governance_security": "docs/plans/governance-security",
-      "operations_quality": "docs/plans/operations-quality",
-      "analytics_data_platform": "docs/plans/analytics-data-platform",
-      "external_platform_partners": "docs/plans/external-platform-partners",
-      "product_business": "docs/plans/product-business"
+    "workspaces": {
+      "unified_platform": {
+        "root": "docs/plans/unified-platform",
+        "readme": "docs/plans/unified-platform/README.md",
+        "plan": "docs/plans/unified-platform/plan.md",
+        "source_map": "docs/plans/unified-platform/source_map.md",
+        "roadmap": "docs/plans/unified-platform/roadmap.md",
+        "tickets": "docs/plans/unified-platform/tickets",
+        "option_papers": "docs/plans/unified-platform/option-papers",
+        "implemented_archive": "docs/plans/unified-platform/archived_plans/implemented",
+        "superseded_archive": "docs/plans/unified-platform/archived_plans/superseded"
+      },
+      "automation_centre": {
+        "root": "docs/plans/automation-centre",
+        "readme": "docs/plans/automation-centre/README.md",
+        "plan": "docs/plans/automation-centre/plan.md",
+        "source_map": "docs/plans/automation-centre/source_map.md",
+        "roadmap": "docs/plans/automation-centre/roadmap.md",
+        "tickets": "docs/plans/automation-centre/tickets",
+        "option_papers": "docs/plans/automation-centre/option-papers",
+        "implemented_archive": "docs/plans/automation-centre/archived_plans/implemented",
+        "superseded_archive": "docs/plans/automation-centre/archived_plans/superseded"
+      },
+      "parser_extraction": {
+        "root": "docs/plans/parser-extraction",
+        "readme": "docs/plans/parser-extraction/README.md",
+        "plan": "docs/plans/parser-extraction/plan.md",
+        "source_map": "docs/plans/parser-extraction/source_map.md",
+        "roadmap": "docs/plans/parser-extraction/roadmap.md",
+        "tickets": "docs/plans/parser-extraction/tickets",
+        "option_papers": "docs/plans/parser-extraction/option-papers",
+        "implemented_archive": "docs/plans/parser-extraction/archived_plans/implemented",
+        "superseded_archive": "docs/plans/parser-extraction/archived_plans/superseded"
+      },
+      "case_workflow_state": {
+        "root": "docs/plans/case-workflow-state",
+        "readme": "docs/plans/case-workflow-state/README.md",
+        "plan": "docs/plans/case-workflow-state/plan.md",
+        "source_map": "docs/plans/case-workflow-state/source_map.md",
+        "roadmap": "docs/plans/case-workflow-state/roadmap.md",
+        "tickets": "docs/plans/case-workflow-state/tickets",
+        "option_papers": "docs/plans/case-workflow-state/option-papers",
+        "implemented_archive": "docs/plans/case-workflow-state/archived_plans/implemented",
+        "superseded_archive": "docs/plans/case-workflow-state/archived_plans/superseded"
+      },
+      "provider_principal_config": {
+        "root": "docs/plans/provider-principal-config",
+        "readme": "docs/plans/provider-principal-config/README.md",
+        "plan": "docs/plans/provider-principal-config/plan.md",
+        "source_map": "docs/plans/provider-principal-config/source_map.md",
+        "roadmap": "docs/plans/provider-principal-config/roadmap.md",
+        "tickets": "docs/plans/provider-principal-config/tickets",
+        "option_papers": "docs/plans/provider-principal-config/option-papers",
+        "implemented_archive": "docs/plans/provider-principal-config/archived_plans/implemented",
+        "superseded_archive": "docs/plans/provider-principal-config/archived_plans/superseded"
+      },
+      "intake_storage_integrations": {
+        "root": "docs/plans/intake-storage-integrations",
+        "readme": "docs/plans/intake-storage-integrations/README.md",
+        "plan": "docs/plans/intake-storage-integrations/plan.md",
+        "source_map": "docs/plans/intake-storage-integrations/source_map.md",
+        "roadmap": "docs/plans/intake-storage-integrations/roadmap.md",
+        "tickets": "docs/plans/intake-storage-integrations/tickets",
+        "option_papers": "docs/plans/intake-storage-integrations/option-papers",
+        "implemented_archive": "docs/plans/intake-storage-integrations/archived_plans/implemented",
+        "superseded_archive": "docs/plans/intake-storage-integrations/archived_plans/superseded"
+      },
+      "evidence_estimate_review": {
+        "root": "docs/plans/evidence-estimate-review",
+        "readme": "docs/plans/evidence-estimate-review/README.md",
+        "plan": "docs/plans/evidence-estimate-review/plan.md",
+        "source_map": "docs/plans/evidence-estimate-review/source_map.md",
+        "roadmap": "docs/plans/evidence-estimate-review/roadmap.md",
+        "tickets": "docs/plans/evidence-estimate-review/tickets",
+        "option_papers": "docs/plans/evidence-estimate-review/option-papers",
+        "implemented_archive": "docs/plans/evidence-estimate-review/archived_plans/implemented",
+        "superseded_archive": "docs/plans/evidence-estimate-review/archived_plans/superseded"
+      },
+      "vehicle_valuation_data": {
+        "root": "docs/plans/vehicle-valuation-data",
+        "readme": "docs/plans/vehicle-valuation-data/README.md",
+        "plan": "docs/plans/vehicle-valuation-data/plan.md",
+        "source_map": "docs/plans/vehicle-valuation-data/source_map.md",
+        "roadmap": "docs/plans/vehicle-valuation-data/roadmap.md",
+        "tickets": "docs/plans/vehicle-valuation-data/tickets",
+        "option_papers": "docs/plans/vehicle-valuation-data/option-papers",
+        "implemented_archive": "docs/plans/vehicle-valuation-data/archived_plans/implemented",
+        "superseded_archive": "docs/plans/vehicle-valuation-data/archived_plans/superseded"
+      },
+      "engineer_communications": {
+        "root": "docs/plans/engineer-communications",
+        "readme": "docs/plans/engineer-communications/README.md",
+        "plan": "docs/plans/engineer-communications/plan.md",
+        "source_map": "docs/plans/engineer-communications/source_map.md",
+        "roadmap": "docs/plans/engineer-communications/roadmap.md",
+        "tickets": "docs/plans/engineer-communications/tickets",
+        "option_papers": "docs/plans/engineer-communications/option-papers",
+        "implemented_archive": "docs/plans/engineer-communications/archived_plans/implemented",
+        "superseded_archive": "docs/plans/engineer-communications/archived_plans/superseded"
+      },
+      "ai_agents": {
+        "root": "docs/plans/ai-agents",
+        "readme": "docs/plans/ai-agents/README.md",
+        "plan": "docs/plans/ai-agents/plan.md",
+        "source_map": "docs/plans/ai-agents/source_map.md",
+        "roadmap": "docs/plans/ai-agents/roadmap.md",
+        "tickets": "docs/plans/ai-agents/tickets",
+        "option_papers": "docs/plans/ai-agents/option-papers",
+        "implemented_archive": "docs/plans/ai-agents/archived_plans/implemented",
+        "superseded_archive": "docs/plans/ai-agents/archived_plans/superseded"
+      },
+      "mcp_and_tooling": {
+        "root": "docs/plans/mcp-and-tooling",
+        "readme": "docs/plans/mcp-and-tooling/README.md",
+        "plan": "docs/plans/mcp-and-tooling/plan.md",
+        "source_map": "docs/plans/mcp-and-tooling/source_map.md",
+        "roadmap": "docs/plans/mcp-and-tooling/roadmap.md",
+        "tickets": "docs/plans/mcp-and-tooling/tickets",
+        "option_papers": "docs/plans/mcp-and-tooling/option-papers",
+        "implemented_archive": "docs/plans/mcp-and-tooling/archived_plans/implemented",
+        "superseded_archive": "docs/plans/mcp-and-tooling/archived_plans/superseded"
+      },
+      "agent_skills": {
+        "root": "docs/plans/agent-skills",
+        "readme": "docs/plans/agent-skills/README.md",
+        "plan": "docs/plans/agent-skills/plan.md",
+        "source_map": "docs/plans/agent-skills/source_map.md",
+        "roadmap": "docs/plans/agent-skills/roadmap.md",
+        "tickets": "docs/plans/agent-skills/tickets",
+        "option_papers": "docs/plans/agent-skills/option-papers",
+        "implemented_archive": "docs/plans/agent-skills/archived_plans/implemented",
+        "superseded_archive": "docs/plans/agent-skills/archived_plans/superseded"
+      },
+      "ai_platform_tools": {
+        "root": "docs/plans/ai-platform-tools",
+        "readme": "docs/plans/ai-platform-tools/README.md",
+        "plan": "docs/plans/ai-platform-tools/plan.md",
+        "source_map": "docs/plans/ai-platform-tools/source_map.md",
+        "roadmap": "docs/plans/ai-platform-tools/roadmap.md",
+        "tickets": "docs/plans/ai-platform-tools/tickets",
+        "option_papers": "docs/plans/ai-platform-tools/option-papers",
+        "implemented_archive": "docs/plans/ai-platform-tools/archived_plans/implemented",
+        "superseded_archive": "docs/plans/ai-platform-tools/archived_plans/superseded"
+      },
+      "user_experience_interfaces": {
+        "root": "docs/plans/user-experience-interfaces",
+        "readme": "docs/plans/user-experience-interfaces/README.md",
+        "plan": "docs/plans/user-experience-interfaces/plan.md",
+        "source_map": "docs/plans/user-experience-interfaces/source_map.md",
+        "roadmap": "docs/plans/user-experience-interfaces/roadmap.md",
+        "tickets": "docs/plans/user-experience-interfaces/tickets",
+        "option_papers": "docs/plans/user-experience-interfaces/option-papers",
+        "implemented_archive": "docs/plans/user-experience-interfaces/archived_plans/implemented",
+        "superseded_archive": "docs/plans/user-experience-interfaces/archived_plans/superseded"
+      },
+      "finance_billing": {
+        "root": "docs/plans/finance-billing",
+        "readme": "docs/plans/finance-billing/README.md",
+        "plan": "docs/plans/finance-billing/plan.md",
+        "source_map": "docs/plans/finance-billing/source_map.md",
+        "roadmap": "docs/plans/finance-billing/roadmap.md",
+        "tickets": "docs/plans/finance-billing/tickets",
+        "option_papers": "docs/plans/finance-billing/option-papers",
+        "implemented_archive": "docs/plans/finance-billing/archived_plans/implemented",
+        "superseded_archive": "docs/plans/finance-billing/archived_plans/superseded"
+      },
+      "governance_security": {
+        "root": "docs/plans/governance-security",
+        "readme": "docs/plans/governance-security/README.md",
+        "plan": "docs/plans/governance-security/plan.md",
+        "source_map": "docs/plans/governance-security/source_map.md",
+        "roadmap": "docs/plans/governance-security/roadmap.md",
+        "tickets": "docs/plans/governance-security/tickets",
+        "option_papers": "docs/plans/governance-security/option-papers",
+        "implemented_archive": "docs/plans/governance-security/archived_plans/implemented",
+        "superseded_archive": "docs/plans/governance-security/archived_plans/superseded"
+      },
+      "operations_quality": {
+        "root": "docs/plans/operations-quality",
+        "readme": "docs/plans/operations-quality/README.md",
+        "plan": "docs/plans/operations-quality/plan.md",
+        "source_map": "docs/plans/operations-quality/source_map.md",
+        "roadmap": "docs/plans/operations-quality/roadmap.md",
+        "tickets": "docs/plans/operations-quality/tickets",
+        "option_papers": "docs/plans/operations-quality/option-papers",
+        "implemented_archive": "docs/plans/operations-quality/archived_plans/implemented",
+        "superseded_archive": "docs/plans/operations-quality/archived_plans/superseded"
+      },
+      "analytics_data_platform": {
+        "root": "docs/plans/analytics-data-platform",
+        "readme": "docs/plans/analytics-data-platform/README.md",
+        "plan": "docs/plans/analytics-data-platform/plan.md",
+        "source_map": "docs/plans/analytics-data-platform/source_map.md",
+        "roadmap": "docs/plans/analytics-data-platform/roadmap.md",
+        "tickets": "docs/plans/analytics-data-platform/tickets",
+        "option_papers": "docs/plans/analytics-data-platform/option-papers",
+        "implemented_archive": "docs/plans/analytics-data-platform/archived_plans/implemented",
+        "superseded_archive": "docs/plans/analytics-data-platform/archived_plans/superseded"
+      },
+      "external_platform_partners": {
+        "root": "docs/plans/external-platform-partners",
+        "readme": "docs/plans/external-platform-partners/README.md",
+        "plan": "docs/plans/external-platform-partners/plan.md",
+        "source_map": "docs/plans/external-platform-partners/source_map.md",
+        "roadmap": "docs/plans/external-platform-partners/roadmap.md",
+        "tickets": "docs/plans/external-platform-partners/tickets",
+        "option_papers": "docs/plans/external-platform-partners/option-papers",
+        "implemented_archive": "docs/plans/external-platform-partners/archived_plans/implemented",
+        "superseded_archive": "docs/plans/external-platform-partners/archived_plans/superseded"
+      },
+      "product_business": {
+        "root": "docs/plans/product-business",
+        "readme": "docs/plans/product-business/README.md",
+        "plan": "docs/plans/product-business/plan.md",
+        "source_map": "docs/plans/product-business/source_map.md",
+        "roadmap": "docs/plans/product-business/roadmap.md",
+        "tickets": "docs/plans/product-business/tickets",
+        "option_papers": "docs/plans/product-business/option-papers",
+        "implemented_archive": "docs/plans/product-business/archived_plans/implemented",
+        "superseded_archive": "docs/plans/product-business/archived_plans/superseded"
+      }
     },
-    "repository_restructure": "docs/plans/initial-repo-setup/archived_plans/implemented/2026-05-23-implemented-repository-restructure.md"
+    "active_parser_mvp": {
+      "plan": "docs/plans/parser-extraction/parser-mvp/plan.md",
+      "evidence_review": "docs/plans/parser-extraction/parser-mvp/adjacent-parser-and-inspection-location-review.md"
+    }
   },
   "reference": {
     "index": "docs/reference/_index.md",
@@ -73,6 +281,7 @@
   "rules": {
     "raw_evidence": "Do not edit files under docs/reference/raw/collisionrelateddocs in place.",
     "reference_material": "Reference material is not active scope unless promoted into plans, tickets, architecture, contracts, or decisions.",
+    "workspace_ownership": "Every reference-derived idea should have exactly one primary planning workspace, with supporting cross-links where needed.",
     "manifest": "Update docs/source_manifest.md, docs/source_manifest.csv, and docs/source_manifest.json whenever source files, generated companions, active docs, or archives change."
   }
 }

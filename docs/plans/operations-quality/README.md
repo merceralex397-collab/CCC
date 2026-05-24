@@ -1,27 +1,63 @@
-# Operations Quality Workspace
+# Operations Quality Planning
+
+Date: 2026-05-24
+Status: active planning workspace
+Owner: unassigned
+Created: 2026-05-24
+Last reviewed: 2026-05-24
+Source links: `docs/operations/monitoring_runbooks.md`, `docs/operations/release_and_rollback.md`, `docs/reference/originalplanning/phase7_expanded_markdown_plan/phase7_expanded_markdown_plan/additional_items/08_10_test_corpus_and_regression_harness.md`, `docs/reference/originalplanning/phase7_expanded_markdown_plan/phase7_expanded_markdown_plan/additional_items/08_11_monitoring_runbooks_and_release_management.md`, `docs/reference/originalplanning/ce_system_plans_enhanced/ce_system_plans_enhanced/13_WORK_PACKAGE_SECURITY_TESTING_ROLLOUT.md`
+Roadmap milestone: Whole-programme roadmap
+Dependencies: parser-extraction, intake-storage-integrations, governance-security, unified-platform
+Expected outputs: source-backed roadmap, scoped tickets, option papers, and archived plans for `docs/plans/operations-quality/`
+Acceptance criteria: every promoted item in this workspace cites source evidence and states cross-workspace dependencies
+Verification required: `python tools/verify_scaffold.py`
+Archive target: `docs/plans/operations-quality/archived_plans/implemented/`
+Supersedes: none
+Superseded-by: none
 
 ## Purpose
 
-This workspace owns all planning for test corpus management, regression harness infrastructure, release and rollback procedures, monitoring, runbooks, staged rollout, and decommissioning.
+Shared QA, release, rollout, monitoring, support, regression, and decommissioning planning.
 
-## Scope Rules
+## Main Plan
 
-- Private real corpus only — no synthetic or publicly sourced test data unless explicitly approved (see ADR 0008).
-- Release gates must verify scaffold, contracts, and corpus regression before MVP acceptance.
-- Decommissioning plans must address the Excel job sheet and network folder dependencies documented in `handover.docx`.
+- Detailed workspace plan: `plan.md`
+- Source map: `source_map.md`
+- Workspace roadmap: `roadmap.md`
 
-## Evidence Sources
+## Owns
 
-| Source | Key Facts |
+- test corpus and regression harness planning
+- release and rollback process
+- monitoring, runbooks, alerts, incident/failure playbooks
+- pilot, shadow run, controlled rollout, support ownership, and decommissioning gates
+
+## Does Not Own
+
+- domain-specific feature design
+- model-evaluation substrate owned by ai-platform-tools
+- business analytics dashboards beyond operational health
+
+## Citeable Source Evidence
+
+| Source | Planning evidence |
 | --- | --- |
-| `docs/reference/originalplanning/phase7_expanded_markdown_plan/additional_items/08_10_test_corpus_and_regression_harness.md` | Test corpus and regression harness design. |
-| `docs/reference/originalplanning/phase7_expanded_markdown_plan/additional_items/08_11_monitoring_runbooks_and_release_management.md` | Monitoring, runbooks, and release management. |
-| `docs/decisions/0008-private-real-corpus-only.md` | ADR: private real corpus only. |
-| `docs/reference/normalized/collisionrelateddocs__collision_releated__handover.docx.md` | Job sheet VBA and network folder dependencies that decommissioning must address. |
+| `docs/operations/monitoring_runbooks.md` | Current monitoring and runbooks baseline. |
+| `docs/operations/release_and_rollback.md` | Current release and rollback baseline. |
+| `docs/reference/originalplanning/phase7_expanded_markdown_plan/phase7_expanded_markdown_plan/additional_items/08_10_test_corpus_and_regression_harness.md` | Test corpus and regression harness plan. |
+| `docs/reference/originalplanning/phase7_expanded_markdown_plan/phase7_expanded_markdown_plan/additional_items/08_11_monitoring_runbooks_and_release_management.md` | Monitoring, runbooks, and release management plan. |
+| `docs/reference/originalplanning/ce_system_plans_enhanced/ce_system_plans_enhanced/13_WORK_PACKAGE_SECURITY_TESTING_ROLLOUT.md` | Security, testing, rollout, and decommissioning plan. |
 
-## Workspace Layout
+## Cross-Workspace Dependencies
 
-- `README.md` — this file
-- `tickets/` — active tickets
-- `option-papers/` — unresolved decisions
-- `archived_plans/` — implemented and superseded plans
+- parser-extraction
+- intake-storage-integrations
+- governance-security
+- unified-platform
+
+## Planning Rules
+
+- Promote work into `tickets/` only after scope, dependencies, acceptance criteria, verification, and governance gates are explicit.
+- Put vendor, privacy, external-access, autonomous-send, payment, AI/RAG, cloud OCR, and partner/API decisions in `option-papers/` first.
+- Archive implemented or superseded work under this workspace's `archived_plans/`.
+- Keep raw evidence immutable; cite source paths instead of copying raw content.

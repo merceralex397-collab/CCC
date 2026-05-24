@@ -1,21 +1,32 @@
-# Parser Extraction — Roadmap
+# Parser Extraction Roadmap
 
 Date: 2026-05-24
-Status: active
+Status: active workspace roadmap
 Owner: unassigned
+Created: 2026-05-24
+Last reviewed: 2026-05-24
+Source links: `docs/plans/parser-extraction/parser-mvp/plan.md`, `docs/plans/parser-extraction/parser-mvp/adjacent-parser-and-inspection-location-review.md`, `docs/decisions/0004-ground-up-compatible-parser-rebuild.md`, `docs/decisions/0007-deterministic-first-parser.md`, `docs/reference/originalplanning/ce_system_plans_enhanced/ce_system_plans_enhanced/06_WORK_PACKAGE_DOCUMENT_MAPPER_AND_EXTRACTION.md`, `docs/contracts/extraction_adapter_contract_v1.md`
+Roadmap milestone: Whole-programme roadmap
+Dependencies: provider-principal-config, operations-quality, governance-security, user-experience-interfaces
+Expected outputs: phased promotion sequence for `docs/plans/parser-extraction/`
+Acceptance criteria: roadmap stages cite source-backed workspace scope and do not duplicate another workspace's primary ownership
+Verification required: `python tools/verify_scaffold.py`
+Archive target: `docs/plans/parser-extraction/archived_plans/implemented/`
+Supersedes: none
+Superseded-by: none
 
-## Sequence
+## S1
 
-| Phase | Milestone | Key Deliverables |
-| --- | --- | --- |
-| P0 | Foundation | Contracts baseline, provider coverage matrix, parser MVP plan, private-corpus-only ADR. |
-| P1 | Parser Core MVP | Deterministic parser core, all 26 provider presets, UI/CLI parity, EVA JSON export, image ordering, golden corpus tests. |
-| P2 | Hardening And Provider Parity | Golden corpus regression harness, triage of `ACSP`/`OAK/AX`/`PRINCIPAL`/`WOODLANDS`, extraction adapter hardening (PDF/DOCX/DOC/MSG/EML/image), UI/CLI parity hardening. |
-| P3+ | Long-Range | Cloud document intelligence (behind governance gate), automated batch ingestion at scale, corpus expansion. |
+- Maintain active parser MVP planning here, then deliver deterministic parser core and shared UI/CLI service behavior.
 
-## Gating Rules
+## S2
 
-- No provider preset added without entry in `docs/reference/data/provider_coverage_matrix.md`.
-- No cloud OCR/document intelligence in default runtime path until privacy, cost, data-residency, and vendor review complete.
-- Parser output must pass canonical schema validation before EVA export is generated.
-- UI and CLI must call the same parser core and share validation/export contracts.
+- Harden extraction adapters, provider corpus coverage, export blockers, and UI/CLI parity.
+
+## S3-S4
+
+- Evaluate OCR/cloud fallback and AI extraction only behind governance and measurable regression evidence.
+
+## Promotion Gate
+
+Any item promoted from this roadmap must cite `source_map.md`, name dependencies, define acceptance criteria, and state whether governance/security or operations-quality approval is required.

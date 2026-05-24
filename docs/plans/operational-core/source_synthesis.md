@@ -4,7 +4,7 @@ Date: 2026-05-23
 Status: active planning map
 Owner: unassigned
 Created: 2026-05-23
-Last reviewed: 2026-05-23
+Last reviewed: 2026-05-24
 Source links: `docs/reference/originalplanning/`, `docs/research/`, `docs/reference/test-context/`, `docs/reference/raw/collisionrelateddocs/`
 Roadmap milestone: Operational Core MVP
 Dependencies: source manifest and reference material inventory
@@ -35,8 +35,10 @@ This document records how generated packs, research notes, test-context packs, a
 | `docs/architecture/future_system_convergence.md` | How later intake, EVA/Sentry, storage, valuation, image, and analytics work plugs in. |
 | `docs/contracts/` | Versioned contracts for parser, work item, provider config, audit, package, EVA, storage, and extraction adapters. |
 | `docs/decisions/` | ADRs for locked decisions and option papers for unresolved choices. |
-| `docs/plans/operational-core/tickets/` | Executable phased backlog with dependencies, acceptance criteria, and verification gates. |
-| `docs/plans/operational-core/parser-mvp/plan.md` | First executable MVP implementation plan for the parser and staff UI/CLI surfaces. |
+| `docs/plans/parser-extraction/parser-mvp/plan.md` | Active parser MVP implementation plan for parser core, provider extraction, staff UI/CLI surfaces, EVA JSON export, and corpus regression. |
+| `docs/plans/parser-extraction/parser-mvp/adjacent-parser-and-inspection-location-review.md` | Active parser evidence note for adjacent repository comparison, inspection-location handling, and EVA/Sentry lookup constraints. |
+| `docs/plans/operational-core/tickets/` | Cross-workspace coordination tombstones and phase routing after ticket relocation. |
+| Owning workspace `tickets/` folders | Executable phased backlog with dependencies, acceptance criteria, verification gates, and primary ownership. |
 
 ## Generated Pack Disposition
 
@@ -77,7 +79,7 @@ For planning purposes:
 
 ## Promotion Rules
 
-Every promoted idea must appear in `docs/plans/operational-core/tickets/` with:
+Every promoted idea must appear in the owning workspace's `tickets/` folder, or in `docs/plans/operational-core/tickets/` only when the item is cross-workspace coordination, with:
 
 - phase;
 - dependency list;
@@ -87,4 +89,4 @@ Every promoted idea must appear in `docs/plans/operational-core/tickets/` with:
 - acceptance criteria;
 - verification requirement.
 
-Ideas not in an operational ticket are either merged into architecture/contracts, captured in `docs/plans/initial-repo-setup/reference-audit/all-ideas-plan.md` for later promotion, or superseded by a later canonical decision.
+Ideas not in an owning-workspace ticket are either merged into architecture/contracts, captured in `docs/plans/initial-repo-setup/reference-audit/all-ideas-plan.md` for later promotion, or superseded by a later canonical decision.

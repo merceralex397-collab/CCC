@@ -1,28 +1,60 @@
-# Governance Security Workspace
+# Governance Security Planning
+
+Date: 2026-05-24
+Status: active planning workspace
+Owner: unassigned
+Created: 2026-05-24
+Last reviewed: 2026-05-24
+Source links: `docs/architecture/governance_security.md`, `docs/security/dpia_vendor_governance.md`, `docs/security/vendor_register.md`, `docs/security/api_security_standard.md`, `docs/reference/test-context/testprojectcontext/collision-engineers-context-pack/collision-engineers-context-pack/12_compliance_governance_and_risk.md`
+Roadmap milestone: Whole-programme roadmap
+Dependencies: all workspaces
+Expected outputs: source-backed roadmap, scoped tickets, option papers, and archived plans for `docs/plans/governance-security/`
+Acceptance criteria: every promoted item in this workspace cites source evidence and states cross-workspace dependencies
+Verification required: `python tools/verify_scaffold.py`
+Archive target: `docs/plans/governance-security/archived_plans/implemented/`
+Supersedes: none
+Superseded-by: none
 
 ## Purpose
 
-This workspace owns all planning for DPIA, vendor governance, privacy, PII redaction, data licensing, expert-boundary rules, API security, retention policy, and audit identity.
+Cross-programme governance, security, privacy, vendor, licensing, audit, and expert-boundary planning.
 
-## Scope Rules
+## Main Plan
 
-- Governance-gated areas must start in `option-papers/` before promotion to tickets.
-- Personal injury and KADOE are out of scope — any future change to this scope boundary requires a written governance decision.
-- Cloud OCR/document intelligence requires privacy, cost, data-residency, and vendor review before use.
-- No secrets, API keys, tokens, OAuth material, mailbox credentials, or provider credentials are committed to the repository.
+- Detailed workspace plan: `plan.md`
+- Source map: `source_map.md`
+- Workspace roadmap: `roadmap.md`
 
-## Evidence Sources
+## Owns
 
-| Source | Key Facts |
+- DPIA/vendor governance tickets and risk acceptance
+- data map, retention, redaction, access review, and audit policy backlog
+- expert-evidence boundary and risk-language policy
+- public/commercial data licensing controls and API security standards
+
+## Does Not Own
+
+- all domain implementation of controls
+- operations runbooks except governance incident requirements
+- MCP gateway implementation details
+
+## Citeable Source Evidence
+
+| Source | Planning evidence |
 | --- | --- |
-| `docs/reference/originalplanning/phase7_expanded_markdown_plan/additional_items/08_12_security_dpia_and_vendor_governance.md` | Security, DPIA, and vendor governance design. |
-| `docs/reference/originalplanning/ce_phase4_agents_reviewed_plan/10_security_governance_audit.md` | Security, governance, and audit requirements. |
-| `docs/reference/originalplanning/phase7_expanded_markdown_plan/additional_items/08_11_monitoring_runbooks_and_release_management.md` | Monitoring, runbooks, and release management. |
-| `docs/architecture/governance_security.md` | Current governance/security architecture. |
+| `docs/architecture/governance_security.md` | Canonical governance and security architecture. |
+| `docs/security/dpia_vendor_governance.md` | DPIA and vendor governance checklist. |
+| `docs/security/vendor_register.md` | Current vendor register. |
+| `docs/security/api_security_standard.md` | API security standard. |
+| `docs/reference/test-context/testprojectcontext/collision-engineers-context-pack/collision-engineers-context-pack/12_compliance_governance_and_risk.md` | Expert evidence and AI governance risk source. |
 
-## Workspace Layout
+## Cross-Workspace Dependencies
 
-- `README.md` — this file
-- `tickets/` — active tickets (only after option-paper approval)
-- `option-papers/` — DPIA, vendor governance, cloud data-intelligence proposals
-- `archived_plans/` — implemented and superseded plans
+- all workspaces
+
+## Planning Rules
+
+- Promote work into `tickets/` only after scope, dependencies, acceptance criteria, verification, and governance gates are explicit.
+- Put vendor, privacy, external-access, autonomous-send, payment, AI/RAG, cloud OCR, and partner/API decisions in `option-papers/` first.
+- Archive implemented or superseded work under this workspace's `archived_plans/`.
+- Keep raw evidence immutable; cite source paths instead of copying raw content.

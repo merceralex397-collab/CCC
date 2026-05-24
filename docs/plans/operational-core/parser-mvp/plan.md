@@ -27,8 +27,8 @@ The active plan at `docs/plans/parser-extraction/parser-mvp/plan.md` covers:
 - PDF, DOCX, DOC, MSG, EML, images, batch folders
 - PyMuPDF → pdfplumber → pypdf → OCR only where justified (deterministic-first)
 - DD/MM/YYYY date format enforcement
-- Six-line inspection address handling
+- six-line inspection address handling
 - EVA JSON field order (from `Final Format Example 02.json`)
 - UI/CLI parity via shared services
-- Private real corpus golden tests
+- private real corpus golden tests
 - All 26 provider presets: `ALISON`, `ALS`, `AMS`, `AX`, `BC`, `BLACK`, `CNX (Engineers)`, `DFD`, `EVA (Engineers)`, `FW (Garage)`, `FW (Solicitor)`, `HDUK`, `KBS`, `KERR`, `KMR`, `MP (Branded)`, `MP (Simple)`, `OAK`, `PCH (Lawshield)`, `PCH (Performance)`, `QCL`, `QDOS`, `RJS`, `SBL`, `SWAN`, `TEN`

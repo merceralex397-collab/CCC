@@ -1,38 +1,64 @@
-# Parser Extraction Workspace
+# Parser Extraction Planning
+
+Date: 2026-05-24
+Status: active planning workspace
+Owner: unassigned
+Created: 2026-05-24
+Last reviewed: 2026-05-24
+Source links: `docs/plans/parser-extraction/parser-mvp/plan.md`, `docs/plans/parser-extraction/parser-mvp/adjacent-parser-and-inspection-location-review.md`, `docs/decisions/0004-ground-up-compatible-parser-rebuild.md`, `docs/decisions/0007-deterministic-first-parser.md`, `docs/reference/originalplanning/ce_system_plans_enhanced/ce_system_plans_enhanced/06_WORK_PACKAGE_DOCUMENT_MAPPER_AND_EXTRACTION.md`, `docs/contracts/extraction_adapter_contract_v1.md`
+Roadmap milestone: Whole-programme roadmap
+Dependencies: provider-principal-config, operations-quality, governance-security, user-experience-interfaces
+Expected outputs: source-backed roadmap, scoped tickets, option papers, and archived plans for `docs/plans/parser-extraction/`
+Acceptance criteria: every promoted item in this workspace cites source evidence and states cross-workspace dependencies
+Verification required: `python tools/verify_scaffold.py`
+Archive target: `docs/plans/parser-extraction/archived_plans/implemented/`
+Supersedes: none
+Superseded-by: none
 
 ## Purpose
 
-This workspace owns all planning for the CCC instruction parser, extraction adapters, provider detection engine, mapping rule engine, OCR fallback strategy, and corpus regression harness.
+Parser, document extraction, CE Document Mapper evolution, and extraction-regression planning.
 
-## Scope Rules
+## Main Plan
 
-- Parser output must pass canonical schema validation before EVA-specific output is generated.
-- The CE Document Mapper monolith (`cedocumentmapper`) must not be imported wholesale. Its behaviours are oracle evidence for the rebuild, migrated deliberately through this workspace.
-- Provider coverage must be tracked in `docs/reference/data/provider_coverage_matrix.md` before adding or changing provider rules.
-- Cloud OCR and document intelligence are future adapters behind governance and feature flags; they must not be the default runtime path.
-- Personal injury and KADOE workflows are out of scope.
+- Detailed workspace plan: `plan.md`
+- Source map: `source_map.md`
+- Workspace roadmap: `roadmap.md`
 
-## Evidence Sources
+## Owns
 
-| Source | Role |
+- PDF, DOCX, DOC, MSG, EML, image, ZIP, and batch extraction
+- deterministic-first parser core and provider-rule execution behavior
+- OCR/cloud document-intelligence option papers
+- parser CLI parity and extraction regression corpus
+
+## Does Not Own
+
+- provider business routing metadata after extraction
+- case-state transitions after parse
+- human-facing UI design beyond parser-specific requirements
+
+## Citeable Source Evidence
+
+| Source | Planning evidence |
 | --- | --- |
-| `docs/reference/raw/collisionrelateddocs/Settings Backup/providers.json` | 26 provider presets and extraction mapping methods |
-| `docs/reference/raw/collisionrelateddocs/claudechat.md` | Legacy CE Document Mapper behaviours (field order, date format, inspection address, mileage/VAT constraints) |
-| `docs/reference/raw/collisionrelateddocs/Final Format Example 02.json` | Authoritative EVA JSON field order |
-| `docs/reference/normalized/collisionrelateddocs__collision_releated__handover.docx.md` | Job sheet VBA helpers, network folder paths, OCR cutoff notes |
-| `docs/research/siderpdf.md` | PDF cascade strategy: PyMuPDF → pdfplumber → pypdf → OCR |
-| `docs/research/gptdeepresearch.md` | Hybrid document extraction research, native-first/OCR fallback |
-| `docs/reference/originalplanning/cedocumentmapper_rebuild_plan_pack_all_zips/` | Ground-up compatible rebuild plan and mapper behavioural oracle |
-| `docs/reference/data/provider_coverage_matrix.md` | Current provider preset list and gap tracking |
+| `docs/plans/parser-extraction/parser-mvp/plan.md` | Active parser MVP implementation plan. |
+| `docs/plans/parser-extraction/parser-mvp/adjacent-parser-and-inspection-location-review.md` | Adjacent parser comparison, inspection-location decision register, and EVA/Sentry lookup constraint. |
+| `docs/decisions/0004-ground-up-compatible-parser-rebuild.md` | Accepted ground-up compatible parser rebuild decision. |
+| `docs/decisions/0007-deterministic-first-parser.md` | Accepted deterministic-first parser decision. |
+| `docs/reference/originalplanning/ce_system_plans_enhanced/ce_system_plans_enhanced/06_WORK_PACKAGE_DOCUMENT_MAPPER_AND_EXTRACTION.md` | Document Mapper and extraction work package. |
+| `docs/contracts/extraction_adapter_contract_v1.md` | Versioned extraction adapter contract. |
 
-## Workspace Layout
+## Cross-Workspace Dependencies
 
-- `parser-mvp/plan.md` — current executable parser MVP implementation plan
-- `tickets/` — phased implementation tickets
-- `option-papers/` — unresolved design choices (cloud OCR, state-store, adapter approach)
-- `archived_plans/` — implemented or superseded plans
+- provider-principal-config
+- operations-quality
+- governance-security
+- user-experience-interfaces
 
-## AGENTS.md Cross-Reference
+## Planning Rules
 
-> Current parser MVP implementation work lives at `docs/plans/parser-extraction/parser-mvp/plan.md`.
-> Parser rules: keep UI and CLI thin; both must call the same parser core and share validation/export contracts.
+- Promote work into `tickets/` only after scope, dependencies, acceptance criteria, verification, and governance gates are explicit.
+- Put vendor, privacy, external-access, autonomous-send, payment, AI/RAG, cloud OCR, and partner/API decisions in `option-papers/` first.
+- Archive implemented or superseded work under this workspace's `archived_plans/`.
+- Keep raw evidence immutable; cite source paths instead of copying raw content.

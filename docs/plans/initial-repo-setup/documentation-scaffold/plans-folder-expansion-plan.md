@@ -263,7 +263,7 @@ The implementation should move and split active planning files as follows:
 
 | Current Operational Core item | New owning path | Refactor action |
 | --- | --- | --- |
-| `docs/plans/operational-core/parser-mvp/plan.md` | `docs/plans/parser-extraction/parser-mvp/plan.md` | Move the active parser MVP plan. Update its roadmap milestone, source links, archive target, and all references. |
+| `docs/plans/operational-core/parser-mvp/plan.md` | `docs/plans/parser-extraction/parser-mvp/plan.md` | Moved. The parser-extraction path is active; the operational-core path remains a compatibility stub until historical references and verifier requirements no longer need it. |
 | `p0-foundation.md` / `P0-003 Provider Coverage And Migration Baseline` | `docs/plans/provider-principal-config/tickets/p0-provider-coverage-migration-baseline.md` | Extract this ticket into the provider workspace. Leave a short dependency reference in Operational Core P0 only if needed. |
 | `p0-foundation.md` / `P0-004 Parser MVP Implementation Plan` | `docs/plans/parser-extraction/tickets/p0-parser-mvp-implementation-plan.md` | Extract this ticket into the parser workspace and point it at the moved parser MVP plan. |
 | `p1-operational-core-mvp.md` / `P1-001 Parser Core MVP` | `docs/plans/parser-extraction/tickets/p1-parser-core-mvp.md` | Extract into parser workspace. |
@@ -289,7 +289,7 @@ All active references to moved paths must be updated in `README.md`, `AGENTS.md`
 1. Create the new top-level workspace folders listed above, including explicit `automation-centre/`, `ai-agents/`, `mcp-and-tooling/`, and `agent-skills/` homes.
 2. Add the standard folder structure to each workspace.
 3. Add a concise `README.md`, `source_map.md`, and `roadmap.md` to each workspace.
-4. Move `docs/plans/operational-core/parser-mvp/plan.md` to `docs/plans/parser-extraction/parser-mvp/plan.md`.
+4. Confirm `docs/plans/parser-extraction/parser-mvp/plan.md` remains the active parser MVP plan and `docs/plans/operational-core/parser-mvp/plan.md` remains only a compatibility stub.
 5. Split `p0-foundation.md`, `p1-operational-core-mvp.md`, `p2-parser-hardening-provider-parity.md`, `p3-integrations-storage-eva-intake.md`, `p4-intelligence-engineer-communications.md`, and `p5-platform-expansion.md` according to the split-out table above.
 6. Rewrite `docs/plans/operational-core/tickets/backlog_index.md` as a cross-workspace coordination index pointing to the new ticket locations.
 7. Update `docs/plans/operational-core/source_synthesis.md` so canonical destinations point to owning workspaces, especially `unified-platform/`, `automation-centre/`, `parser-extraction/`, `case-workflow-state/`, `provider-principal-config/`, `ai-agents/`, `mcp-and-tooling/`, `agent-skills/`, and the P4/P5 owning workspaces.
@@ -300,7 +300,7 @@ All active references to moved paths must be updated in `README.md`, `AGENTS.md`
 12. Update `tools/verify_scaffold.py` so it checks required new planning folders, README files, archive folders, source-map files, and moved parser/ticket paths.
 13. Update `tools/scaffold_initial_repo.py` so regenerated scaffold docs preserve the same folder taxonomy and moved paths.
 14. Regenerate `docs/source_manifest.md`, `docs/source_manifest.csv`, and `docs/source_manifest.json`.
-15. Run a final stale-path search for old `docs/plans/operational-core/parser-mvp/` and moved ticket paths; only historical archived references may remain.
+15. Run a final stale-path search for old active `docs/plans/operational-core/parser-mvp/` references and moved ticket paths; only explicit stub references and historical archived references may remain.
 
 ## Verification Plan
 

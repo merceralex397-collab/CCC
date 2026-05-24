@@ -1,33 +1,65 @@
-# Intake Storage Integrations Workspace
+# Intake Storage Integrations Planning
+
+Date: 2026-05-24
+Status: active planning workspace
+Owner: unassigned
+Created: 2026-05-24
+Last reviewed: 2026-05-24
+Source links: `docs/contracts/evidence_package_contract_v1.md`, `docs/contracts/storage_adapter_contract_v1.md`, `docs/contracts/eva_export_contract_v1.md`, `docs/reference/originalplanning/ce_system_plans_enhanced/ce_system_plans_enhanced/07_WORK_PACKAGE_OUTLOOK_AND_COMMUNICATIONS.md`, `docs/reference/originalplanning/ce_system_plans_enhanced/ce_system_plans_enhanced/08_WORK_PACKAGE_BOX_STORAGE_AND_FILES.md`, `docs/reference/originalplanning/ce_system_plans_enhanced/ce_system_plans_enhanced/10_WORK_PACKAGE_EVA_SENTRY_INTEGRATION.md`
+Roadmap milestone: Whole-programme roadmap
+Dependencies: case-workflow-state, mcp-and-tooling, governance-security, operations-quality
+Expected outputs: source-backed roadmap, scoped tickets, option papers, and archived plans for `docs/plans/intake-storage-integrations/`
+Acceptance criteria: every promoted item in this workspace cites source evidence and states cross-workspace dependencies
+Verification required: `python tools/verify_scaffold.py`
+Archive target: `docs/plans/intake-storage-integrations/archived_plans/implemented/`
+Supersedes: none
+Superseded-by: none
 
 ## Purpose
 
-This workspace owns all planning for Outlook email intake, Box live upload, EVA/Sentry API adapter, website/WhatsApp intake boundary, and spreadsheet bridge adapters.
+Intake channels, source capture, storage adapters, EVA/Sentry adapters, and transitional spreadsheet bridge planning.
 
-## Scope Rules
+## Main Plan
 
-- Intake creates work items and source files without bypassing parser review.
-- Sentry/EVA submission is never automatic — reviewed exports require explicit operator/reviewer action.
-- Portal/payment automation and autonomous WhatsApp/email send are long-range planned and require separate governance approval before implementation.
-- Cloud OCR/document intelligence in the intake path requires the same privacy, cost, data-residency, and vendor review as in the parser path.
+- Detailed workspace plan: `plan.md`
+- Source map: `source_map.md`
+- Workspace roadmap: `roadmap.md`
 
-## Evidence Sources
+## Owns
 
-| Source | Key Facts |
+- Outlook/Graph intake and polling fallback
+- Box-ready package to live Box adapter path
+- EVA JSON export and EVA/Sentry adapter planning
+- website, WhatsApp, payment, Box, and local-folder metadata boundaries
+- job-sheet/spreadsheet transition bridge planning
+
+## Does Not Own
+
+- external customer portal product scope
+- payment automation itself
+- MCP wrappers when the issue is tool exposure rather than adapter behavior
+
+## Citeable Source Evidence
+
+| Source | Planning evidence |
 | --- | --- |
-| `docs/reference/normalized/collisionrelateddocs__collision_releated__sentry_api_complete_guide.md.md` | Sentry/EVA API v1.2: JWT bearer tokens with 5-minute expiry, `/api/v1/jobs` and `/api/v1/submit` endpoints, manual approval gate requirement. |
-| `docs/reference/raw/collisionrelateddocs/Final Format Example 02.json` | Authoritative EVA JSON field order for export validation. |
-| `docs/reference/normalized/collisionrelateddocs__collision_releated__handover.docx.md` | Mailbox access: `digital@collisionengineers.co.uk` has delegated access to `desk@`, `engineers@`, `info@`. Network storage: `\\192.168.0.106\Collision Engineers\`. |
-| `docs/reference/originalplanning/ce_system_plans_enhanced/07_WORK_PACKAGE_OUTLOOK_AND_COMMUNICATIONS.md` | Outlook intake design. |
-| `docs/reference/originalplanning/ce_system_plans_enhanced/08_WORK_PACKAGE_BOX_STORAGE_AND_FILES.md` | Box storage and file management. |
-| `docs/reference/originalplanning/ce_system_plans_enhanced/10_WORK_PACKAGE_EVA_SENTRY_INTEGRATION.md` | EVA/Sentry integration requirements. |
-| `docs/reference/originalplanning/phase7_expanded_markdown_plan/additional_items/08_05_eva_sentry_api_adapter_and_import_control.md` | Sentry API adapter and import control design. |
+| `docs/contracts/evidence_package_contract_v1.md` | Evidence package contract including portal/payment metadata. |
+| `docs/contracts/storage_adapter_contract_v1.md` | Storage adapter contract. |
+| `docs/contracts/eva_export_contract_v1.md` | EVA export contract. |
+| `docs/reference/originalplanning/ce_system_plans_enhanced/ce_system_plans_enhanced/07_WORK_PACKAGE_OUTLOOK_AND_COMMUNICATIONS.md` | Outlook intake and communications source. |
+| `docs/reference/originalplanning/ce_system_plans_enhanced/ce_system_plans_enhanced/08_WORK_PACKAGE_BOX_STORAGE_AND_FILES.md` | Box storage and files work package. |
+| `docs/reference/originalplanning/ce_system_plans_enhanced/ce_system_plans_enhanced/10_WORK_PACKAGE_EVA_SENTRY_INTEGRATION.md` | EVA/Sentry integration work package. |
 
-## Workspace Layout
+## Cross-Workspace Dependencies
 
-- `README.md` — this file
-- `source_map.md` — reference-to-plan traceability
-- `roadmap.md` — sequencing
-- `tickets/` — active tickets
-- `option-papers/` — unresolved decisions (storage provider, cloud intake)
-- `archived_plans/` — implemented and superseded plans
+- case-workflow-state
+- mcp-and-tooling
+- governance-security
+- operations-quality
+
+## Planning Rules
+
+- Promote work into `tickets/` only after scope, dependencies, acceptance criteria, verification, and governance gates are explicit.
+- Put vendor, privacy, external-access, autonomous-send, payment, AI/RAG, cloud OCR, and partner/API decisions in `option-papers/` first.
+- Archive implemented or superseded work under this workspace's `archived_plans/`.
+- Keep raw evidence immutable; cite source paths instead of copying raw content.

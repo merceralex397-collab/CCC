@@ -797,7 +797,7 @@ def write_static_docs() -> None:
         - `docs/roadmap.md`
         - `docs/plans/_index.md`
         - `docs/plans/operational-core/source_synthesis.md`
-        - `docs/plans/operational-core/parser-mvp/plan.md`
+        - `docs/plans/parser-extraction/parser-mvp/plan.md`
         - `docs/architecture/`
         - `docs/contracts/`
         - `docs/decisions/`
@@ -829,7 +829,7 @@ def write_static_docs() -> None:
         - Start with `docs/docs_index.md` for human-readable navigation and `docs/repo_map.json` for machine-readable path routing.
         - Initial repository setup and exhaustive reference-derived idea planning live under `docs/plans/initial-repo-setup/`.
         - Active programme planning lives under `docs/plans/operational-core/`.
-        - Current parser MVP implementation work lives at `docs/plans/operational-core/parser-mvp/plan.md`.
+        - Current parser MVP implementation work lives at `docs/plans/parser-extraction/parser-mvp/plan.md`; `docs/plans/operational-core/parser-mvp/plan.md` is only a compatibility stub.
         - Active tickets live under `docs/plans/operational-core/tickets/`.
         - Implemented or superseded plans live under the owning workspace's `archived_plans/`.
         - Raw evidence lives under `docs/reference/raw/collisionrelateddocs/`.
@@ -846,6 +846,15 @@ def write_static_docs() -> None:
         - Preserve unrelated local configuration, auth state, MCP settings, and user files.
         - Use `rg` or `rg --files` first for search. Use structured parsers for JSON, spreadsheets, DOCX, and PDFs when available.
         - Use `apply_patch` for manual edits. Do not create or edit files with shell write tricks.
+
+        ## Documentation Sync Rules
+
+        - At the start of any substantial task, check `docs/docs_index.md`, `docs/repo_map.json`, `docs/roadmap.md`, the owning workspace `plan.md`, active tickets, relevant ADRs/contracts, and source evidence before changing files.
+        - At the start of parser work, also check `docs/plans/parser-extraction/parser-mvp/plan.md`, `docs/plans/parser-extraction/parser-mvp/adjacent-parser-and-inspection-location-review.md`, `docs/reference/adjacent_repositories.md`, and the provider/corpus sources named by the parser plan.
+        - `docs/roadmap.md` must show both the full programme plan and the current project position. Update its Current Status section whenever the active phase, milestone, blockers, or next action changes.
+        - On completion of any large task, update the owning plan/ticket, `docs/roadmap.md`, `docs/docs_index.md`, `docs/repo_map.json`, and any affected architecture, contract, decision, requirement, operations, security, or glossary docs.
+        - If docs, generated companions, active plans, tickets, archives, or source inventories change, regenerate `docs/source_manifest.md`, `docs/source_manifest.csv`, and `docs/source_manifest.json`.
+        - A task that changes behavior, scope, status, roadmap position, source ownership, or verification requirements is not complete until the relevant documentation and manifests are updated or the omission is explicitly documented.
 
         ## Planning And Ticket Lifecycle
 
@@ -882,7 +891,7 @@ def write_static_docs() -> None:
         - Initial setup planning: `docs/plans/initial-repo-setup/README.md`.
         - Active programme plan: `docs/plans/operational-core/source_synthesis.md`.
         - Planned folder taxonomy: `docs/plans/initial-repo-setup/documentation-scaffold/plans-folder-expansion-plan.md`.
-        - Parser MVP plan: `docs/plans/operational-core/parser-mvp/plan.md`.
+        - Parser MVP plan: `docs/plans/parser-extraction/parser-mvp/plan.md`.
         - Active backlog: `docs/plans/operational-core/tickets/backlog_index.md`.
         - Agent path map: `docs/repo_map.json`.
         - Full source inventory: `docs/source_manifest.md`, `docs/source_manifest.csv`, and `docs/source_manifest.json`.
@@ -913,6 +922,8 @@ def write_static_docs() -> None:
 
         ## Quality Rules
 
+        - At task start, read the roadmap, repo map, owning workspace plan, active tickets, and relevant source evidence before changing files.
+        - At completion of any large task, update `docs/roadmap.md`, the owning plan/ticket, `docs/docs_index.md`, `docs/repo_map.json`, affected key docs, and `docs/source_manifest.*`.
         - Update `docs/source_manifest.*` when source files, generated companions, active docs, or archives change.
         - Promote ideas from reference material into `docs/plans/initial-repo-setup/reference-audit/`, `docs/plans/operational-core/tickets/`, or another owning plan before treating them as active scope.
         - Keep raw evidence immutable and create derivatives under `docs/reference/normalized/` or `docs/reference/data/`.
@@ -943,7 +954,7 @@ def write_static_docs() -> None:
         ## Operational Core Layout
 
         - `docs/plans/operational-core/source_synthesis.md` maps reference material into canonical outputs.
-        - `docs/plans/operational-core/parser-mvp/plan.md` is the current parser MVP implementation plan.
+        - `docs/plans/parser-extraction/parser-mvp/plan.md` is the current parser MVP implementation plan.
         - `docs/plans/operational-core/tickets/` contains active phased tickets.
         - `docs/plans/operational-core/archived_plans/implemented/` contains completed plans.
         - `docs/plans/operational-core/archived_plans/superseded/` contains superseded or merged plans.
@@ -1021,7 +1032,7 @@ def write_static_docs() -> None:
                     "operational_core": {
                         "root": "docs/plans/operational-core",
                         "source_synthesis": "docs/plans/operational-core/source_synthesis.md",
-                        "parser_mvp_plan": "docs/plans/operational-core/parser-mvp/plan.md",
+                        "parser_mvp_plan": "docs/plans/parser-extraction/parser-mvp/plan.md",
                         "tickets": "docs/plans/operational-core/tickets",
                         "implemented_archive": "docs/plans/operational-core/archived_plans/implemented",
                         "superseded_archive": "docs/plans/operational-core/archived_plans/superseded",
@@ -1153,6 +1164,18 @@ def write_static_docs() -> None:
         ROOT / "docs/roadmap.md",
         """
         # Roadmap
+
+        ## Current Status
+
+        Current position: Section 0 - Taxonomy And Planning Scaffold, final pre-parser documentation and handoff alignment.
+
+        Current milestone: make the repository documentation, roadmap, source manifests, workspace ownership, and parser handoff rules reliable enough for parser MVP implementation to start from a known baseline.
+
+        Parser implementation status: not started. The active parser MVP plan is `docs/plans/parser-extraction/parser-mvp/plan.md`; the operational-core parser path is only a compatibility stub.
+
+        Pre-parser readiness gates: repository documentation lifecycle rules must be explicit, this Current Status section must be up to date, source manifests must match the working tree, scaffold verification and scaffold contract tests must pass, and parser work should start from a committed/pushed documentation baseline.
+
+        Optional pre-parser action: decide whether to create a portable task-start/navigation skill before parser implementation. This is not a parser blocker unless the project requires the same task-start checklist to be enforced outside this repository's `AGENTS.md`.
 
         ## P0 - Repository Safety And Documentation Foundation
 
@@ -2054,6 +2077,8 @@ def write_parser_scaffold() -> None:
             "docs/architecture/parser_ui_cli.md",
             "docs/plans/operational-core/source_synthesis.md",
             "docs/plans/operational-core/parser-mvp/plan.md",
+            "docs/plans/parser-extraction/parser-mvp/plan.md",
+            "docs/plans/parser-extraction/parser-mvp/adjacent-parser-and-inspection-location-review.md",
             "docs/contracts/parser_result_v1.md",
             "docs/contracts/eva_export_contract.md",
             "docs/contracts/eva_export_contract_v1.md",
@@ -2401,7 +2426,7 @@ def write_parser_scaffold() -> None:
             )
             require_terms(read_doc("docs/plans/_index.md"), PLANNED_WORKSPACE_TERMS, "Plans index planned workspaces")
 
-            parser_plan = read_doc("docs/plans/operational-core/parser-mvp/plan.md")
+            parser_plan = read_doc("docs/plans/parser-extraction/parser-mvp/plan.md")
             require_terms(parser_plan, PLAN_METADATA_TERMS, "Parser MVP plan metadata")
             require_terms(parser_plan, PROVIDER_PRESETS, "Parser MVP plan")
             require_terms(parser_plan, PARSER_PLAN_TERMS, "Parser MVP plan")
