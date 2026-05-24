@@ -1,4 +1,31 @@
-# P0 Foundation Tickets
+# P0 Foundation Tickets — Redirected
+
+> **This file is a tombstone/redirect.** Tickets have been relocated to their owning workspaces as part of the docs/plans workspace expansion (2026-05-24). This file is preserved so that scaffold verifier path checks continue to pass.
+
+- Status: redirected.
+- Owner: unassigned.
+- Created: 2026-05-23.
+- Last reviewed: 2026-05-24.
+- Source links: `docs/plans/initial-repo-setup/documentation-scaffold/plans-folder-expansion-plan.md`.
+- Roadmap milestone: P0 Foundation.
+- Dependencies: none.
+- Expected outputs: see new workspace ticket files below.
+- Acceptance criteria: all P0 tickets exist in their owning workspace.
+- Verification required: scaffold verifier path checks pass.
+- Archive target: `docs/plans/operational-core/archived_plans/implemented/` when all P0 work is done.
+- Supersedes: none.
+- Superseded-by: see new workspace paths below.
+
+## Ticket Relocation Map
+
+| Ticket | New Location |
+| --- | --- |
+| P0-001 Source Synthesis And Canonical Promotion | Remains in `docs/plans/operational-core/` — cross-workspace coordination. |
+| P0-002 Contracts Baseline | Remains in `docs/plans/operational-core/` — cross-workspace coordination. |
+| P0-003 Provider Coverage And Migration Baseline | `docs/plans/parser-extraction/tickets/p0-provider-coverage-migration-baseline.md` |
+| P0-004 Parser MVP Implementation Plan | `docs/plans/parser-extraction/tickets/p0-parser-mvp-implementation-plan.md` |
+| P0-005 Governance, Security, Operations Baseline | `docs/plans/governance-security/` (option-paper first, then ticket). |
+| P0-006 ADR And Option Paper Baseline | `docs/plans/operational-core/` — cross-workspace ADR coordination. |
 
 ## P0-001 Source Synthesis And Canonical Promotion
 
@@ -9,7 +36,7 @@
 - Source links: `docs/reference/originalplanning/`, `docs/research/*.md`, `docs/reference/test-context/testprojectcontext/`.
 - Roadmap milestone: P0 Foundation.
 - Dependencies: none.
-- Expected outputs: `docs/plans/operational-core/source_synthesis.md`, promoted phase backlog, parked/superseded list.
+- Expected outputs: `docs/plans/operational-core/source_synthesis.md`, promoted phase backlog, all-ideas ledger, superseded list.
 - Acceptance criteria: every generated pack and research document is referenced; every promoted idea has a phase or is merged into a canonical doc; no generated pack remains an implicit active plan.
 - Verification required: scaffold verifier checks generated pack and research references.
 - Archive target: `docs/plans/operational-core/archived_plans/implemented/` when implemented.

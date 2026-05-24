@@ -9,6 +9,16 @@
   },
   "plans": {
     "index": "docs/plans/_index.md",
+    "workspace_expansion_plan": "docs/plans/initial-repo-setup/documentation-scaffold/plans-folder-expansion-plan.md",
+    "initial_repo_setup": {
+      "root": "docs/plans/initial-repo-setup",
+      "readme": "docs/plans/initial-repo-setup/README.md",
+      "documentation_scaffold": "docs/plans/initial-repo-setup/documentation-scaffold",
+      "reference_audit": "docs/plans/initial-repo-setup/reference-audit",
+      "tickets": "docs/plans/initial-repo-setup/tickets",
+      "implemented_archive": "docs/plans/initial-repo-setup/archived_plans/implemented",
+      "superseded_archive": "docs/plans/initial-repo-setup/archived_plans/superseded"
+    },
     "operational_core": {
       "root": "docs/plans/operational-core",
       "source_synthesis": "docs/plans/operational-core/source_synthesis.md",
@@ -17,7 +27,29 @@
       "implemented_archive": "docs/plans/operational-core/archived_plans/implemented",
       "superseded_archive": "docs/plans/operational-core/archived_plans/superseded"
     },
-    "repository_restructure": "docs/plans/operational-core/archived_plans/implemented/2026-05-23-implemented-repository-restructure.md"
+    "planned_workspaces": {
+      "unified_platform": "docs/plans/unified-platform",
+      "automation_centre": "docs/plans/automation-centre",
+      "parser_extraction": "docs/plans/parser-extraction",
+      "case_workflow_state": "docs/plans/case-workflow-state",
+      "provider_principal_config": "docs/plans/provider-principal-config",
+      "intake_storage_integrations": "docs/plans/intake-storage-integrations",
+      "evidence_estimate_review": "docs/plans/evidence-estimate-review",
+      "vehicle_valuation_data": "docs/plans/vehicle-valuation-data",
+      "engineer_communications": "docs/plans/engineer-communications",
+      "ai_agents": "docs/plans/ai-agents",
+      "mcp_and_tooling": "docs/plans/mcp-and-tooling",
+      "agent_skills": "docs/plans/agent-skills",
+      "ai_platform_tools": "docs/plans/ai-platform-tools",
+      "user_experience_interfaces": "docs/plans/user-experience-interfaces",
+      "finance_billing": "docs/plans/finance-billing",
+      "governance_security": "docs/plans/governance-security",
+      "operations_quality": "docs/plans/operations-quality",
+      "analytics_data_platform": "docs/plans/analytics-data-platform",
+      "external_platform_partners": "docs/plans/external-platform-partners",
+      "product_business": "docs/plans/product-business"
+    },
+    "repository_restructure": "docs/plans/initial-repo-setup/archived_plans/implemented/2026-05-23-implemented-repository-restructure.md"
   },
   "reference": {
     "index": "docs/reference/_index.md",

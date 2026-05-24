@@ -117,7 +117,7 @@ def classify(path: Path) -> str:
         return "normalized-derivative"
     if len(parts) >= 3 and parts[0] == "docs" and parts[1] == "reference" and parts[2] in {"originalplanning", "test-context"}:
         return "generated-reference"
-    if parts[: len(ARCHIVED_PLANS_ROOT)] == ARCHIVED_PLANS_ROOT:
+    if len(parts) >= 4 and parts[0] == "docs" and parts[1] == "plans" and parts[3] == "archived_plans":
         return "implemented" if "implemented" in parts else "superseded"
     if first in GENERATED_REFERENCE_PREFIXES:
         return "generated-reference"
@@ -146,7 +146,7 @@ def source_group(path: Path) -> str:
         if len(parts) > len(REFERENCE_DATA_ROOT):
             return f"data/{parts[len(REFERENCE_DATA_ROOT)]}"
         return "data"
-    if parts[: len(ARCHIVED_PLANS_ROOT)] == ARCHIVED_PLANS_ROOT:
+    if len(parts) >= 4 and parts[0] == "docs" and parts[1] == "plans" and parts[3] == "archived_plans":
         return "archived_plans"
     if len(parts) >= 4 and parts[0] == "docs" and parts[1] == "reference" and parts[2] == "originalplanning":
         return f"originalplanning/{parts[3]}"
@@ -805,7 +805,7 @@ def write_static_docs() -> None:
         - `docs/requirements/`
         - `docs/reference/data/provider_coverage_matrix.md`
         - `docs/reference/originalplanning_index.md`
-        - `docs/plans/operational-core/archived_plans/implemented/`
+        - `docs/plans/*/archived_plans/implemented/`
 
         ## Local Verification
 
@@ -827,10 +827,11 @@ def write_static_docs() -> None:
         ## Navigation
 
         - Start with `docs/docs_index.md` for human-readable navigation and `docs/repo_map.json` for machine-readable path routing.
+        - Initial repository setup and exhaustive reference-derived idea planning live under `docs/plans/initial-repo-setup/`.
         - Active programme planning lives under `docs/plans/operational-core/`.
         - Current parser MVP implementation work lives at `docs/plans/operational-core/parser-mvp/plan.md`.
         - Active tickets live under `docs/plans/operational-core/tickets/`.
-        - Implemented or superseded plans live under `docs/plans/operational-core/archived_plans/`.
+        - Implemented or superseded plans live under the owning workspace's `archived_plans/`.
         - Raw evidence lives under `docs/reference/raw/collisionrelateddocs/`.
         - Normalized companions and extracted data live under `docs/reference/normalized/` and `docs/reference/data/`.
         - Generated or historical planning packs live under `docs/reference/originalplanning/` and are reference-only unless promoted.
@@ -849,8 +850,8 @@ def write_static_docs() -> None:
         ## Planning And Ticket Lifecycle
 
         - Every active plan or ticket must include status, owner, created date, last reviewed date, source links, roadmap milestone, dependencies, expected outputs, acceptance criteria, verification required, archive target, and supersedes/superseded-by fields.
-        - When a plan or ticket is implemented, move it to `docs/plans/operational-core/archived_plans/implemented/`, rename it with the completion date, and add an implemented-state block at the top.
-        - Superseded or merged plans go to `docs/plans/operational-core/archived_plans/superseded/` with a pointer to the replacement doc or ticket.
+        - When a plan or ticket is implemented, move it to the owning workspace's `archived_plans/implemented/`, rename it with the completion date, and add an implemented-state block at the top.
+        - Superseded or merged plans go to the owning workspace's `archived_plans/superseded/` with a pointer to the replacement doc or ticket.
         - Generated plan packs are reference material unless explicitly promoted into active docs or tickets.
 
         ## Parser Rules
@@ -878,7 +879,9 @@ def write_static_docs() -> None:
         ## Quick Start
 
         - Product scope and current milestone: `README.md` and `docs/roadmap.md`.
+        - Initial setup planning: `docs/plans/initial-repo-setup/README.md`.
         - Active programme plan: `docs/plans/operational-core/source_synthesis.md`.
+        - Planned folder taxonomy: `docs/plans/initial-repo-setup/documentation-scaffold/plans-folder-expansion-plan.md`.
         - Parser MVP plan: `docs/plans/operational-core/parser-mvp/plan.md`.
         - Active backlog: `docs/plans/operational-core/tickets/backlog_index.md`.
         - Agent path map: `docs/repo_map.json`.
@@ -889,6 +892,7 @@ def write_static_docs() -> None:
         | Area | Path | Use |
         | --- | --- | --- |
         | Plans | `docs/plans/_index.md` | Active plan workspaces and archived plans. |
+        | Initial Repo Setup | `docs/plans/initial-repo-setup/` | Pre-code repository setup, documentation scaffold, and exhaustive reference idea planning. |
         | Operational Core | `docs/plans/operational-core/` | Current programme plan, parser MVP plan, and tickets. |
         | Architecture | `docs/architecture/` | System architecture and programme boundaries. |
         | Contracts | `docs/contracts/` | Versioned schemas and integration contracts. |
@@ -910,7 +914,7 @@ def write_static_docs() -> None:
         ## Quality Rules
 
         - Update `docs/source_manifest.*` when source files, generated companions, active docs, or archives change.
-        - Promote ideas from reference material into `docs/plans/operational-core/tickets/` before treating them as active scope.
+        - Promote ideas from reference material into `docs/plans/initial-repo-setup/reference-audit/`, `docs/plans/operational-core/tickets/`, or another owning plan before treating them as active scope.
         - Keep raw evidence immutable and create derivatives under `docs/reference/normalized/` or `docs/reference/data/`.
         - Run `python tools/verify_scaffold.py` after documentation structure changes.
         """,
@@ -924,8 +928,17 @@ def write_static_docs() -> None:
 
         | Plan Area | Path | Status |
         | --- | --- | --- |
+        | Initial Repo Setup | `docs/plans/initial-repo-setup/` | active pre-code planning workspace |
         | Operational Core | `docs/plans/operational-core/` | active programme workspace |
-        | Repository Restructure | `docs/plans/operational-core/archived_plans/implemented/2026-05-23-implemented-repository-restructure.md` | implemented |
+        | Workspace Expansion Plan | `docs/plans/initial-repo-setup/documentation-scaffold/plans-folder-expansion-plan.md` | active taxonomy plan for future plan folders |
+        | Repository Restructure | `docs/plans/initial-repo-setup/archived_plans/implemented/2026-05-23-implemented-repository-restructure.md` | implemented |
+
+        ## Initial Repo Setup Layout
+
+        - `docs/plans/initial-repo-setup/documentation-scaffold/` captures repository setup and documentation scaffold planning.
+        - `docs/plans/initial-repo-setup/reference-audit/` captures exhaustive reference-derived idea inventories.
+        - `docs/plans/initial-repo-setup/tickets/` contains pre-code setup tickets.
+        - `docs/plans/initial-repo-setup/archived_plans/` contains implemented or superseded setup plans.
 
         ## Operational Core Layout
 
@@ -934,6 +947,33 @@ def write_static_docs() -> None:
         - `docs/plans/operational-core/tickets/` contains active phased tickets.
         - `docs/plans/operational-core/archived_plans/implemented/` contains completed plans.
         - `docs/plans/operational-core/archived_plans/superseded/` contains superseded or merged plans.
+
+        ## Planned Expansion Workspaces
+
+        The saved expansion plan assigns reference-derived work to these future folders before implementation starts:
+
+        | Planned Area | Future Path | Owns |
+        | --- | --- | --- |
+        | Unified Platform | `docs/plans/unified-platform/` | Mature end-to-end platform and convergence roadmap. |
+        | Automation Centre | `docs/plans/automation-centre/` | Deterministic automation model, workflows, retries, exception routing, and automation KPIs. |
+        | Parser Extraction | `docs/plans/parser-extraction/` | Parser, extraction adapters, mapper compatibility, OCR fallback, and corpus regression. |
+        | Case Workflow State | `docs/plans/case-workflow-state/` | Work item state, review queue, audit stream, missing-info state, duplicate and historical search. |
+        | Provider Principal Config | `docs/plans/provider-principal-config/` | Provider, principal, garage, routing, and provider-admin planning. |
+        | Intake Storage Integrations | `docs/plans/intake-storage-integrations/` | Outlook, Box, EVA/Sentry, website/WhatsApp metadata, and spreadsheet bridge adapters. |
+        | Evidence Estimate Review | `docs/plans/evidence-estimate-review/` | Evidence, image quality, estimate parsing, ABP review, duplicate/reused evidence, and damage workbench planning. |
+        | Vehicle Valuation Data | `docs/plans/vehicle-valuation-data/` | Vehicle intelligence, DVLA/DVSA, MOT data, valuation evidence, salvage, mileage, and identity planning. |
+        | Engineer Communications | `docs/plans/engineer-communications/` | Engineer pack, templates, report drafting support, status summaries, and communication workflows. |
+        | AI Agents | `docs/plans/ai-agents/` | Controlled workflow agents and agent-vs-automation boundaries. |
+        | MCP And Tooling | `docs/plans/mcp-and-tooling/` | MCP servers, internal tool adapters, registry, schemas, audit, rate limits, and security gateway. |
+        | Agent Skills | `docs/plans/agent-skills/` | Reusable drafting, summary, RAG, valuation, communication, and training skills. |
+        | AI Platform Tools | `docs/plans/ai-platform-tools/` | Model evaluation, prompt governance, datasets, AI feedback loops, and policy implementation. |
+        | User Experience Interfaces | `docs/plans/user-experience-interfaces/` | Staff, engineer, admin, parser, review, dashboard, portal/front-door, and accessibility planning. |
+        | Finance Billing | `docs/plans/finance-billing/` | Invoice, fee-note, payment status, chaser metadata, approvals, and payment automation option papers. |
+        | Governance Security | `docs/plans/governance-security/` | DPIA, vendor governance, privacy, PII redaction, data licensing, expert-boundary, and API security planning. |
+        | Operations Quality | `docs/plans/operations-quality/` | Test corpus, regression harness, release/rollback, monitoring, runbooks, rollout, and decommissioning. |
+        | Analytics Data Platform | `docs/plans/analytics-data-platform/` | Operations analytics, data warehouse, EVA mining, data quality, risk indicators, scheduling, and BI. |
+        | External Platform Partners | `docs/plans/external-platform-partners/` | Customer portal, partner API, insurer integrations, Audatex partnerships, and partner access controls. |
+        | Product Business | `docs/plans/product-business/` | Discovery, ROI, client pitch, conservative positioning, objection handling, and defensibility. |
         """,
     )
     write_text(
@@ -951,7 +991,7 @@ def write_static_docs() -> None:
         | Original planning | `docs/reference/originalplanning/` | generated historical planning packs |
         | Test context | `docs/reference/test-context/` | historical test repositories/context packs |
 
-        Generated and historical material is not active scope unless promoted into architecture, contracts, decisions, or `docs/plans/operational-core/tickets/`.
+        Generated and historical material is not active scope unless promoted into `docs/plans/initial-repo-setup/reference-audit/`, architecture, contracts, decisions, or `docs/plans/operational-core/tickets/`.
         """,
     )
     write_text(
@@ -968,6 +1008,16 @@ def write_static_docs() -> None:
                 },
                 "plans": {
                     "index": "docs/plans/_index.md",
+                    "workspace_expansion_plan": "docs/plans/initial-repo-setup/documentation-scaffold/plans-folder-expansion-plan.md",
+                    "initial_repo_setup": {
+                        "root": "docs/plans/initial-repo-setup",
+                        "readme": "docs/plans/initial-repo-setup/README.md",
+                        "documentation_scaffold": "docs/plans/initial-repo-setup/documentation-scaffold",
+                        "reference_audit": "docs/plans/initial-repo-setup/reference-audit",
+                        "tickets": "docs/plans/initial-repo-setup/tickets",
+                        "implemented_archive": "docs/plans/initial-repo-setup/archived_plans/implemented",
+                        "superseded_archive": "docs/plans/initial-repo-setup/archived_plans/superseded",
+                    },
                     "operational_core": {
                         "root": "docs/plans/operational-core",
                         "source_synthesis": "docs/plans/operational-core/source_synthesis.md",
@@ -976,7 +1026,29 @@ def write_static_docs() -> None:
                         "implemented_archive": "docs/plans/operational-core/archived_plans/implemented",
                         "superseded_archive": "docs/plans/operational-core/archived_plans/superseded",
                     },
-                    "repository_restructure": "docs/plans/operational-core/archived_plans/implemented/2026-05-23-implemented-repository-restructure.md",
+                    "planned_workspaces": {
+                        "unified_platform": "docs/plans/unified-platform",
+                        "automation_centre": "docs/plans/automation-centre",
+                        "parser_extraction": "docs/plans/parser-extraction",
+                        "case_workflow_state": "docs/plans/case-workflow-state",
+                        "provider_principal_config": "docs/plans/provider-principal-config",
+                        "intake_storage_integrations": "docs/plans/intake-storage-integrations",
+                        "evidence_estimate_review": "docs/plans/evidence-estimate-review",
+                        "vehicle_valuation_data": "docs/plans/vehicle-valuation-data",
+                        "engineer_communications": "docs/plans/engineer-communications",
+                        "ai_agents": "docs/plans/ai-agents",
+                        "mcp_and_tooling": "docs/plans/mcp-and-tooling",
+                        "agent_skills": "docs/plans/agent-skills",
+                        "ai_platform_tools": "docs/plans/ai-platform-tools",
+                        "user_experience_interfaces": "docs/plans/user-experience-interfaces",
+                        "finance_billing": "docs/plans/finance-billing",
+                        "governance_security": "docs/plans/governance-security",
+                        "operations_quality": "docs/plans/operations-quality",
+                        "analytics_data_platform": "docs/plans/analytics-data-platform",
+                        "external_platform_partners": "docs/plans/external-platform-partners",
+                        "product_business": "docs/plans/product-business",
+                    },
+                    "repository_restructure": "docs/plans/initial-repo-setup/archived_plans/implemented/2026-05-23-implemented-repository-restructure.md",
                 },
                 "reference": {
                     "index": "docs/reference/_index.md",
@@ -1965,7 +2037,15 @@ def write_parser_scaffold() -> None:
             "docs/source_manifest.csv",
             "docs/roadmap.md",
             "docs/plans/_index.md",
-            "docs/plans/operational-core/archived_plans/implemented/2026-05-23-implemented-repository-restructure.md",
+            "docs/plans/initial-repo-setup/README.md",
+            "docs/plans/initial-repo-setup/documentation-scaffold/plan.md",
+            "docs/plans/initial-repo-setup/documentation-scaffold/plans-folder-expansion-plan.md",
+            "docs/plans/initial-repo-setup/reference-audit/all-ideas-plan.md",
+            "docs/plans/initial-repo-setup/tickets/README.md",
+            "docs/plans/initial-repo-setup/archived_plans/implemented/.gitkeep",
+            "docs/plans/initial-repo-setup/archived_plans/implemented/2026-05-23-implemented-initrepoplan.md",
+            "docs/plans/initial-repo-setup/archived_plans/implemented/2026-05-23-implemented-repository-restructure.md",
+            "docs/plans/initial-repo-setup/archived_plans/superseded/.gitkeep",
             "docs/architecture/overview.md",
             "docs/architecture/programme_architecture.md",
             "docs/architecture/mvp_interlock.md",
@@ -2018,7 +2098,6 @@ def write_parser_scaffold() -> None:
             "src/ccc_parser/cli.py",
             "src/ccc_parser/ui/app.py",
             "tests/test_scaffold_contracts.py",
-            "docs/plans/operational-core/archived_plans/implemented/2026-05-23-implemented-initrepoplan.md",
             "docs/plans/operational-core/archived_plans/superseded/.gitkeep",
         ]
 
@@ -2037,6 +2116,29 @@ def write_parser_scaffold() -> None:
             "docs/research/gptdeepresearch.md",
             "docs/research/gptevadeepresearch.md",
             "docs/research/siderpdf.md",
+        ]
+
+        PLANNED_WORKSPACE_TERMS = [
+            "docs/plans/unified-platform/",
+            "docs/plans/automation-centre/",
+            "docs/plans/parser-extraction/",
+            "docs/plans/case-workflow-state/",
+            "docs/plans/provider-principal-config/",
+            "docs/plans/intake-storage-integrations/",
+            "docs/plans/evidence-estimate-review/",
+            "docs/plans/vehicle-valuation-data/",
+            "docs/plans/engineer-communications/",
+            "docs/plans/ai-agents/",
+            "docs/plans/mcp-and-tooling/",
+            "docs/plans/agent-skills/",
+            "docs/plans/ai-platform-tools/",
+            "docs/plans/user-experience-interfaces/",
+            "docs/plans/finance-billing/",
+            "docs/plans/governance-security/",
+            "docs/plans/operations-quality/",
+            "docs/plans/analytics-data-platform/",
+            "docs/plans/external-platform-partners/",
+            "docs/plans/product-business/",
         ]
 
         PROVIDER_PRESETS = [
@@ -2283,12 +2385,21 @@ def write_parser_scaffold() -> None:
             require(any(row["code"] == "ACSP" and row["parser_covered"] == "no" for row in matrix_rows), "ACSP uncovered status missing")
             require(any(row["code"] == "WOODLANDS" and row["parser_covered"] == "no" for row in matrix_rows), "WOODLANDS uncovered status missing")
 
-            plan_text = (ROOT / "docs/plans/operational-core/archived_plans/implemented/2026-05-23-implemented-initrepoplan.md").read_text(encoding="utf-8")
+            plan_text = (ROOT / "docs/plans/initial-repo-setup/archived_plans/implemented/2026-05-23-implemented-initrepoplan.md").read_text(encoding="utf-8")
             require("Status: implemented" in plan_text, "Archived initrepoplan missing implemented status")
 
             synthesis_text = read_doc("docs/plans/operational-core/source_synthesis.md")
             require_terms(synthesis_text, GENERATED_PACKS, "Source synthesis")
             require_terms(synthesis_text, RESEARCH_DOCS, "Source synthesis")
+
+            expansion_plan = read_doc("docs/plans/initial-repo-setup/documentation-scaffold/plans-folder-expansion-plan.md")
+            require_terms(expansion_plan, PLANNED_WORKSPACE_TERMS, "Plans folder expansion plan")
+            require_terms(
+                expansion_plan,
+                ["Deterministic automation", "AI agents", "MCP plans", "Agent skills"],
+                "Plans folder expansion coverage",
+            )
+            require_terms(read_doc("docs/plans/_index.md"), PLANNED_WORKSPACE_TERMS, "Plans index planned workspaces")
 
             parser_plan = read_doc("docs/plans/operational-core/parser-mvp/plan.md")
             require_terms(parser_plan, PLAN_METADATA_TERMS, "Parser MVP plan metadata")
@@ -2362,7 +2473,7 @@ def archive_plan() -> None:
         ---
         """
     ).strip()
-    archive = ROOT / f"docs/plans/operational-core/archived_plans/implemented/{TODAY}-implemented-initrepoplan.md"
+    archive = ROOT / f"docs/plans/initial-repo-setup/archived_plans/implemented/{TODAY}-implemented-initrepoplan.md"
     write_text(archive, status + "\n\n" + content)
     src.unlink()
 

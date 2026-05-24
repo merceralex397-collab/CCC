@@ -8,8 +8,8 @@ Last reviewed: 2026-05-23
 Source links: `docs/reference/originalplanning/`, `docs/research/`, `docs/reference/test-context/`, `docs/reference/raw/collisionrelateddocs/`
 Roadmap milestone: Operational Core MVP
 Dependencies: source manifest and reference material inventory
-Expected outputs: promoted canonical docs, active tickets, parked/superseded source map
-Acceptance criteria: generated packs, research notes, test context, and operational evidence are either promoted, merged, parked, or superseded
+Expected outputs: promoted canonical docs, active tickets, long-range planned/superseded source map
+Acceptance criteria: generated packs, research notes, test context, and operational evidence are either promoted, merged, captured in the all-ideas ledger, or superseded
 Verification required: `python tools/verify_scaffold.py`
 Archive target: `docs/plans/operational-core/archived_plans/implemented/`
 Supersedes: none
@@ -40,15 +40,15 @@ This document records how generated packs, research notes, test-context packs, a
 
 ## Generated Pack Disposition
 
-| Source | Promoted Or Merged | Parked Or Superseded | Canonical Destination |
+| Source | Promoted Or Merged | Long-Range Planned Or Superseded | Canonical Destination |
 | --- | --- | --- | --- |
-| `docs/reference/originalplanning/ce_phase4_agents_reviewed_plan/ce_phase4_agents_reviewed_plan/` | Deterministic case association, missing-information state handling, valuation evidence with approval, image/evidence matching, security/governance, acceptance tests. | Autonomous external emailing, autonomous EVA submission, and open-ended continuous learning are parked. | P3/P4 tickets, governance doc, future convergence doc. |
-| `docs/reference/originalplanning/ce_system_plans_enhanced/ce_system_plans_enhanced/` | Data model and workflow, Document Mapper/extraction package, Box files, review/matching, EVA/Sentry integration, provider settings migration. | Phase 6 mobile/PWA and decommissioning work are parked until parser parity and Operational Core are live. | Programme architecture, contracts, P1-P3 tickets. |
-| `docs/reference/originalplanning/cedocumentmapper_rebuild_plan_pack_all_zips/` | Ground-up compatible parser rebuild, legacy mapper behavioural oracle, parser adapters, EVA export boundary. | Zip files remain parked reference unless implementation evidence is missing from normalized docs. | ADR 0004, parser MVP plan, extraction adapter contract, P1/P2 tickets. |
-| `docs/reference/originalplanning/collision_engineers_ai_tools_plans_markdown/` | CE extraction service, field/schema mapper, Box metadata adapter, review queue, provider mapping assistant, PII/audit controls, canonical case store. | ANDIE workbench, broad RAG/training, invoices, and front-door portal are parked until Operational Core is stable. | Contracts, P1/P4/P5 tickets, future convergence doc. |
-| `docs/reference/originalplanning/collision_engineers_bulk_data_research_pack/` | MOT/DVLA cache ideas, mileage estimation and anomaly review, vehicle identity normalization, valuation evidence store, duplicate image review, data governance. | Weather, traffic, road-safety enrichment, broad analytics, and warehouse items are parked for P4/P5. | P4/P5 tickets, governance doc, future convergence doc. |
-| `docs/reference/originalplanning/originalplans_output/` | Practical new-system MVP framing: holding pen, intake/upload, evidence matching, case detail page, chasers, engineer pack, provider management. | Earlier broad sequencing is superseded by the Operational Core roadmap. | Roadmap, MVP interlock, P0-P5 backlog. |
-| `docs/reference/originalplanning/phase7_expanded_markdown_plan/phase7_expanded_markdown_plan/` | Work-item state store, provider/principal library, central extraction service, human review queue, EVA adapter/import control, engineer pack, monitoring, DPIA/vendor governance. | Predictive scheduling, external partner APIs, insurer/Audatex partnerships, and data warehouse are parked until core workflow data exists. | Programme architecture, governance doc, P1-P5 backlog. |
+| `docs/reference/originalplanning/ce_phase4_agents_reviewed_plan/ce_phase4_agents_reviewed_plan/` | Deterministic case association, missing-information state handling, valuation evidence with approval, image/evidence matching, security/governance, acceptance tests. | Autonomous external emailing, autonomous EVA submission, controlled AI agents, and open-ended continuous learning are captured in `docs/plans/initial-repo-setup/reference-audit/all-ideas-plan.md` for governed promotion, with planned destinations in `docs/plans/automation-centre/` and `docs/plans/ai-agents/`. | P3/P4 tickets, governance doc, future convergence doc, all-ideas ledger, workspace expansion plan. |
+| `docs/reference/originalplanning/ce_system_plans_enhanced/ce_system_plans_enhanced/` | Data model and workflow, Document Mapper/extraction package, Box files, review/matching, EVA/Sentry integration, provider settings migration. | Phase 6 mobile/PWA and decommissioning work are long-range planned until parser parity and Operational Core are live. | Programme architecture, contracts, P1-P3 tickets, all-ideas ledger. |
+| `docs/reference/originalplanning/cedocumentmapper_rebuild_plan_pack_all_zips/` | Ground-up compatible parser rebuild, legacy mapper behavioural oracle, parser adapters, EVA export boundary. | Zip files remain reference evidence unless implementation evidence is missing from normalized docs. | ADR 0004, parser MVP plan, extraction adapter contract, P1/P2 tickets. |
+| `docs/reference/originalplanning/collision_engineers_ai_tools_plans_markdown/` | CE extraction service, field/schema mapper, Box metadata adapter, review queue, provider mapping assistant, PII/audit controls, canonical case store. | MCPs, reusable agent skills, tool registry/security gateway, ANDIE workbench, broad RAG/training, invoices, and front-door portal are captured in the all-ideas ledger and planned behind Operational Core stability gates. Planned destinations are `docs/plans/mcp-and-tooling/`, `docs/plans/agent-skills/`, `docs/plans/ai-agents/`, and `docs/plans/ai-platform-tools/` depending on the item. | Contracts, P1/P4/P5 tickets, future convergence doc, all-ideas ledger, workspace expansion plan. |
+| `docs/reference/originalplanning/collision_engineers_bulk_data_research_pack/` | MOT/DVLA cache ideas, mileage estimation and anomaly review, vehicle identity normalization, valuation evidence store, duplicate image review, data governance. | Weather, traffic, road-safety enrichment, broad analytics, and warehouse items are planned for P4/P5 or later promotion through the all-ideas ledger. | P4/P5 tickets, governance doc, future convergence doc, all-ideas ledger. |
+| `docs/reference/originalplanning/originalplans_output/` | Practical new-system MVP framing: holding pen, intake/upload, evidence matching, case detail page, chasers, engineer pack, provider management. | Earlier broad sequencing is superseded by the Operational Core roadmap, but `phase_ai_agents.md`, `phase_ai_tools.md`, and `phase_initial_automation.md` remain active source evidence for the planned `automation-centre/`, `ai-agents/`, `mcp-and-tooling/`, and `agent-skills/` workspaces. | Roadmap, MVP interlock, P0-P5 backlog, all-ideas ledger, workspace expansion plan. |
+| `docs/reference/originalplanning/phase7_expanded_markdown_plan/phase7_expanded_markdown_plan/` | Work-item state store, provider/principal library, central extraction service, human review queue, EVA adapter/import control, engineer pack, monitoring, DPIA/vendor governance. | Predictive scheduling, external partner APIs, insurer/Audatex partnerships, and data warehouse are planned in the all-ideas ledger until core workflow data exists. | Programme architecture, governance doc, P1-P5 backlog, all-ideas ledger. |
 
 ## Research Disposition
 
@@ -60,10 +60,10 @@ This document records how generated packs, research notes, test-context packs, a
 
 ## Test Context Disposition
 
-| Source | Promoted Or Merged | Parked Or Superseded | Canonical Destination |
+| Source | Promoted Or Merged | Long-Range Planned Or Superseded | Canonical Destination |
 | --- | --- | --- | --- |
-| `docs/reference/test-context/testprojectcontext/collision_project_context_pack/collision_project_context_pack/` | Outlook intake, Box storage, EVA integration, extraction/AI strategy, canonical data model, workflow states, review, governance. | Wider automation-centre material is parked behind Operational Core. | Architecture, contracts, P1-P4 backlog. |
-| `docs/reference/test-context/testprojectcontext/collision-engineers-context-pack/collision-engineers-context-pack/` | Operational MVP framing, UI/dashboard expectations, schemas, AI module boundaries, compliance/governance, test plan. | Client pitch and speculative ecosystem material are parked. | MVP interlock, parser UI/CLI plan, tickets. |
+| `docs/reference/test-context/testprojectcontext/collision_project_context_pack/collision_project_context_pack/` | Outlook intake, Box storage, EVA integration, extraction/AI strategy, canonical data model, workflow states, review, governance. | Wider automation-centre, Agent/MCP direction, observability, and future-agent handoff material is planned in the all-ideas ledger behind Operational Core, with explicit workspace destinations in `docs/plans/automation-centre/`, `docs/plans/mcp-and-tooling/`, and `docs/plans/ai-agents/`. | Architecture, contracts, P1-P4 backlog, all-ideas ledger, workspace expansion plan. |
+| `docs/reference/test-context/testprojectcontext/collision-engineers-context-pack/collision-engineers-context-pack/` | Operational MVP framing, UI/dashboard expectations, schemas, AI module boundaries, compliance/governance, test plan. | Client pitch and speculative ecosystem material are planned in the all-ideas ledger. | MVP interlock, parser UI/CLI plan, tickets, all-ideas ledger. |
 
 ## Provider Coverage Findings
 
@@ -87,4 +87,4 @@ Every promoted idea must appear in `docs/plans/operational-core/tickets/` with:
 - acceptance criteria;
 - verification requirement.
 
-Ideas not in a ticket are either merged into architecture/contracts, explicitly parked in this synthesis, or superseded by a later canonical decision.
+Ideas not in an operational ticket are either merged into architecture/contracts, captured in `docs/plans/initial-repo-setup/reference-audit/all-ideas-plan.md` for later promotion, or superseded by a later canonical decision.

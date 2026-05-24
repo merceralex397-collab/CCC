@@ -1,4 +1,30 @@
-# P5 Platform Expansion Tickets
+# P5 Platform Expansion Tickets — Redirected
+
+> **This file is a tombstone/redirect.** Tickets have been relocated to their owning workspaces as part of the docs/plans workspace expansion (2026-05-24). This file is preserved so that scaffold verifier path checks continue to pass.
+
+- Status: redirected.
+- Owner: unassigned.
+- Created: 2026-05-23.
+- Last reviewed: 2026-05-24.
+- Source links: `docs/plans/initial-repo-setup/documentation-scaffold/plans-folder-expansion-plan.md`.
+- Roadmap milestone: P5 Platform Expansion.
+- Dependencies: Operational Core maturity.
+- Expected outputs: see new workspace ticket files below.
+- Acceptance criteria: all P5 tickets exist in their owning workspace.
+- Verification required: scaffold verifier path checks pass.
+- Archive target: `docs/plans/operational-core/archived_plans/implemented/` or `archived_plans/superseded/`.
+- Supersedes: none.
+- Superseded-by: see new workspace paths below.
+
+## Ticket Relocation Map
+
+| Ticket | New Location |
+| --- | --- |
+| P5-001 Operations Analytics | `docs/plans/analytics-data-platform/tickets/p5-analytics.md` |
+| P5-002 Portal And External API | `docs/plans/external-platform-partners/tickets/p5-external-platform.md` |
+| P5-003 Data Warehouse And Historical Mining | `docs/plans/analytics-data-platform/tickets/p5-analytics.md` |
+| P5-004 External Ecosystem Integrations | `docs/plans/external-platform-partners/tickets/p5-external-platform.md` |
+| P5-005 Portal, Payment, And Messaging Automation Governance | `docs/plans/external-platform-partners/tickets/p5-external-platform.md` |
 
 ## P5-001 Operations Analytics
 
@@ -18,7 +44,7 @@
 
 ## P5-002 Portal And External API
 
-- Status: parked-planned.
+- Status: long-range planned.
 - Owner: TBD.
 - Created: 2026-05-23.
 - Last reviewed: 2026-05-23.
@@ -26,7 +52,7 @@
 - Roadmap milestone: P5 Platform Expansion.
 - Dependencies: Operational Core, security model, external access approval.
 - Expected outputs: option paper and ADR before implementation.
-- Acceptance criteria: no external access until auth, audit, retention, and data minimisation are approved; current website portal and payment evidence may inform the design, but external portal/API/payment automation stays parked until governance approval.
+- Acceptance criteria: no external access until auth, audit, retention, and data minimisation are approved; current website portal and payment evidence may inform the design, but external portal/API/payment automation remains long-range planned until governance approval.
 - Verification required: security review, API tests, and governance sign-off on the portal/payment scope guardrail.
 - Archive target: `docs/plans/operational-core/archived_plans/implemented/` or `docs/plans/operational-core/archived_plans/superseded/`.
 - Supersedes: none.
@@ -34,7 +60,7 @@
 
 ## P5-003 Data Warehouse And Historical Mining
 
-- Status: parked-planned.
+- Status: long-range planned.
 - Owner: TBD.
 - Created: 2026-05-23.
 - Last reviewed: 2026-05-23.
@@ -50,7 +76,7 @@
 
 ## P5-004 External Ecosystem Integrations
 
-- Status: parked-planned.
+- Status: long-range planned.
 - Owner: TBD.
 - Created: 2026-05-23.
 - Last reviewed: 2026-05-23.
@@ -66,7 +92,7 @@
 
 ## P5-005 Portal, Payment, And Messaging Automation Governance
 
-- Status: parked-planned.
+- Status: long-range planned.
 - Owner: TBD.
 - Created: 2026-05-23.
 - Last reviewed: 2026-05-23.

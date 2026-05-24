@@ -1,4 +1,30 @@
-# P4 Intelligence, Engineer Pack, And Communications Tickets
+# P4 Intelligence, Engineer Pack, And Communications Tickets — Redirected
+
+> **This file is a tombstone/redirect.** Tickets have been relocated to their owning workspaces as part of the docs/plans workspace expansion (2026-05-24). This file is preserved so that scaffold verifier path checks continue to pass.
+
+- Status: redirected.
+- Owner: unassigned.
+- Created: 2026-05-23.
+- Last reviewed: 2026-05-24.
+- Source links: `docs/plans/initial-repo-setup/documentation-scaffold/plans-folder-expansion-plan.md`.
+- Roadmap milestone: P4 Intelligence Engineer Communications.
+- Dependencies: P1 Operational Core MVP.
+- Expected outputs: see new workspace ticket files below.
+- Acceptance criteria: all P4 tickets exist in their owning workspace.
+- Verification required: scaffold verifier path checks pass.
+- Archive target: `docs/plans/operational-core/archived_plans/implemented/`.
+- Supersedes: none.
+- Superseded-by: see new workspace paths below.
+
+## Ticket Relocation Map
+
+| Ticket | New Location |
+| --- | --- |
+| P4-001 Valuation Evidence Support | `docs/plans/vehicle-valuation-data/tickets/p4-vehicle-valuation.md` |
+| P4-002 DVLA/DVSA And Mileage Evidence | `docs/plans/vehicle-valuation-data/tickets/p4-vehicle-valuation.md` |
+| P4-003 Image Intelligence And Evidence Matching | `docs/plans/evidence-estimate-review/tickets/p4-image-intelligence.md` |
+| P4-004 Engineer Pack Generator | `docs/plans/engineer-communications/tickets/p4-engineer-communications.md` |
+| P4-005 Communications Drafting | `docs/plans/engineer-communications/tickets/p4-engineer-communications.md` |
 
 ## P4-001 Valuation Evidence Support
 

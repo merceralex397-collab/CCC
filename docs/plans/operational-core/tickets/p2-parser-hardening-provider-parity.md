@@ -1,4 +1,29 @@
-# P2 Parser Hardening And Provider Parity Tickets
+# P2 Parser Hardening And Provider Parity Tickets — Redirected
+
+> **This file is a tombstone/redirect.** Tickets have been relocated to their owning workspaces as part of the docs/plans workspace expansion (2026-05-24). This file is preserved so that scaffold verifier path checks continue to pass.
+
+- Status: redirected.
+- Owner: unassigned.
+- Created: 2026-05-23.
+- Last reviewed: 2026-05-24.
+- Source links: `docs/plans/initial-repo-setup/documentation-scaffold/plans-folder-expansion-plan.md`.
+- Roadmap milestone: P2 Parser Hardening And Provider Parity.
+- Dependencies: P1 Operational Core MVP.
+- Expected outputs: see new workspace ticket files below.
+- Acceptance criteria: all P2 tickets exist in their owning workspace.
+- Verification required: scaffold verifier path checks pass.
+- Archive target: `docs/plans/operational-core/archived_plans/implemented/`.
+- Supersedes: none.
+- Superseded-by: see new workspace paths below.
+
+## Ticket Relocation Map
+
+| Ticket | New Location |
+| --- | --- |
+| P2-001 Golden Corpus Regression Harness | `docs/plans/parser-extraction/tickets/p2-golden-corpus-regression.md` |
+| P2-002 Provider Parity And Uncovered Principals | `docs/plans/provider-principal-config/tickets/p2-provider-parity.md` |
+| P2-003 Extraction Adapter Hardening | `docs/plans/parser-extraction/tickets/p2-parser-hardening.md` |
+| P2-004 UI/CLI Parity Hardening | `docs/plans/parser-extraction/tickets/p2-parser-hardening.md` |
 
 ## P2-001 Golden Corpus Regression Harness
 
@@ -25,7 +50,7 @@
 - Roadmap milestone: P2 Parser Hardening And Provider Parity.
 - Dependencies: P2-001.
 - Expected outputs: triage decisions for `ACSP`, `OAK/AX`, `PRINCIPAL`, `WOODLANDS`, provider-priority list for all requested providers.
-- Acceptance criteria: uncovered principals are either implemented, mapped to existing provider logic, marked data-quality issue, or parked with reason.
+- Acceptance criteria: uncovered principals are either implemented, mapped to existing provider logic, marked data-quality issue, or captured in the all-ideas ledger with reason.
 - Verification required: provider matrix updated and regression harness covers implemented additions.
 - Archive target: `docs/plans/operational-core/archived_plans/implemented/`.
 - Supersedes: none.

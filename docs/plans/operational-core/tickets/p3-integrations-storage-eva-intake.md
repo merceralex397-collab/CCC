@@ -1,4 +1,30 @@
-# P3 Integrations, Storage, EVA, And Intake Tickets
+# P3 Integrations, Storage, EVA, And Intake Tickets — Redirected
+
+> **This file is a tombstone/redirect.** Tickets have been relocated to their owning workspaces as part of the docs/plans workspace expansion (2026-05-24). This file is preserved so that scaffold verifier path checks continue to pass.
+
+- Status: redirected.
+- Owner: unassigned.
+- Created: 2026-05-23.
+- Last reviewed: 2026-05-24.
+- Source links: `docs/plans/initial-repo-setup/documentation-scaffold/plans-folder-expansion-plan.md`.
+- Roadmap milestone: P3 Integrations Storage EVA Intake.
+- Dependencies: P1 Operational Core MVP.
+- Expected outputs: see new workspace ticket files below.
+- Acceptance criteria: all P3 tickets exist in their owning workspace.
+- Verification required: scaffold verifier path checks pass.
+- Archive target: `docs/plans/operational-core/archived_plans/implemented/`.
+- Supersedes: none.
+- Superseded-by: see new workspace paths below.
+
+## Ticket Relocation Map
+
+| Ticket | New Location |
+| --- | --- |
+| P3-001 Outlook Intake Adapter | `docs/plans/intake-storage-integrations/tickets/p3-integrations.md` |
+| P3-002 Live Box Upload Adapter | `docs/plans/intake-storage-integrations/tickets/p3-integrations.md` |
+| P3-003 Website/Payment Intake Boundary | `docs/plans/intake-storage-integrations/tickets/p3-integrations.md` |
+| P3-004 EVA/Sentry Adapter And Import Control | `docs/plans/intake-storage-integrations/tickets/p3-integrations.md` |
+| P3-005 CCC-Owned Storage Decision | `docs/plans/intake-storage-integrations/tickets/p3-integrations.md` |
 
 ## P3-001 Outlook Intake Adapter
 

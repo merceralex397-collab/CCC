@@ -3,10 +3,11 @@
 ## Navigation
 
 - Start with `docs/docs_index.md` for human-readable navigation and `docs/repo_map.json` for machine-readable path routing.
+- Initial repository setup and exhaustive reference-derived idea planning live under `docs/plans/initial-repo-setup/`.
 - Active programme planning lives under `docs/plans/operational-core/`.
 - Current parser MVP implementation work lives at `docs/plans/operational-core/parser-mvp/plan.md`.
 - Active tickets live under `docs/plans/operational-core/tickets/`.
-- Implemented or superseded plans live under `docs/plans/operational-core/archived_plans/`.
+- Implemented or superseded plans live under the owning workspace's `archived_plans/`.
 - Raw evidence lives under `docs/reference/raw/collisionrelateddocs/`.
 - Normalized companions and extracted data live under `docs/reference/normalized/` and `docs/reference/data/`.
 - Generated or historical planning packs live under `docs/reference/originalplanning/` and are reference-only unless promoted.
@@ -25,8 +26,8 @@
 ## Planning And Ticket Lifecycle
 
 - Every active plan or ticket must include status, owner, created date, last reviewed date, source links, roadmap milestone, dependencies, expected outputs, acceptance criteria, verification required, archive target, and supersedes/superseded-by fields.
-- When a plan or ticket is implemented, move it to `docs/plans/operational-core/archived_plans/implemented/`, rename it with the completion date, and add an implemented-state block at the top.
-- Superseded or merged plans go to `docs/plans/operational-core/archived_plans/superseded/` with a pointer to the replacement doc or ticket.
+- When a plan or ticket is implemented, move it to the owning workspace's `archived_plans/implemented/`, rename it with the completion date, and add an implemented-state block at the top.
+- Superseded or merged plans go to the owning workspace's `archived_plans/superseded/` with a pointer to the replacement doc or ticket.
 - Generated plan packs are reference material unless explicitly promoted into active docs or tickets.
 
 ## Parser Rules

@@ -25,7 +25,15 @@ REQUIRED_PATHS = [
     "docs/source_manifest.csv",
     "docs/roadmap.md",
     "docs/plans/_index.md",
-    "docs/plans/operational-core/archived_plans/implemented/2026-05-23-implemented-repository-restructure.md",
+    "docs/plans/initial-repo-setup/README.md",
+    "docs/plans/initial-repo-setup/documentation-scaffold/plan.md",
+    "docs/plans/initial-repo-setup/documentation-scaffold/plans-folder-expansion-plan.md",
+    "docs/plans/initial-repo-setup/reference-audit/all-ideas-plan.md",
+    "docs/plans/initial-repo-setup/tickets/README.md",
+    "docs/plans/initial-repo-setup/archived_plans/implemented/.gitkeep",
+    "docs/plans/initial-repo-setup/archived_plans/implemented/2026-05-23-implemented-initrepoplan.md",
+    "docs/plans/initial-repo-setup/archived_plans/implemented/2026-05-23-implemented-repository-restructure.md",
+    "docs/plans/initial-repo-setup/archived_plans/superseded/.gitkeep",
     "docs/architecture/overview.md",
     "docs/architecture/programme_architecture.md",
     "docs/architecture/mvp_interlock.md",
@@ -78,7 +86,6 @@ REQUIRED_PATHS = [
     "src/ccc_parser/cli.py",
     "src/ccc_parser/ui/app.py",
     "tests/test_scaffold_contracts.py",
-    "docs/plans/operational-core/archived_plans/implemented/2026-05-23-implemented-initrepoplan.md",
     "docs/plans/operational-core/archived_plans/superseded/.gitkeep",
 ]
 
@@ -97,6 +104,29 @@ RESEARCH_DOCS = [
     "docs/research/gptdeepresearch.md",
     "docs/research/gptevadeepresearch.md",
     "docs/research/siderpdf.md",
+]
+
+PLANNED_WORKSPACE_TERMS = [
+    "docs/plans/unified-platform/",
+    "docs/plans/automation-centre/",
+    "docs/plans/parser-extraction/",
+    "docs/plans/case-workflow-state/",
+    "docs/plans/provider-principal-config/",
+    "docs/plans/intake-storage-integrations/",
+    "docs/plans/evidence-estimate-review/",
+    "docs/plans/vehicle-valuation-data/",
+    "docs/plans/engineer-communications/",
+    "docs/plans/ai-agents/",
+    "docs/plans/mcp-and-tooling/",
+    "docs/plans/agent-skills/",
+    "docs/plans/ai-platform-tools/",
+    "docs/plans/user-experience-interfaces/",
+    "docs/plans/finance-billing/",
+    "docs/plans/governance-security/",
+    "docs/plans/operations-quality/",
+    "docs/plans/analytics-data-platform/",
+    "docs/plans/external-platform-partners/",
+    "docs/plans/product-business/",
 ]
 
 PROVIDER_PRESETS = [
@@ -343,12 +373,21 @@ def main() -> int:
     require(any(row["code"] == "ACSP" and row["parser_covered"] == "no" for row in matrix_rows), "ACSP uncovered status missing")
     require(any(row["code"] == "WOODLANDS" and row["parser_covered"] == "no" for row in matrix_rows), "WOODLANDS uncovered status missing")
 
-    plan_text = (ROOT / "docs/plans/operational-core/archived_plans/implemented/2026-05-23-implemented-initrepoplan.md").read_text(encoding="utf-8")
+    plan_text = (ROOT / "docs/plans/initial-repo-setup/archived_plans/implemented/2026-05-23-implemented-initrepoplan.md").read_text(encoding="utf-8")
     require("Status: implemented" in plan_text, "Archived initrepoplan missing implemented status")
 
     synthesis_text = read_doc("docs/plans/operational-core/source_synthesis.md")
     require_terms(synthesis_text, GENERATED_PACKS, "Source synthesis")
     require_terms(synthesis_text, RESEARCH_DOCS, "Source synthesis")
+
+    expansion_plan = read_doc("docs/plans/initial-repo-setup/documentation-scaffold/plans-folder-expansion-plan.md")
+    require_terms(expansion_plan, PLANNED_WORKSPACE_TERMS, "Plans folder expansion plan")
+    require_terms(
+        expansion_plan,
+        ["Deterministic automation", "AI agents", "MCP plans", "Agent skills"],
+        "Plans folder expansion coverage",
+    )
+    require_terms(read_doc("docs/plans/_index.md"), PLANNED_WORKSPACE_TERMS, "Plans index planned workspaces")
 
     parser_plan = read_doc("docs/plans/operational-core/parser-mvp/plan.md")
     require_terms(parser_plan, PLAN_METADATA_TERMS, "Parser MVP plan metadata")

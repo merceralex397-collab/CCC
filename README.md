@@ -27,6 +27,7 @@ Raw operational files under `docs/reference/raw/collisionrelateddocs/` remain im
 - `docs/source_manifest.md`
 - `docs/roadmap.md`
 - `docs/plans/_index.md`
+- `docs/plans/initial-repo-setup/README.md`
 - `docs/plans/operational-core/source_synthesis.md`
 - `docs/plans/operational-core/parser-mvp/plan.md`
 - `docs/architecture/`
@@ -36,7 +37,7 @@ Raw operational files under `docs/reference/raw/collisionrelateddocs/` remain im
 - `docs/requirements/`
 - `docs/reference/data/provider_coverage_matrix.md`
 - `docs/reference/originalplanning_index.md`
-- `docs/plans/operational-core/archived_plans/implemented/`
+- `docs/plans/*/archived_plans/implemented/`
 
 ## Local Verification
 

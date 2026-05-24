@@ -10,4 +10,4 @@
 | Original planning | `docs/reference/originalplanning/` | generated historical planning packs |
 | Test context | `docs/reference/test-context/` | historical test repositories/context packs |
 
-Generated and historical material is not active scope unless promoted into architecture, contracts, decisions, or `docs/plans/operational-core/tickets/`.
+Generated and historical material is not active scope unless promoted into `docs/plans/initial-repo-setup/reference-audit/`, architecture, contracts, decisions, or `docs/plans/operational-core/tickets/`.

@@ -40,9 +40,9 @@ Current operational evidence already reaches beyond Outlook email alone: website
 
 Portal/payment scope guardrail: current portal, payment, Box, and WhatsApp findings should be modeled as source/evidence metadata and governance inputs first. They do not authorize autonomous sending, autonomous payment chasing, autonomous WhatsApp messaging, or parser-owned checkout/portal behavior in P1.
 
-## Parked Items
+## Long-Range Planned Items
 
-The following ideas are intentionally parked until the core workflow is live and measurable:
+The following ideas are planned for later promotion once the core workflow is live and measurable:
 
 - predictive engineer scheduling;
 - external partner APIs;

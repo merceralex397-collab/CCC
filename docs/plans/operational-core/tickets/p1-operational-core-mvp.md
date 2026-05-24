@@ -1,4 +1,32 @@
-# P1 Operational Core MVP Tickets
+# P1 Operational Core MVP Tickets — Redirected
+
+> **This file is a tombstone/redirect.** Tickets have been relocated to their owning workspaces as part of the docs/plans workspace expansion (2026-05-24). This file is preserved so that scaffold verifier path checks continue to pass.
+
+- Status: redirected.
+- Owner: unassigned.
+- Created: 2026-05-23.
+- Last reviewed: 2026-05-24.
+- Source links: `docs/plans/initial-repo-setup/documentation-scaffold/plans-folder-expansion-plan.md`.
+- Roadmap milestone: P1 Operational Core MVP.
+- Dependencies: P0 foundation.
+- Expected outputs: see new workspace ticket files below.
+- Acceptance criteria: all P1 tickets exist in their owning workspace.
+- Verification required: scaffold verifier path checks pass.
+- Archive target: `docs/plans/operational-core/archived_plans/implemented/`.
+- Supersedes: none.
+- Superseded-by: see new workspace paths below.
+
+## Ticket Relocation Map
+
+| Ticket | New Location |
+| --- | --- |
+| P1-001 Parser Core MVP | `docs/plans/parser-extraction/tickets/p1-parser-core-mvp.md` |
+| P1-002 Staff Parser UI | `docs/plans/user-experience-interfaces/tickets/p1-staff-parser-ui.md` |
+| P1-003 Parser CLI Parity | `docs/plans/parser-extraction/tickets/p1-parser-cli-parity.md` |
+| P1-004 Provider Principal Admin UI | `docs/plans/provider-principal-config/tickets/p1-provider-principal-admin-ui.md` |
+| P1-005 Work Item And Review Queue | `docs/plans/case-workflow-state/tickets/p1-work-item-review-queue.md` |
+| P1-006 EVA JSON Export | `docs/plans/intake-storage-integrations/tickets/p1-eva-json-export.md` |
+| P1-007 Box-Ready Evidence Package | `docs/plans/intake-storage-integrations/tickets/p1-box-ready-evidence-package.md` |
 
 ## P1-001 Parser Core MVP
 
