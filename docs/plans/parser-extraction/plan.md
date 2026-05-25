@@ -4,8 +4,8 @@ Date: 2026-05-24
 Status: active workspace plan
 Owner: unassigned
 Created: 2026-05-24
-Last reviewed: 2026-05-24
-Source links: `docs/plans/parser-extraction/parser-mvp/plan.md`, `docs/plans/parser-extraction/parser-mvp/adjacent-parser-and-inspection-location-review.md`, `docs/decisions/0004-ground-up-compatible-parser-rebuild.md`, `docs/decisions/0007-deterministic-first-parser.md`, `docs/reference/originalplanning/ce_system_plans_enhanced/ce_system_plans_enhanced/06_WORK_PACKAGE_DOCUMENT_MAPPER_AND_EXTRACTION.md`, `docs/contracts/extraction_adapter_contract_v1.md`
+Last reviewed: 2026-05-25
+Source links: `docs/plans/parser-extraction/parser-mvp/plan.md`, `docs/plans/parser-extraction/parser-mvp/adjacent-parser-and-inspection-location-review.md`, `docs/plans/parser-extraction/parser-mvp/sentry-api-enhancement-mechanisms.md`, `docs/decisions/0004-ground-up-compatible-parser-rebuild.md`, `docs/decisions/0007-deterministic-first-parser.md`, `docs/reference/originalplanning/ce_system_plans_enhanced/ce_system_plans_enhanced/06_WORK_PACKAGE_DOCUMENT_MAPPER_AND_EXTRACTION.md`, `docs/contracts/extraction_adapter_contract_v1.md`
 Roadmap milestone: Whole-programme roadmap
 Dependencies: provider-principal-config, operations-quality, governance-security, user-experience-interfaces
 Expected outputs: source-backed todos, scoped tickets, option papers, roadmap updates, and archive records for `docs/plans/parser-extraction/`
@@ -25,6 +25,7 @@ Superseded-by: none
 | --- | --- |
 | `docs/plans/parser-extraction/parser-mvp/plan.md` | Active parser MVP implementation plan. |
 | `docs/plans/parser-extraction/parser-mvp/adjacent-parser-and-inspection-location-review.md` | Adjacent parser comparison, inspection-location decision register, and EVA/Sentry lookup constraint. |
+| `docs/plans/parser-extraction/parser-mvp/sentry-api-enhancement-mechanisms.md` | Sentry API enhancement mechanisms, parser boundary guardrails, and future integration ownership. |
 | `docs/decisions/0004-ground-up-compatible-parser-rebuild.md` | Accepted ground-up compatible parser rebuild decision. |
 | `docs/decisions/0007-deterministic-first-parser.md` | Accepted deterministic-first parser decision. |
 | `docs/reference/originalplanning/ce_system_plans_enhanced/ce_system_plans_enhanced/06_WORK_PACKAGE_DOCUMENT_MAPPER_AND_EXTRACTION.md` | Document Mapper and extraction work package. |

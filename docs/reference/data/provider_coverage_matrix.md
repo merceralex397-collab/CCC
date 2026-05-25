@@ -1,6 +1,6 @@
 # Provider Coverage Matrix
 
-- Generated: 2026-05-23
+- Generated: 2026-05-25
 - Parser source: `docs/reference/raw/collisionrelateddocs/Settings Backup/providers.json`
 - Job-sheet sources: `Backup of CE Job Sheet 260429.xlsm`, `Backup of CE Job Sheet 260309.xlsm`
 - Mapped-principals source: `Mapped Principals.xlsx`
@@ -23,8 +23,9 @@
 
 - Latest corpus run: 134 files under `docs/reference/raw/collisionrelateddocs/Instructions/`.
 - Reader-level blockers: 0.
-- Provider presets exercised by at least one matched instruction: 26 current presets, with image-only/review-only inputs remaining `UNKNOWN`.
-- Image-only PDFs are review-required when no native text is present and local Tesseract OCR is unavailable.
+- Provider presets exercised by at least one matched instruction: 26 current presets. The latest corpus report records 3 remaining `UNKNOWN` evidence/image-pack review cases.
+- Short image-only instruction PDFs can use optional local Tesseract OCR when a local or bundled binary is discoverable; the six MP image-only instruction PDFs now read through `pymupdf_ocr_fallback`.
+- Image-only evidence packs remain review-required and are not OCRed as instruction documents by default.
 - Deterministic fallback extraction now fills blank-rule engineer-report fields where visible in text; `tests/parsertests/output1.json` records the CNX regression fixture.
 - Evidence-only image packs are recorded as `not-eva-export-candidate` in the fixture ledger and cannot produce EVA JSON.
 - The generated fixture ledger records expected provider status, extracted fields, review blockers, and export snapshot status for every corpus file.

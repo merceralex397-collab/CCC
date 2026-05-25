@@ -1,11 +1,13 @@
 from __future__ import annotations
 
 import json
+import subprocess
 from email.message import EmailMessage
 from pathlib import Path
 
 import pytest
 
+from ccc_parser import readers
 from ccc_parser.core import ParserCore
 from ccc_parser.exporters.eva import export_eva_payload
 from ccc_parser.normalization import (
@@ -15,6 +17,7 @@ from ccc_parser.normalization import (
     normalize_vrm,
 )
 from ccc_parser.providers import detect_provider, load_provider_presets
+from ccc_parser.triage import triage_file
 from ccc_parser.ui.app import parse_drop_paths
 
 
@@ -26,6 +29,7 @@ PROVIDER_FIXTURE = ROOT / "docs/reference/data/parser_provider_presets_v1.json"
 CORPUS_LEDGER = ROOT / "docs/reference/data/parser_corpus_fixture_ledger.json"
 CORPUS_REPORT = ROOT / "docs/reference/data/parser_corpus_regression_report.json"
 PARSERTESTS = ROOT / "tests/parsertests"
+LOCAL_TESSERACT = ROOT.parent / "cedocumentmapper" / "tesseract" / "tesseract.exe"
 
 
 def field_value(result, name: str) -> str:
@@ -111,6 +115,68 @@ def test_parse_cnx_engineer_report_uses_deterministic_fallbacks_for_visible_fiel
     assert field_value(result, "mileage_unit") == "Miles"
 
 
+@pytest.mark.skipif(not LOCAL_TESSERACT.exists(), reason="local Tesseract bundle is not available")
+def test_short_image_only_pdf_uses_local_ocr_for_mp_instruction():
+    result = ParserCore(PROVIDERS).parse(INSTRUCTIONS / "MP PDF 01.pdf")
+
+    assert result.detected_provider == "MP (Simple)"
+    assert field_value(result, "work_provider") == "MP"
+    assert field_value(result, "vrm") == "FG21DGV"
+    assert "Lewisham Park" in field_value(result, "inspection_address")
+    assert any(warning.code == "ocr_fallback_used" for warning in result.warnings)
+
+
+def test_folder_parse_merges_engineer_report_without_losing_instruction_provider(tmp_path):
+    instruction = tmp_path / "01-instruction.txt"
+    instruction.write_text(
+        "\n".join(
+            [
+                "Smart Business Link",
+                "Date",
+                "01/05/2026",
+                "From",
+                "Registration: SK24 KYF",
+                "Vehicle Make: FORD SWIFT VOYAGER 494 AUTO",
+                "Policyholder Name: Mr Craig Motorhome Escapes",
+                "Claim Number: SBL-B0470099",
+                "Incident Date: 06/04/2026",
+                "Incident Circumstances",
+                "Initial impact summary.",
+                "Agreed Value",
+                "Policyholder VAT Status: VAT Registered",
+            ]
+        ),
+        encoding="utf-8",
+    )
+    engineer_report = tmp_path / "02-engineer-report.txt"
+    engineer_report.write_text(
+        "\n".join(
+            [
+                "Connexus Vehicle Assessors",
+                "Reg No: SK24 KYF",
+                "Client: Mr Craig Motorhome Escapes",
+                "Our Ref: SBL-B0470099",
+                "Inspection Date: 02/05/2026",
+                "Speedo: 70,552 Miles",
+                "NATURE OF INCIDENT",
+                "Rear bumper damage from impact.",
+                "ENGINEER'S COMMENTS",
+            ]
+        ),
+        encoding="utf-8",
+    )
+
+    result = ParserCore(PROVIDERS).parse(tmp_path)
+
+    assert result.detected_provider == "SBL"
+    assert field_value(result, "work_provider") == "SBL"
+    assert field_value(result, "mileage") == "70552"
+    assert field_value(result, "mileage_unit") == "Miles"
+    assert "rear bumper damage" in field_value(result, "accident_circumstances").lower()
+    assert result.audit_metadata["engineer_report_provider"] == "CNX (Engineers)"
+    assert any(warning.code == "engineer_report_field_override" for warning in result.warnings)
+
+
 def test_parsertests_output1_matches_cnx_eva_export_regression_fixture():
     result = ParserCore(PROVIDERS).parse(INSTRUCTIONS / "CNX 01.pdf")
     payload = export_eva_payload(result, allow_blockers=True)
@@ -165,6 +231,66 @@ def test_email_attachment_instruction_is_routed_through_parser_core(tmp_path):
     assert field_value(result, "vrm") == "SK24KYF"
     assert field_value(result, "reference") == "SBL-B0470099"
     assert any(source.path.name == "attached-instruction.txt" for source in result.source_files)
+
+
+def test_email_attachment_cache_is_unique_per_read(tmp_path):
+    message = EmailMessage()
+    message["Subject"] = "Instruction"
+    message["From"] = "sender@example.test"
+    message["To"] = "engineers@example.test"
+    message.set_content("Please see attached instruction.")
+    message.add_attachment("Smart Business Link", subtype="plain", filename="attached-instruction.txt")
+    eml_path = tmp_path / "instruction-email.eml"
+    eml_path.write_bytes(message.as_bytes())
+
+    first = readers.read_document(triage_file(eml_path))
+    second = readers.read_document(triage_file(eml_path))
+
+    assert first.attachments[0].parent != second.attachments[0].parent
+    assert first.attachments[0].exists()
+    assert second.attachments[0].exists()
+
+
+def test_batch_report_keeps_successes_when_one_item_fails(monkeypatch, tmp_path):
+    good = tmp_path / "good.txt"
+    bad = tmp_path / "bad.txt"
+    good.write_text("Smart Business Link", encoding="utf-8")
+    bad.write_text("Smart Business Link", encoding="utf-8")
+    core = ParserCore(PROVIDERS)
+    real_parse = core.parse
+
+    def parse_with_failure(path, provider=None):
+        if Path(path).name == "bad.txt":
+            raise RuntimeError("synthetic parse failure")
+        return real_parse(path, provider=provider)
+
+    monkeypatch.setattr(core, "parse", parse_with_failure)
+
+    report = core.parse_batch_report(tmp_path)
+
+    assert len(report["results"]) == 1
+    assert report["errors"][0]["path"].endswith("bad.txt")
+    assert report["errors"][0]["message"] == "synthetic parse failure"
+
+
+def test_doc_conversion_helpers_use_timeouts(monkeypatch, tmp_path):
+    source = tmp_path / "sample.doc"
+    source.write_bytes(b"not a real doc")
+
+    def fake_which(name):
+        return name
+
+    def fake_run(*args, **kwargs):
+        assert kwargs["timeout"] == readers.SUBPROCESS_TIMEOUT_SECONDS
+        raise subprocess.TimeoutExpired(args[0], kwargs["timeout"])
+
+    monkeypatch.setattr(readers.shutil, "which", fake_which)
+    monkeypatch.setattr(readers.subprocess, "run", fake_run)
+
+    with pytest.raises(RuntimeError, match="timed out"):
+        readers._extract_doc_text_via_soffice(source)
+    with pytest.raises(RuntimeError, match="timed out"):
+        readers._extract_doc_text_via_antiword(source)
 
 
 def test_forced_provider_code_must_be_unambiguous():

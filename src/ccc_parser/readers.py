@@ -1,10 +1,13 @@
 from __future__ import annotations
 
 import io
+import os
 import re
 import shutil
 import subprocess
+import sys
 import tempfile
+import uuid
 import zipfile
 from dataclasses import dataclass, field
 from email import policy
@@ -59,7 +62,9 @@ except Exception:  # pragma: no cover
 
 
 OCR_PAGE_LIMIT = 2
+SUBPROCESS_TIMEOUT_SECONDS = 30
 ATTACHMENT_CACHE = Path(tempfile.gettempdir()) / "ccc_parser_attachments"
+_TESSERACT_CONFIGURED: bool | None = None
 
 
 @dataclass(frozen=True)
@@ -92,9 +97,7 @@ def _safe_attachment_name(name: str, fallback: str) -> str:
 
 def _attachment_output_dir(message_path: Path) -> Path:
     digest = file_sha256(message_path)[:16]
-    output_dir = ATTACHMENT_CACHE / digest
-    if output_dir.exists():
-        shutil.rmtree(output_dir)
+    output_dir = ATTACHMENT_CACHE / f"{digest}-{os.getpid()}-{uuid.uuid4().hex[:12]}"
     output_dir.mkdir(parents=True, exist_ok=True)
     return output_dir
 
@@ -108,6 +111,51 @@ def _unique_attachment_path(output_dir: Path, filename: str) -> Path:
         candidate = output_dir / f"{stem}-{index}{suffix}"
         index += 1
     return candidate
+
+
+def _resource_path(name: str) -> Path:
+    if hasattr(sys, "_MEIPASS"):
+        return Path(getattr(sys, "_MEIPASS")) / name
+    return Path(__file__).resolve().parents[2] / name
+
+
+def _configure_tesseract() -> bool:
+    global _TESSERACT_CONFIGURED
+    if _TESSERACT_CONFIGURED is not None:
+        return _TESSERACT_CONFIGURED
+    if pytesseract is None:
+        _TESSERACT_CONFIGURED = False
+        return False
+
+    explicit = os.environ.get("CCC_TESSERACT_CMD") or os.environ.get("TESSERACT_CMD")
+    command_candidates = [Path(explicit)] if explicit else []
+    command_candidates.extend(
+        [
+            _resource_path("tesseract") / "tesseract.exe",
+            _resource_path("tesseract") / "tesseract",
+            Path(__file__).resolve().parents[3] / "cedocumentmapper" / "tesseract" / "tesseract.exe",
+            Path(__file__).resolve().parents[3] / "cedocumentmapper" / "tesseract" / "tesseract",
+        ]
+    )
+    path_tesseract = shutil.which("tesseract")
+    if path_tesseract:
+        command_candidates.append(Path(path_tesseract))
+
+    binary = next((candidate for candidate in command_candidates if candidate and candidate.exists()), None)
+    if binary is None:
+        _TESSERACT_CONFIGURED = False
+        return False
+
+    try:
+        pytesseract.pytesseract.tesseract_cmd = str(binary)
+    except Exception:
+        _TESSERACT_CONFIGURED = False
+        return False
+    tessdata = binary.parent / "tessdata"
+    if tessdata.exists():
+        os.environ.setdefault("TESSDATA_PREFIX", str(tessdata))
+    _TESSERACT_CONFIGURED = True
+    return True
 
 
 def _read_text_file(path: Path) -> str:
@@ -163,7 +211,7 @@ def _extract_pdf_pymupdf(path: Path) -> tuple[str, list[ParserWarning], str]:
             not combined
             and 0 < len(image_counts) <= OCR_PAGE_LIMIT
             and all(count == 1 for count in image_counts)
-            and pytesseract is not None
+            and _configure_tesseract()
             and PILImage is not None
         )
         if should_ocr:
@@ -492,11 +540,15 @@ def _extract_doc_text_via_soffice(path: Path) -> str:
         raise RuntimeError("LibreOffice is not installed.")
     with tempfile.TemporaryDirectory() as tmpdir:
         outdir = Path(tmpdir)
-        subprocess.run(
-            [soffice, "--headless", "--convert-to", "docx", "--outdir", str(outdir), str(path.resolve())],
-            check=True,
-            capture_output=True,
-        )
+        try:
+            subprocess.run(
+                [soffice, "--headless", "--convert-to", "docx", "--outdir", str(outdir), str(path.resolve())],
+                check=True,
+                capture_output=True,
+                timeout=SUBPROCESS_TIMEOUT_SECONDS,
+            )
+        except subprocess.TimeoutExpired as exc:
+            raise RuntimeError("LibreOffice DOC conversion timed out.") from exc
         candidates = list(outdir.glob("*.docx"))
         if not candidates:
             raise RuntimeError("LibreOffice did not produce a DOCX file.")
@@ -507,7 +559,15 @@ def _extract_doc_text_via_antiword(path: Path) -> str:
     antiword = shutil.which("antiword")
     if not antiword:
         raise RuntimeError("antiword is not installed.")
-    result = subprocess.run([antiword, str(path.resolve())], check=True, capture_output=True)
+    try:
+        result = subprocess.run(
+            [antiword, str(path.resolve())],
+            check=True,
+            capture_output=True,
+            timeout=SUBPROCESS_TIMEOUT_SECONDS,
+        )
+    except subprocess.TimeoutExpired as exc:
+        raise RuntimeError("antiword DOC extraction timed out.") from exc
     output = result.stdout.decode("utf-8", errors="ignore")
     output = output.replace("\r\n", "\n").replace("\r", "\n")
     output = re.sub(r"\n{3,}", "\n\n", output)

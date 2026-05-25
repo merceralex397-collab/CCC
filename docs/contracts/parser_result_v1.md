@@ -78,3 +78,7 @@ EVA field shape is an export adapter. Do not let EVA-specific JSON become the on
 ## Deterministic Fallbacks
 
 Provider presets remain the primary extraction source. When a preset has a blank config, or a fixed-position rule extracts visible document-control noise instead of a field value, the parser may apply deterministic labelled-value fallbacks for VRM, reference, claimant name, vehicle model, dates, inspection mode/address, accident circumstances, mileage, mileage unit, and provider code. These fallback fields still carry method, confidence, and provenance metadata and must remain reviewable before export.
+
+## Engineer Report Merge Metadata
+
+When a folder contains one instruction and one engineer-report source, parser core may merge non-provider engineer-report fields into the canonical result while preserving the instruction work provider. The result audit metadata records `engineer_report_provider`, `engineer_report_source_file_id`, and `engineer_report_field_overrides`; any replacement of a non-blank instruction value must create an `engineer_report_field_override` warning.

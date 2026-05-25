@@ -35,10 +35,12 @@ Implemented package manifest: `src/ccc_parser/packaging.py` records preview imag
 
 ## Future Sentry/EVA API
 
-Direct Sentry submission is future work. Current research shows the API docs are not enough to treat live submission as a parser MVP requirement. Future work must validate token handling, schema, duplicate prevention, failure recovery, and manual approval.
+Direct Sentry submission is future work. The Sentry API guide supports exact-identifier writes and released-report reads, but it does not document a general live claim/location search or native batch endpoint. Future work must validate token handling, schema, duplicate prevention, throttled client-side batching, failure recovery, and manual approval.
 
 ## Sources
 
 - `docs/reference/raw/collisionrelateddocs/Final Format Example 02.json`
+- `docs/reference/raw/collisionrelateddocs/collision_releated/Sentry_API_Complete_Guide.md`
+- `docs/plans/parser-extraction/parser-mvp/sentry-api-enhancement-mechanisms.md`
 - `docs/research/gptevadeepresearch.md`
 - `docs/contracts/parser_result_v1.md`

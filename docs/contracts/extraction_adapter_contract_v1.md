@@ -34,7 +34,10 @@ Extraction adapters normalize file-specific parsing into a shared intermediate r
 - Do not reduce layout-rich documents to plain text before the geometry/table passes have had a chance to run.
 - Preserve page numbers, text spans, bounding boxes, block order, and extraction method when available.
 - OCR is a fallback for image-only or failed native extraction, not a default for every PDF.
+- Short image-only instruction PDFs may use a locally configured or bundled Tesseract binary; image-only evidence packs remain review material and must not be OCRed into EVA-exportable instructions by default.
 - Adapter failures must be recoverable and visible to the review queue.
+- External converter helpers must use bounded timeouts and fall through to the next extraction fallback where possible.
+- Email attachment extraction must use per-parse workspaces so concurrent parses of the same source cannot delete each other's attachments.
 
 ## PDF Cascade Baseline
 
@@ -47,4 +50,3 @@ Extraction adapters normalize file-specific parsing into a shared intermediate r
 
 - `docs/research/siderpdf.md`
 - `docs/research/gptdeepresearch.md`
-

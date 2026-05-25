@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated": "2026-05-24",
+  "updated": "2026-05-25",
   "entry_points": {
     "human_index": "docs/docs_index.md",
     "machine_map": "docs/repo_map.json",
@@ -259,7 +259,8 @@
       "plan": "docs/plans/parser-extraction/parser-mvp/plan.md",
       "evidence_review": "docs/plans/parser-extraction/parser-mvp/adjacent-parser-and-inspection-location-review.md",
       "legacy_behavior_inventory": "docs/plans/parser-extraction/parser-mvp/legacy_behavior_inventory.md",
-      "adjacent_repo_comparison": "docs/plans/parser-extraction/parser-mvp/adjacent_repo_comparison.md"
+      "adjacent_repo_comparison": "docs/plans/parser-extraction/parser-mvp/adjacent_repo_comparison.md",
+      "sentry_api_enhancement_mechanisms": "docs/plans/parser-extraction/parser-mvp/sentry-api-enhancement-mechanisms.md"
     }
   },
   "tests": {

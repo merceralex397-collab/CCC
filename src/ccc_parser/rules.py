@@ -432,7 +432,7 @@ def _extract_accident_circumstances_fallback(text: str) -> str:
     value = _first_regex_match(
         text,
         [
-            r"(?is)\bNATURE\s+OF\s+INCIDENT\s*(.+?)(?=\n\s*(?:ENGINEER'?S\s+COMMENTS|VEHICLE\s+HISTORY|REPAIR\s+SCHEDULE|[A-Z][A-Z '&/\-]{8,})\s*\n)",
+            r"(?is)\bNATURE\s+OF\s+INCIDENT\s*(.+?)(?=\n\s*(?:ENGINEER'?S\s+COMMENTS|VEHICLE\s+HISTORY|REPAIR\s+SCHEDULE|[A-Z][A-Z '&/\-]{8,})\s*(?:\n|$))",
         ],
     )
     if value:

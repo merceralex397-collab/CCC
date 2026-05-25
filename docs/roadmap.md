@@ -4,7 +4,7 @@ Date: 2026-05-24
 Status: active programme roadmap
 Owner: unassigned
 Created: 2026-05-24
-Last reviewed: 2026-05-24
+Last reviewed: 2026-05-25
 Source links: `docs/plans/initial-repo-setup/reference-audit/all-ideas-plan.md`, `docs/plans/initial-repo-setup/documentation-scaffold/plans-folder-expansion-plan.md`, `docs/plans/operational-core/source_synthesis.md`, `docs/architecture/future_system_convergence.md`, `docs/reference/test-context/testprojectcontext/collision_project_context_pack/collision_project_context_pack/14_IMPLEMENTATION_ROADMAP.md`, `docs/reference/originalplanning/phase7_expanded_markdown_plan/phase7_expanded_markdown_plan/02_prioritised_roadmap.md`
 Roadmap milestone: Whole-programme roadmap
 Dependencies: source manifest, workspace source maps, governance/security gates, operations-quality gates
@@ -25,7 +25,7 @@ Current milestone: harden parser MVP implementation against review findings, pro
 
 Parser implementation status: executable MVP present. The active parser MVP plan is `docs/plans/parser-extraction/parser-mvp/plan.md`; the operational-core parser path is only a compatibility stub. Current verification commands are `python -m pytest`, `python tools/run_parser_corpus.py`, and `python tools/verify_scaffold.py`.
 
-Current known parser review items: image-only MP PDFs and image packs remain review/OCR-required when no native text is present; many provider presets still require staff review for mileage, mileage unit, VAT, or inspection address because those values are absent from current provider rules or source documents. The CNX parsertests gap has been resolved by deterministic fallback extraction and is pinned in `tests/parsertests/output1.json`. Current blockers are captured in `docs/reference/data/parser_corpus_regression_report.json` and `docs/reference/data/parser_corpus_fixture_ledger.json`.
+Current known parser review items: local OCR now recovers the short MP image-only PDFs when a Tesseract binary is available, folder parsing can merge one instruction with one engineer report without losing the instruction provider, and PR review fixes covered per-parse attachment workspaces, partial batch reporting, triaged source-hash reuse, and DOC converter timeouts. Three corpus items remain `UNKNOWN`/review-required because the source evidence is an image pack or lacks a configured inspection address; many provider presets still require staff review for mileage, mileage unit, VAT, or inspection address because those values are absent from current provider rules or source documents. The CNX parsertests gap has been resolved by deterministic fallback extraction and is pinned in `tests/parsertests/output1.json`. Current blockers are captured in `docs/reference/data/parser_corpus_regression_report.json` and `docs/reference/data/parser_corpus_fixture_ledger.json`.
 
 Local repo skill status: installed at `C:/Users/PC/.codex/skills/ccc-repo-task-start` and planned/evaluated in `docs/plans/initial-repo-setup/local-repo-task-start-skill-plan.md`. This local development skill is separate from `docs/plans/agent-skills/`, which is reserved for production Collision Engineers skills.
 

@@ -1,14 +1,14 @@
 # Source Manifest
 
 - Generated: 2026-05-25
-- Total files inventoried: 890
+- Total files inventoried: 891
 - Full machine-readable inventory: `docs/source_manifest.csv` and `docs/source_manifest.json`
 
 ## Status Counts
 
 | Status | Count |
 | --- | ---: |
-| active-plan | 252 |
+| active-plan | 253 |
 | generated-reference | 186 |
 | implemented | 24 |
 | normalized-derivative | 254 |
@@ -33,7 +33,7 @@
 | data/parser_provider_presets_v1.json | 1 |
 | data/provider_coverage_matrix.csv | 1 |
 | data/provider_coverage_matrix.md | 1 |
-| docs | 262 |
+| docs | 263 |
 | normalized | 151 |
 | originalplanning/ce_phase4_agents_reviewed_plan | 16 |
 | originalplanning/ce_system_plans_enhanced | 14 |
@@ -64,7 +64,7 @@
 | .jam | 1 |
 | .jpg | 8 |
 | .json | 12 |
-| .md | 560 |
+| .md | 561 |
 | .msg | 15 |
 | .pdf | 64 |
 | .png | 45 |
@@ -81,23 +81,23 @@
 | Path | Status | Type | Size | SHA256 | Normalized companion | Blocker |
 | --- | --- | --- | ---: | --- | --- | --- |
 | `.gitattributes` | active-plan | [no extension] | 217 | `d0e6d92080d530ef222139e1e2260d518bb771c7d0b441ff5541a4734e0f564a` |  |  |
-| `.gitignore` | active-plan | [no extension] | 303 | `0430e7e98453d68945387f6d5f1b47e4d4646b68e78fd70d37d69faf882e82bb` |  |  |
+| `.gitignore` | active-plan | [no extension] | 306 | `168e26e3a2c926730f10be958b2404d32945717eea20592c043a7d2d960d94f0` |  |  |
 | `AGENTS.md` | active-plan | .md | 5075 | `5f5ab9cb99472bdff384d5e964ef8c5f4818c1d01acc8ba392a5051293e2990e` |  |  |
 | `codexconvo.md` | parked | .md | 16105 | `c393735dd9f8c653d9290242105870585c16288cba2b779c167cb562c6d17841` |  |  |
 | `docs/architecture/future_system_convergence.md` | active-plan | .md | 3297 | `89922fc80bc05f13afab0299daf0c0b00eb5afa6c22db4dabdd9139f89780576` |  |  |
 | `docs/architecture/governance_security.md` | active-plan | .md | 3017 | `461d2fe400c1469beeff314451c2815e48fa97e929f0fac7c7ac8c3dfeda5f54` |  |  |
 | `docs/architecture/mvp_interlock.md` | active-plan | .md | 2647 | `e21ccae05bc68e9d4471bdfac0ce11d6037ae4ba69d3c2c4a08bf30f093da5bc` |  |  |
-| `docs/architecture/overview.md` | active-plan | .md | 1575 | `9f1de898c685fbb6ca820a3e0ecc512825122aad1c4d25d7c1d47c70e573276a` |  |  |
-| `docs/architecture/parser_ui_cli.md` | active-plan | .md | 3672 | `33fb50707161399f0530518ee07f9d46ed461d2f4527cf00f7d0b5eab8de780a` |  |  |
+| `docs/architecture/overview.md` | active-plan | .md | 1560 | `447a67cc4a1e3f406f5ee00a974f3279365b6a6788929c91e4fedfa21d9780ae` |  |  |
+| `docs/architecture/parser_ui_cli.md` | active-plan | .md | 3647 | `ddc4c56299df562c82d71f60ac7c517188c07fa3c8947645dd981f7a1975c7b8` |  |  |
 | `docs/architecture/programme_architecture.md` | active-plan | .md | 4225 | `635a2450c4aea6623d07d9ef334ccb735f44e9f03f26feb9c9f578216c007c92` |  |  |
 | `docs/architecture/tooling.md` | active-plan | .md | 1231 | `49943384e1551f5fdc74bf1c46e615b02e71d91a46cc92dfc1d6a79ea8e1dcf6` |  |  |
 | `docs/codex-session-18-07.md` | active-plan | .md | 18111 | `78a8062e02121b689c6666846e0c574e46007e8e52ca11adcbca325710dde0bc` |  |  |
 | `docs/codex-session-20-28.md` | active-plan | .md | 81182 | `a8ed62606b99ae610da86c3729efbcc2bb536282882bb6f1ae85461a3d4673a0` |  |  |
 | `docs/contracts/eva_export_contract.md` | active-plan | .md | 463 | `a1210e56e4235e82179be86d4381cbc4d7420286fad9e930bcbd0883f6c965fc` |  |  |
-| `docs/contracts/eva_export_contract_v1.md` | active-plan | .md | 2072 | `05a8117e6b30d88438d9a45fdb4f6f435bbdaea968564d5a222a24ef968829c9` |  |  |
+| `docs/contracts/eva_export_contract_v1.md` | active-plan | .md | 2341 | `947dad32ec7a17c1093a646f247a99cc16ef953fba782a2daf337474afcea82d` |  |  |
 | `docs/contracts/evidence_package_contract_v1.md` | active-plan | .md | 2617 | `78fc9814f003037d410813804c1e45629b282b1716e1730e9456d0885c3aaa06` |  |  |
-| `docs/contracts/extraction_adapter_contract_v1.md` | active-plan | .md | 1843 | `18aca12e5b3f214b95d407c2c22a18a43120f366358ce35e17a8b55c3daadceb` |  |  |
-| `docs/contracts/parser_result_v1.md` | active-plan | .md | 3674 | `ebe3a0466bbfa2aef4c6d912b4845dd6fae4d7e8d5419ffd99997e63fd733997` |  |  |
+| `docs/contracts/extraction_adapter_contract_v1.md` | active-plan | .md | 2312 | `fddb046f3955474be9c59e186c8b01d2e447bfa8a00532afc6fddf7a41f23522` |  |  |
+| `docs/contracts/parser_result_v1.md` | active-plan | .md | 4154 | `9bb0a0c55d8285172ca1acbf3b19c3ca8b4c3c6d7091fd3a01d949ab026d5100` |  |  |
 | `docs/contracts/provider_principal_config_contract_v1.md` | active-plan | .md | 4093 | `08be8d202bfab0b9515991e1e7230821408f90c185bd8337b8e9bcb82e560fac` |  |  |
 | `docs/contracts/review_audit_event_contract_v1.md` | active-plan | .md | 1557 | `1ae823d210225cceb79705ba4a489843cef0f41c2cfc2ea38a6b850aa8cdd2ef` |  |  |
 | `docs/contracts/storage_adapter_contract.md` | active-plan | .md | 299 | `fd237875de3caf2166fb06040291f00ecd4db54cb19aae87888de011f38200f8` |  |  |
@@ -115,7 +115,7 @@
 | `docs/decisions/options/cloud_document_intelligence_options.md` | active-plan | .md | 3419 | `deedc4bbd2c26794d4b9aacd84f242a3185d80052d592e210504a9aafdb931df` |  |  |
 | `docs/decisions/options/state_store_options.md` | active-plan | .md | 1727 | `5d7373e4cee119ff21545b31bdb96c8adc4d60424b74779436f55618900ad9ba` |  |  |
 | `docs/decisions/options/ui_platform_options.md` | active-plan | .md | 2409 | `6cdd033b51fc1ce5434ee06f8a441b0712db42d752c487fcc991fc568bbbd64c` |  |  |
-| `docs/docs_index.md` | active-plan | .md | 4521 | `d1d1f51de15c3a20f8bace012ffc8b3dda7e6eccec49ce41558745aa3d680fa8` |  |  |
+| `docs/docs_index.md` | active-plan | .md | 4608 | `c5007cf15bfa96e2707f2225bcde6c751016cf57ca5c9d325e6dace840fadf1a` |  |  |
 | `docs/glossary.md` | active-plan | .md | 1050 | `fcbb246e611d7782e339d5af663cf7f02f3aac9876ed80b3cf6046f94415e4de` |  |  |
 | `docs/integrations/external_services.md` | active-plan | .md | 1201 | `34b8e31cb296a42d2a063c0f225515905e98c92b215c48817048daa4c6e2abb3` |  |  |
 | `docs/operations/job_sheet_spreadsheet_companion.md` | active-plan | .md | 4511 | `31832411464f6a0f1382e622654cb90b9bddbf077c7720d0cb9a4565c7297f45` |  |  |
@@ -124,7 +124,7 @@
 | `docs/operations/runbooks/box-upload-failure.md` | active-plan | .md | 602 | `381474cbf905e5f9c048bddf8bbbea2740ef916a6b5f93af5867b3d459a1292a` |  |  |
 | `docs/operations/runbooks/eva-rejected-payload.md` | active-plan | .md | 660 | `0e3ea7ebbbada7fa9af13b0fcc138096649b159486f49a69ac45f0e126e8b773` |  |  |
 | `docs/operations/runbooks/outlook-intake-stopped.md` | active-plan | .md | 635 | `d279e8bc1c12c432236abb8afdc0cfe10817a37f8307dc1751d4a8f5ef0d5743` |  |  |
-| `docs/plans/_index.md` | active-plan | .md | 4704 | `6eef386d965af96aa788584988fae338eb62440317e2fcd1d7d23f2571ecfee5` |  |  |
+| `docs/plans/_index.md` | active-plan | .md | 4648 | `e139db3163962bd1b6f60935323539f06499e00bc5615f74da75c13425f20731` |  |  |
 | `docs/plans/agent-skills/archived_plans/implemented/.gitkeep` | implemented | [no extension] | 0 | `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` |  |  |
 | `docs/plans/agent-skills/archived_plans/superseded/.gitkeep` | superseded | [no extension] | 0 | `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` |  |  |
 | `docs/plans/agent-skills/option-papers/.gitkeep` | normalized-derivative | [no extension] | 0 | `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` |  |  |
@@ -304,10 +304,11 @@
 | `docs/plans/parser-extraction/parser-mvp/adjacent-parser-and-inspection-location-review.md` | active-plan | .md | 16370 | `61eb3289f8275e50c188bed94f589d992d3aad07ba2c3847101c823d5132e18e` |  |  |
 | `docs/plans/parser-extraction/parser-mvp/adjacent_repo_comparison.md` | active-plan | .md | 2565 | `8a55792ddaaa36f9fe1cc599460d560d5fe7120556ab131ea9902b011e9b67c2` |  |  |
 | `docs/plans/parser-extraction/parser-mvp/legacy_behavior_inventory.md` | active-plan | .md | 4815 | `9fc8fdd04e4cefd1cfdb882b13317f6689645edf5d56b41c513ca4eecf28b369` |  |  |
-| `docs/plans/parser-extraction/parser-mvp/plan.md` | active-plan | .md | 24147 | `7cd039fe63a84fbe07dfd7d6cdb1d3ad251429975f6b65297b12192ff02a4598` |  |  |
-| `docs/plans/parser-extraction/plan.md` | active-plan | .md | 7957 | `7bf99c3459131e464545647dafe496ebf1ec4394f8098df2936af4d79702d1ef` |  |  |
+| `docs/plans/parser-extraction/parser-mvp/plan.md` | active-plan | .md | 25490 | `4e2b02b42ea35d5f9170e2c1211a8c8b53a7c0416b54f902105e7053c1710f3f` |  |  |
+| `docs/plans/parser-extraction/parser-mvp/sentry-api-enhancement-mechanisms.md` | active-plan | .md | 4316 | `4f26a3a9ce34885455d860a998790a58d64177bda556cc9776d00a5dca8031be` |  |  |
+| `docs/plans/parser-extraction/plan.md` | active-plan | .md | 8218 | `552d78090b527051eb5004e226ef1eedefb21b3481eaeb872f5cbbae9e559fcc` |  |  |
 | `docs/plans/parser-extraction/README.md` | active-plan | .md | 3991 | `7bf07f7a96b96ca6163cb303722330168ab64762ea02a332d71b345484fcf1fe` |  |  |
-| `docs/plans/parser-extraction/roadmap.md` | active-plan | .md | 1974 | `b67c7b7fb7f5ac1b4734f06530c1eebc0575c9a730167d1fb99805325e176985` |  |  |
+| `docs/plans/parser-extraction/roadmap.md` | active-plan | .md | 2160 | `eaa074de355cdbb544f82275c6db1f3f4653f3c2f4d3aadf0f084eee84c5e70e` |  |  |
 | `docs/plans/parser-extraction/source_map.md` | active-plan | .md | 3747 | `d0c353f89bf7f0686f72ae0e093df53e81ea851afe806c25ce2de52ac4ac9067` |  |  |
 | `docs/plans/parser-extraction/tickets/.gitkeep` | normalized-derivative | [no extension] | 0 | `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` |  |  |
 | `docs/plans/parser-extraction/tickets/p0-parser-mvp-implementation-plan.md` | active-plan | .md | 1048 | `a3f277e54e5394853b01e3fe684c5ada3fc5e7c5a74dc202b699544a4cf4addb` |  |  |
@@ -315,8 +316,8 @@
 | `docs/plans/parser-extraction/tickets/p0-provider-coverage-migration-baseline.md` | active-plan | .md | 1914 | `60094ad398748da08cbc0f6165c59fb60c391c8b3cea69d6c7ff1b3946c7954e` |  |  |
 | `docs/plans/parser-extraction/tickets/p1-parser-cli-parity.md` | active-plan | .md | 998 | `a5aea62027111c1bc38a9874331b6d209d80a055c2343ad70ea6797edf9f13af` |  |  |
 | `docs/plans/parser-extraction/tickets/p1-parser-core-mvp.md` | active-plan | .md | 1425 | `6264401ccc90d7757adbb67ad38cf2c69f36bbdc0ffe93e8e9db14131205d5f8` |  |  |
-| `docs/plans/parser-extraction/tickets/p2-golden-corpus-regression.md` | active-plan | .md | 1172 | `4438b62e8a10de8d6d323350f662018afabc1f87d130044e29f469b8c30f6a93` |  |  |
-| `docs/plans/parser-extraction/tickets/p2-parser-hardening.md` | active-plan | .md | 2442 | `76b448c397792becfb432399347853a5ca0c5e4a0ad345e93d4c515e96598aaa` |  |  |
+| `docs/plans/parser-extraction/tickets/p2-golden-corpus-regression.md` | active-plan | .md | 1293 | `4c508d120795e912abd989bb01e2c8ec9d9eb4c30d4a8ffcdcd5246a2650f549` |  |  |
+| `docs/plans/parser-extraction/tickets/p2-parser-hardening.md` | active-plan | .md | 2814 | `dc7513d2b2dc43fafb4d783d7a9691273fa9067da9bb43e96c0a8ac894dda72b` |  |  |
 | `docs/plans/parser-extraction/tickets/README.md` | active-plan | .md | 367 | `db30780d83641fc8d83f2258be08393562d45f8dca6ebc17a7d72f6afc3f9843` |  |  |
 | `docs/plans/product-business/archived_plans/implemented/.gitkeep` | implemented | [no extension] | 0 | `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` |  |  |
 | `docs/plans/product-business/archived_plans/superseded/.gitkeep` | superseded | [no extension] | 0 | `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` |  |  |
@@ -432,12 +433,12 @@
 | `docs/reference/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/images/frame-044.png` | normalized-derivative | .png | 303051 | `4a4fa9ee109330b29936a6eb1637bb4632417e556c2c0d773ff5e37bc889d82d` |  |  |
 | `docs/reference/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/images/thumbnail.png` | normalized-derivative | .png | 10547 | `d0fbecf0577031364def7b4c68cc85e4c3e7d3b6a9f8f0c27cc5bdf4f86f44db` |  |  |
 | `docs/reference/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/jam_meta.json` | normalized-derivative | .json | 1097 | `12d96e0760457d0e8d3874674c609918987d3c28b1c8ed10204f5678fe5d0a67` |  |  |
-| `docs/reference/data/parser_corpus_fixture_ledger.csv` | normalized-derivative | .csv | 108999 | `0f0ba4f6bc4d40c86cc510ef0ab95cebe7ee1963a6eaa24f5ce8b2e9d366408b` |  |  |
-| `docs/reference/data/parser_corpus_fixture_ledger.json` | normalized-derivative | .json | 155306 | `9b441514d4a35cbadd56d2d5ef5685f5e5da5aeefca786ee7a326baed71a1d55` |  |  |
-| `docs/reference/data/parser_corpus_regression_report.json` | normalized-derivative | .json | 100085 | `f4614ed0e5490e28588f21e0cb91d58639384ad84996794019bfe9088c36ba48` |  |  |
+| `docs/reference/data/parser_corpus_fixture_ledger.csv` | normalized-derivative | .csv | 111203 | `ed91a210eac65b041e382f256e3f3b32730cd9a3f63e9d6fa7c3d07387c1ac0a` |  |  |
+| `docs/reference/data/parser_corpus_fixture_ledger.json` | normalized-derivative | .json | 157447 | `667a455317870711e6190c080189b5ddc480c6b328b7132de82f7666e6f831f2` |  |  |
+| `docs/reference/data/parser_corpus_regression_report.json` | normalized-derivative | .json | 100472 | `22215e2a8a06b5990d97a8ebc3a94978a837e99127ce816aa998c89ad270f2a2` |  |  |
 | `docs/reference/data/parser_provider_presets_v1.json` | normalized-derivative | .json | 45387 | `25b43a8206d81c1b7caf5e555f20b151397834aeb596e15a5faddff236f2625a` |  |  |
 | `docs/reference/data/provider_coverage_matrix.csv` | normalized-derivative | .csv | 7308 | `67bbaa5564e040e552569b531e93fc3bcf8d412a1449600839a9c25d8a5fe071` |  |  |
-| `docs/reference/data/provider_coverage_matrix.md` | normalized-derivative | .md | 6562 | `61dfcff588cd2c11d79da6b562c523c3623e98c19b39df5e10e94df7df1eb0ea` |  |  |
+| `docs/reference/data/provider_coverage_matrix.md` | normalized-derivative | .md | 6884 | `0718e3cc75c01b7c8ffc7c8a30e1738e8f4ff67b2f2cc5e291fc6d2b37e26a19` |  |  |
 | `docs/reference/normalized/collisionrelateddocs__claudechat.md.md` | normalized-derivative | .md | 272807 | `e56c71c1132a9840a744a4ee950a75a95717c44a1858555d06fcd8b0329089e0` |  |  |
 | `docs/reference/normalized/collisionrelateddocs__claudechatnormalized.md.md` | normalized-derivative | .md | 263944 | `0b5ebe65f89a12fdc180d00dd51a7745bb0d540b05c147caed4b066a710409b3` |  |  |
 | `docs/reference/normalized/collisionrelateddocs__collision_releated__backup-of-ce-job-sheet-260309.xlsm.md` | normalized-derivative | .md | 15736 | `96db87d5e8545e3cb93bff94c4672894bdd737923012cab27392f8a0517dd8b8` |  |  |
@@ -927,43 +928,43 @@
 | `docs/reference/test-context/testprojectcontext/collision_project_context_pack/collision_project_context_pack/20_SELF_REVIEW_AND_COVERAGE_CHECK.md` | generated-reference | .md | 3773 | `24bf9fb961432f354bbc838640b4c2cfa721a0ced1455d570d406a192c5b2761` |  |  |
 | `docs/reference/test-context/testprojectcontext/collision_project_context_pack/collision_project_context_pack/_GENERATION_CHECK.txt` | generated-reference | .txt | 70 | `2b4b50685ebcc88f70ffc6f5b6d658048bfa6ad3f401edd011afb1ee5c32d147` |  |  |
 | `docs/reference/test-context/testprojectcontext/collision_project_context_pack/collision_project_context_pack/MANIFEST.md` | generated-reference | .md | 1142 | `527a60f464187ad01e5274f26d538c56ede451599a20df76a185001aea5eacdf` |  |  |
-| `docs/repo_map.json` | active-plan | .json | 17729 | `637db0e11d01977b2036433d1fee48e598a3b8c45bed706eb2bc14cefc710200` |  |  |
-| `docs/requirements/business_requirements.md` | active-plan | .md | 1851 | `e9695ab842b1dd72b6335c53ec511dedd577d9fbc9ff5a6960433df9e6c3d63e` |  |  |
-| `docs/requirements/open_business_questions.md` | active-plan | .md | 1961 | `8126a064cbfd08d64f37bb230eb87d8655c4e75c8a934f3d8d30b922f913f98b` |  |  |
+| `docs/repo_map.json` | active-plan | .json | 17579 | `73bd40b7f9d4bf9e3e5b0592acf18ad7ce9141e6bdcd74710001501f3dab0dfe` |  |  |
+| `docs/requirements/business_requirements.md` | active-plan | .md | 1837 | `e07fcdd491d883015e62a2fd2b9aa2d64bdee22df31cb96d32bd0e6bb07c0031` |  |  |
+| `docs/requirements/open_business_questions.md` | active-plan | .md | 1945 | `2ff6cc9f5c95f92779b99da457c40784e8eef7e92a8f433f50a801df0fcf606e` |  |  |
 | `docs/research/gptdeepresearch.md` | active-plan | .md | 45765 | `a7d15a0072090b4665e7aec3cbff1edbaf4f9c8da0b09753b4308c3907d0556f` |  |  |
 | `docs/research/gptevadeepresearch.md` | active-plan | .md | 32158 | `25511c8daa014d4ae60b442ccfaafff04b1f99f2290997c6e06f00c0137d7dc3` |  |  |
 | `docs/research/siderpdf.md` | active-plan | .md | 65914 | `eda2bb18fb1d551e5d17287533307c2e6e13e7831eeb527bf2344f5f8184d554` |  |  |
-| `docs/roadmap.md` | active-plan | .md | 14223 | `8b79ed37ba18ea909e805a109f7544855a940ad48f4176917161699d04a1ae80` |  |  |
+| `docs/roadmap.md` | active-plan | .md | 14465 | `01ee96b64831ef2dfded321bbf2aadccf22a604b72b65b065fc95b53e4cf68c4` |  |  |
 | `docs/security/api_security_standard.md` | active-plan | .md | 1067 | `2f38aa32ee7a6ea0c78182749412749f25163f3187c8e82aaae01a02b97467b0` |  |  |
 | `docs/security/data_map.md` | active-plan | .md | 1876 | `b4cfd8681ca7eaa4c4ec0fa2e38f2da9144207bcb94f8acab9a408a681c71230` |  |  |
 | `docs/security/dpia_vendor_governance.md` | active-plan | .md | 1215 | `4319e4b7be00b786fc0ec6eed45b826f6eb3532bee93f49531347bfc185fa04f` |  |  |
 | `docs/security/source_safety_review.md` | active-plan | .md | 1385 | `1a525b179a8f27fc001310f8375c9a2f5803284b860667779fa5bb3b4e41d124` |  |  |
 | `docs/security/vendor_register.md` | active-plan | .md | 1371 | `4bc249c099a0a3b65fd0b01af5bee928f6702deddf39fcaedbb883c6c45f2514` |  |  |
-| `docs/source_manifest.csv` | normalized-derivative | .csv | 287520 | `d9f4c27db745848aa174e9758e8adaa3133517185dc2ed9ece0205a2ab702a21` |  |  |
-| `docs/source_manifest.json` | active-plan | .json | 524975 | `859cbdf0f207df31285e0b250a85e709c7ddc1991fd12be352ee8fc8e8ae813b` |  |  |
-| `docs/source_manifest.md` | active-plan | .md | 195460 | `d514844bfaf6d5d02b3b49e6706dcbc6fc2eeb35b6e89be2efff23ba98a7cc2f` |  |  |
-| `pyproject.toml` | active-plan | .toml | 540 | `507ac27eb6b51c5131e75758bb551828f38c7282b769e4a6bbb37dd5181742f2` |  |  |
+| `docs/source_manifest.csv` | normalized-derivative | .csv | 286629 | `424970983308385cd982684495beb595806031207ec3ee13250d988fcd03c295` |  |  |
+| `docs/source_manifest.json` | active-plan | .json | 513403 | `d01d99e582e18fdec80cb4612c94c799926965ce9831d7fb5c08ef906bdc1f5a` |  |  |
+| `docs/source_manifest.md` | active-plan | .md | 194488 | `ede706530c52962de044d8c112d8d6cc3a2a0b003701bbde75085f899d8b7201` |  |  |
+| `pyproject.toml` | active-plan | .toml | 553 | `bf9655e7f71838f034cb692a2a26eb2f03b547c74811552e7166fdf29dec09d8` |  |  |
 | `README.md` | active-plan | .md | 3066 | `e3c35759dedb3f55dd04161da44f443f6202a31c816134221007454a30acf626` |  |  |
 | `src/ccc_parser/__init__.py` | active-plan | .py | 58 | `3fbed1e97c17fe9ce73c5bddae57cd65b7fe3cbcf31e0d401e6af92f6dcf4f88` |  |  |
-| `src/ccc_parser/cli.py` | active-plan | .py | 4921 | `7b51d70029d41959b98aa58cbc6fc8b804d84a9750d36cd5ff4b1d3fc2664b76` |  |  |
+| `src/ccc_parser/cli.py` | active-plan | .py | 5074 | `30a2c0a5197565c3c8af8f6486c2f3a6c2373a75994efeaddff6e51cfdee6ee1` |  |  |
 | `src/ccc_parser/constants.py` | active-plan | .py | 1247 | `209c4804d2266e2bc419ef210c4e181730f98f6438c0411a5ffbd0185de870df` |  |  |
-| `src/ccc_parser/core.py` | active-plan | .py | 8083 | `805d500d2f304180952820bb9b6a626d3412d5667a2c7726df7e46e6813fe4a8` |  |  |
+| `src/ccc_parser/core.py` | active-plan | .py | 12456 | `bc7982df6a966e28370f1a0fc3e7affd65fd64c57c590c5a0c5cd3184e9fd0e5` |  |  |
 | `src/ccc_parser/exporters/__init__.py` | active-plan | .py | 142 | `ab473389887fd436fcb486e7a8409f9f18e5aea152a0d7ee733bb6ed91f86971` |  |  |
 | `src/ccc_parser/exporters/eva.py` | active-plan | .py | 1513 | `4ec4a960d7113571755b6965e79e75756b34266ccffe084a31e7415c23ca5464` |  |  |
 | `src/ccc_parser/models.py` | active-plan | .py | 13188 | `b2f6fdb4dd0e745b6d64d461359e52899b1ffea04e75957853ed48e6e069a894` |  |  |
 | `src/ccc_parser/normalization.py` | active-plan | .py | 6366 | `72e76197ce1a6d9580879728f9b8c6df2a262368df87408fb8933fa0ee9c8da1` |  |  |
 | `src/ccc_parser/packaging.py` | active-plan | .py | 1744 | `5180e0bb52b29b3a35f135d8606f3961e7209cfb65be5b7e7df4226240bf22ba` |  |  |
 | `src/ccc_parser/providers.py` | active-plan | .py | 6023 | `7dfbbcff0878d515b44b64749627729d948ee6cfb0b20b673df5c7648a330689` |  |  |
-| `src/ccc_parser/readers.py` | active-plan | .py | 32620 | `20d446d17397a830ffc4d545111d3231778ed5325e4022ef6b98068779d02786` |  |  |
+| `src/ccc_parser/readers.py` | active-plan | .py | 34737 | `73aceb65e010079a1a34c973f8e0948e27941c95796a6e60d603dd0df3d1b01d` |  |  |
 | `src/ccc_parser/review.py` | active-plan | .py | 2144 | `2137c6b2f2926b0624dc41a1f513b40388b9859b231746cc472b4a7c036073eb` |  |  |
-| `src/ccc_parser/rules.py` | active-plan | .py | 28090 | `f32ba4d279c39500327547aace45ce2f30191ce9d8e0f103b8b056a83e1739b9` |  |  |
+| `src/ccc_parser/rules.py` | active-plan | .py | 28096 | `fd522c06a2332b6579a883da9afd40cb1d0c0c1d003ddeacbdf6b02d4871911a` |  |  |
 | `src/ccc_parser/triage.py` | active-plan | .py | 3223 | `2f829df43468a44c6853bc4307ef9a7b97cbc68f0a0bf989511d0f0e9d25127c` |  |  |
 | `src/ccc_parser/ui/__init__.py` | active-plan | .py | 45 | `7e64d212ddb97d9234a18135e60db18f6db8af9241f4fbe370452ce75df4c498` |  |  |
 | `src/ccc_parser/ui/app.py` | active-plan | .py | 9901 | `10407b6867544f470925a3265982c53fe4e9828e415c0641af8404669c57d727` |  |  |
 | `src/ccc_parser/validation.py` | active-plan | .py | 4378 | `10bc765f69623d23c9dd42c6627f64029313a67a3b9852f346c80c5908647b5c` |  |  |
 | `tests/parsertests/output1.json` | active-plan | .json | 530 | `746384946733851e0b0de1f79dc3ca33ad538d092e6ccbca7923d30bd047bf06` |  |  |
 | `tests/test_parser_cli_mvp.py` | active-plan | .py | 3036 | `afd01765b6fbc1fe3235f2f0b7c2197febca601a25e70e5f8ee0021af9ff28c6` |  |  |
-| `tests/test_parser_mvp_contracts.py` | active-plan | .py | 9752 | `adff58956d351a09da93498c72470575e2f87e479b3443b469f5764ca05c5e20` |  |  |
+| `tests/test_parser_mvp_contracts.py` | active-plan | .py | 14681 | `ad53e9ae63d14bd737241c9a393693d5fe36005c26e463ff5427bd37582681d5` |  |  |
 | `tests/test_scaffold_contracts.py` | active-plan | .py | 2788 | `5eeb1b889c68e1346efeaaecda7972ab5a5dd5f5ae200ec0d6e73c17810a9289` |  |  |
 | `tools/build_parser_fixtures.py` | active-plan | .py | 4676 | `fdb32717e73e8d2fd2118d9b77fd4a993c448c889db823873f8a2e31d03894f8` |  |  |
 | `tools/generate_plan_workspaces.py` | active-plan | .py | 83485 | `3bfbb5a8a81c4d10e8222b9fd260a7411ab1c479dd5070306407c7f31d461855` |  |  |

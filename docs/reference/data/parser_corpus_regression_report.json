@@ -19,8 +19,8 @@
     "KBS": 5,
     "KERR": 5,
     "KMR": 5,
-    "MP (Branded)": 1,
-    "MP (Simple)": 4,
+    "MP (Branded)": 3,
+    "MP (Simple)": 8,
     "OAK": 5,
     "PCH (Lawshield)": 3,
     "PCH (Performance)": 7,
@@ -30,30 +30,30 @@
     "SBL": 5,
     "SWAN": 5,
     "TEN": 5,
-    "UNKNOWN": 9
+    "UNKNOWN": 3
   },
   "reader_counts": {
     "extract_msg": 15,
     "olefile_worddocument": 35,
-    "pdf_image_metadata": 7,
+    "pdf_image_metadata": 1,
     "pymupdf_blocks": 55,
+    "pymupdf_ocr_fallback": 6,
     "python_docx_ooxml": 17,
     "rtf_plain_text": 5
   },
   "blocker_counts": {
-    "missing_inspection_address": 9,
+    "missing_inspection_address": 3,
     "missing_mileage": 120,
     "missing_mileage_unit": 121,
     "missing_vat_status": 106,
-    "missing_vrm": 8,
-    "missing_work_provider": 6,
-    "not_instruction_export_candidate": 3,
-    "provider_not_detected": 6
+    "missing_vrm": 2,
+    "not_instruction_export_candidate": 3
   },
   "warning_counts": {
-    "image_only_pdf_requires_review": 7,
+    "image_only_pdf_requires_review": 1,
+    "ocr_fallback_used": 6,
     "pdf_page_no_text": 1,
-    "provider_not_detected": 9
+    "provider_not_detected": 3
   },
   "files": [
     {
@@ -2073,127 +2073,157 @@
       "path": "docs/reference/raw/collisionrelateddocs/Instructions/MP PDF 01.pdf",
       "sha256": "79097baeec1eac46bb9a34afe67945d398df93a621857179c793f2cff5d5d3f4",
       "document_classification": "instruction",
-      "reader_method": "pdf_image_metadata",
-      "detected_provider": "UNKNOWN",
+      "reader_method": "pymupdf_ocr_fallback",
+      "detected_provider": "MP (Simple)",
       "blockers": [
-        "provider_not_detected",
-        "missing_work_provider",
-        "missing_vrm",
-        "missing_inspection_address",
         "missing_mileage",
         "missing_vat_status",
         "missing_mileage_unit"
       ],
       "warnings": [
-        "image_only_pdf_requires_review",
-        "provider_not_detected"
+        "ocr_fallback_used"
       ],
-      "nonempty_fields": []
+      "nonempty_fields": [
+        "claimant_name",
+        "incident_date",
+        "inspection_address",
+        "inspection_date",
+        "instruction_date",
+        "reference",
+        "vehicle_model",
+        "vrm",
+        "work_provider"
+      ]
     },
     {
       "path": "docs/reference/raw/collisionrelateddocs/Instructions/MP PDF 02.pdf",
       "sha256": "bf8092e4bd7e47407590a20784173bc185b5d68b265451a7b71d4a6214eafe82",
       "document_classification": "instruction",
-      "reader_method": "pdf_image_metadata",
-      "detected_provider": "UNKNOWN",
+      "reader_method": "pymupdf_ocr_fallback",
+      "detected_provider": "MP (Simple)",
       "blockers": [
-        "provider_not_detected",
-        "missing_work_provider",
-        "missing_vrm",
-        "missing_inspection_address",
         "missing_mileage",
         "missing_vat_status",
         "missing_mileage_unit"
       ],
       "warnings": [
-        "image_only_pdf_requires_review",
-        "provider_not_detected"
+        "ocr_fallback_used"
       ],
-      "nonempty_fields": []
+      "nonempty_fields": [
+        "claimant_name",
+        "incident_date",
+        "inspection_address",
+        "inspection_date",
+        "instruction_date",
+        "reference",
+        "vehicle_model",
+        "vrm",
+        "work_provider"
+      ]
     },
     {
       "path": "docs/reference/raw/collisionrelateddocs/Instructions/MP PDF 03.pdf",
       "sha256": "b33f7e55b179a8a12b2f1a59d2360f12f8b1e49fd65b673e8b7544ce913967f5",
       "document_classification": "instruction",
-      "reader_method": "pdf_image_metadata",
-      "detected_provider": "UNKNOWN",
+      "reader_method": "pymupdf_ocr_fallback",
+      "detected_provider": "MP (Simple)",
       "blockers": [
-        "provider_not_detected",
-        "missing_work_provider",
-        "missing_vrm",
-        "missing_inspection_address",
         "missing_mileage",
         "missing_vat_status",
         "missing_mileage_unit"
       ],
       "warnings": [
-        "image_only_pdf_requires_review",
-        "provider_not_detected"
+        "ocr_fallback_used"
       ],
-      "nonempty_fields": []
+      "nonempty_fields": [
+        "claimant_name",
+        "incident_date",
+        "inspection_address",
+        "inspection_date",
+        "instruction_date",
+        "reference",
+        "vehicle_model",
+        "vrm",
+        "work_provider"
+      ]
     },
     {
       "path": "docs/reference/raw/collisionrelateddocs/Instructions/MP PDF 04.pdf",
       "sha256": "6f799851135947ec05c90d464eb6266bad570f0fe1a7e13ae9992b1b6071e917",
       "document_classification": "instruction",
-      "reader_method": "pdf_image_metadata",
-      "detected_provider": "UNKNOWN",
+      "reader_method": "pymupdf_ocr_fallback",
+      "detected_provider": "MP (Simple)",
       "blockers": [
-        "provider_not_detected",
-        "missing_work_provider",
-        "missing_vrm",
-        "missing_inspection_address",
         "missing_mileage",
         "missing_vat_status",
         "missing_mileage_unit"
       ],
       "warnings": [
-        "image_only_pdf_requires_review",
-        "provider_not_detected"
+        "ocr_fallback_used"
       ],
-      "nonempty_fields": []
+      "nonempty_fields": [
+        "claimant_name",
+        "incident_date",
+        "inspection_address",
+        "inspection_date",
+        "instruction_date",
+        "reference",
+        "vehicle_model",
+        "vrm",
+        "work_provider"
+      ]
     },
     {
       "path": "docs/reference/raw/collisionrelateddocs/Instructions/MP Weird 01.pdf",
       "sha256": "277b0531273e350ebd60f5820024e9a40e45b71d7d5e0157d11c84c1ac9a0541",
       "document_classification": "instruction",
-      "reader_method": "pdf_image_metadata",
-      "detected_provider": "UNKNOWN",
+      "reader_method": "pymupdf_ocr_fallback",
+      "detected_provider": "MP (Branded)",
       "blockers": [
-        "provider_not_detected",
-        "missing_work_provider",
-        "missing_vrm",
-        "missing_inspection_address",
         "missing_mileage",
         "missing_vat_status",
         "missing_mileage_unit"
       ],
       "warnings": [
-        "image_only_pdf_requires_review",
-        "provider_not_detected"
+        "ocr_fallback_used"
       ],
-      "nonempty_fields": []
+      "nonempty_fields": [
+        "claimant_name",
+        "incident_date",
+        "inspection_address",
+        "inspection_date",
+        "instruction_date",
+        "reference",
+        "vehicle_model",
+        "vrm",
+        "work_provider"
+      ]
     },
     {
       "path": "docs/reference/raw/collisionrelateddocs/Instructions/MP Weird 02.pdf",
       "sha256": "89413ad58022e75f3592c377d0c0f572d8ba8325722090775334178ca94be098",
       "document_classification": "instruction",
-      "reader_method": "pdf_image_metadata",
-      "detected_provider": "UNKNOWN",
+      "reader_method": "pymupdf_ocr_fallback",
+      "detected_provider": "MP (Branded)",
       "blockers": [
-        "provider_not_detected",
-        "missing_work_provider",
-        "missing_vrm",
-        "missing_inspection_address",
         "missing_mileage",
         "missing_vat_status",
         "missing_mileage_unit"
       ],
       "warnings": [
-        "image_only_pdf_requires_review",
-        "provider_not_detected"
+        "ocr_fallback_used"
       ],
-      "nonempty_fields": []
+      "nonempty_fields": [
+        "claimant_name",
+        "incident_date",
+        "inspection_address",
+        "inspection_date",
+        "instruction_date",
+        "reference",
+        "vehicle_model",
+        "vrm",
+        "work_provider"
+      ]
     },
     {
       "path": "docs/reference/raw/collisionrelateddocs/Instructions/MP Word 01.doc",

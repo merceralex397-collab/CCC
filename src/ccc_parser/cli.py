@@ -102,9 +102,15 @@ def main(argv: list[str] | None = None) -> int:
         return 0
 
     if args.command == "batch":
-        results = [result.to_dict() for result in core.parse_batch(args.folder)]
-        _write_json({"results": results}, args.output)
-        return 0
+        report = core.parse_batch_report(args.folder)
+        _write_json(
+            {
+                "results": [result.to_dict() for result in report["results"]],
+                "errors": report["errors"],
+            },
+            args.output,
+        )
+        return 1 if report["errors"] else 0
 
     if args.command == "providers":
         provider_command = args.providers_command or "list"
