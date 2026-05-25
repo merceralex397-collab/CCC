@@ -108,8 +108,8 @@
     "status": "active-plan",
     "source_group": "docs",
     "file_type": ".md",
-    "size_bytes": "1492",
-    "sha256": "bc98e298562ed8f88e0474bc1f3c4ef03e309e64c2092d75b5e08ac54c2766af",
+    "size_bytes": "3672",
+    "sha256": "33fb50707161399f0530518ee07f9d46ed461d2f4527cf00f7d0b5eab8de780a",
     "canonical_path": "docs/architecture/parser_ui_cli.md",
     "normalized_companion": "",
     "extraction_method": "native-markdown",
@@ -186,8 +186,8 @@
     "status": "active-plan",
     "source_group": "docs",
     "file_type": ".md",
-    "size_bytes": "1564",
-    "sha256": "301846155a84752a289302fc865fd70eb78e0cfd42afa3d2cc8b0a504896efc8",
+    "size_bytes": "2072",
+    "sha256": "05a8117e6b30d88438d9a45fdb4f6f435bbdaea968564d5a222a24ef968829c9",
     "canonical_path": "docs/contracts/eva_export_contract_v1.md",
     "normalized_companion": "",
     "extraction_method": "native-markdown",
@@ -225,8 +225,8 @@
     "status": "active-plan",
     "source_group": "docs",
     "file_type": ".md",
-    "size_bytes": "2167",
-    "sha256": "01a163c990dd6560f0e05dc13cbb321fe1b19bbb95765deee116585f7f4b099e",
+    "size_bytes": "3674",
+    "sha256": "ebe3a0466bbfa2aef4c6d912b4845dd6fae4d7e8d5419ffd99997e63fd733997",
     "canonical_path": "docs/contracts/parser_result_v1.md",
     "normalized_companion": "",
     "extraction_method": "native-markdown",
@@ -459,8 +459,8 @@
     "status": "active-plan",
     "source_group": "docs",
     "file_type": ".md",
-    "size_bytes": "3951",
-    "sha256": "172b561f74c2b605c7c97aa4a41a40ef8ce59e507a5d8d2c66fd512a23a3ac3f",
+    "size_bytes": "4521",
+    "sha256": "d1d1f51de15c3a20f8bace012ffc8b3dda7e6eccec49ce41558745aa3d680fa8",
     "canonical_path": "docs/docs_index.md",
     "normalized_companion": "",
     "extraction_method": "native-markdown",
@@ -2886,12 +2886,38 @@
     "blocker": ""
   },
   {
+    "path": "docs/plans/parser-extraction/parser-mvp/adjacent_repo_comparison.md",
+    "status": "active-plan",
+    "source_group": "docs",
+    "file_type": ".md",
+    "size_bytes": "2565",
+    "sha256": "8a55792ddaaa36f9fe1cc599460d560d5fe7120556ab131ea9902b011e9b67c2",
+    "canonical_path": "docs/plans/parser-extraction/parser-mvp/adjacent_repo_comparison.md",
+    "normalized_companion": "",
+    "extraction_method": "native-markdown",
+    "extraction_confidence": "complete",
+    "blocker": ""
+  },
+  {
+    "path": "docs/plans/parser-extraction/parser-mvp/legacy_behavior_inventory.md",
+    "status": "active-plan",
+    "source_group": "docs",
+    "file_type": ".md",
+    "size_bytes": "4815",
+    "sha256": "9fc8fdd04e4cefd1cfdb882b13317f6689645edf5d56b41c513ca4eecf28b369",
+    "canonical_path": "docs/plans/parser-extraction/parser-mvp/legacy_behavior_inventory.md",
+    "normalized_companion": "",
+    "extraction_method": "native-markdown",
+    "extraction_confidence": "complete",
+    "blocker": ""
+  },
+  {
     "path": "docs/plans/parser-extraction/parser-mvp/plan.md",
     "status": "active-plan",
     "source_group": "docs",
     "file_type": ".md",
-    "size_bytes": "21218",
-    "sha256": "c611b1b47ea45ddd36ad27b4bd1f1ab4002cd7709eab61f5c233a7ff22ab7a52",
+    "size_bytes": "24147",
+    "sha256": "7cd039fe63a84fbe07dfd7d6cdb1d3ad251429975f6b65297b12192ff02a4598",
     "canonical_path": "docs/plans/parser-extraction/parser-mvp/plan.md",
     "normalized_companion": "",
     "extraction_method": "native-markdown",
@@ -2916,8 +2942,8 @@
     "status": "active-plan",
     "source_group": "docs",
     "file_type": ".md",
-    "size_bytes": "3336",
-    "sha256": "b36d00a0aeb620b0d0697243bf07160f263428577e14e5bf22be96082c0aca59",
+    "size_bytes": "3991",
+    "sha256": "7bf07f7a96b96ca6163cb303722330168ab64762ea02a332d71b345484fcf1fe",
     "canonical_path": "docs/plans/parser-extraction/README.md",
     "normalized_companion": "",
     "extraction_method": "native-markdown",
@@ -2929,8 +2955,8 @@
     "status": "active-plan",
     "source_group": "docs",
     "file_type": ".md",
-    "size_bytes": "1720",
-    "sha256": "e585d429ae7f53dd4c8309b04a3d4e643104227293947c86eb6e3bd9f6cf3cfb",
+    "size_bytes": "1974",
+    "sha256": "b67c7b7fb7f5ac1b4734f06530c1eebc0575c9a730167d1fb99805325e176985",
     "canonical_path": "docs/plans/parser-extraction/roadmap.md",
     "normalized_companion": "",
     "extraction_method": "native-markdown",
@@ -2942,8 +2968,8 @@
     "status": "active-plan",
     "source_group": "docs",
     "file_type": ".md",
-    "size_bytes": "2969",
-    "sha256": "bc52c8dfa280e53cb8ff13a8318f2d07384a50a8f22356e57395d459983f12c9",
+    "size_bytes": "3747",
+    "sha256": "d0c353f89bf7f0686f72ae0e093df53e81ea851afe806c25ce2de52ac4ac9067",
     "canonical_path": "docs/plans/parser-extraction/source_map.md",
     "normalized_companion": "",
     "extraction_method": "native-markdown",
@@ -2981,8 +3007,8 @@
     "status": "active-plan",
     "source_group": "docs",
     "file_type": ".md",
-    "size_bytes": "3675",
-    "sha256": "3ebd32a3bd4a1e812e888e8b3640c2c207a002e0a1164c9b6e1b17cc3f3ef33e",
+    "size_bytes": "3974",
+    "sha256": "9f3641aaeb214def4ccfca15d4defcb8beb8628db36ac2bd5c1da8eceefe6dc6",
     "canonical_path": "docs/plans/parser-extraction/tickets/p0-parser-mvp-plan-enhancement-and-adjacent-evidence.md",
     "normalized_companion": "",
     "extraction_method": "native-markdown",
@@ -2994,8 +3020,8 @@
     "status": "active-plan",
     "source_group": "docs",
     "file_type": ".md",
-    "size_bytes": "1735",
-    "sha256": "134295f17e262866e1756b7c9851148af729ead112781193da4a87fd36a302f3",
+    "size_bytes": "1914",
+    "sha256": "60094ad398748da08cbc0f6165c59fb60c391c8b3cea69d6c7ff1b3946c7954e",
     "canonical_path": "docs/plans/parser-extraction/tickets/p0-provider-coverage-migration-baseline.md",
     "normalized_companion": "",
     "extraction_method": "native-markdown",
@@ -3007,8 +3033,8 @@
     "status": "active-plan",
     "source_group": "docs",
     "file_type": ".md",
-    "size_bytes": "882",
-    "sha256": "b5f6e742011029ca233d7595526389146e11ec9b29a3c32f1433c6407c70dd24",
+    "size_bytes": "998",
+    "sha256": "a5aea62027111c1bc38a9874331b6d209d80a055c2343ad70ea6797edf9f13af",
     "canonical_path": "docs/plans/parser-extraction/tickets/p1-parser-cli-parity.md",
     "normalized_companion": "",
     "extraction_method": "native-markdown",
@@ -3020,8 +3046,8 @@
     "status": "active-plan",
     "source_group": "docs",
     "file_type": ".md",
-    "size_bytes": "1079",
-    "sha256": "bfee0ae1ec0611b1bb6a8b5ced3bbb7cef78fb4a89eaa628b8b7ebc9c85ce244",
+    "size_bytes": "1425",
+    "sha256": "6264401ccc90d7757adbb67ad38cf2c69f36bbdc0ffe93e8e9db14131205d5f8",
     "canonical_path": "docs/plans/parser-extraction/tickets/p1-parser-core-mvp.md",
     "normalized_companion": "",
     "extraction_method": "native-markdown",
@@ -3033,8 +3059,8 @@
     "status": "active-plan",
     "source_group": "docs",
     "file_type": ".md",
-    "size_bytes": "947",
-    "sha256": "41e057c68f4fa55f2e1e2b473994c4821132cf00a183f025bab50bda6a35e6cc",
+    "size_bytes": "1172",
+    "sha256": "4438b62e8a10de8d6d323350f662018afabc1f87d130044e29f469b8c30f6a93",
     "canonical_path": "docs/plans/parser-extraction/tickets/p2-golden-corpus-regression.md",
     "normalized_companion": "",
     "extraction_method": "native-markdown",
@@ -3046,8 +3072,8 @@
     "status": "active-plan",
     "source_group": "docs",
     "file_type": ".md",
-    "size_bytes": "1939",
-    "sha256": "57a9941da5cbbd5759635b3e62f61ee3d8374c088817cf431f829be798ae82b9",
+    "size_bytes": "2442",
+    "sha256": "76b448c397792becfb432399347853a5ca0c5e4a0ad345e93d4c515e96598aaa",
     "canonical_path": "docs/plans/parser-extraction/tickets/p2-parser-hardening.md",
     "normalized_companion": "",
     "extraction_method": "native-markdown",
@@ -4550,6 +4576,58 @@
     "blocker": ""
   },
   {
+    "path": "docs/reference/data/parser_corpus_fixture_ledger.csv",
+    "status": "normalized-derivative",
+    "source_group": "data/parser_corpus_fixture_ledger.csv",
+    "file_type": ".csv",
+    "size_bytes": "108999",
+    "sha256": "0f0ba4f6bc4d40c86cc510ef0ab95cebe7ee1963a6eaa24f5ce8b2e9d366408b",
+    "canonical_path": "docs/reference/data/parser_corpus_fixture_ledger.csv",
+    "normalized_companion": "",
+    "extraction_method": "not-applicable",
+    "extraction_confidence": "not-applicable",
+    "blocker": ""
+  },
+  {
+    "path": "docs/reference/data/parser_corpus_fixture_ledger.json",
+    "status": "normalized-derivative",
+    "source_group": "data/parser_corpus_fixture_ledger.json",
+    "file_type": ".json",
+    "size_bytes": "155306",
+    "sha256": "9b441514d4a35cbadd56d2d5ef5685f5e5da5aeefca786ee7a326baed71a1d55",
+    "canonical_path": "docs/reference/data/parser_corpus_fixture_ledger.json",
+    "normalized_companion": "",
+    "extraction_method": "json-copy",
+    "extraction_confidence": "complete",
+    "blocker": ""
+  },
+  {
+    "path": "docs/reference/data/parser_corpus_regression_report.json",
+    "status": "normalized-derivative",
+    "source_group": "data/parser_corpus_regression_report.json",
+    "file_type": ".json",
+    "size_bytes": "100085",
+    "sha256": "f4614ed0e5490e28588f21e0cb91d58639384ad84996794019bfe9088c36ba48",
+    "canonical_path": "docs/reference/data/parser_corpus_regression_report.json",
+    "normalized_companion": "",
+    "extraction_method": "json-copy",
+    "extraction_confidence": "complete",
+    "blocker": ""
+  },
+  {
+    "path": "docs/reference/data/parser_provider_presets_v1.json",
+    "status": "normalized-derivative",
+    "source_group": "data/parser_provider_presets_v1.json",
+    "file_type": ".json",
+    "size_bytes": "45387",
+    "sha256": "25b43a8206d81c1b7caf5e555f20b151397834aeb596e15a5faddff236f2625a",
+    "canonical_path": "docs/reference/data/parser_provider_presets_v1.json",
+    "normalized_companion": "",
+    "extraction_method": "json-copy",
+    "extraction_confidence": "complete",
+    "blocker": ""
+  },
+  {
     "path": "docs/reference/data/provider_coverage_matrix.csv",
     "status": "normalized-derivative",
     "source_group": "data/provider_coverage_matrix.csv",
@@ -4567,8 +4645,8 @@
     "status": "normalized-derivative",
     "source_group": "data/provider_coverage_matrix.md",
     "file_type": ".md",
-    "size_bytes": "5376",
-    "sha256": "71acf119c618c1ae5b63042f84edd721e406d90536668c4f254e8fcf0808690f",
+    "size_bytes": "6562",
+    "sha256": "61dfcff588cd2c11d79da6b562c523c3623e98c19b39df5e10e94df7df1eb0ea",
     "canonical_path": "docs/reference/data/provider_coverage_matrix.md",
     "normalized_companion": "",
     "extraction_method": "native-markdown",
@@ -8445,9 +8523,9 @@
     "sha256": "8f45f9c1befe62ed1bfd42bc3562903d8f6f36b3dacc4aa152ec31dd4b9db55a",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/collision_releated/Backup of CE Job Sheet 260309.xlsm",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__collision_releated__backup-of-ce-job-sheet-260309.xlsm.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "openpyxl is not available"
+    "extraction_method": "openpyxl-workbook-summary",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "Workbook formulas/macros/images are not executed or visually validated"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/collision_releated/Backup of CE Job Sheet 260429.xlsm",
@@ -8458,9 +8536,9 @@
     "sha256": "a52b5df2a131c1b00866f478ebba20150070a3af25915acd8c05a41b2d0b983b",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/collision_releated/Backup of CE Job Sheet 260429.xlsm",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__collision_releated__backup-of-ce-job-sheet-260429.xlsm.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "openpyxl is not available"
+    "extraction_method": "openpyxl-workbook-summary",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "Workbook formulas/macros/images are not executed or visually validated"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/collision_releated/Backup of Conditional Formatting 260202.txt",
@@ -8484,9 +8562,9 @@
     "sha256": "1878ee75ee0dd2054778b0e173a3d1681d14e9a76268a6b0a8d9dea255ffe846",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/collision_releated/CE Communication Style & Tone Profile.docx",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__collision_releated__ce-communication-style-tone-profile.docx.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "python-docx is not available in the active runtime"
+    "extraction_method": "python-docx-paragraphs-tables",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "Headers, footers, text boxes, and embedded objects require later OOXML/manual QA"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/collision_releated/Collision Engineers Whiteboard.jam",
@@ -8510,9 +8588,9 @@
     "sha256": "155c3095d3dcf9965740c81c96d9fc21b9c22e78d1ff1af73c7a59d837118b56",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/collision_releated/EVA User Guide.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__collision_releated__eva-user-guide.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/collision_releated/evaapidocs.pdf",
@@ -8523,9 +8601,9 @@
     "sha256": "fb6c66f4dcdc2452ef477f79881ffd675d4c14aa077f681a4351638033e9d7d5",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/collision_releated/evaapidocs.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__collision_releated__evaapidocs.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/collision_releated/handover.docx",
@@ -8536,9 +8614,9 @@
     "sha256": "9873bdd8f79bc76534a4108fac70c708fee7d5f07ab28500831727f22213e673",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/collision_releated/handover.docx",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__collision_releated__handover.docx.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "python-docx is not available in the active runtime"
+    "extraction_method": "python-docx-paragraphs-tables",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "Headers, footers, text boxes, and embedded objects require later OOXML/manual QA"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/collision_releated/Mapped Principals.xlsx",
@@ -8549,9 +8627,9 @@
     "sha256": "e024a4f9c10f6c08df8c14cdae565518a10f4b7be64468e7a24e0028e13b1b87",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/collision_releated/Mapped Principals.xlsx",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__collision_releated__mapped-principals.xlsx.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "openpyxl is not available"
+    "extraction_method": "openpyxl-workbook-summary",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "Workbook formulas/macros/images are not executed or visually validated"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/collision_releated/Sentry_API_Complete_Guide.md",
@@ -8575,9 +8653,9 @@
     "sha256": "00770a49056df0849220f468abda0e4a00bd21551f6b611ba4ca56068459dfe0",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/collision_releated/Standard Audatex Invoice.docx",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__collision_releated__standard-audatex-invoice.docx.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "python-docx is not available in the active runtime"
+    "extraction_method": "python-docx-paragraphs-tables",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "Headers, footers, text boxes, and embedded objects require later OOXML/manual QA"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/collision_releated/Website Invoice Template.docx",
@@ -8588,9 +8666,9 @@
     "sha256": "3c08570d01aba839e57f7028bbbc23b088a78a42c7cb97fb5e5692ab9092d491",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/collision_releated/Website Invoice Template.docx",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__collision_releated__website-invoice-template.docx.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "python-docx is not available in the active runtime"
+    "extraction_method": "python-docx-paragraphs-tables",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "Headers, footers, text boxes, and embedded objects require later OOXML/manual QA"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Final Format Example 02.json",
@@ -8614,9 +8692,9 @@
     "sha256": "e6fcc03186984f416a190fd2b0389393f9cd277dc7e40de25378ca9524ed0abb",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/__Images 01.docx",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions____images-01.docx.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "python-docx is not available in the active runtime"
+    "extraction_method": "python-docx-paragraphs-tables",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "Headers, footers, text boxes, and embedded objects require later OOXML/manual QA"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/__Images 02.pdf",
@@ -8627,9 +8705,9 @@
     "sha256": "f4e63b242eb2028da48a21eee45bd4bb8fe08b96ab6b3f9e277af94dc417bd3d",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/__Images 02.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions____images-02.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/__Images 03.pdf",
@@ -8640,9 +8718,9 @@
     "sha256": "b22aafff212825938aaffd0d933aed3342057685740d61b07705dd5029f0c93e",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/__Images 03.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions____images-03.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/ALISON PDF 01.pdf",
@@ -8653,9 +8731,9 @@
     "sha256": "d70b613c47138d65af56aeb3313ba86d416742e29d12f5275b9474175fcdf263",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/ALISON PDF 01.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__alison-pdf-01.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/ALISON PDF 02.pdf",
@@ -8666,9 +8744,9 @@
     "sha256": "4245ad8fb9d0216bbc3a6e91ac7b79a4729ab5496963fca2e06ba9b597781b72",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/ALISON PDF 02.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__alison-pdf-02.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/ALISON PDF 03.pdf",
@@ -8679,9 +8757,9 @@
     "sha256": "7bb3cace40cd619269c36ac7f2f1777d96a8b32b50fd1b8e6d45167fc0d91201",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/ALISON PDF 03.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__alison-pdf-03.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/ALISON PDF 04.pdf",
@@ -8692,9 +8770,9 @@
     "sha256": "c9c48af52fbb4fdd8b5d1583d46113ab40e54e3d79372609b4037bd296bb462e",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/ALISON PDF 04.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__alison-pdf-04.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/ALISON PDF 05.pdf",
@@ -8705,9 +8783,9 @@
     "sha256": "e6c1d1888d9b00b708cac9ed61f375dfb4a2809daea6495b2ef7d49c914f710b",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/ALISON PDF 05.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__alison-pdf-05.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/ALISON WORD 01.docx",
@@ -8718,9 +8796,9 @@
     "sha256": "0bb5640eadfe71c8fa7bca3cf03fdb123ae1d05dd2c6bac61e2054bdba389367",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/ALISON WORD 01.docx",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__alison-word-01.docx.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "python-docx is not available in the active runtime"
+    "extraction_method": "python-docx-paragraphs-tables",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "Headers, footers, text boxes, and embedded objects require later OOXML/manual QA"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/ALISON WORD 02.docx",
@@ -8731,9 +8809,9 @@
     "sha256": "b3b79b5001145457e06af78998174fa2be4608b474d6c8ede9117c52fd0702b6",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/ALISON WORD 02.docx",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__alison-word-02.docx.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "python-docx is not available in the active runtime"
+    "extraction_method": "python-docx-paragraphs-tables",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "Headers, footers, text boxes, and embedded objects require later OOXML/manual QA"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/ALISON WORD 03.docx",
@@ -8744,9 +8822,9 @@
     "sha256": "ceb3b496e36c9d4ca749982fc008df4a49f500b15b5c7c4f8636deb200e64bf8",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/ALISON WORD 03.docx",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__alison-word-03.docx.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "python-docx is not available in the active runtime"
+    "extraction_method": "python-docx-paragraphs-tables",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "Headers, footers, text boxes, and embedded objects require later OOXML/manual QA"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/ALISON WORD 04.docx",
@@ -8757,9 +8835,9 @@
     "sha256": "1ca54f46c1d2c46f09d47343dc86f28b9fdbbd048b21812e450002e973183c2c",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/ALISON WORD 04.docx",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__alison-word-04.docx.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "python-docx is not available in the active runtime"
+    "extraction_method": "python-docx-paragraphs-tables",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "Headers, footers, text boxes, and embedded objects require later OOXML/manual QA"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/ALISON WORD 05.docx",
@@ -8770,9 +8848,9 @@
     "sha256": "05415183569f8b71fcd899e5385b6be6e24fb5f5ad90d43daee107b684d3f7fd",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/ALISON WORD 05.docx",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__alison-word-05.docx.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "python-docx is not available in the active runtime"
+    "extraction_method": "python-docx-paragraphs-tables",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "Headers, footers, text boxes, and embedded objects require later OOXML/manual QA"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/ALS 01.DOC",
@@ -8913,9 +8991,9 @@
     "sha256": "58e6bdf408d46c547efe6bf4c168fe878b028b8ff9c8692fa78ecbe37180df3f",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/AX 01.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__ax-01.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/AX 02.pdf",
@@ -8926,9 +9004,9 @@
     "sha256": "74a6f73c862efc079208f816727ddff5a4e16f1114290e7c74743ccf37a2e992",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/AX 02.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__ax-02.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/AX 03.pdf",
@@ -8939,9 +9017,9 @@
     "sha256": "c94df8b20c8e7bc90d2c910099ed62fcd3e1fd2cbf2dafec7db06eaab33cca5a",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/AX 03.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__ax-03.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/AX 04.pdf",
@@ -8952,9 +9030,9 @@
     "sha256": "2d8e3e0eced74dc915b028f6b8a4ef064efffc27f63c1be7741f8dae1dad4985",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/AX 04.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__ax-04.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/AX 05.pdf",
@@ -8965,9 +9043,9 @@
     "sha256": "0f6cde6ed6caf12f30305afd530333f0b7d580e8affe0ecd0491400cbc9ec777",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/AX 05.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__ax-05.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/BC 01.DOC",
@@ -9043,9 +9121,9 @@
     "sha256": "bf9f91b87f71dec6ecbea3f77d54c0522867c9a446599a1ebf5f03d859fa4385",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/BLACK 01.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__black-01.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/BLACK 02.pdf",
@@ -9056,9 +9134,9 @@
     "sha256": "7deb35748a1bff7f8804f312b1cee297c0abfdc4323474ab9e3142cf909fb834",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/BLACK 02.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__black-02.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/BLACK 03.pdf",
@@ -9069,9 +9147,9 @@
     "sha256": "201fb07ae667c1300ca773f24c6dee1e66e8eb63364e30932ff626e660e98071",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/BLACK 03.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__black-03.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/BLACK 04.pdf",
@@ -9082,9 +9160,9 @@
     "sha256": "89aaec4f52eb417ed7207319a8e7d2171b70d364f5f944b494b3e222de60afcd",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/BLACK 04.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__black-04.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/BLACK 05.pdf",
@@ -9095,9 +9173,9 @@
     "sha256": "a0a1ae68d7f000d2d0fcf0e2db9e8185c53edc9a9a67b30c37466e95ec855419",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/BLACK 05.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__black-05.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/CNX 01.pdf",
@@ -9108,9 +9186,9 @@
     "sha256": "0082a0cba98af3e7e408b6f48724c6e9a64bb7f72aa5b1e08ad7d511b71f6b8a",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/CNX 01.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__cnx-01.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/CNX 02.pdf",
@@ -9121,9 +9199,9 @@
     "sha256": "5dc091471954e509f9d324a7fe5aee8a1d08aac03cb39f66376de19b163e2b13",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/CNX 02.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__cnx-02.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/CNX 03.pdf",
@@ -9134,9 +9212,9 @@
     "sha256": "2daa97f7316cf3253fe2ee461c3c5a03d0bb6920afd28e06310105d8a67e2c08",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/CNX 03.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__cnx-03.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/CNX 04.pdf",
@@ -9147,9 +9225,9 @@
     "sha256": "e3254af9becdfbc6ccaf7e88bdfb81059bb415d3b08396200db05ef20e8f5259",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/CNX 04.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__cnx-04.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/CNX 05.pdf",
@@ -9160,9 +9238,9 @@
     "sha256": "d239bc8de8deef86afd2c49aed03f92ab4d4fd36473af2c8a46e2da9db41be97",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/CNX 05.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__cnx-05.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/DFD 01.pdf",
@@ -9173,9 +9251,9 @@
     "sha256": "a8eebc6d0c4088cd8d7a1ccff8dc690a5f8a13c96457d1bc04b1aed7b4930782",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/DFD 01.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__dfd-01.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/DFD 02.pdf",
@@ -9186,9 +9264,9 @@
     "sha256": "10f47df9a02a19c111e0ad07d9f739e904b4665fbe8a452640f4f7a1814fb72d",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/DFD 02.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__dfd-02.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/DFD 03.pdf",
@@ -9199,9 +9277,9 @@
     "sha256": "bc276820f055a184e8ca0f977b59e5bcdeb703ed15ebff24772f24511d0760d1",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/DFD 03.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__dfd-03.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/DFD 04.pdf",
@@ -9212,9 +9290,9 @@
     "sha256": "6b27e492c18fbb4fde08ec059acbc3a79a18e2db4fa5036dfbae32224d96744b",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/DFD 04.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__dfd-04.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/DFD 05.pdf",
@@ -9225,9 +9303,9 @@
     "sha256": "ee4fab522c6f4bb5b3fbc693f405ac6282aa166d9af5bf9868f0f9a0d728019d",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/DFD 05.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__dfd-05.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/EVA 01.pdf",
@@ -9238,9 +9316,9 @@
     "sha256": "4138321abc9549c0877abe2b80352c8b8cd788c91ccd1733cc4e5d3b7b5048ec",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/EVA 01.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__eva-01.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/EVA 02.pdf",
@@ -9251,9 +9329,9 @@
     "sha256": "c60e8d2aa70b1ae9a114bf6b435ec51f0c514b689af5f7a3790da0df51d1094a",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/EVA 02.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__eva-02.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/EVA 03.pdf",
@@ -9264,9 +9342,9 @@
     "sha256": "e47b592e6f01d9db9a2a92cc57c0442af439bebb58d6fda222fc1b17a1ddcd63",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/EVA 03.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__eva-03.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/EVA 04.pdf",
@@ -9277,9 +9355,9 @@
     "sha256": "32b1c1872ada54ab4fa239efe23f0ba4e1e6a5169707893028bcbf6901e777b3",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/EVA 04.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__eva-04.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/EVA 05.pdf",
@@ -9290,9 +9368,9 @@
     "sha256": "03c21b65aa79f2816b4a13ee013628697e11b5779a8804d4e2dd7d6c176a4b07",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/EVA 05.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__eva-05.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/FW 01.msg",
@@ -9368,9 +9446,9 @@
     "sha256": "37f70f707fa710d81c09abb3ccda02c61292a37fa3665d4dccc4ce20c6c8cfc6",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/HDUK 01.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__hduk-01.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/HDUK 02.pdf",
@@ -9381,9 +9459,9 @@
     "sha256": "1567e1393f0a1d7c3cd609664b58fa4697cc30cfe57a8feb60ae741240f06e69",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/HDUK 02.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__hduk-02.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/HDUK 03.pdf",
@@ -9394,9 +9472,9 @@
     "sha256": "f1540a0c96e4d32d703b4faab7ed1ed2621e755d7395bd426da3288693688db2",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/HDUK 03.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__hduk-03.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/HDUK 04.pdf",
@@ -9407,9 +9485,9 @@
     "sha256": "8dc9d4b59b85feb64eed9fc7a3dbc020170f002c82363372af5768411aa888b9",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/HDUK 04.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__hduk-04.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/HDUK 05.pdf",
@@ -9420,9 +9498,9 @@
     "sha256": "6708f0e9f46186a4ef7a5972271b05ac7ed8873d628b42940a5ef323bdf6d906",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/HDUK 05.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__hduk-05.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/KBS 01.docx",
@@ -9433,9 +9511,9 @@
     "sha256": "bcc96a21cb4418349f0a720c1b64545560b058d8ea7d19162bd2e8d1b2397730",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/KBS 01.docx",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__kbs-01.docx.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "python-docx is not available in the active runtime"
+    "extraction_method": "python-docx-paragraphs-tables",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "Headers, footers, text boxes, and embedded objects require later OOXML/manual QA"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/KBS 02.pdf",
@@ -9446,9 +9524,9 @@
     "sha256": "882c6ed6d2c78599b1d5bab4013a25288f1d9cc64b9c3ab0b58b4e68df5e7db8",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/KBS 02.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__kbs-02.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/KBS 03.pdf",
@@ -9459,9 +9537,9 @@
     "sha256": "ab970f4d2b22e4665ba0240f26129f3247e7a091822e734c0a129b7c5b99f22f",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/KBS 03.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__kbs-03.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/KBS 04.pdf",
@@ -9472,9 +9550,9 @@
     "sha256": "cbc01789c2808a572006880a02bc97962c3a57252e23b94061bc5a35d0c87b0e",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/KBS 04.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__kbs-04.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/KBS 05.pdf",
@@ -9485,9 +9563,9 @@
     "sha256": "7bdd91f82cb2877de5e231bdacf2335f65b8d2e3308c96f479c39eb1a8d4c3fe",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/KBS 05.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__kbs-05.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/KERR 01.msg",
@@ -9563,9 +9641,9 @@
     "sha256": "d7dd8d77204b224f7f5a212b5dc64ad868bd040da71de87d93a0d8947480011a",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/KMR 01.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__kmr-01.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/KMR 02.pdf",
@@ -9576,9 +9654,9 @@
     "sha256": "57d9ce853f2559f641a2da5ababe19288f00b68b47931556369a4d94dd3e7f9f",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/KMR 02.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__kmr-02.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/KMR 03.pdf",
@@ -9589,9 +9667,9 @@
     "sha256": "75eae4d900a747e6cac9cccfaa976b1cf010f79d15eb2bc4b82aab6ae622eac1",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/KMR 03.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__kmr-03.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/KMR 04.pdf",
@@ -9602,9 +9680,9 @@
     "sha256": "900ca6d59ba3902aee61527aa84953d0c52842da487cd71a08057703fb5954cb",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/KMR 04.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__kmr-04.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/KMR 05.pdf",
@@ -9615,9 +9693,9 @@
     "sha256": "c62f1592bd495c43495074d5307ee0502efc949bdf68c9da0ed94e421de7a3d3",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/KMR 05.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__kmr-05.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/LAW 01.DOC",
@@ -9693,9 +9771,9 @@
     "sha256": "79097baeec1eac46bb9a34afe67945d398df93a621857179c793f2cff5d5d3f4",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/MP PDF 01.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__mp-pdf-01.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/MP PDF 02.pdf",
@@ -9706,9 +9784,9 @@
     "sha256": "bf8092e4bd7e47407590a20784173bc185b5d68b265451a7b71d4a6214eafe82",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/MP PDF 02.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__mp-pdf-02.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/MP PDF 03.pdf",
@@ -9719,9 +9797,9 @@
     "sha256": "b33f7e55b179a8a12b2f1a59d2360f12f8b1e49fd65b673e8b7544ce913967f5",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/MP PDF 03.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__mp-pdf-03.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/MP PDF 04.pdf",
@@ -9732,9 +9810,9 @@
     "sha256": "6f799851135947ec05c90d464eb6266bad570f0fe1a7e13ae9992b1b6071e917",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/MP PDF 04.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__mp-pdf-04.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/MP Weird 01.pdf",
@@ -9745,9 +9823,9 @@
     "sha256": "277b0531273e350ebd60f5820024e9a40e45b71d7d5e0157d11c84c1ac9a0541",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/MP Weird 01.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__mp-weird-01.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/MP Weird 02.pdf",
@@ -9758,9 +9836,9 @@
     "sha256": "89413ad58022e75f3592c377d0c0f572d8ba8325722090775334178ca94be098",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/MP Weird 02.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__mp-weird-02.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/MP Word 01.doc",
@@ -9966,9 +10044,9 @@
     "sha256": "cb6b0f120d2e8d06a2e79e0b97f6326ab12395a1c9cfc60cc3f8ad6e1744bac7",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/QCL 01.docx",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__qcl-01.docx.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "python-docx is not available in the active runtime"
+    "extraction_method": "python-docx-paragraphs-tables",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "Headers, footers, text boxes, and embedded objects require later OOXML/manual QA"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/QCL 02.docx",
@@ -9979,9 +10057,9 @@
     "sha256": "94f1c9c9af4881d20a18a6ba3819970273dc1c66ebe71b18f8d29ed6807131c7",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/QCL 02.docx",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__qcl-02.docx.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "python-docx is not available in the active runtime"
+    "extraction_method": "python-docx-paragraphs-tables",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "Headers, footers, text boxes, and embedded objects require later OOXML/manual QA"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/QCL 03.docx",
@@ -9992,9 +10070,9 @@
     "sha256": "a0cc054eb8060172428cad0cc8621cd019c45efa929fb453d42960782dbff474",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/QCL 03.docx",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__qcl-03.docx.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "python-docx is not available in the active runtime"
+    "extraction_method": "python-docx-paragraphs-tables",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "Headers, footers, text boxes, and embedded objects require later OOXML/manual QA"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/QCL 04.docx",
@@ -10005,9 +10083,9 @@
     "sha256": "e37143b3f73ada187db9ff4e196778f40ddd4ca7f302508d5285cdcae7170a2e",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/QCL 04.docx",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__qcl-04.docx.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "python-docx is not available in the active runtime"
+    "extraction_method": "python-docx-paragraphs-tables",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "Headers, footers, text boxes, and embedded objects require later OOXML/manual QA"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/QCL 05.docx",
@@ -10018,9 +10096,9 @@
     "sha256": "4cee9b8ef41dccdbc2db90685ec1fef3fc00eba13dd28da8b09d44503259433a",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/QCL 05.docx",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__qcl-05.docx.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "python-docx is not available in the active runtime"
+    "extraction_method": "python-docx-paragraphs-tables",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "Headers, footers, text boxes, and embedded objects require later OOXML/manual QA"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/QDOS 01.pdf",
@@ -10031,9 +10109,9 @@
     "sha256": "21ad661ea450a7d05a082da8742f5ea0d6bb6917db5b5b290ab2dabe78c04ede",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/QDOS 01.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__qdos-01.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/QDOS 02.pdf",
@@ -10044,9 +10122,9 @@
     "sha256": "854ad91f463010780fc91e9c08961546d05c5c6f29cdf8320ae0fdad52d94d91",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/QDOS 02.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__qdos-02.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/QDOS 03.pdf",
@@ -10057,9 +10135,9 @@
     "sha256": "f6961bc33ec46f3e6312f9818f12b1b116a1645407f7e342c0d41806be88efef",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/QDOS 03.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__qdos-03.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/QDOS 04.pdf",
@@ -10070,9 +10148,9 @@
     "sha256": "c78c2dcf87c3f2949cbe446840cbaa17cd54098b89b9972a43a84309d2cdc56b",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/QDOS 04.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__qdos-04.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/QDOS 05.pdf",
@@ -10083,9 +10161,9 @@
     "sha256": "080bec20fd211188ca8e19404ff518ed8396c348e381c6d2a2fda53fd0f0af94",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/QDOS 05.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__qdos-05.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/RJS 01.DOC",
@@ -10161,9 +10239,9 @@
     "sha256": "fa2d7e6abe04830ac29bd5faa7b9452212a6bc91d636cfddf10510c821780fc8",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/SBL 01.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__sbl-01.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/SBL 02.pdf",
@@ -10174,9 +10252,9 @@
     "sha256": "7cd71550bb2d0d782885928036c23818b6db877cac97db30d55e76ca47d62866",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/SBL 02.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__sbl-02.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/SBL 03.pdf",
@@ -10187,9 +10265,9 @@
     "sha256": "d5106d2067f7576c6873527db59f8868ed8617f2f1334faf22f5a65caf36adee",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/SBL 03.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__sbl-03.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/SBL 04.pdf",
@@ -10200,9 +10278,9 @@
     "sha256": "3fd4d9cd2f7895579f51afcaf055f43e465038125543f198046109fd313dd99b",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/SBL 04.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__sbl-04.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/SBL 05.pdf",
@@ -10213,9 +10291,9 @@
     "sha256": "436db268cf7cb824ef089e08399879b4f7f78a65bf3c2b0f515d043c44bb3e00",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/SBL 05.pdf",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__sbl-05.pdf.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "pypdf is not available in the active runtime"
+    "extraction_method": "pypdf-text",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "No OCR/layout validation in scaffold pass"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/SWAN 01.docx",
@@ -10226,9 +10304,9 @@
     "sha256": "d8eab26c5a7c522c17901c2d81be4729f74b628159df0c7c48f8bb9c4cc74d89",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/SWAN 01.docx",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__swan-01.docx.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "python-docx is not available in the active runtime"
+    "extraction_method": "python-docx-paragraphs-tables",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "Headers, footers, text boxes, and embedded objects require later OOXML/manual QA"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/SWAN 02.docx",
@@ -10239,9 +10317,9 @@
     "sha256": "c9ef76a0a46d95bc8a31257444534a16c1d850d898c45134faca64131cf793e9",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/SWAN 02.docx",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__swan-02.docx.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "python-docx is not available in the active runtime"
+    "extraction_method": "python-docx-paragraphs-tables",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "Headers, footers, text boxes, and embedded objects require later OOXML/manual QA"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/SWAN 03.docx",
@@ -10252,9 +10330,9 @@
     "sha256": "81ebf171fe46979ef9fa3effbe61e16789b4b6f5e8f7044bdc445d87c4206111",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/SWAN 03.docx",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__swan-03.docx.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "python-docx is not available in the active runtime"
+    "extraction_method": "python-docx-paragraphs-tables",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "Headers, footers, text boxes, and embedded objects require later OOXML/manual QA"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/SWAN 04.docx",
@@ -10265,9 +10343,9 @@
     "sha256": "4929e82195367e24c89fa5491c2f91688c7b2c74d49fde67f3555688a2dc4e48",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/SWAN 04.docx",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__swan-04.docx.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "python-docx is not available in the active runtime"
+    "extraction_method": "python-docx-paragraphs-tables",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "Headers, footers, text boxes, and embedded objects require later OOXML/manual QA"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/SWAN 05.docx",
@@ -10278,9 +10356,9 @@
     "sha256": "8723a19be7759b81dec2ddc905c74ff42464f4a740ca925a2a5ab770396cc7d2",
     "canonical_path": "docs/reference/raw/collisionrelateddocs/Instructions/SWAN 05.docx",
     "normalized_companion": "docs/reference/normalized/collisionrelateddocs__instructions__swan-05.docx.md",
-    "extraction_method": "blocked",
-    "extraction_confidence": "blocked",
-    "blocker": "python-docx is not available in the active runtime"
+    "extraction_method": "python-docx-paragraphs-tables",
+    "extraction_confidence": "partial-review-required",
+    "blocker": "Headers, footers, text boxes, and embedded objects require later OOXML/manual QA"
   },
   {
     "path": "docs/reference/raw/collisionrelateddocs/Instructions/TEN 01.msg",
@@ -10937,8 +11015,8 @@
     "status": "active-plan",
     "source_group": "docs",
     "file_type": ".json",
-    "size_bytes": "16946",
-    "sha256": "d1384a02ae96795af925d840bf0cfbeb407d7be90f9481d2c5daed7c223f613c",
+    "size_bytes": "17729",
+    "sha256": "637db0e11d01977b2036433d1fee48e598a3b8c45bed706eb2bc14cefc710200",
     "canonical_path": "docs/repo_map.json",
     "normalized_companion": "",
     "extraction_method": "json-copy",
@@ -11015,8 +11093,8 @@
     "status": "active-plan",
     "source_group": "docs",
     "file_type": ".md",
-    "size_bytes": "13598",
-    "sha256": "3985bb4e3b6b4bcc6ed28764b6dfe5591a91fb6dc208d9bbb80eeef93439daac",
+    "size_bytes": "14223",
+    "sha256": "8b79ed37ba18ea909e805a109f7544855a940ad48f4176917161699d04a1ae80",
     "canonical_path": "docs/roadmap.md",
     "normalized_companion": "",
     "extraction_method": "native-markdown",
@@ -11093,8 +11171,8 @@
     "status": "normalized-derivative",
     "source_group": "docs",
     "file_type": ".csv",
-    "size_bytes": "280847",
-    "sha256": "f17c80517592e649f198e67c7408ccbba81d9351a2330885945170c74a4f51b7",
+    "size_bytes": "287520",
+    "sha256": "d9f4c27db745848aa174e9758e8adaa3133517185dc2ed9ece0205a2ab702a21",
     "canonical_path": "docs/source_manifest.csv",
     "normalized_companion": "",
     "extraction_method": "generated-csv",
@@ -11106,8 +11184,8 @@
     "status": "active-plan",
     "source_group": "docs",
     "file_type": ".json",
-    "size_bytes": "513271",
-    "sha256": "ec899b5751c9cd0f90a054ae0651aa94c822a5f4034f824897b4dbed9d2ef9e4",
+    "size_bytes": "524975",
+    "sha256": "859cbdf0f207df31285e0b250a85e709c7ddc1991fd12be352ee8fc8e8ae813b",
     "canonical_path": "docs/source_manifest.json",
     "normalized_companion": "",
     "extraction_method": "json-copy",
@@ -11119,8 +11197,8 @@
     "status": "active-plan",
     "source_group": "docs",
     "file_type": ".md",
-    "size_bytes": "191838",
-    "sha256": "2ba312aa5e1b0bfc08bc72fce119ca62fbd621bc8aaa69eb364ce84e0a3039b4",
+    "size_bytes": "195460",
+    "sha256": "d514844bfaf6d5d02b3b49e6706dcbc6fc2eeb35b6e89be2efff23ba98a7cc2f",
     "canonical_path": "docs/source_manifest.md",
     "normalized_companion": "",
     "extraction_method": "native-markdown",
@@ -11132,8 +11210,8 @@
     "status": "active-plan",
     "source_group": "pyproject.toml",
     "file_type": ".toml",
-    "size_bytes": "286",
-    "sha256": "12b6065c6720786f3ad24fc68fb41801cbdc3c8d98a05048c0e218f4ed503b5c",
+    "size_bytes": "540",
+    "sha256": "507ac27eb6b51c5131e75758bb551828f38c7282b769e4a6bbb37dd5181742f2",
     "canonical_path": "pyproject.toml",
     "normalized_companion": "",
     "extraction_method": "not-applicable",
@@ -11145,8 +11223,8 @@
     "status": "active-plan",
     "source_group": "README.md",
     "file_type": ".md",
-    "size_bytes": "1946",
-    "sha256": "cfa41ff43fc3ca6f807fa4c70aba324178f22995901b13b05a8413fe35c31868",
+    "size_bytes": "3066",
+    "sha256": "e3c35759dedb3f55dd04161da44f443f6202a31c816134221007454a30acf626",
     "canonical_path": "README.md",
     "normalized_companion": "",
     "extraction_method": "native-markdown",
@@ -11171,9 +11249,22 @@
     "status": "active-plan",
     "source_group": "src",
     "file_type": ".py",
-    "size_bytes": "1583",
-    "sha256": "d9543c67437a8cc7921b8b041f8110aafe4630b992a2117c828c07092dc21612",
+    "size_bytes": "4921",
+    "sha256": "7b51d70029d41959b98aa58cbc6fc8b804d84a9750d36cd5ff4b1d3fc2664b76",
     "canonical_path": "src/ccc_parser/cli.py",
+    "normalized_companion": "",
+    "extraction_method": "not-applicable",
+    "extraction_confidence": "not-applicable",
+    "blocker": ""
+  },
+  {
+    "path": "src/ccc_parser/constants.py",
+    "status": "active-plan",
+    "source_group": "src",
+    "file_type": ".py",
+    "size_bytes": "1247",
+    "sha256": "209c4804d2266e2bc419ef210c4e181730f98f6438c0411a5ffbd0185de870df",
+    "canonical_path": "src/ccc_parser/constants.py",
     "normalized_companion": "",
     "extraction_method": "not-applicable",
     "extraction_confidence": "not-applicable",
@@ -11184,8 +11275,8 @@
     "status": "active-plan",
     "source_group": "src",
     "file_type": ".py",
-    "size_bytes": "2162",
-    "sha256": "ce48c7c5061e20119a767394acf1414be39d32ccd636b80f154c40195369a749",
+    "size_bytes": "8083",
+    "sha256": "805d500d2f304180952820bb9b6a626d3412d5667a2c7726df7e46e6813fe4a8",
     "canonical_path": "src/ccc_parser/core.py",
     "normalized_companion": "",
     "extraction_method": "not-applicable",
@@ -11197,8 +11288,8 @@
     "status": "active-plan",
     "source_group": "src",
     "file_type": ".py",
-    "size_bytes": "67",
-    "sha256": "e1d80dccafed86fbc5f13aa4d39913ddc1374d0e7dae291c1546dcc17ba6843e",
+    "size_bytes": "142",
+    "sha256": "ab473389887fd436fcb486e7a8409f9f18e5aea152a0d7ee733bb6ed91f86971",
     "canonical_path": "src/ccc_parser/exporters/__init__.py",
     "normalized_companion": "",
     "extraction_method": "not-applicable",
@@ -11210,8 +11301,8 @@
     "status": "active-plan",
     "source_group": "src",
     "file_type": ".py",
-    "size_bytes": "305",
-    "sha256": "bfe2aa51d20eda3c01e67c423e6e133525076a4c1187f34a75c2add1c1ddbe51",
+    "size_bytes": "1513",
+    "sha256": "4ec4a960d7113571755b6965e79e75756b34266ccffe084a31e7415c23ca5464",
     "canonical_path": "src/ccc_parser/exporters/eva.py",
     "normalized_companion": "",
     "extraction_method": "not-applicable",
@@ -11223,9 +11314,35 @@
     "status": "active-plan",
     "source_group": "src",
     "file_type": ".py",
-    "size_bytes": "1468",
-    "sha256": "5146dc5a4c5588bf26e35a2b1fa270187eaa7678aca41bc4b35e25eb4acbcad9",
+    "size_bytes": "13188",
+    "sha256": "b2f6fdb4dd0e745b6d64d461359e52899b1ffea04e75957853ed48e6e069a894",
     "canonical_path": "src/ccc_parser/models.py",
+    "normalized_companion": "",
+    "extraction_method": "not-applicable",
+    "extraction_confidence": "not-applicable",
+    "blocker": ""
+  },
+  {
+    "path": "src/ccc_parser/normalization.py",
+    "status": "active-plan",
+    "source_group": "src",
+    "file_type": ".py",
+    "size_bytes": "6366",
+    "sha256": "72e76197ce1a6d9580879728f9b8c6df2a262368df87408fb8933fa0ee9c8da1",
+    "canonical_path": "src/ccc_parser/normalization.py",
+    "normalized_companion": "",
+    "extraction_method": "not-applicable",
+    "extraction_confidence": "not-applicable",
+    "blocker": ""
+  },
+  {
+    "path": "src/ccc_parser/packaging.py",
+    "status": "active-plan",
+    "source_group": "src",
+    "file_type": ".py",
+    "size_bytes": "1744",
+    "sha256": "5180e0bb52b29b3a35f135d8606f3961e7209cfb65be5b7e7df4226240bf22ba",
+    "canonical_path": "src/ccc_parser/packaging.py",
     "normalized_companion": "",
     "extraction_method": "not-applicable",
     "extraction_confidence": "not-applicable",
@@ -11236,9 +11353,61 @@
     "status": "active-plan",
     "source_group": "src",
     "file_type": ".py",
-    "size_bytes": "1367",
-    "sha256": "e54b1dddd7c5303df48945b0a64da592f8bfdc20e51d88201777c14f0951c483",
+    "size_bytes": "6023",
+    "sha256": "7dfbbcff0878d515b44b64749627729d948ee6cfb0b20b673df5c7648a330689",
     "canonical_path": "src/ccc_parser/providers.py",
+    "normalized_companion": "",
+    "extraction_method": "not-applicable",
+    "extraction_confidence": "not-applicable",
+    "blocker": ""
+  },
+  {
+    "path": "src/ccc_parser/readers.py",
+    "status": "active-plan",
+    "source_group": "src",
+    "file_type": ".py",
+    "size_bytes": "32620",
+    "sha256": "20d446d17397a830ffc4d545111d3231778ed5325e4022ef6b98068779d02786",
+    "canonical_path": "src/ccc_parser/readers.py",
+    "normalized_companion": "",
+    "extraction_method": "not-applicable",
+    "extraction_confidence": "not-applicable",
+    "blocker": ""
+  },
+  {
+    "path": "src/ccc_parser/review.py",
+    "status": "active-plan",
+    "source_group": "src",
+    "file_type": ".py",
+    "size_bytes": "2144",
+    "sha256": "2137c6b2f2926b0624dc41a1f513b40388b9859b231746cc472b4a7c036073eb",
+    "canonical_path": "src/ccc_parser/review.py",
+    "normalized_companion": "",
+    "extraction_method": "not-applicable",
+    "extraction_confidence": "not-applicable",
+    "blocker": ""
+  },
+  {
+    "path": "src/ccc_parser/rules.py",
+    "status": "active-plan",
+    "source_group": "src",
+    "file_type": ".py",
+    "size_bytes": "28090",
+    "sha256": "f32ba4d279c39500327547aace45ce2f30191ce9d8e0f103b8b056a83e1739b9",
+    "canonical_path": "src/ccc_parser/rules.py",
+    "normalized_companion": "",
+    "extraction_method": "not-applicable",
+    "extraction_confidence": "not-applicable",
+    "blocker": ""
+  },
+  {
+    "path": "src/ccc_parser/triage.py",
+    "status": "active-plan",
+    "source_group": "src",
+    "file_type": ".py",
+    "size_bytes": "3223",
+    "sha256": "2f829df43468a44c6853bc4307ef9a7b97cbc68f0a0bf989511d0f0e9d25127c",
+    "canonical_path": "src/ccc_parser/triage.py",
     "normalized_companion": "",
     "extraction_method": "not-applicable",
     "extraction_confidence": "not-applicable",
@@ -11262,9 +11431,61 @@
     "status": "active-plan",
     "source_group": "src",
     "file_type": ".py",
-    "size_bytes": "1768",
-    "sha256": "6a7d08f3dca550cbf2a4668500a252349f8c2c3fd2cb6815cb5c6fb32a21ea45",
+    "size_bytes": "9901",
+    "sha256": "10407b6867544f470925a3265982c53fe4e9828e415c0641af8404669c57d727",
     "canonical_path": "src/ccc_parser/ui/app.py",
+    "normalized_companion": "",
+    "extraction_method": "not-applicable",
+    "extraction_confidence": "not-applicable",
+    "blocker": ""
+  },
+  {
+    "path": "src/ccc_parser/validation.py",
+    "status": "active-plan",
+    "source_group": "src",
+    "file_type": ".py",
+    "size_bytes": "4378",
+    "sha256": "10bc765f69623d23c9dd42c6627f64029313a67a3b9852f346c80c5908647b5c",
+    "canonical_path": "src/ccc_parser/validation.py",
+    "normalized_companion": "",
+    "extraction_method": "not-applicable",
+    "extraction_confidence": "not-applicable",
+    "blocker": ""
+  },
+  {
+    "path": "tests/parsertests/output1.json",
+    "status": "active-plan",
+    "source_group": "tests",
+    "file_type": ".json",
+    "size_bytes": "530",
+    "sha256": "746384946733851e0b0de1f79dc3ca33ad538d092e6ccbca7923d30bd047bf06",
+    "canonical_path": "tests/parsertests/output1.json",
+    "normalized_companion": "",
+    "extraction_method": "json-copy",
+    "extraction_confidence": "complete",
+    "blocker": ""
+  },
+  {
+    "path": "tests/test_parser_cli_mvp.py",
+    "status": "active-plan",
+    "source_group": "tests",
+    "file_type": ".py",
+    "size_bytes": "3036",
+    "sha256": "afd01765b6fbc1fe3235f2f0b7c2197febca601a25e70e5f8ee0021af9ff28c6",
+    "canonical_path": "tests/test_parser_cli_mvp.py",
+    "normalized_companion": "",
+    "extraction_method": "not-applicable",
+    "extraction_confidence": "not-applicable",
+    "blocker": ""
+  },
+  {
+    "path": "tests/test_parser_mvp_contracts.py",
+    "status": "active-plan",
+    "source_group": "tests",
+    "file_type": ".py",
+    "size_bytes": "9752",
+    "sha256": "adff58956d351a09da93498c72470575e2f87e479b3443b469f5764ca05c5e20",
+    "canonical_path": "tests/test_parser_mvp_contracts.py",
     "normalized_companion": "",
     "extraction_method": "not-applicable",
     "extraction_confidence": "not-applicable",
@@ -11284,6 +11505,19 @@
     "blocker": ""
   },
   {
+    "path": "tools/build_parser_fixtures.py",
+    "status": "active-plan",
+    "source_group": "tools",
+    "file_type": ".py",
+    "size_bytes": "4676",
+    "sha256": "fdb32717e73e8d2fd2118d9b77fd4a993c448c889db823873f8a2e31d03894f8",
+    "canonical_path": "tools/build_parser_fixtures.py",
+    "normalized_companion": "",
+    "extraction_method": "not-applicable",
+    "extraction_confidence": "not-applicable",
+    "blocker": ""
+  },
+  {
     "path": "tools/generate_plan_workspaces.py",
     "status": "active-plan",
     "source_group": "tools",
@@ -11291,6 +11525,19 @@
     "size_bytes": "83485",
     "sha256": "3bfbb5a8a81c4d10e8222b9fd260a7411ab1c479dd5070306407c7f31d461855",
     "canonical_path": "tools/generate_plan_workspaces.py",
+    "normalized_companion": "",
+    "extraction_method": "not-applicable",
+    "extraction_confidence": "not-applicable",
+    "blocker": ""
+  },
+  {
+    "path": "tools/run_parser_corpus.py",
+    "status": "active-plan",
+    "source_group": "tools",
+    "file_type": ".py",
+    "size_bytes": "3761",
+    "sha256": "b85bf7601e215d6ff629d9db30757dc0ec6f8700645c7d00bd5915a7281dfad8",
+    "canonical_path": "tools/run_parser_corpus.py",
     "normalized_companion": "",
     "extraction_method": "not-applicable",
     "extraction_confidence": "not-applicable",

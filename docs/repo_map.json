@@ -257,8 +257,15 @@
     },
     "active_parser_mvp": {
       "plan": "docs/plans/parser-extraction/parser-mvp/plan.md",
-      "evidence_review": "docs/plans/parser-extraction/parser-mvp/adjacent-parser-and-inspection-location-review.md"
+      "evidence_review": "docs/plans/parser-extraction/parser-mvp/adjacent-parser-and-inspection-location-review.md",
+      "legacy_behavior_inventory": "docs/plans/parser-extraction/parser-mvp/legacy_behavior_inventory.md",
+      "adjacent_repo_comparison": "docs/plans/parser-extraction/parser-mvp/adjacent_repo_comparison.md"
     }
+  },
+  "tests": {
+    "parser_contract_tests": "tests/test_parser_mvp_contracts.py",
+    "parser_cli_tests": "tests/test_parser_cli_mvp.py",
+    "parser_regression_fixtures": "tests/parsertests"
   },
   "reference": {
     "index": "docs/reference/_index.md",
@@ -266,6 +273,10 @@
     "normalized_companions": "docs/reference/normalized",
     "reference_data": "docs/reference/data",
     "provider_coverage_matrix": "docs/reference/data/provider_coverage_matrix.md",
+    "parser_provider_presets": "docs/reference/data/parser_provider_presets_v1.json",
+    "parser_corpus_fixture_ledger_csv": "docs/reference/data/parser_corpus_fixture_ledger.csv",
+    "parser_corpus_fixture_ledger_json": "docs/reference/data/parser_corpus_fixture_ledger.json",
+    "parser_corpus_regression_report": "docs/reference/data/parser_corpus_regression_report.json",
     "original_planning": "docs/reference/originalplanning",
     "original_planning_index": "docs/reference/originalplanning_index.md",
     "test_context": "docs/reference/test-context"

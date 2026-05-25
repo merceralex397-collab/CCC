@@ -1,5 +1,7 @@
 # Parser Result Contract v1
 
+Implementation: `src/ccc_parser/models.py` now emits this contract shape through `ParserResult.to_dict()`. Field overrides preserve the same envelope through `src/ccc_parser/review.py`.
+
 Parser output is canonical before it becomes EVA-specific.
 
 ## Result Envelope
@@ -53,11 +55,26 @@ Each extracted field should include:
 ## Validation Requirements
 
 - Dates intended for EVA export must normalize to `DD/MM/YYYY`.
-- Inspection address handling must support up to six lines without silently dropping lines.
+- Inspection address handling must support up to six lines without silently dropping lines. Blank canonical values remain blank until the EVA export adapter renders the legacy six blank lines.
 - Mileage must distinguish missing, estimated, extracted, and manually corrected values.
 - VAT status and mileage unit must be explicit where required.
 - Missing work provider/principal is a critical export blocker.
+- Evidence images and image packs are not instruction export candidates and must not produce EVA JSON, even for review-copy export.
+
+## Implemented Canonical Inspection Fields
+
+The parser result also carries the inspection-site fields required by the parser MVP plan:
+
+- `inspection_mode`: `physical`, `image_based`, `unknown`, or `review_required`.
+- `inspection_site_source`: instruction text, provider manual rule, staff review, or unknown source marker.
+- `inspection_address_lines`: six-line-compatible structured lines before EVA serialization.
+- `inspection_postcode`: detected postcode where available.
+- `inspection_location_confidence` and `inspection_location_evidence`.
 
 ## Rule
 
 EVA field shape is an export adapter. Do not let EVA-specific JSON become the only internal representation.
+
+## Deterministic Fallbacks
+
+Provider presets remain the primary extraction source. When a preset has a blank config, or a fixed-position rule extracts visible document-control noise instead of a field value, the parser may apply deterministic labelled-value fallbacks for VRM, reference, claimant name, vehicle model, dates, inspection mode/address, accident circumstances, mileage, mileage unit, and provider code. These fallback fields still carry method, confidence, and provenance metadata and must remain reviewable before export.

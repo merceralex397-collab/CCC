@@ -1,7 +1,7 @@
 # Parser MVP Plan Enhancement And Adjacent Evidence
 
 Date: 2026-05-24
-Status: active parser-planning ticket
+Status: implemented baseline
 Owner: unassigned
 Created: 2026-05-24
 Last reviewed: 2026-05-24
@@ -17,13 +17,15 @@ Superseded-by: none
 
 ## Todo Checklist
 
-- [ ] Inventory `../cedocumentmapper/app.py` extraction, provider detection, rule execution, field normalization, six-line inspection-address export, and export gating behavior.
-- [ ] Inventory `../collisionpdf` for parser-service patterns worth adopting: native extraction IR, OCR fallback boundary, schema validation, warning taxonomy, and synthetic-test limitations.
-- [ ] Inventory `../cedocumentmapper_v2.0` for module-boundary and regression-harness patterns worth adopting.
-- [ ] Build a fixture ledger for every file under `docs/reference/raw/collisionrelateddocs/Instructions/`, linking raw source, normalized companion, detected provider, expected canonical fields, expected EVA JSON fields, and review-required gaps.
-- [ ] Convert the 26 provider presets from `docs/reference/raw/collisionrelateddocs/Settings Backup/providers.json` into versioned config fixtures with tests before changing behavior.
-- [ ] Add explicit inspection-location policy: preserve legacy six-line `Inspection Address` export while adding canonical internal mode/source/address fields.
-- [ ] Document why the new parser diverges from `cedocumentmapper` where it does: source-linked provenance, schema validation, separate inspection mode, provider/principal/garage lookup separation, and UI/CLI shared core.
-- [ ] Add EVA/Sentry constraints from `Sentry_API_Complete_Guide.md`: no direct live submission in MVP, no dependency on undocumented location lookup, future `LocationUpdate` write path only after governance review.
-- [ ] Use the job sheet workbook, companion, and FigJam workflow as provider/principal/garage operational evidence; do not encode spreadsheet-only routing as parser extraction logic without a provider-config owner decision.
-- [ ] Add acceptance tests for final EVA JSON field order against `Final Format Example 02.json`.
+- [x] Inventory `../cedocumentmapper/app.py` extraction, provider detection, rule execution, field normalization, six-line inspection-address export, and export gating behavior.
+- [x] Inventory `../collisionpdf` for parser-service patterns worth adopting: native extraction IR, OCR fallback boundary, schema validation, warning taxonomy, and synthetic-test limitations.
+- [x] Inventory `../cedocumentmapper_v2.0` for module-boundary and regression-harness patterns worth adopting.
+- [x] Build a fixture ledger for every file under `docs/reference/raw/collisionrelateddocs/Instructions/`, linking raw source, normalized companion, detected provider, expected canonical fields, expected EVA JSON fields, and review-required gaps.
+- [x] Convert the 26 provider presets from `docs/reference/raw/collisionrelateddocs/Settings Backup/providers.json` into versioned config fixtures with tests before changing behavior.
+- [x] Add explicit inspection-location policy: preserve legacy six-line `Inspection Address` export while adding canonical internal mode/source/address fields.
+- [x] Document why the new parser diverges from `cedocumentmapper` where it does: source-linked provenance, schema validation, separate inspection mode, provider/principal/garage lookup separation, and UI/CLI shared core.
+- [x] Add EVA/Sentry constraints from `Sentry_API_Complete_Guide.md`: no direct live submission in MVP, no dependency on undocumented location lookup, future `LocationUpdate` write path only after governance review.
+- [x] Use the job sheet workbook, companion, and FigJam workflow as provider/principal/garage operational evidence; do not encode spreadsheet-only routing as parser extraction logic without a provider-config owner decision.
+- [x] Add acceptance tests for final EVA JSON field order against `Final Format Example 02.json`.
+
+Implemented evidence: `docs/plans/parser-extraction/parser-mvp/legacy_behavior_inventory.md`, `docs/plans/parser-extraction/parser-mvp/adjacent_repo_comparison.md`, `docs/reference/data/parser_provider_presets_v1.json`, `docs/reference/data/parser_corpus_fixture_ledger.*`, and parser tests under `tests/`.

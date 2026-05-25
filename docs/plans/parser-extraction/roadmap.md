@@ -17,11 +17,11 @@ Superseded-by: none
 
 ## S1
 
-- Maintain active parser MVP planning here, then deliver deterministic parser core and shared UI/CLI service behavior.
+- Parser MVP executable baseline implemented on branch `codex/parser-mvp-full`: deterministic parser core, shared CLI/UI service behavior, provider fixtures, EVA export adapter, evidence package manifest, and corpus regression report.
 
 ## S2
 
-- Harden extraction adapters, provider corpus coverage, export blockers, and UI/CLI parity.
+- Harden provider field coverage, review-required cases, OCR/manual review workflow for image-only PDFs, release packaging, and UI ergonomics using `docs/reference/data/parser_corpus_regression_report.json` as the regression baseline.
 
 ## S3-S4
 

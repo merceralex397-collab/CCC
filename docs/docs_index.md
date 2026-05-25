@@ -14,6 +14,10 @@ This is the primary human navigation file for CCC documentation.
 - Local repo task-start skill plan and install record: `docs/plans/initial-repo-setup/local-repo-task-start-skill-plan.md`.
 - Parser MVP plan: `docs/plans/parser-extraction/parser-mvp/plan.md`.
 - Parser MVP evidence and divergence review: `docs/plans/parser-extraction/parser-mvp/adjacent-parser-and-inspection-location-review.md`.
+- Parser MVP legacy behavior inventory: `docs/plans/parser-extraction/parser-mvp/legacy_behavior_inventory.md`.
+- Parser MVP adjacent repository comparison: `docs/plans/parser-extraction/parser-mvp/adjacent_repo_comparison.md`.
+- Parser extraction regression fixtures: `tests/parsertests/`.
+- Parser corpus fixtures and regression report: `docs/reference/data/parser_corpus_fixture_ledger.csv`, `docs/reference/data/parser_corpus_fixture_ledger.json`, `docs/reference/data/parser_corpus_regression_report.json`, and `docs/reference/data/parser_provider_presets_v1.json`.
 - Active backlog before ticket relocation: `docs/plans/operational-core/tickets/backlog_index.md`.
 - Agent path map: `docs/repo_map.json`.
 - Full source inventory: `docs/source_manifest.md`, `docs/source_manifest.csv`, and `docs/source_manifest.json`.

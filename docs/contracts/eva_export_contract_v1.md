@@ -8,6 +8,7 @@ EVA export turns a reviewed canonical parser result into EVA-ready JSON and imag
 
 Export must fail or require review when:
 
+- the parser result is not an instruction export candidate, such as an evidence image or image pack;
 - work provider/principal is missing;
 - required dates are missing or not formatted as `DD/MM/YYYY`;
 - inspection address is missing and no image-based assessment marker is present;
@@ -20,6 +21,8 @@ Export must fail or require review when:
 
 The EVA JSON field order must match `docs/reference/raw/collisionrelateddocs/Final Format Example 02.json` and be covered by golden tests. Any extra CCC audit metadata must be stored outside the EVA payload if EVA does not support it.
 
+Implemented adapter: `src/ccc_parser/exporters/eva.py` serializes only the EVA fields in this order. Parser audit, provenance, validation, and source metadata remain in the canonical parser result and are not added to the EVA payload.
+
 ## Image Rules
 
 Image attachment order is controlled by the evidence package/review model:
@@ -27,6 +30,8 @@ Image attachment order is controlled by the evidence package/review model:
 1. preview full vehicle image;
 2. preview close-up damage image;
 3. all images, including the first two again.
+
+Implemented package manifest: `src/ccc_parser/packaging.py` records preview image ids, ordered image ids, image metadata, and review warnings for missing preview choices.
 
 ## Future Sentry/EVA API
 
@@ -37,4 +42,3 @@ Direct Sentry submission is future work. Current research shows the API docs are
 - `docs/reference/raw/collisionrelateddocs/Final Format Example 02.json`
 - `docs/research/gptevadeepresearch.md`
 - `docs/contracts/parser_result_v1.md`
-

@@ -2,10 +2,10 @@
 
 Date: 2026-05-23
 
-Status: active implementation plan. When implemented, move this plan to `docs/plans/parser-extraction/archived_plans/implemented/`, rename it with the implementation date, and add an implemented-state block at the top.
+Status: implemented baseline, active hardening plan. When final release hardening is accepted, move this plan to `docs/plans/parser-extraction/archived_plans/implemented/`, rename it with the implementation date, and add an implemented-state block at the top.
 Owner: unassigned
 Created: 2026-05-23
-Last reviewed: 2026-05-24
+Last reviewed: 2026-05-25
 Source links: `docs/reference/raw/collisionrelateddocs/`, `docs/reference/normalized/`, `docs/reference/data/provider_coverage_matrix.md`, `docs/reference/adjacent_repositories.md`, `docs/plans/parser-extraction/parser-mvp/adjacent-parser-and-inspection-location-review.md`, `docs/reference/raw/collisionrelateddocs/Settings Backup/providers.json`, `docs/reference/raw/collisionrelateddocs/Final Format Example 02.json`, `docs/reference/raw/collisionrelateddocs/collision_releated/Sentry_API_Complete_Guide.md`, `docs/reference/raw/collisionrelateddocs/collision_releated/Backup of CE Job Sheet 260309.xlsm`, `docs/operations/job_sheet_spreadsheet_companion.md`, `docs/reference/data/jam_exports/collisionrelateddocs__collision_releated__collision-engineers-whiteboard.jam/figma_inspection.md`, `docs/research/`, `docs/reference/originalplanning/`
 Roadmap milestone: P1 Operational Core MVP
 Dependencies: P0 contracts baseline, provider coverage baseline, source synthesis map
@@ -19,6 +19,21 @@ Superseded-by: none
 ## Objective
 
 Build the first executable parser MVP inside `docs/plans/parser-extraction/`: a deterministic-first instruction parser with non-technical staff UI and equivalent CLI. The parser must handle the current private corpus and produce reviewed EVA-ready JSON plus Box-ready evidence package inputs.
+
+## Implementation Baseline
+
+The executable baseline is implemented in `src/ccc_parser/` with supporting tools and fixtures:
+
+- shared parser core, readers, provider detection, rule engine, normalization, validation, review overrides, EVA export, and package manifest services;
+- CLI commands for triage, parse, validate, export-eva, package, batch, and provider utilities;
+- staff Tk UI for import, field review/correction, validation, result save, EVA export, and package manifest save;
+- versioned provider fixture at `docs/reference/data/parser_provider_presets_v1.json`;
+- full corpus fixture ledger at `docs/reference/data/parser_corpus_fixture_ledger.csv` and `.json`;
+- latest regression report at `docs/reference/data/parser_corpus_regression_report.json`.
+
+Current verification baseline: `python -m pytest` and `python tools/run_parser_corpus.py` pass with zero reader-level blockers across all 134 files under `docs/reference/raw/collisionrelateddocs/Instructions/`. Review-required field gaps remain explicit validation blockers where source data or provider rules do not supply mileage, VAT, mileage unit, inspection address, VRM, or provider identity.
+
+Review hardening on 2026-05-25 resolved the `tests/parsertests/output1.json` CNX engineer-report gap by adding deterministic fallback extraction after provider-rule extraction, suppressing legacy fixed-position `.DOC` noise, normalizing hyphenated month dates, deriving provider codes for engineer presets, hard-blocking EVA export for non-instruction evidence sources, routing email attachments through triage/readers, requiring full provider names for duplicate-code overrides, and restoring Tk drag/drop through `tkinterdnd2`. Remaining blockers are review-required data gaps or image-only sources with no native text layer.
 
 ## Success Criteria
 
@@ -381,18 +396,26 @@ Parity rule:
 
 ## Atomic Handoff Tasks
 
-- [ ] Create `legacy_behavior_inventory.md` covering `../cedocumentmapper/app.py` extraction cascade, provider scoring, rule methods, field normalization, export blockers, and export order.
-- [ ] Create `adjacent_repo_comparison.md` or extend `adjacent-parser-and-inspection-location-review.md` with adopted/rejected patterns from `../collisionpdf` and `../cedocumentmapper_v2.0`.
-- [ ] Create a fixture ledger for all raw instruction files with raw path, normalized companion path, provider, document type, expected fields, review blockers, and export snapshot status.
-- [ ] Create provider-config fixtures for all 26 presets from `Settings Backup/providers.json`.
-- [ ] Create inspection-address fixtures for real address, image-based assessment, blank address, postcode-forced address, multi-line address, and overflow address.
-- [ ] Create EVA JSON field-order fixture from `Final Format Example 02.json`.
-- [ ] Add parser result schema checks before any EVA-specific export.
-- [ ] Add source-provenance assertions for each extracted field where the adapter can provide location evidence.
-- [ ] Add review-required outcomes for ambiguous workbook/garage/principal cases instead of silent lookup guesses.
-- [ ] Add documentation links from provider/principal/garage lookup work to `docs/plans/provider-principal-config/`.
-- [ ] Add documentation links from future EVA/Sentry read/write work to `docs/plans/intake-storage-integrations/`.
-- [ ] Record every deliberate divergence from `cedocumentmapper` in this plan or a decision note before implementation merges.
+- [x] Create `legacy_behavior_inventory.md` covering `../cedocumentmapper/app.py` extraction cascade, provider scoring, rule methods, field normalization, export blockers, and export order.
+- [x] Create `adjacent_repo_comparison.md` or extend `adjacent-parser-and-inspection-location-review.md` with adopted/rejected patterns from `../collisionpdf` and `../cedocumentmapper_v2.0`.
+- [x] Create a fixture ledger for all raw instruction files with raw path, normalized companion path, provider, document type, expected fields, review blockers, and export snapshot status.
+- [x] Create provider-config fixtures for all 26 presets from `Settings Backup/providers.json`.
+- [x] Create inspection-address fixtures for real address, image-based assessment, blank address, postcode-forced address, multi-line address, and overflow address.
+- [x] Create EVA JSON field-order fixture from `Final Format Example 02.json`.
+- [x] Add parser result schema checks before any EVA-specific export.
+- [x] Add source-provenance assertions for each extracted field where the adapter can provide location evidence.
+- [x] Add review-required outcomes for ambiguous workbook/garage/principal cases instead of silent lookup guesses.
+- [x] Add documentation links from provider/principal/garage lookup work to `docs/plans/provider-principal-config/`.
+- [x] Add documentation links from future EVA/Sentry read/write work to `docs/plans/intake-storage-integrations/`.
+- [x] Record every deliberate divergence from `cedocumentmapper` in this plan or a decision note before implementation merges.
+
+## Review Hardening Findings
+
+- The parser was not below legacy output for CNX; legacy itself left the same fields blank because the CNX provider preset has blank field configs.
+- Strictly preserving that blank-rule behavior is not good enough for the rebuild. The parser now extracts visible labelled values through a deterministic fallback layer while keeping configured provider rules first.
+- Fixed-position rules from the legacy config can point into OLE/header noise when Word/LibreOffice are unavailable. The parser now rejects invalid date/reference values and falls back to visible source dates/references where present.
+- Drag/drop was absent from the new Tk UI. It is now optional-runtime enabled via `tkinterdnd2` while preserving file-picker operation when the package is unavailable.
+- Reviewer blockers resolved after independent review: image/image-pack results now block EVA export even with `--allow-blockers`, MSG/EML attachments are materialized and parsed, and ambiguous provider-code overrides such as `FW` now fail with an explicit error instead of choosing a variant.
 
 ## Verification Gates Before MVP Acceptance
 

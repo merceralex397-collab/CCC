@@ -24,6 +24,9 @@ Parser, document extraction, CE Document Mapper evolution, and extraction-regres
 - Detailed workspace plan: `plan.md`
 - Source map: `source_map.md`
 - Workspace roadmap: `roadmap.md`
+- Parser MVP implementation plan: `parser-mvp/plan.md`
+- Legacy behavior inventory: `parser-mvp/legacy_behavior_inventory.md`
+- Adjacent repository comparison: `parser-mvp/adjacent_repo_comparison.md`
 
 ## Owns
 
@@ -31,6 +34,15 @@ Parser, document extraction, CE Document Mapper evolution, and extraction-regres
 - deterministic-first parser core and provider-rule execution behavior
 - OCR/cloud document-intelligence option papers
 - parser CLI parity and extraction regression corpus
+
+## Current Parser Artifacts
+
+- Parser package: `src/ccc_parser/`
+- Corpus runner: `tools/run_parser_corpus.py`
+- Fixture builder: `tools/build_parser_fixtures.py`
+- Provider fixture: `docs/reference/data/parser_provider_presets_v1.json`
+- Corpus fixture ledger: `docs/reference/data/parser_corpus_fixture_ledger.csv` and `docs/reference/data/parser_corpus_fixture_ledger.json`
+- Latest corpus report: `docs/reference/data/parser_corpus_regression_report.json`
 
 ## Does Not Own
 

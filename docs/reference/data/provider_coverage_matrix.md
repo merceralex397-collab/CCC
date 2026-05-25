@@ -5,6 +5,9 @@
 - Job-sheet sources: `Backup of CE Job Sheet 260429.xlsm`, `Backup of CE Job Sheet 260309.xlsm`
 - Mapped-principals source: `Mapped Principals.xlsx`
 - Full matrix: `docs/reference/data/provider_coverage_matrix.csv`
+- Parser provider fixture: `docs/reference/data/parser_provider_presets_v1.json`
+- Parser corpus fixture ledger: `docs/reference/data/parser_corpus_fixture_ledger.csv` and `docs/reference/data/parser_corpus_fixture_ledger.json`
+- Latest parser corpus regression report: `docs/reference/data/parser_corpus_regression_report.json`
 
 ## Summary
 
@@ -16,6 +19,16 @@
 - Job-sheet principal table codes not parser-covered: 30
 - Mapped-only uncovered codes: 26
 
+## Parser MVP Regression Status
+
+- Latest corpus run: 134 files under `docs/reference/raw/collisionrelateddocs/Instructions/`.
+- Reader-level blockers: 0.
+- Provider presets exercised by at least one matched instruction: 26 current presets, with image-only/review-only inputs remaining `UNKNOWN`.
+- Image-only PDFs are review-required when no native text is present and local Tesseract OCR is unavailable.
+- Deterministic fallback extraction now fills blank-rule engineer-report fields where visible in text; `tests/parsertests/output1.json` records the CNX regression fixture.
+- Evidence-only image packs are recorded as `not-eva-export-candidate` in the fixture ledger and cannot produce EVA JSON.
+- The generated fixture ledger records expected provider status, extracted fields, review blockers, and export snapshot status for every corpus file.
+
 ## Parser Presets
 
 | Provider preset | Parser code | Engineer report | Detect phrases |
@@ -26,9 +39,9 @@
 | `AX` | `AX` | False | AX Reference |
 | `BC` | `BC` | False | Baker & Coleman |
 | `BLACK` | `BLACK` | False | Blackstone Legal |
-| `CNX (Engineers)` | `` | True | Connexus Vehicle Assessors |
+| `CNX (Engineers)` | `CNX` | True | Connexus Vehicle Assessors |
 | `DFD` | `DFD` | False | Davison Flynn Duke Solicitors |
-| `EVA (Engineers)` | `` | True | Exclusive Vehicle Assessors |
+| `EVA (Engineers)` | `EVA` | True | Exclusive Vehicle Assessors |
 | `FW (Garage)` | `FW` | False | fairwaylegal; Inspection Location: |
 | `FW (Solicitor)` | `FW` | False | fairwaylegal |
 | `HDUK` | `YML` | False | HD UK NETWORK |

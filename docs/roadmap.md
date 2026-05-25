@@ -19,13 +19,13 @@ CCC starts with vehicle-damage instruction parsing and evidence preparation, the
 
 ## Current Status
 
-Current position: Section 0 complete for parser readiness. The next implementation phase is Section 2 parser MVP execution under `docs/plans/parser-extraction/parser-mvp/plan.md`.
+Current position: Section 2 parser MVP execution is in progress on branch `codex/parser-mvp-full`. The first executable parser core, CLI, staff UI review surface, EVA export adapter, evidence package manifest, provider fixtures, corpus regression ledger, deterministic fallback extraction, and Tk drag/drop intake are implemented under `src/ccc_parser/`, `tools/`, and `docs/reference/data/`.
 
-Current milestone: begin parser MVP implementation from the committed documentation baseline, using the parser MVP plan, adjacent parser review, provider sources, and local repo task-start skill.
+Current milestone: harden parser MVP implementation against review findings, provider field gaps, and release packaging after corpus regression reports zero reader-level blockers across the private `Instructions/` corpus.
 
-Parser implementation status: ready to start; parser code work has not started in this phase. The active parser MVP plan is `docs/plans/parser-extraction/parser-mvp/plan.md`; the operational-core parser path is only a compatibility stub.
+Parser implementation status: executable MVP present. The active parser MVP plan is `docs/plans/parser-extraction/parser-mvp/plan.md`; the operational-core parser path is only a compatibility stub. Current verification commands are `python -m pytest`, `python tools/run_parser_corpus.py`, and `python tools/verify_scaffold.py`.
 
-Pre-parser readiness gates: repository documentation lifecycle rules are explicit, this Current Status section is up to date, source manifests match the working tree, scaffold verification and scaffold contract tests pass, and parser work should start from a committed/pushed documentation baseline.
+Current known parser review items: image-only MP PDFs and image packs remain review/OCR-required when no native text is present; many provider presets still require staff review for mileage, mileage unit, VAT, or inspection address because those values are absent from current provider rules or source documents. The CNX parsertests gap has been resolved by deterministic fallback extraction and is pinned in `tests/parsertests/output1.json`. Current blockers are captured in `docs/reference/data/parser_corpus_regression_report.json` and `docs/reference/data/parser_corpus_fixture_ledger.json`.
 
 Local repo skill status: installed at `C:/Users/PC/.codex/skills/ccc-repo-task-start` and planned/evaluated in `docs/plans/initial-repo-setup/local-repo-task-start-skill-plan.md`. This local development skill is separate from `docs/plans/agent-skills/`, which is reserved for production Collision Engineers skills.
 
