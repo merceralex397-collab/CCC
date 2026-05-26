@@ -1,0 +1,2 @@
+PASSED
+All markdown files generated and basic coverage checks passed.
