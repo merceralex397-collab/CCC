@@ -9,9 +9,9 @@ The shared Collision Engineers brand + document-layout skill. It is the single s
 
 ## Assets
 
-- **Logo:** `assets/logo.pdf` (vector), plus `../vehicle-valuation/assets/brand/logo.png` and `logo.svg` (to be consolidated here).
+- **Logo:** `assets/brand/logo.png`, `assets/brand/logo.svg`, and `assets/logo.pdf` (vector).
+- **Layout templates:** `assets/templates/` — `_base.html.j2`, `report.html.j2`, `evidence_pack.html.j2`, `styles.css`.
 - **Example outputs** (reference for layout fidelity): `assets/feenoteexample.pdf`, `assets/addendumreportexample.pdf`, `assets/totallossexample.pdf`.
-- **Layout templates** (currently in `../vehicle-valuation/assets/templates/`, to consolidate here): `_base.html.j2`, `report.html.j2`, `evidence_pack.html.j2`, `styles.css`.
 - **Specs:** `../vehicle-valuation/references/pdf-template-spec.md` (PDF layout/typography), `../vehicle-valuation/references/brand.md` (brand).
 
 ## House style (summary)
@@ -24,4 +24,4 @@ Document-producing skills reference this skill for: the logo, the base layout/te
 
 ## Status
 
-Migrated brand assets present (logos + example PDFs). Consolidation of the shared templates from `vehicle-valuation` into this skill is a planned follow-up (see `src/skills/README.md` and `docs/plans/agent-skills/`). Branding/layout is `assist` class; the documents it styles are governed by their owning (often expert-class) skill.
+Brand assets + shared layout templates consolidated here (2026-05-29); `vehicle-valuation` renders from `ce-branding/assets/templates/` + `assets/brand/logo.png` (path repoint static-verified; a render test is pending the `[skills]` deps). Branding/layout is `assist` class; the documents it styles are governed by their owning (often expert-class) skill.

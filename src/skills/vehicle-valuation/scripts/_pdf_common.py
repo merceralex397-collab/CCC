@@ -25,9 +25,11 @@ from validate_evidence_pack import validate_payload
 
 SKILL_DIR = Path(__file__).resolve().parents[1]
 REPO_ROOT = SKILL_DIR.parents[1]
-TEMPLATE_DIR = SKILL_DIR / "assets" / "templates"
+# Shared CE brand + layout live in the ce-branding skill (consolidated 2026-05-29).
+CE_BRANDING_DIR = SKILL_DIR.parent / "ce-branding"
+TEMPLATE_DIR = CE_BRANDING_DIR / "assets" / "templates"
 CSS_PATH = TEMPLATE_DIR / "styles.css"
-LOGO_PATH = SKILL_DIR / "assets" / "brand" / "logo.png"
+LOGO_PATH = CE_BRANDING_DIR / "assets" / "brand" / "logo.png"
 _DLL_DIRECTORY_HANDLES: list[object] = []
 DESKTOP_CAPTURE_WIDTH = 1440
 DESKTOP_CAPTURE_VIEWPORT_HEIGHT = 1200
@@ -475,7 +477,7 @@ def _render_reportlab(payload: dict[str, Any], template_name: str, path: Path, t
 
 
 def _reportlab_header(context, normal, brand_red, Image, Paragraph, Table, TableStyle, mm):
-    logo = Image(str(SKILL_DIR / "assets" / "brand" / "logo.png"), width=53 * mm, height=30.3 * mm)
+    logo = Image(str(LOGO_PATH), width=53 * mm, height=30.3 * mm)
     logo.hAlign = "LEFT"
     meta = context["meta"]
     ref_rows = [["Our Ref:", context["subject"]["registration"]]]

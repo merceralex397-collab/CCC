@@ -30,11 +30,15 @@ Record of the Phase-4 migration of `../collisionplugin` assets into the CCC repo
 
 - `src/skills/vehicle-valuation/SKILL.md`: render-script invocation paths updated from `skills/vehicle-valuation/...` to `src/skills/vehicle-valuation/...`.
 
-## Follow-ups (open)
+## Follow-ups
 
-1. Add `vehicle-valuation/scripts/requirements.txt` deps (reportlab/jinja2/etc.) to the repo's `pyproject.toml` (or a skills extra).
-2. Consolidate shared layout templates from `vehicle-valuation/assets/templates/` into `ce-branding/`.
-3. Add `SKILL.md` wrappers for `rebuttal` and `roadworthy` (currently `projecttext.md` / `startingprompt.md`+).
+Done (2026-05-29):
+1. ✅ Render deps added to `pyproject.toml` as the `[skills]` extra (`pip install -e .[skills]`).
+2. ✅ Shared layout templates + brand logos consolidated into `ce-branding/assets/`; `vehicle-valuation` repointed via `CE_BRANDING_DIR` in `_pdf_common.py` (static-verified; render test pending deps).
+3. ✅ `SKILL.md` wrappers added for `rebuttal` and `roadworthy`.
+
+Open:
 4. Bring all skills under the lifecycle substrate (`docs/plans/ai-platform/`) — versioning, eval, redaction.
 5. Wire tool deps via the gateway (`docs/plans/mcp-tooling/`): Autotrader Codex connector + first-party DVSA-MOT MCP.
 6. Rotate the DVSA-MOT token (governance/IT).
+7. Run a valuation render with `[skills]` deps installed to confirm the consolidated template/brand paths.
