@@ -1,14 +1,14 @@
 # Source Manifest
 
 - Generated: 2026-05-29
-- Total files inventoried: 920
+- Total files inventoried: 951
 - Full machine-readable inventory: `docs/source_manifest.csv` and `docs/source_manifest.json`
 
 ## Status Counts
 
 | Status | Count |
 | --- | ---: |
-| active-plan | 282 |
+| active-plan | 313 |
 | generated-reference | 186 |
 | implemented | 24 |
 | normalized-derivative | 254 |
@@ -33,7 +33,7 @@
 | data/parser_provider_presets_v1.json | 1 |
 | data/provider_coverage_matrix.csv | 1 |
 | data/provider_coverage_matrix.md | 1 |
-| docs | 292 |
+| docs | 323 |
 | normalized | 151 |
 | originalplanning/ce_phase4_agents_reviewed_plan | 16 |
 | originalplanning/ce_system_plans_enhanced | 14 |
@@ -64,7 +64,7 @@
 | .jam | 1 |
 | .jpg | 8 |
 | .json | 13 |
-| .md | 589 |
+| .md | 620 |
 | .msg | 15 |
 | .pdf | 64 |
 | .png | 45 |
@@ -161,6 +161,12 @@
 | `docs/plans/ai-platform-tools/source_map.md` | active-plan | .md | 2755 | `b49d51ef76d504e51f9f9e0796c3e1df297183d3c2a74ba57cfa8d1e7c0402c9` |  |  |
 | `docs/plans/ai-platform-tools/tickets/.gitkeep` | normalized-derivative | [no extension] | 0 | `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` |  |  |
 | `docs/plans/ai-platform-tools/tickets/README.md` | active-plan | .md | 367 | `ca11dd9c4ade5ed81c6facddd7b4c2a1f0c498a8aa3decd735d477cc14a4f55a` |  |  |
+| `docs/plans/ai-platform/context.md` | active-plan | .md | 4066 | `8790728020167439acc05eb2cc5edf6a90603644e23bbda08b8c088fa3edc8fb` |  |  |
+| `docs/plans/ai-platform/open-questions.md` | active-plan | .md | 1522 | `a5b26f02968dc7556e5300d02defb0b1efecf3e8d1f386bfa13b5f586179122d` |  |  |
+| `docs/plans/ai-platform/option-papers/bounded-agent-permission-model.md` | active-plan | .md | 2402 | `b53a4ad38515483fa91b1f79f73602ee25e3d6a141597236e4a294450ac4e432` |  |  |
+| `docs/plans/ai-platform/option-papers/model-provider-and-hosting.md` | active-plan | .md | 1856 | `69b0b76f08d6d6b803da20650c3bb60c663e31a6dda6ef3dbc1d2cb81b265c09` |  |  |
+| `docs/plans/ai-platform/option-papers/prompt-version-eval-redaction-substrate.md` | active-plan | .md | 2151 | `62feeba78568c14dab04e791f2a5fa12ee3b2eedee34d045a479a203ef20c408` |  |  |
+| `docs/plans/ai-platform/plan.md` | active-plan | .md | 3343 | `740adb8ead85f2fd431131dd5949e44959d4d24af556033a2f70b182c7b15b18` |  |  |
 | `docs/plans/analytics-data-platform/archived_plans/implemented/.gitkeep` | implemented | [no extension] | 0 | `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` |  |  |
 | `docs/plans/analytics-data-platform/archived_plans/superseded/.gitkeep` | superseded | [no extension] | 0 | `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` |  |  |
 | `docs/plans/analytics-data-platform/option-papers/.gitkeep` | normalized-derivative | [no extension] | 0 | `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` |  |  |
@@ -182,6 +188,12 @@
 | `docs/plans/automation-centre/source_map.md` | active-plan | .md | 2928 | `3439ffe4a78502cb1e46eef3f6135f5def4cc43dc585ca33f333e96392ee46e5` |  |  |
 | `docs/plans/automation-centre/tickets/.gitkeep` | normalized-derivative | [no extension] | 0 | `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` |  |  |
 | `docs/plans/automation-centre/tickets/README.md` | active-plan | .md | 367 | `605f10f0b43585c442de4f908b8f1ece82ed0685db587ff8defd46529e495784` |  |  |
+| `docs/plans/business/context.md` | active-plan | .md | 4074 | `1d95c4be82cd47b5c74dd82f682d5384b5d000b8fb4d877519a6da0c590f49e3` |  |  |
+| `docs/plans/business/open-questions.md` | active-plan | .md | 1579 | `5a0817ab020073764caa3493a8b94b3adcb80fa61e461d0444d663a269a83c7e` |  |  |
+| `docs/plans/business/option-papers/external-portal-and-partner-api.md` | active-plan | .md | 2185 | `4bec6d09e640b1f09fc25bb1352c54be33eb11cb3f3d57b61341f105a2bdccb5` |  |  |
+| `docs/plans/business/option-papers/finance-document-generation-and-accounting.md` | active-plan | .md | 2167 | `a6b96685cfb318fabb2b2b3b6cde7f876d826d35baf599c42f41d61a56b85df4` |  |  |
+| `docs/plans/business/option-papers/operations-analytics-and-data-quality.md` | active-plan | .md | 2052 | `7ed58059a347492dae5b543267d009aca7d4e05aa89b9667f4d9802ffae8a6b5` |  |  |
+| `docs/plans/business/plan.md` | active-plan | .md | 4030 | `d536eb3aaf137cff08c553ca11732e49bf9f62a14ca6c1d50aa92c3b97a9858b` |  |  |
 | `docs/plans/case-workflow-state/archived_plans/implemented/.gitkeep` | implemented | [no extension] | 0 | `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` |  |  |
 | `docs/plans/case-workflow-state/archived_plans/superseded/.gitkeep` | superseded | [no extension] | 0 | `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` |  |  |
 | `docs/plans/case-workflow-state/context.md` | active-plan | .md | 5244 | `98bb3fa9b444e5b898bc7e7f0e0fc3572ebd062af9cd06e19bb5e7b34b599c75` |  |  |
@@ -241,6 +253,10 @@
 | `docs/plans/finance-billing/source_map.md` | active-plan | .md | 2910 | `1ec977958ad90077985454d77877f1a1b363e67702d1611f6f116cdc5c64796c` |  |  |
 | `docs/plans/finance-billing/tickets/.gitkeep` | normalized-derivative | [no extension] | 0 | `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` |  |  |
 | `docs/plans/finance-billing/tickets/README.md` | active-plan | .md | 363 | `7ad63505f4b27c6d79d70a02489a8bed6b6ff22fc9750af511ff9d6af944791a` |  |  |
+| `docs/plans/foundation/context.md` | active-plan | .md | 4297 | `eaf40ac676a8fe1d7c73e2a9cc4ad81b79a214f93a7a2269fe4917b6ff699756` |  |  |
+| `docs/plans/foundation/open-questions.md` | active-plan | .md | 1572 | `67c5c3f1968c815a94ee1b10b7ac0a7cdbaadfdd47e4530ad02e83e990c87194` |  |  |
+| `docs/plans/foundation/option-papers/cross-cutting-gaps-backlog.md` | active-plan | .md | 2095 | `2c03623c8e37bebd34c1b415856c28c9ac3c3eb7b6caf8e1a9aea04a9161359e` |  |  |
+| `docs/plans/foundation/plan.md` | active-plan | .md | 3067 | `67ecdbadf3c2cfbf56bbb7c32e3d3cdb753b69e73d9d2c43d0e7d17e82026359` |  |  |
 | `docs/plans/governance-security/archived_plans/implemented/.gitkeep` | implemented | [no extension] | 0 | `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` |  |  |
 | `docs/plans/governance-security/archived_plans/superseded/.gitkeep` | superseded | [no extension] | 0 | `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` |  |  |
 | `docs/plans/governance-security/option-papers/.gitkeep` | normalized-derivative | [no extension] | 0 | `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` |  |  |
@@ -281,6 +297,12 @@
 | `docs/plans/intake-storage-integrations/tickets/p3-integrations.md` | active-plan | .md | 6568 | `34b6794deac724654fd672847b991937b3c1c2333b20ea5dd7dca88a1ad70bcd` |  |  |
 | `docs/plans/intake-storage-integrations/tickets/p3-outlook-intake-adapter.md` | active-plan | .md | 3200 | `d3df760fe6ed1ae6b2e395b8b3ae38da40cb864182c2df465bd5a2f3b9b6d128` |  |  |
 | `docs/plans/intake-storage-integrations/tickets/README.md` | active-plan | .md | 387 | `9c25ed36fe7b8d2ab6031da13707bee3147dca39240091c089ad95532ee15401` |  |  |
+| `docs/plans/intelligence/context.md` | active-plan | .md | 4569 | `48560a4a0cea7485bd2b823ad567680e6caebca465432b4ed5bdc58c4fa128c5` |  |  |
+| `docs/plans/intelligence/open-questions.md` | active-plan | .md | 1592 | `fd75e5b0b00742edeb72e6391817b1ecf005b8e2fb5ea1b113fd05685f9681b0` |  |  |
+| `docs/plans/intelligence/option-papers/audatex-abp-estimate-review-positioning.md` | active-plan | .md | 2318 | `4f4754b9cb66aee7014cdefe21d2053642df7c9234e30585949305b8d5225d7d` |  |  |
+| `docs/plans/intelligence/option-papers/valuation-methodology.md` | active-plan | .md | 2514 | `45b7117417423fedd2db92fd4b8710363ed6f7702a28e8ef4fa7908a624e90d4` |  |  |
+| `docs/plans/intelligence/option-papers/vehicle-data-evidence-store-and-licensing.md` | active-plan | .md | 2193 | `9b05dbfcfc3d7d21a7149f6db2252a1c812caf163be459030709ce090e5f703c` |  |  |
+| `docs/plans/intelligence/plan.md` | active-plan | .md | 3808 | `1dd04e0963950e332ff0424480ab962983802b816e7196f130a69aeb0c33c985` |  |  |
 | `docs/plans/mcp-and-tooling/archived_plans/implemented/.gitkeep` | implemented | [no extension] | 0 | `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` |  |  |
 | `docs/plans/mcp-and-tooling/archived_plans/superseded/.gitkeep` | superseded | [no extension] | 0 | `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` |  |  |
 | `docs/plans/mcp-and-tooling/context.md` | active-plan | .md | 5350 | `98e85f0adca33a6ee8a4cd39a3a26b392b45c49d392b6fb8925246ea4b3fbb01` |  |  |
@@ -368,9 +390,11 @@
 | `docs/plans/roadmap.md` | active-plan | .md | 13947 | `dd43bc94786728ef2a352bd9ec0684c18f76122d355c7b63705acfc51ca222d3` |  |  |
 | `docs/plans/unified-platform/archived_plans/implemented/.gitkeep` | implemented | [no extension] | 0 | `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` |  |  |
 | `docs/plans/unified-platform/archived_plans/superseded/.gitkeep` | superseded | [no extension] | 0 | `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` |  |  |
+| `docs/plans/unified-platform/context.md` | active-plan | .md | 3255 | `f098f004db0fbda11f35601bc99a98420b9ff1f021e6cef9daea2da3199228db` |  |  |
+| `docs/plans/unified-platform/open-questions.md` | active-plan | .md | 1039 | `58ff97568f407ca9b2dfde2bcb9e954551f07f8be1281ad235b58a575e3a3f5b` |  |  |
 | `docs/plans/unified-platform/option-papers/.gitkeep` | normalized-derivative | [no extension] | 0 | `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` |  |  |
 | `docs/plans/unified-platform/option-papers/README.md` | active-plan | .md | 324 | `8ce691a1b1ec41762a15af60d7c3275795485bd0207e6d883b5621116ef600db` |  |  |
-| `docs/plans/unified-platform/plan.md` | active-plan | .md | 7267 | `076592304bf288ccfeabaa6cc6c7d076a898c3979f6ec9c802adf98918ce27f0` |  |  |
+| `docs/plans/unified-platform/plan.md` | active-plan | .md | 3375 | `aa706d037568db820e1db375482eada815cff8ee80c13e9ba1735fc311e73765` |  |  |
 | `docs/plans/unified-platform/README.md` | active-plan | .md | 2897 | `5f94867e3c4bdca04b194dff0397a5c8a640611b04163e3396a631c305c58e25` |  |  |
 | `docs/plans/unified-platform/roadmap.md` | active-plan | .md | 1636 | `3c6c2f0468cab3f11cb8c678f43068267c71129f4d600e19be5b02f2f0f04685` |  |  |
 | `docs/plans/unified-platform/source_map.md` | active-plan | .md | 2547 | `0bfa1c4e1145491a3517568e347bbd40cb2f6eb778f92b85079e98dfa8a59fe5` |  |  |
@@ -960,18 +984,25 @@
 | `docs/research/siderpdf.md` | active-plan | .md | 63392 | `286c0f1581bddfd4201ae739824cf3fcbd5e7eb1bdc48b5aef9412b1128d76b8` |  |  |
 | `docs/roadmap.md` | active-plan | .md | 14477 | `9cabbd6e9d54ea98650872a4047014d46fd5c20427548cbe617759695808cf6e` |  |  |
 | `docs/security/api_security_standard.md` | active-plan | .md | 1067 | `2f38aa32ee7a6ea0c78182749412749f25163f3187c8e82aaae01a02b97467b0` |  |  |
-| `docs/security/data_map.md` | active-plan | .md | 1876 | `b4cfd8681ca7eaa4c4ec0fa2e38f2da9144207bcb94f8acab9a408a681c71230` |  |  |
+| `docs/security/data_map.md` | active-plan | .md | 1944 | `86186961a3531482bc2ab849b571f3503f3d68258c4e180d2011f53ce1ee9bb3` |  |  |
+| `docs/security/data_retention_policy.md` | active-plan | .md | 2928 | `71c064e1a246f0d8226fd4603d4bf9fe395848175e1bc09c3ab0b403f6fa7671` |  |  |
 | `docs/security/dpia_vendor_governance.md` | active-plan | .md | 1215 | `4319e4b7be00b786fc0ec6eed45b826f6eb3532bee93f49531347bfc185fa04f` |  |  |
+| `docs/security/role_model.md` | active-plan | .md | 3243 | `0173d80a54a58a2fae4af83c8506466e80d964b642db4e144b021cc121f1ce20` |  |  |
 | `docs/security/source_safety_review.md` | active-plan | .md | 1385 | `1a525b179a8f27fc001310f8375c9a2f5803284b860667779fa5bb3b4e41d124` |  |  |
-| `docs/security/vendor_register.md` | active-plan | .md | 1371 | `4bc249c099a0a3b65fd0b01af5bee928f6702deddf39fcaedbb883c6c45f2514` |  |  |
-| `docs/source_manifest.csv` | normalized-derivative | .csv | 291434 | `749876eea411d2089871ba7bf142300c28182ca7564cecee28039cb18207898c` |  |  |
-| `docs/source_manifest.json` | active-plan | .json | 535339 | `686cb0fac7b7a5d36f9e37d5b83d33989f7020f8c277cc3f2810644d506d06bd` |  |  |
-| `docs/source_manifest.md` | active-plan | .md | 198691 | `f41aa3ef4393b017b6c7401841160026189feecc18657b4ff3a3e29dc90506b4` |  |  |
+| `docs/security/vendor_register.md` | active-plan | .md | 2585 | `04973c01fe4c6bccc999494002499224cf0182fe7a2b00f7e29b3f8e5e0b7dd8` |  |  |
+| `docs/source_manifest.csv` | normalized-derivative | .csv | 299120 | `00eddd2bf938c326cf3e927ac37f681e9b47b9a9ac403d4fe9e9f5bd476466ea` |  |  |
+| `docs/source_manifest.json` | active-plan | .json | 552103 | `2498e102226eaa531964c26466f0120dc810353b681fceda8d18abd22bdd49f1` |  |  |
+| `docs/source_manifest.md` | active-plan | .md | 204217 | `d7e3fc1ba893f1b8710ac9d487f02ba024e0dc41f812d4a9e6e0d5b5fd83b5d3` |  |  |
 | `docs/superpowers/specs/2026-05-29-agent-skills-design.md` | active-plan | .md | 5812 | `6edd0ba58d677e7734f08563541775d1d7328680baac49584549267689ab02b0` |  |  |
+| `docs/superpowers/specs/2026-05-29-ai-platform-design.md` | active-plan | .md | 5088 | `26a8f208c57f1a8cb74b40e1531de04ecaeb249c1a499340e07d5491f4b3019e` |  |  |
 | `docs/superpowers/specs/2026-05-29-bridge-design.md` | active-plan | .md | 7218 | `ef0404e03fd1d6aad8f3d3644b5c532234a6c3c8b37ee424bc5a913f534360dc` |  |  |
+| `docs/superpowers/specs/2026-05-29-business-design.md` | active-plan | .md | 4833 | `8e8066ccc658a5b78a9d32b990ddc976e07434fb4be89720087fc1d77432f02b` |  |  |
 | `docs/superpowers/specs/2026-05-29-casework-design.md` | active-plan | .md | 5964 | `aa0feb57efa042478239764bb19511c7eb9da9fb1a2a25c5ba2419271e1a9601` |  |  |
+| `docs/superpowers/specs/2026-05-29-foundation-design.md` | active-plan | .md | 4058 | `4bd83ced45bc78d0ab551b8733b314cab9e3b12d8dc885f282b619af835000f5` |  |  |
+| `docs/superpowers/specs/2026-05-29-intelligence-design.md` | active-plan | .md | 5360 | `9ee74084c7c0eb275e043f479a349953f172a6045c20df4eab8c7b8d4c11a65e` |  |  |
 | `docs/superpowers/specs/2026-05-29-mcp-tooling-design.md` | active-plan | .md | 5485 | `e38d176dd26b4a8a7c3f4327db413188e4614cc9e40cdfe74e10a6c8fe6626ca` |  |  |
 | `docs/superpowers/specs/2026-05-29-parser-iteration-design.md` | active-plan | .md | 8029 | `d8ec72db215965b91b0330f79200e426fced6183c8f146cc1e442e14d233fe08` |  |  |
+| `docs/superpowers/specs/2026-05-29-unified-platform-design.md` | active-plan | .md | 3672 | `802aeefa6095e54d7c5ccdfb6264888332bb616c158ce105163df7865090ea81` |  |  |
 | `pyproject.toml` | active-plan | .toml | 286 | `12b6065c6720786f3ad24fc68fb41801cbdc3c8d98a05048c0e218f4ed503b5c` |  |  |
 | `README.md` | active-plan | .md | 1860 | `e45085c98394fef8b1666bcd93ba750ebcee8a96c1e82a539cfbb27c6bd2f27e` |  |  |
 | `src/ccc_parser/__init__.py` | active-plan | .py | 58 | `3fbed1e97c17fe9ce73c5bddae57cd65b7fe3cbcf31e0d401e6af92f6dcf4f88` |  |  |
