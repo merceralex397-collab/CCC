@@ -1,14 +1,14 @@
 # Source Manifest
 
 - Generated: 2026-05-29
-- Total files inventoried: 914
+- Total files inventoried: 920
 - Full machine-readable inventory: `docs/source_manifest.csv` and `docs/source_manifest.json`
 
 ## Status Counts
 
 | Status | Count |
 | --- | ---: |
-| active-plan | 276 |
+| active-plan | 282 |
 | generated-reference | 186 |
 | implemented | 24 |
 | normalized-derivative | 254 |
@@ -33,7 +33,7 @@
 | data/parser_provider_presets_v1.json | 1 |
 | data/provider_coverage_matrix.csv | 1 |
 | data/provider_coverage_matrix.md | 1 |
-| docs | 286 |
+| docs | 292 |
 | normalized | 151 |
 | originalplanning/ce_phase4_agents_reviewed_plan | 16 |
 | originalplanning/ce_system_plans_enhanced | 14 |
@@ -64,7 +64,7 @@
 | .jam | 1 |
 | .jpg | 8 |
 | .json | 13 |
-| .md | 583 |
+| .md | 589 |
 | .msg | 15 |
 | .pdf | 64 |
 | .png | 45 |
@@ -184,14 +184,19 @@
 | `docs/plans/automation-centre/tickets/README.md` | active-plan | .md | 367 | `605f10f0b43585c442de4f908b8f1ece82ed0685db587ff8defd46529e495784` |  |  |
 | `docs/plans/case-workflow-state/archived_plans/implemented/.gitkeep` | implemented | [no extension] | 0 | `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` |  |  |
 | `docs/plans/case-workflow-state/archived_plans/superseded/.gitkeep` | superseded | [no extension] | 0 | `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` |  |  |
+| `docs/plans/case-workflow-state/context.md` | active-plan | .md | 5244 | `98bb3fa9b444e5b898bc7e7f0e0fc3572ebd062af9cd06e19bb5e7b34b599c75` |  |  |
+| `docs/plans/case-workflow-state/decisions/0001-casework-ui-winui3-and-sqlite-store.md` | active-plan | .md | 2146 | `72fd7a010c33330ebf34688d5bc109b0042ca0b216f277b5c8fb573e392e0126` |  |  |
+| `docs/plans/case-workflow-state/open-questions.md` | active-plan | .md | 1705 | `e4192a5eede9e8ac3918a6e8875d06298a239d1129aeaa0a1541fd37f7804f68` |  |  |
 | `docs/plans/case-workflow-state/option-papers/.gitkeep` | normalized-derivative | [no extension] | 0 | `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` |  |  |
 | `docs/plans/case-workflow-state/option-papers/README.md` | active-plan | .md | 327 | `2429e63b4784c23485227612f030e9e4de86b13f1f226c38bce16020e3363268` |  |  |
-| `docs/plans/case-workflow-state/plan.md` | active-plan | .md | 8270 | `ba1d12ada23b510a0b9fcc73d847b1c84a819721a6c0896182d35eef0077223d` |  |  |
+| `docs/plans/case-workflow-state/option-papers/work-item-store-access-boundary.md` | active-plan | .md | 2168 | `8b037ed1aa6e2330b65bd5957146ab1b94e67673bd1c20f1a847e199819dc5bb` |  |  |
+| `docs/plans/case-workflow-state/plan.md` | active-plan | .md | 4526 | `96462f6bdef788fb2af2edd71cbecc90bddf58bc7a3f49849b760fb82502fd5e` |  |  |
 | `docs/plans/case-workflow-state/README.md` | active-plan | .md | 3359 | `2280d19b6c6dcbecdb393aa7a081226f7eeb303482661209e93b69a209d20fa2` |  |  |
 | `docs/plans/case-workflow-state/roadmap.md` | active-plan | .md | 1772 | `99960b1c4fd79ad70534013b556d70d3843a5999d8d9412fc0916dbf9a0da06e` |  |  |
 | `docs/plans/case-workflow-state/source_map.md` | active-plan | .md | 2981 | `13624ca5f8f319a2031d4b4443158a68551e0f8389de4b6987718622c80dd320` |  |  |
 | `docs/plans/case-workflow-state/tickets/.gitkeep` | normalized-derivative | [no extension] | 0 | `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` |  |  |
 | `docs/plans/case-workflow-state/tickets/p1-work-item-review-queue.md` | active-plan | .md | 2105 | `aeaef920da4f67ca7213a2d7dcf2a89bc128713faac1a7f54102263be42065da` |  |  |
+| `docs/plans/case-workflow-state/tickets/p1-work-item-store-and-service.md` | active-plan | .md | 2820 | `24185619a22a17d07eb3493ce925f89be8e53c3227772012635cc33682ceb9e9` |  |  |
 | `docs/plans/case-workflow-state/tickets/README.md` | active-plan | .md | 371 | `7f7306a00fee005b924e5d9f5362ce459822b93cc0854003b8828b36e0eac80c` |  |  |
 | `docs/plans/engineer-communications/archived_plans/implemented/.gitkeep` | implemented | [no extension] | 0 | `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` |  |  |
 | `docs/plans/engineer-communications/archived_plans/superseded/.gitkeep` | superseded | [no extension] | 0 | `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` |  |  |
@@ -959,11 +964,12 @@
 | `docs/security/dpia_vendor_governance.md` | active-plan | .md | 1215 | `4319e4b7be00b786fc0ec6eed45b826f6eb3532bee93f49531347bfc185fa04f` |  |  |
 | `docs/security/source_safety_review.md` | active-plan | .md | 1385 | `1a525b179a8f27fc001310f8375c9a2f5803284b860667779fa5bb3b4e41d124` |  |  |
 | `docs/security/vendor_register.md` | active-plan | .md | 1371 | `4bc249c099a0a3b65fd0b01af5bee928f6702deddf39fcaedbb883c6c45f2514` |  |  |
-| `docs/source_manifest.csv` | normalized-derivative | .csv | 290327 | `dceef5433db85da0a7f8e44a2aa6f7dbd885dc90d0d8586b237a17001132664f` |  |  |
-| `docs/source_manifest.json` | active-plan | .json | 532897 | `44e80406cd6935f46101a381a8b0053894b00b17558693bd246c8077cc182f54` |  |  |
-| `docs/source_manifest.md` | active-plan | .md | 197890 | `cc07c645fa17787e6324bdc0864e45d1257c21330ab4cf2c3ccfe0940a1b88b9` |  |  |
+| `docs/source_manifest.csv` | normalized-derivative | .csv | 291434 | `749876eea411d2089871ba7bf142300c28182ca7564cecee28039cb18207898c` |  |  |
+| `docs/source_manifest.json` | active-plan | .json | 535339 | `686cb0fac7b7a5d36f9e37d5b83d33989f7020f8c277cc3f2810644d506d06bd` |  |  |
+| `docs/source_manifest.md` | active-plan | .md | 198691 | `f41aa3ef4393b017b6c7401841160026189feecc18657b4ff3a3e29dc90506b4` |  |  |
 | `docs/superpowers/specs/2026-05-29-agent-skills-design.md` | active-plan | .md | 5812 | `6edd0ba58d677e7734f08563541775d1d7328680baac49584549267689ab02b0` |  |  |
 | `docs/superpowers/specs/2026-05-29-bridge-design.md` | active-plan | .md | 7218 | `ef0404e03fd1d6aad8f3d3644b5c532234a6c3c8b37ee424bc5a913f534360dc` |  |  |
+| `docs/superpowers/specs/2026-05-29-casework-design.md` | active-plan | .md | 5964 | `aa0feb57efa042478239764bb19511c7eb9da9fb1a2a25c5ba2419271e1a9601` |  |  |
 | `docs/superpowers/specs/2026-05-29-mcp-tooling-design.md` | active-plan | .md | 5485 | `e38d176dd26b4a8a7c3f4327db413188e4614cc9e40cdfe74e10a6c8fe6626ca` |  |  |
 | `docs/superpowers/specs/2026-05-29-parser-iteration-design.md` | active-plan | .md | 8029 | `d8ec72db215965b91b0330f79200e426fced6183c8f146cc1e442e14d233fe08` |  |  |
 | `pyproject.toml` | active-plan | .toml | 286 | `12b6065c6720786f3ad24fc68fb41801cbdc3c8d98a05048c0e218f4ed503b5c` |  |  |
