@@ -10,4 +10,4 @@ Index of manufacturer repair/position statements bundled in this skill. Add a ro
 ## Notes
 
 - Both seed statements are **US-market** — verify UK/EU applicability before relying (see the skill's market caveat).
-- Common thread: alloy wheels with structural distortion must be **replaced, not refurbished** — a hard constraint for `repair-estimate` / `total-loss` and a roadworthiness consideration for `roadworthy`.
+- Common thread: alloy wheels with structural distortion must be **replaced, not refurbished** — a hard constraint for `damage-estimating` and a roadworthiness consideration for `roadworthy`.

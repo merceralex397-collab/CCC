@@ -11,7 +11,7 @@ try:
 except ModuleNotFoundError as exc:  # pragma: no cover
     raise SystemExit(
         "Missing Python dependency: pypdf. Install with: "
-        "python -m pip install -r skills/vehicle-valuation/scripts/requirements.txt"
+        "python -m pip install -r tools/vehicle-valuation/requirements.txt"
     ) from exc
 
 

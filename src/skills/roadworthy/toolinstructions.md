@@ -6,7 +6,7 @@
 2. **Only the 14 highlighted fields change.** Nothing else in the template is ever modified — not the wording, not the engineer's name, not the qualifications, not the paragraphs, not the footer, not the fonts, not the highlighting.
 3. **Our Ref is always the vehicle registration number.** No exceptions, no other formats, no asking.
 4. **If a field's source value isn't in the engineer's report, use the fallback in the table below** — do not stop and ask.
-5. **Work on a copy.** Never edit `HS_roadworthy_report_template.docx` itself.
+5. **Work on a copy.** Never edit the approved master DOCX template itself.
 
 ---
 
@@ -41,16 +41,16 @@ That paragraph is part of the body, not the table. The yellow-highlighted word(s
 
 ## Process
 
-1. Read `/mnt/skills/public/docx/SKILL.md` first for the docx unpack/edit/pack workflow.
-2. Copy `HS_roadworthy_report_template.docx` to the working directory.
-3. Unpack: `python /mnt/skills/public/docx/scripts/office/unpack.py template.docx unpacked/`
+1. Use the repo's approved DOCX editing workflow when available, or a supplied DOCX template copy.
+2. Copy the approved template to the working directory.
+3. Unpack the DOCX with the configured Office unpack helper.
 4. Read the engineer's report (PDF or docx) and extract the values.
 5. Edit two XML files only:
    - `unpacked/word/header1.xml` — Our Ref, Your Ref, Date
    - `unpacked/word/document.xml` — everything else
 6. **Header date special case**: the date is split across six separate `<w:r>` runs (e.g. "20", "/", "0", "4", "/202", "6"). Replace the text in the **first** run with the full new date (e.g. "08/05/2026") and **delete the other five `<w:r>...</w:r>` blocks entirely**.
-7. Pack: `python /mnt/skills/public/docx/scripts/office/pack.py unpacked/ output.docx --original template.docx` — this validates automatically.
-8. Save to `/mnt/user-data/outputs/HS_roadworthy_<REGISTRATION>.docx` and present.
+7. Pack the DOCX with the configured Office pack helper and validate the result.
+8. Save to `output/HS_roadworthy_<REGISTRATION>.docx`.
 9. Tell the user the report is ready and they need to drag images in manually. **Keep the message short — do not list every field that was filled in.**
 
 ---

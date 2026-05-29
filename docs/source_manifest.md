@@ -1,14 +1,14 @@
 # Source Manifest
 
 - Generated: 2026-05-29
-- Total files inventoried: 1071
+- Total files inventoried: 1080
 - Full machine-readable inventory: `docs/source_manifest.csv` and `docs/source_manifest.json`
 
 ## Status Counts
 
 | Status | Count |
 | --- | ---: |
-| active-plan | 368 |
+| active-plan | 377 |
 | generated-reference | 186 |
 | implemented | 24 |
 | normalized-derivative | 319 |
@@ -33,7 +33,7 @@
 | data/parser_provider_presets_v1.json | 1 |
 | data/provider_coverage_matrix.csv | 1 |
 | data/provider_coverage_matrix.md | 1 |
-| docs | 365 |
+| docs | 377 |
 | normalized | 151 |
 | originalplanning/ce_phase4_agents_reviewed_plan | 16 |
 | originalplanning/ce_system_plans_enhanced | 14 |
@@ -49,10 +49,10 @@
 | raw-evidence/claudechat.md | 1 |
 | raw-evidence/claudechatnormalized.md | 1 |
 | raw-evidence/collision_releated | 12 |
-| src | 95 |
+| src | 84 |
 | test-context/testprojectcontext | 43 |
 | tests | 4 |
-| tools | 5 |
+| tools | 13 |
 
 ## Extension Counts
 
@@ -66,7 +66,7 @@
 | .jam | 1 |
 | .jpg | 8 |
 | .json | 13 |
-| .md | 669 |
+| .md | 678 |
 | .msg | 15 |
 | .pdf | 99 |
 | .png | 61 |
@@ -85,7 +85,7 @@
 
 | Path | Status | Type | Size | SHA256 | Normalized companion | Blocker |
 | --- | --- | --- | ---: | --- | --- | --- |
-| `.claude/settings.local.json` | parked | .json | 85 | `342a7701db376a0eb74a91e73d95ced9ff83aaa57e0e1abcab2aed080cd54585` |  |  |
+| `.claude/settings.local.json` | parked | .json | 165 | `a4842813c7964f63825590b4e726065f0424ddb80d50f2c098d9b6817aabf32d` |  |  |
 | `.gitattributes` | active-plan | [no extension] | 217 | `d0e6d92080d530ef222139e1e2260d518bb771c7d0b441ff5541a4734e0f564a` |  |  |
 | `.gitignore` | active-plan | [no extension] | 231 | `9de1ba49f824e49b4e3142f80476ae02e9034634017d4e43b5427fcbb0120232` |  |  |
 | `AGENTS.md` | active-plan | .md | 5129 | `5ac1f588a41bd821ff0572a4c0e09a35c4edc1e1d838a4635cf8db28363316a1` |  |  |
@@ -121,7 +121,7 @@
 | `docs/decisions/options/cloud_document_intelligence_options.md` | active-plan | .md | 3419 | `deedc4bbd2c26794d4b9aacd84f242a3185d80052d592e210504a9aafdb931df` |  |  |
 | `docs/decisions/options/state_store_options.md` | active-plan | .md | 1727 | `5d7373e4cee119ff21545b31bdb96c8adc4d60424b74779436f55618900ad9ba` |  |  |
 | `docs/decisions/options/ui_platform_options.md` | active-plan | .md | 2409 | `6cdd033b51fc1ce5434ee06f8a441b0712db42d752c487fcc991fc568bbbd64c` |  |  |
-| `docs/docs_index.md` | active-plan | .md | 3331 | `c76de63e5a34dd2a811fef47689be7ef4d6bd15e5a38c5a38129c55cfcd69260` |  |  |
+| `docs/docs_index.md` | active-plan | .md | 3943 | `b9b0014d4a032dce7b81ba1d5d82c9b29c937f7bdc10ec8aafe254a3bc6a1029` |  |  |
 | `docs/glossary.md` | active-plan | .md | 1068 | `f8a493965bd3b60bc4aff14cedcef08e2407c3c871fa10226a901b645c29a027` |  |  |
 | `docs/integrations/external_services.md` | active-plan | .md | 1233 | `69c3e5bba42a9de65aa160f1165195730984560ba803d7930ddf3e498dabbc24` |  |  |
 | `docs/operations/job_sheet_spreadsheet_companion.md` | active-plan | .md | 2514 | `f5c0842985d69faed8c5a93deed5a0b5b230f57466505d0d38d6c1ad86f9466f` |  |  |
@@ -134,19 +134,19 @@
 | `docs/plans/_index.md` | active-plan | .md | 5007 | `fd72b353afa7ac8d51f167dc5958936c03e3e8c4e68b3d1c8c4cac19fe189c86` |  |  |
 | `docs/plans/agent-skills/archived_plans/implemented/.gitkeep` | implemented | [no extension] | 0 | `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` |  |  |
 | `docs/plans/agent-skills/archived_plans/superseded/.gitkeep` | superseded | [no extension] | 0 | `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` |  |  |
-| `docs/plans/agent-skills/collisionplugin-migration.md` | active-plan | .md | 2308 | `1a52380e8be00b3bf78aa8415c793003a5cbbdd99f3963377f6105976a150c1f` |  |  |
+| `docs/plans/agent-skills/collisionplugin-migration.md` | active-plan | .md | 2798 | `8ca233a1f97c5b380846fa7edfab20570730eff6e00535d5c46d80ee61200335` |  |  |
 | `docs/plans/agent-skills/context.md` | active-plan | .md | 5230 | `dd69aa04c4a0bebcb18e960f9257855040923046c8955ed227ae89dc06ad2c45` |  |  |
-| `docs/plans/agent-skills/open-questions.md` | active-plan | .md | 1698 | `0c0782df5985f79ea2b6679635e30e4c5dece2ba6474f1465252b254c0a9a419` |  |  |
+| `docs/plans/agent-skills/open-questions.md` | active-plan | .md | 1439 | `407c36b94e22ac1b3e7fd2e94c0a22f00add2455527494449b92c6365ec480a6` |  |  |
 | `docs/plans/agent-skills/option-papers/.gitkeep` | normalized-derivative | [no extension] | 0 | `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` |  |  |
 | `docs/plans/agent-skills/option-papers/oem-standards-uk-applicability.md` | active-plan | .md | 1570 | `7b0e68487cf1a21be91976a35eb44477e55b0b0809ff73c075d5359310b50562` |  |  |
 | `docs/plans/agent-skills/option-papers/README.md` | active-plan | .md | 320 | `6af796dad66bbb79e1125fde4e8d80793dc52781a88b487cbc03204c159fd4e6` |  |  |
 | `docs/plans/agent-skills/option-papers/reference-data-versioning.md` | active-plan | .md | 1700 | `4d0ebd21933f74f1cf0863bfc0da7c906b59a76f6749b0b59bbdcad4275bf9d4` |  |  |
 | `docs/plans/agent-skills/option-papers/skill-lifecycle-and-portable-contract.md` | active-plan | .md | 2354 | `0ba500aac1f361cf9191032867d548149d53eeea5dfd7896a34a662b2fbbe3df` |  |  |
-| `docs/plans/agent-skills/plan.md` | active-plan | .md | 4738 | `c6edcbc45743fb9b152c6c27f9fc43c02c6af3ac2b3e2a2f38b29b47c4359df2` |  |  |
+| `docs/plans/agent-skills/plan.md` | active-plan | .md | 4881 | `bbe04a510b2c6895551aaa2c1f9dc922bb912d6d48843a047b83722bd3a96c92` |  |  |
 | `docs/plans/agent-skills/README.md` | active-plan | .md | 3334 | `8292473d2a91eae040b2b0bdf8945f93cb4af283258da72ab499cce799e8c402` |  |  |
 | `docs/plans/agent-skills/roadmap.md` | active-plan | .md | 1755 | `1c4e486430663838ef0f7f4daabdee2b5ee36a0cf7a96b5712b97f270ba131c2` |  |  |
-| `docs/plans/agent-skills/skill-catalogue.md` | active-plan | .md | 4822 | `c8d74714013de829f05a8251aebfb4447e03af70a22953b70d14a4a7b08da622` |  |  |
-| `docs/plans/agent-skills/source_map.md` | active-plan | .md | 2969 | `310473e3f151c6f319ba4a794a0210e198d55e8f351af0ddd5c1e717019db25a` |  |  |
+| `docs/plans/agent-skills/skill-catalogue.md` | active-plan | .md | 3728 | `ab6278e69649bd61fa979144edaaa977de43ea706cb6a18d1a28d3bb9739cb29` |  |  |
+| `docs/plans/agent-skills/source_map.md` | active-plan | .md | 5504 | `b1f7c4d0ef4c385798504006936ffaf7dc89c8f6b930012c6eda6f2519d04fb1` |  |  |
 | `docs/plans/agent-skills/tickets/.gitkeep` | normalized-derivative | [no extension] | 0 | `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` |  |  |
 | `docs/plans/agent-skills/tickets/README.md` | active-plan | .md | 357 | `19b8d23d24c24b2b0c15f525d9dd7f2224acc664cdd7fa260b29385b41c27191` |  |  |
 | `docs/plans/ai-agents/archived_plans/implemented/.gitkeep` | implemented | [no extension] | 0 | `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` |  |  |
@@ -434,7 +434,7 @@
 | `docs/reference/_index.md` | active-plan | .md | 848 | `2beb26861684f211f1d7c31862b041833379638f52d5bf760eb00b1b92953e8d` |  |  |
 | `docs/reference/adjacent_repositories.md` | active-plan | .md | 903 | `cc42396333724c04a08103aa8ce8d4280a3b660fe5e2df005a06d68104b4fbe8` |  |  |
 | `docs/reference/case-corpus/fee-note/GX18XEB-fee.pdf` | normalized-derivative | .pdf | 101135 | `5391fb4afe032fdd86611094d8c03002fa297e843b3278e6dc199ba474d61cd4` |  | No OCR/layout validation in scaffold pass |
-| `docs/reference/case-corpus/README.md` | active-plan | .md | 1999 | `629399b96516d8f9d7bf30473b788b7e0cbdb0d4ea19fbd406152f1f98554649` |  |  |
+| `docs/reference/case-corpus/README.md` | active-plan | .md | 1967 | `d540210c855d628042b4d7ef61046ae13d4aec3c58173726220be6ca26c1991d` |  |  |
 | `docs/reference/case-corpus/rebuttal/GX18XEB-expert-report.pdf` | normalized-derivative | .pdf | 7023789 | `68acec7c1b607e08e930d7d1ac94b1ebcb11b3d0a3f0ff567ca80b83a902b702` |  | No OCR/layout validation in scaffold pass |
 | `docs/reference/case-corpus/rebuttal/GX18XEB-figs.pdf` | normalized-derivative | .pdf | 651395 | `a01ea363bccbd3c3ab8bc14793b6a34c362a4bbb819b17560645ead919ab6625` |  | No OCR/layout validation in scaffold pass |
 | `docs/reference/case-corpus/rebuttal/H2KXM-expert-report.pdf` | normalized-derivative | .pdf | 2416245 | `9ff5ce0707bda24044595428b2754f6f8766411772e3609114a9f8e21d9fdbae` |  | No OCR/layout validation in scaffold pass |
@@ -979,6 +979,18 @@
 | `docs/reference/raw/collisionrelateddocs/Instructions/TEN 05.msg` | raw-source | .msg | 143360 | `1cf3dd85a35c30250eece4a684b204f3a8285bee1e2a3fa6b39feda4620ad3dc` | `docs/reference/normalized/collisionrelateddocs__instructions__ten-05.msg.md` | MSG extraction needs extract-msg or equivalent parser; not installed |
 | `docs/reference/raw/collisionrelateddocs/Settings Backup/app_settings.json` | raw-source | .json | 28 | `9586fe74ab2647c722b10774bbefc6e14c1cee599a0d458acf5dc144732ba05c` | `docs/reference/normalized/collisionrelateddocs__settings-backup__app_settings.json.md` |  |
 | `docs/reference/raw/collisionrelateddocs/Settings Backup/providers.json` | raw-source | .json | 42943 | `8b979a7467951c14a60d7cf80725c314a35371c57269046af1238af062d91221` | `docs/reference/normalized/collisionrelateddocs__settings-backup__providers.json.md` |  |
+| `docs/reference/skill-material/vehicle-valuation/authoritative-sources.md` | active-plan | .md | 668 | `a53a16ceda34b5fa99a5e2070802bb756cdac093431269044c3cf9ef14bbfefe` |  |  |
+| `docs/reference/skill-material/vehicle-valuation/autotrader-search.md` | active-plan | .md | 1639 | `70424330d0871fa8e7f0bc75b86cb4d7cc5809bcd23d08037d69ec558fc3e894` |  |  |
+| `docs/reference/skill-material/vehicle-valuation/brand.md` | active-plan | .md | 603 | `999a7e75614341333fdf7373f063962fb2a41e59912fdc363532d8c6423114b0` |  |  |
+| `docs/reference/skill-material/vehicle-valuation/eva-screenshot-intake.md` | active-plan | .md | 6462 | `16959268b0f55e738bcef5b5b95240cfadd825ba7eb82fde9d9fb83c65aa73ef` |  |  |
+| `docs/reference/skill-material/vehicle-valuation/example-outputs.md` | active-plan | .md | 3953 | `12fce6abae4e93fac03f8e4816ba34b89051800848d4481932e16d1d0a02bbca` |  |  |
+| `docs/reference/skill-material/vehicle-valuation/examples.md` | active-plan | .md | 559 | `646e90c47e59f98a9143f43572d5c4604cd9871adf2b175c1a06fa727e957d39` |  |  |
+| `docs/reference/skill-material/vehicle-valuation/external-wording.md` | active-plan | .md | 820 | `9aa130b2ad7a72a4f366b3a268b46e32e931d7c5ba78e9f6cfc39a674298028b` |  |  |
+| `docs/reference/skill-material/vehicle-valuation/pdf-template-spec.md` | active-plan | .md | 830 | `8fc3b6f0669ee52d4845962d755929d05c0c32c4008ae9ec6c8d687fab471d0a` |  |  |
+| `docs/reference/skill-material/vehicle-valuation/report-style.md` | active-plan | .md | 2418 | `163463e06fe70e0d453681f34587f846ee0cef4136ca2c9d26f2ed52c2523f52` |  |  |
+| `docs/reference/skill-material/vehicle-valuation/valuation-methodology.md` | active-plan | .md | 22577 | `ebdfa34b910edbf68b2303c2ddeb542f759f782e3b2daf54ff6ef4f1d4f2fdb4` |  |  |
+| `docs/reference/skill-material/vehicle-valuation/vat-and-commercial-vehicles.md` | active-plan | .md | 900 | `2de53f4e5d3d4b4abf920c7ea71cfb69433bff6fd73cc2595288fa8f0e4b62e6` |  |  |
+| `docs/reference/skill-material/vehicle-valuation/workflow-dispatcher-v1.md` | active-plan | .md | 11900 | `da900ad6c30e9f7354dd8047e5cdd6958f5b14c79fe089289d19700ab2acf4d5` |  |  |
 | `docs/reference/test-context/testprojectcontext/collision-engineers-context-pack/collision-engineers-context-pack/01_project_brief.md` | generated-reference | .md | 4342 | `2fc8e61f1c798077cf24861732eb56d031defe4cab750da21664eda250db3725` |  |  |
 | `docs/reference/test-context/testprojectcontext/collision-engineers-context-pack/collision-engineers-context-pack/02_company_business_context.md` | generated-reference | .md | 4615 | `4723b503ec6b88113f35a173107381543dc54cd5bb4b9f4c1bdbedfb223e6f35` |  |  |
 | `docs/reference/test-context/testprojectcontext/collision-engineers-context-pack/collision-engineers-context-pack/03_domain_glossary.md` | generated-reference | .md | 7410 | `d375105c77f30d10c23d12d12f2e1e1081c0c0374bce7440d12543885e783d7a` |  |  |
@@ -1022,13 +1034,13 @@
 | `docs/reference/test-context/testprojectcontext/collision_project_context_pack/collision_project_context_pack/20_SELF_REVIEW_AND_COVERAGE_CHECK.md` | generated-reference | .md | 3773 | `24bf9fb961432f354bbc838640b4c2cfa721a0ced1455d570d406a192c5b2761` |  |  |
 | `docs/reference/test-context/testprojectcontext/collision_project_context_pack/collision_project_context_pack/_GENERATION_CHECK.txt` | generated-reference | .txt | 72 | `e5273346d620891b3c0453d4ab5b464daee36f8772150c3b7cebc36351db66f2` |  |  |
 | `docs/reference/test-context/testprojectcontext/collision_project_context_pack/collision_project_context_pack/MANIFEST.md` | generated-reference | .md | 1142 | `527a60f464187ad01e5274f26d538c56ede451599a20df76a185001aea5eacdf` |  |  |
-| `docs/repo_map.json` | active-plan | .json | 4259 | `5d9be8785c93e1626a2e6bf757daa1a95b75fcdc575ecb64c5c221af0369dcac` |  |  |
+| `docs/repo_map.json` | active-plan | .json | 5156 | `b9a02d955fefe94700cde0524fec1665bb95b4abe6092e68ac844f0de5679d99` |  |  |
 | `docs/requirements/business_requirements.md` | active-plan | .md | 1110 | `fb2b4d515dbb53bc6ec911c5098e4ce905d9bd8159940d2e21354e0c1480e1f3` |  |  |
 | `docs/requirements/open_business_questions.md` | active-plan | .md | 673 | `329a876e764fd3d241bcbf2f38fc8053af564af50f5d2d7838c5c05fb202f79b` |  |  |
 | `docs/research/gptdeepresearch.md` | active-plan | .md | 45765 | `a7d15a0072090b4665e7aec3cbff1edbaf4f9c8da0b09753b4308c3907d0556f` |  |  |
 | `docs/research/gptevadeepresearch.md` | active-plan | .md | 32158 | `25511c8daa014d4ae60b442ccfaafff04b1f99f2290997c6e06f00c0137d7dc3` |  |  |
 | `docs/research/siderpdf.md` | active-plan | .md | 63392 | `286c0f1581bddfd4201ae739824cf3fcbd5e7eb1bdc48b5aef9412b1128d76b8` |  |  |
-| `docs/roadmap.md` | active-plan | .md | 14477 | `9cabbd6e9d54ea98650872a4047014d46fd5c20427548cbe617759695808cf6e` |  |  |
+| `docs/roadmap.md` | active-plan | .md | 14853 | `324b734f94bb4327c6ccb2d18de7d5f74e2d2dcc45f2902affcaaef2bf4606aa` |  |  |
 | `docs/security/api_security_standard.md` | active-plan | .md | 1067 | `2f38aa32ee7a6ea0c78182749412749f25163f3187c8e82aaae01a02b97467b0` |  |  |
 | `docs/security/data_map.md` | active-plan | .md | 1944 | `86186961a3531482bc2ab849b571f3503f3d68258c4e180d2011f53ce1ee9bb3` |  |  |
 | `docs/security/data_retention_policy.md` | active-plan | .md | 2928 | `71c064e1a246f0d8226fd4603d4bf9fe395848175e1bc09c3ab0b403f6fa7671` |  |  |
@@ -1036,9 +1048,9 @@
 | `docs/security/role_model.md` | active-plan | .md | 3243 | `0173d80a54a58a2fae4af83c8506466e80d964b642db4e144b021cc121f1ce20` |  |  |
 | `docs/security/source_safety_review.md` | active-plan | .md | 1385 | `1a525b179a8f27fc001310f8375c9a2f5803284b860667779fa5bb3b4e41d124` |  |  |
 | `docs/security/vendor_register.md` | active-plan | .md | 2585 | `04973c01fe4c6bccc999494002499224cf0182fe7a2b00f7e29b3f8e5e0b7dd8` |  |  |
-| `docs/source_manifest.csv` | normalized-derivative | .csv | 311115 | `f0daa1409f402706553315c1d6f52730412cd6b8e5c20dc553b4f3b9bdeee783` |  |  |
-| `docs/source_manifest.json` | active-plan | .json | 577448 | `5b0b2fa999a18ee534cfae2441ab1061568dd738bc25bd7d59d4c86f5efc8875` |  |  |
-| `docs/source_manifest.md` | active-plan | .md | 213053 | `de633b882278cf6c62eaaa2a08e14c1380139b442bc7bc6c0f4e6475b9b600c9` |  |  |
+| `docs/source_manifest.csv` | normalized-derivative | .csv | 334151 | `c1724e4d64951c17d7d24e11608c286c4b92747582ecdbe61aa3335db218240c` |  |  |
+| `docs/source_manifest.json` | active-plan | .json | 622378 | `0db4c573bb7b1967dd5cd09145820130572000bd1fa2785a3c189119dce8a083` |  |  |
+| `docs/source_manifest.md` | active-plan | .md | 229422 | `2baba428b953d21348f9fe5cd13f8454d3acad0fd984ad10bb2dabc286458c86` |  |  |
 | `docs/superpowers/specs/2026-05-29-agent-skills-design.md` | active-plan | .md | 5812 | `6edd0ba58d677e7734f08563541775d1d7328680baac49584549267689ab02b0` |  |  |
 | `docs/superpowers/specs/2026-05-29-ai-platform-design.md` | active-plan | .md | 5088 | `26a8f208c57f1a8cb74b40e1531de04ecaeb249c1a499340e07d5491f4b3019e` |  |  |
 | `docs/superpowers/specs/2026-05-29-bridge-design.md` | active-plan | .md | 7218 | `ef0404e03fd1d6aad8f3d3644b5c532234a6c3c8b37ee424bc5a913f534360dc` |  |  |
@@ -1071,55 +1083,63 @@
 | `src/ccc_parser/validation.py` | active-plan | .py | 4378 | `10bc765f69623d23c9dd42c6627f64029313a67a3b9852f346c80c5908647b5c` |  |  |
 | `src/skills/abp-rates/references/abp-2026-rates.md` | active-plan | .md | 7745 | `769bd3749253583d63eabba3a2c1bf9a3d48b6fb87a98700933988b7f54365ee` |  |  |
 | `src/skills/abp-rates/references/abp2026.pdf` | normalized-derivative | .pdf | 2610000 | `4c7be678842b1eee869e493a0d6c90aebd90cd592dd8f8ed005b279a4020f43c` |  | No OCR/layout validation in scaffold pass |
-| `src/skills/abp-rates/SKILL.md` | active-plan | .md | 2040 | `c565ffef3a7d78dff4d9b23390cb7f2967b30c35cf71c4b5521412bf6584381d` |  |  |
-| `src/skills/ce-branding/assets/addendumreportexample.pdf` | normalized-derivative | .pdf | 196058 | `e696b6caa74a68e9ece196fd3a9c149cdf2c9db1ba713d59437f44dd01b31421` |  | No OCR/layout validation in scaffold pass |
-| `src/skills/ce-branding/assets/brand/logo.png` | normalized-derivative | .png | 97828 | `c825da628927ddff78c357ae598d14fec420bc650045b88f5d9cf6ba2127ee51` |  |  |
-| `src/skills/ce-branding/assets/brand/logo.svg` | normalized-derivative | .svg | 199 | `6c544d16f3666be4cb465783a50362b5b2c474a30c63d6ad67c2cfe4cbb32018` |  |  |
-| `src/skills/ce-branding/assets/feenoteexample.pdf` | normalized-derivative | .pdf | 130535 | `de835eafde9ce4fafe345d3a2f9d74941a373de605f13c91a5da0864303f1a45` |  | No OCR/layout validation in scaffold pass |
-| `src/skills/ce-branding/assets/logo.pdf` | normalized-derivative | .pdf | 118752 | `fe784d22afd3b24867655e1d8a951b98a257b52a58b0fe5fd3529dcd926ddd58` |  | No OCR/layout validation in scaffold pass |
-| `src/skills/ce-branding/assets/templates/_base.html.j2` | normalized-derivative | .j2 | 814 | `ca9cc9d0d28342c1e9450b01f20ecd6b0ec4948f5b4d574a6cd90e3dcfc5230e` |  |  |
-| `src/skills/ce-branding/assets/templates/evidence_pack.html.j2` | normalized-derivative | .j2 | 1524 | `27addb9d7ff4e3f451b01514476e2c001043209d6f6126a6424053f18c9fd3eb` |  |  |
-| `src/skills/ce-branding/assets/templates/report.html.j2` | normalized-derivative | .j2 | 2138 | `d5d9164d3b523d20af6f209b63ba58d9627e64cde6084afff6139309b2d73a17` |  |  |
-| `src/skills/ce-branding/assets/templates/styles.css` | normalized-derivative | .css | 6733 | `951c8cb1671e00c4ee936db041aa35f355f0a549ca0289811c876d527c290bac` |  |  |
-| `src/skills/ce-branding/assets/totallossexample.pdf` | normalized-derivative | .pdf | 2364722 | `a7257ed8e2ec34ef3fe74a1a044567753e96a6f46e3fde47baf7c2a62d3eb04a` |  | No OCR/layout validation in scaffold pass |
-| `src/skills/ce-branding/SKILL.md` | active-plan | .md | 2206 | `060bf9d0185ab71013a55aa574c19dfc3f3752e01a5262693952b8fbab623a9c` |  |  |
+| `src/skills/abp-rates/SKILL.md` | active-plan | .md | 2028 | `25373162d94edd70be03b45a022ee19dde65e39e0e55b5b8cedeb68ebaf347bd` |  |  |
 | `src/skills/ce-domain-glossary/references/audatex-abp-context.md` | active-plan | .md | 6347 | `b8648ad26613a48114ec8004c52fa8d9b9c7363e164cd5d7f496a5da0b5c3558` |  |  |
 | `src/skills/ce-domain-glossary/references/glossary.md` | active-plan | .md | 7410 | `d375105c77f30d10c23d12d12f2e1e1081c0c0374bce7440d12543885e783d7a` |  |  |
 | `src/skills/ce-domain-glossary/SKILL.md` | active-plan | .md | 1246 | `97502061b6e780881f85e2b2811daf0ed61ed4c9a630ac374c143f8f13d91954` |  |  |
-| `src/skills/ce-style/CE Communication Style & Tone Profile.docx` | normalized-derivative | .docx | 20527 | `1878ee75ee0dd2054778b0e173a3d1681d14e9a76268a6b0a8d9dea255ffe846` |  | python-docx is not available in the active runtime |
-| `src/skills/fee-note/references/fee-note-spec.md` | active-plan | .md | 1327 | `e15fe41515a1f3b3150eb86670136f4a249915c0ff4c3a092832b535de5381f2` |  |  |
-| `src/skills/fee-note/SKILL.md` | active-plan | .md | 1399 | `5875185671a6b0847937c2a7196c6d9c3d64738cef44ac341a71c39a8fb05449` |  |  |
-| `src/skills/manufacturer-standards/references/oem-index.md` | active-plan | .md | 1593 | `f46f6d89f157e31eb080a7d7b6d28a6d7809cb57b1160473998d0c5a54719478` |  |  |
+| `src/skills/ce-house-style/assets/addendumreportexample.pdf` | normalized-derivative | .pdf | 196058 | `e696b6caa74a68e9ece196fd3a9c149cdf2c9db1ba713d59437f44dd01b31421` |  | No OCR/layout validation in scaffold pass |
+| `src/skills/ce-house-style/assets/brand/logo.png` | normalized-derivative | .png | 97828 | `c825da628927ddff78c357ae598d14fec420bc650045b88f5d9cf6ba2127ee51` |  |  |
+| `src/skills/ce-house-style/assets/brand/logo.svg` | normalized-derivative | .svg | 199 | `6c544d16f3666be4cb465783a50362b5b2c474a30c63d6ad67c2cfe4cbb32018` |  |  |
+| `src/skills/ce-house-style/assets/feenoteexample.pdf` | normalized-derivative | .pdf | 130535 | `de835eafde9ce4fafe345d3a2f9d74941a373de605f13c91a5da0864303f1a45` |  | No OCR/layout validation in scaffold pass |
+| `src/skills/ce-house-style/assets/logo.pdf` | normalized-derivative | .pdf | 118752 | `fe784d22afd3b24867655e1d8a951b98a257b52a58b0fe5fd3529dcd926ddd58` |  | No OCR/layout validation in scaffold pass |
+| `src/skills/ce-house-style/assets/templates/_base.html.j2` | normalized-derivative | .j2 | 814 | `ca9cc9d0d28342c1e9450b01f20ecd6b0ec4948f5b4d574a6cd90e3dcfc5230e` |  |  |
+| `src/skills/ce-house-style/assets/templates/evidence_pack.html.j2` | normalized-derivative | .j2 | 1524 | `27addb9d7ff4e3f451b01514476e2c001043209d6f6126a6424053f18c9fd3eb` |  |  |
+| `src/skills/ce-house-style/assets/templates/report.html.j2` | normalized-derivative | .j2 | 2138 | `d5d9164d3b523d20af6f209b63ba58d9627e64cde6084afff6139309b2d73a17` |  |  |
+| `src/skills/ce-house-style/assets/templates/styles.css` | normalized-derivative | .css | 6733 | `951c8cb1671e00c4ee936db041aa35f355f0a549ca0289811c876d527c290bac` |  |  |
+| `src/skills/ce-house-style/assets/totallossexample.pdf` | normalized-derivative | .pdf | 2364722 | `a7257ed8e2ec34ef3fe74a1a044567753e96a6f46e3fde47baf7c2a62d3eb04a` |  | No OCR/layout validation in scaffold pass |
+| `src/skills/ce-house-style/references/CE Communication Style & Tone Profile.docx` | normalized-derivative | .docx | 20527 | `1878ee75ee0dd2054778b0e173a3d1681d14e9a76268a6b0a8d9dea255ffe846` |  | python-docx is not available in the active runtime |
+| `src/skills/ce-house-style/references/visual-layout.md` | active-plan | .md | 1306 | `6db1d01d5d2b1899fea937625a8a2270aebaf3d3ac12885416eb9fd7334b833d` |  |  |
+| `src/skills/ce-house-style/references/writing-tone.md` | active-plan | .md | 1312 | `3e33023ddba0a919a879c20426859c6a8dcb0ce8ce387fd9c27044ac20dd2bec` |  |  |
+| `src/skills/ce-house-style/SKILL.md` | active-plan | .md | 1486 | `5536c968829e2e5457cfe71f8b7e7c2a283b7b0ab1aa3ba8b9f28a53836da0d2` |  |  |
+| `src/skills/damage-estimating/references/atzpaintcalculation.pdf` | normalized-derivative | .pdf | 15684742 | `0a498902c91dd5d6210ef749da9d1d2882444d686256ca4e986e38b4f9faaa77` |  | No OCR/layout validation in scaffold pass |
+| `src/skills/damage-estimating/references/authoritative-sources.md` | active-plan | .md | 1093 | `5ca343dfaff9f521d4fec123c1b38a0ad03757543ee19b7328f6118c8ce5ab43` |  |  |
+| `src/skills/damage-estimating/references/azt-paint-method.md` | active-plan | .md | 14474 | `9689f07b5e5e00edfeb8b06baad0e2229c621ca9ad1272772d140255122fafd3` |  |  |
+| `src/skills/damage-estimating/references/charge-review.md` | active-plan | .md | 681 | `be6748c41d8683ec906e7674ea2c08215b186d1605f870921c71af71ec51c9dc` |  |  |
+| `src/skills/damage-estimating/references/estimate-framework-full.md` | active-plan | .md | 14013 | `ae110c8f21c9f569f06dba8434d2156529008f1e7ae4f390cc7af69fa5a08c4d` |  |  |
+| `src/skills/damage-estimating/references/estimate-framework.md` | active-plan | .md | 1514 | `8f0ddbceec6da90ef06e8389022b14f01da080b53f14c7e6177fa7ec077a3211` |  |  |
+| `src/skills/damage-estimating/references/eva-total-loss-context.md` | active-plan | .md | 18983 | `4f5bcc2b65b2babca6ec9fdc370a2104a4c245f31c8d09feae4a43a5d363e2c3` |  |  |
+| `src/skills/damage-estimating/references/eva-total-loss.md` | active-plan | .md | 862 | `b4ee8665d7aca61e1d0442c6f78ecdf6721322623c4c7c6e8cd84fdd98b2c46d` |  |  |
+| `src/skills/damage-estimating/references/examples.md` | active-plan | .md | 982 | `83ffdc8923846942fa058dda4026f6b0df33f5a6951ab55e125191dc2d75fd21` |  |  |
+| `src/skills/damage-estimating/references/paint-costing.md` | active-plan | .md | 649 | `beb9e8839f21ab60ba580a718388aa18982d7baf5065d8c7cb5ad920c9a43859` |  |  |
+| `src/skills/damage-estimating/references/repair-estimate.md` | active-plan | .md | 884 | `0f275dfd7cfa77af5ea67b22e50de9ae22f047b84664b74b950e4bce9dea936d` |  |  |
+| `src/skills/damage-estimating/references/source-provenance/valuationinfo-v1.txt` | normalized-derivative | .txt | 40302 | `20e5288c62f26d08f360025d3f9554d997b5f25d8631135030a0c59e24fb7da5` |  |  |
+| `src/skills/damage-estimating/scripts/eva-audatex-generator.py.md` | active-plan | .md | 53755 | `3254ba86b0022dc62c97b3bdf97815439857d97ebd561b8d46e892acb2c2d953` |  |  |
+| `src/skills/damage-estimating/SKILL.md` | active-plan | .md | 2527 | `74419a7934e8cbc3036a0fb7fe594195c334c4c75edb8285224077b15302f00c` |  |  |
+| `src/skills/finance-document/references/email-draft.md` | active-plan | .md | 500 | `36db1e1f5036d154c00fdc678ed995d19fb9e5bfcadcec69e5ca1c817885ddea` |  |  |
+| `src/skills/finance-document/references/fee-note-spec.md` | active-plan | .md | 1352 | `2a99af2ab8671f8512d53c0f55f09a4a5802982bde0ea50dbdef96fbb492535c` |  |  |
+| `src/skills/finance-document/references/fee-note.md` | active-plan | .md | 442 | `a883c08e34ab495e4a2ae1a736b5e7d962119ca22dffba0a02661386d5b9f33b` |  |  |
+| `src/skills/finance-document/references/invoice-templates.md` | active-plan | .md | 962 | `1ab17a5fcab051e309b7dcfbc61d867722941911c18429fc2fd4ce87a4313d58` |  |  |
+| `src/skills/finance-document/SKILL.md` | active-plan | .md | 1674 | `483f60bc159f5b77d37c1b81c3109bcfcbe556fe208e828db961e435503969dc` |  |  |
+| `src/skills/manufacturer-standards/references/oem-index.md` | active-plan | .md | 1580 | `801d7fdf6f8096900654521dce41ffa259c0230ee6c79519abea3c35164c7936` |  |  |
 | `src/skills/manufacturer-standards/references/volkswagen-wheel-repair.pdf` | normalized-derivative | .pdf | 24675 | `7528ca462428bba418243fe8ee6c6df2edc3517c04afbe13f9b83a04b4f24e6b` |  | No OCR/layout validation in scaffold pass |
 | `src/skills/manufacturer-standards/references/volvo-wheels-tyres.pdf` | normalized-derivative | .pdf | 138143 | `5187991468de4b4c96f3ea13e5386021f8a1b86085a7ba7a08239056a1e59351` |  | No OCR/layout validation in scaffold pass |
-| `src/skills/manufacturer-standards/SKILL.md` | active-plan | .md | 1867 | `b29445a4aa7bb1077bfb0ebb17205c3c226f03a0873f23a85b5d15eac54e6062` |  |  |
-| `src/skills/paint-calculation/references/atzpaintcalculation.pdf` | normalized-derivative | .pdf | 15684742 | `0a498902c91dd5d6210ef749da9d1d2882444d686256ca4e986e38b4f9faaa77` |  | No OCR/layout validation in scaffold pass |
-| `src/skills/paint-calculation/references/azt-paint-method.md` | active-plan | .md | 14483 | `cca4290841ea91f82fa68d20ad2ebce92d5555d9b3c5d377f9b823b8289f6bfd` |  |  |
-| `src/skills/paint-calculation/SKILL.md` | active-plan | .md | 1950 | `dc826c6155c7d62e55f4178fce1102f56de3ccc941221051559b59709f2c4162` |  |  |
-| `src/skills/README.md` | active-plan | .md | 3525 | `415805e5c3de0fc496d41d101ff7f7e09c046f26cde7627162f4919debfd9534` |  |  |
+| `src/skills/manufacturer-standards/SKILL.md` | active-plan | .md | 1857 | `e207d48e8397c87f709029b9f937bb9f0f21e51964e2a168b51e554d53fe0e3c` |  |  |
+| `src/skills/README.md` | active-plan | .md | 2303 | `fe7f4d93de7dbe1a843e0b90b588f0354dc941ba5a7b9a8946573458939eb7a2` |  |  |
 | `src/skills/rebuttal/projecttext.md` | active-plan | .md | 18393 | `b34904f88f5efd67e2278ed3f115d57d143e5e893a1d709489e04d66a0ba2266` |  |  |
 | `src/skills/rebuttal/references/anticipated-arguments.docx` | normalized-derivative | .docx | 214564 | `809a43412482a2bf0df7fc13e182aee31c86dbf0183e6dfa21af41d7113edcff` |  | python-docx is not available in the active runtime |
-| `src/skills/rebuttal/references/authoritative-sources.md` | active-plan | .md | 1250 | `1ac333e3fd680871ade409fddaa63fff41fc9c632385703c5aacbce36255b23e` |  |  |
+| `src/skills/rebuttal/references/authoritative-sources.md` | active-plan | .md | 1252 | `d8085a20bf4e309c7a055153cb817ab9feabde19fa91ccf3a5778ebbcd97dabd` |  |  |
 | `src/skills/rebuttal/references/diminution-report-template.docx` | normalized-derivative | .docx | 1196125 | `b3157bd76108e58e821d9f3487e7fdf64bd2d86217cd155342fa389e078dc288` |  | python-docx is not available in the active runtime |
 | `src/skills/rebuttal/references/examples.md` | active-plan | .md | 570 | `ef576de4da9d17b36888f6bb976f4cb6c5794d7e17aea95995c36f91143c6e80` |  |  |
-| `src/skills/rebuttal/SKILL.md` | active-plan | .md | 1049 | `56371dd4e4d381e881a47b6087f79edd78d669b3774369974a2b1a90b42ce61b` |  |  |
-| `src/skills/repair-estimate/references/archive/valuationinfo-v1.txt` | normalized-derivative | .txt | 40302 | `20e5288c62f26d08f360025d3f9554d997b5f25d8631135030a0c59e24fb7da5` |  |  |
-| `src/skills/repair-estimate/references/estimate-framework.md` | active-plan | .md | 14013 | `ae110c8f21c9f569f06dba8434d2156529008f1e7ae4f390cc7af69fa5a08c4d` |  |  |
-| `src/skills/repair-estimate/SKILL.md` | active-plan | .md | 2447 | `ccd9fad60891321b7b43e939c6492a6924276205f7eaca799ea00e4e455851f2` |  |  |
+| `src/skills/rebuttal/SKILL.md` | active-plan | .md | 999 | `5a5efc09c2182a942a41bd59347bc14f55471a3ec28a583c7eb96c6a3ed583a6` |  |  |
 | `src/skills/roadworthy/references/authoritative-sources.md` | active-plan | .md | 509 | `3e1b3531061183541b55051ee7ce23f177b0d99153ceb9d29170cdd540eb8652` |  |  |
 | `src/skills/roadworthy/references/examples.md` | active-plan | .md | 582 | `26a3b858aa039edc85041ded742f8393c4fbaaaadb50c7fa8655b3284228c742` |  |  |
-| `src/skills/roadworthy/SKILL.md` | active-plan | .md | 1021 | `451d4601b60f79445bd281d88b2494aa9871ded72721637de324268602bbddf1` |  |  |
-| `src/skills/roadworthy/startingprompt.md` | active-plan | .md | 1762 | `257316ff2f402a9b1ed6d1dc8be3330b90d6a5160c1d6c72814624dc0592ad09` |  |  |
+| `src/skills/roadworthy/SKILL.md` | active-plan | .md | 1102 | `aabe31351a741d362d0dff8a1f38201d55af0cf219272ce41959fbb39d81ffa2` |  |  |
+| `src/skills/roadworthy/startingprompt.md` | active-plan | .md | 1584 | `b7fc284ad8c9d335d1a1dc0188ddb4e15d6118270d7ec044614375fa92d5a71e` |  |  |
 | `src/skills/roadworthy/template.md` | active-plan | .md | 2991 | `a47b4de7f4249f4d1a1e0b2df2e14e21977675dc3f992d1b5648d382224e5abc` |  |  |
-| `src/skills/roadworthy/toolinstructions.md` | active-plan | .md | 4512 | `18736702e32166dee77f53047730fcc8193db78b60e6b596632a50abd63c53e7` |  |  |
+| `src/skills/roadworthy/toolinstructions.md` | active-plan | .md | 4374 | `8f8216076ab2aae63c12ed117b6f53ed87922f94e4a6289d504b9470aaacf2eb` |  |  |
 | `src/skills/salvage-categorisation/references/abi-salvage-cop.md` | active-plan | .md | 18437 | `fca20e8193443a278c75d50bae8606c9cd0f7564527587be2f9298fc93552a0a` |  |  |
 | `src/skills/salvage-categorisation/references/abi-salvage-cop.pdf` | normalized-derivative | .pdf | 1023074 | `69b3458a63fa7a0266edebce9afae8803a6b26eef77cf6e9f99a64caf921d4ef` |  | No OCR/layout validation in scaffold pass |
-| `src/skills/salvage-categorisation/SKILL.md` | active-plan | .md | 2074 | `5b6d126dca57a9a7470869d0c6b6071d9819c8ab236beb70cec03d542d4e5253` |  |  |
-| `src/skills/total-loss/context.md` | active-plan | .md | 19003 | `e1aa99a83e6c9365e473757642794b94d9d67bcde5e3eb3feae0cdaf1a28c859` |  |  |
-| `src/skills/total-loss/references/authoritative-sources.md` | active-plan | .md | 1041 | `e59acc76f76a892a95d3c294a6f4837ca9d74ec40d9f4eae6c7296b89d6c4ea9` |  |  |
-| `src/skills/total-loss/references/examples.md` | active-plan | .md | 731 | `66da7922251f8535f5aaba3647c0acf986cb86422ef08ff36a17a328b4ec7c17` |  |  |
-| `src/skills/total-loss/SKILL.md` | active-plan | .md | 1830 | `75bada21797c8cd298cf0142a5d65135fd5087ed2046f778313279e8b81d088d` |  |  |
-| `src/skills/total-loss/tool.py.md` | active-plan | .md | 53755 | `3254ba86b0022dc62c97b3bdf97815439857d97ebd561b8d46e892acb2c2d953` |  |  |
+| `src/skills/salvage-categorisation/SKILL.md` | active-plan | .md | 2063 | `082ed37246133715967f1402b43fd506b3c9330d245c0f592e7f24320a7e4d95` |  |  |
 | `src/skills/vehicle-valuation/agents/openai.yaml` | normalized-derivative | .yaml | 494 | `556936e46a832a6a0992f24ff6f2215f339b280c9480b21cac4af943da0165b0` |  |  |
 | `src/skills/vehicle-valuation/assets/style-examples/example_evidence_pack.pdf` | normalized-derivative | .pdf | 67957 | `adaa02b6d61f3e6465b6cddeee2ef30e31c9045461f128b74d0e79adddec0a83` |  | No OCR/layout validation in scaffold pass |
 | `src/skills/vehicle-valuation/assets/style-examples/example_report.pdf` | normalized-derivative | .pdf | 67860 | `80e151ce4e1cf6df18158076f5a2cb30d3b9c17f22b0aaf44dfd884d7c26f2e9` |  | No OCR/layout validation in scaffold pass |
@@ -1127,26 +1147,7 @@
 | `src/skills/vehicle-valuation/assets/style-examples/FH70PKY.pdf` | normalized-derivative | .pdf | 2364722 | `a7257ed8e2ec34ef3fe74a1a044567753e96a6f46e3fde47baf7c2a62d3eb04a` |  | No OCR/layout validation in scaffold pass |
 | `src/skills/vehicle-valuation/assets/style-examples/logo.pdf` | normalized-derivative | .pdf | 118752 | `fe784d22afd3b24867655e1d8a951b98a257b52a58b0fe5fd3529dcd926ddd58` |  | No OCR/layout validation in scaffold pass |
 | `src/skills/vehicle-valuation/assets/style-examples/SJ67COU_Addendum_Report.pdf` | normalized-derivative | .pdf | 196058 | `e696b6caa74a68e9ece196fd3a9c149cdf2c9db1ba713d59437f44dd01b31421` |  | No OCR/layout validation in scaffold pass |
-| `src/skills/vehicle-valuation/references/authoritative-sources.md` | active-plan | .md | 643 | `df075cb952db68210d345e32905e12de3deab0b8cb339d34300f077e45835ec2` |  |  |
-| `src/skills/vehicle-valuation/references/autotrader-search.md` | active-plan | .md | 1639 | `70424330d0871fa8e7f0bc75b86cb4d7cc5809bcd23d08037d69ec558fc3e894` |  |  |
-| `src/skills/vehicle-valuation/references/brand.md` | active-plan | .md | 582 | `508a66790c58d9b51d0039f0e62ebe10a0b0d36f7d32b51bbc123c1f0b029da2` |  |  |
-| `src/skills/vehicle-valuation/references/eva-screenshot-intake.md` | active-plan | .md | 6462 | `16959268b0f55e738bcef5b5b95240cfadd825ba7eb82fde9d9fb83c65aa73ef` |  |  |
-| `src/skills/vehicle-valuation/references/example-outputs.md` | active-plan | .md | 3953 | `12fce6abae4e93fac03f8e4816ba34b89051800848d4481932e16d1d0a02bbca` |  |  |
-| `src/skills/vehicle-valuation/references/examples.md` | active-plan | .md | 559 | `646e90c47e59f98a9143f43572d5c4604cd9871adf2b175c1a06fa727e957d39` |  |  |
-| `src/skills/vehicle-valuation/references/external-wording.md` | active-plan | .md | 820 | `9aa130b2ad7a72a4f366b3a268b46e32e931d7c5ba78e9f6cfc39a674298028b` |  |  |
-| `src/skills/vehicle-valuation/references/pdf-template-spec.md` | active-plan | .md | 830 | `8fc3b6f0669ee52d4845962d755929d05c0c32c4008ae9ec6c8d687fab471d0a` |  |  |
-| `src/skills/vehicle-valuation/references/report-style.md` | active-plan | .md | 2418 | `163463e06fe70e0d453681f34587f846ee0cef4136ca2c9d26f2ed52c2523f52` |  |  |
-| `src/skills/vehicle-valuation/references/valuation-methodology.md` | active-plan | .md | 22577 | `ebdfa34b910edbf68b2303c2ddeb542f759f782e3b2daf54ff6ef4f1d4f2fdb4` |  |  |
-| `src/skills/vehicle-valuation/references/vat-and-commercial-vehicles.md` | active-plan | .md | 900 | `2de53f4e5d3d4b4abf920c7ea71cfb69433bff6fd73cc2595288fa8f0e4b62e6` |  |  |
-| `src/skills/vehicle-valuation/scripts/_pdf_common.py` | active-plan | .py | 34099 | `8312373c693c3a837b28c0125e65b595ff23a1450c7d4edd204538e1384851fa` |  |  |
-| `src/skills/vehicle-valuation/scripts/diff_against_example.py` | active-plan | .py | 8539 | `2258f27da141a8a0ebe065358af664a1c51a2fa420672ae52a4e7371e2036685` |  |  |
-| `src/skills/vehicle-valuation/scripts/render_evidence_pack.py` | active-plan | .py | 4598 | `6f9f4a04422b252d9eff4e7b5beb4dc204327563b51b607bbb78c09cafcdbdcf` |  |  |
-| `src/skills/vehicle-valuation/scripts/render_report.py` | active-plan | .py | 801 | `51155d5c3621d0546b8c0504d04568065f1ed5d7b6a85164b2393eabe62b0678` |  |  |
-| `src/skills/vehicle-valuation/scripts/requirements.txt` | normalized-derivative | .txt | 113 | `b399711f98d5cddb38cc0aee1352a81f9c9a99dba773597928ef20c0507a8837` |  |  |
-| `src/skills/vehicle-valuation/scripts/round_valuation.py` | active-plan | .py | 1069 | `e29ffc497cb0fc8ac38c08256327a7293cb9dd2615cda0e310a2c693a4a40da5` |  |  |
-| `src/skills/vehicle-valuation/scripts/sync_methodology.ps1` | normalized-derivative | .ps1 | 746 | `9bbc31af240c2b07f8adfe7a1e56b5a95f4a392295e63cb425787d07b1e12e28` |  |  |
-| `src/skills/vehicle-valuation/scripts/validate_evidence_pack.py` | active-plan | .py | 11543 | `95fb7ac207c78572aa7543c4f280b13d892d1fa0eca9c64b18a9e9ecdb03cf00` |  |  |
-| `src/skills/vehicle-valuation/SKILL.md` | active-plan | .md | 11097 | `50eddc5b27905ce0489fec9dc7c13565014fa1726e807e81c08359e389c1073c` |  |  |
+| `src/skills/vehicle-valuation/SKILL.md` | active-plan | .md | 3197 | `80cc5416c2426d094419c876a43adfd8a775f1999fbc7e77bad28d8706f194c2` |  |  |
 | `tests/parsertests/output1.json` | active-plan | .json | 529 | `c3d1a9a94672fd158a477c3f736aed411ebba330178e06ee8bafd6d2f912db70` |  |  |
 | `tests/test_parser_cli_mvp.py` | active-plan | .py | 3036 | `afd01765b6fbc1fe3235f2f0b7c2197febca601a25e70e5f8ee0021af9ff28c6` |  |  |
 | `tests/test_parser_mvp_contracts.py` | active-plan | .py | 14681 | `ad53e9ae63d14bd737241c9a393693d5fe36005c26e463ff5427bd37582681d5` |  |  |
@@ -1155,4 +1156,12 @@
 | `tools/generate_plan_workspaces.py` | active-plan | .py | 83497 | `fc60f1cca6ae867d9875691198f33bae92fc84a0b32a1757a7c6a97ebb2dd8f9` |  |  |
 | `tools/run_parser_corpus.py` | active-plan | .py | 3761 | `b85bf7601e215d6ff629d9db30757dc0ec6f8700645c7d00bd5915a7281dfad8` |  |  |
 | `tools/scaffold_initial_repo.py` | active-plan | .py | 113891 | `e0b6bbd0946b696cd58ff219ee7c1816fa744dd8596f169b7e9885f32b2c0967` |  |  |
+| `tools/vehicle-valuation/_pdf_common.py` | active-plan | .py | 34103 | `aae062c367ea616cddacbf6b801c73d7e6fd53454595d509928555e1abb493ed` |  |  |
+| `tools/vehicle-valuation/diff_against_example.py` | active-plan | .py | 8530 | `47c48f5ef3f2aa7b6945f3744c4acd922c53792a80e99f5f74a84ae9b0cd757c` |  |  |
+| `tools/vehicle-valuation/render_evidence_pack.py` | active-plan | .py | 4598 | `6f9f4a04422b252d9eff4e7b5beb4dc204327563b51b607bbb78c09cafcdbdcf` |  |  |
+| `tools/vehicle-valuation/render_report.py` | active-plan | .py | 801 | `51155d5c3621d0546b8c0504d04568065f1ed5d7b6a85164b2393eabe62b0678` |  |  |
+| `tools/vehicle-valuation/requirements.txt` | normalized-derivative | .txt | 113 | `b399711f98d5cddb38cc0aee1352a81f9c9a99dba773597928ef20c0507a8837` |  |  |
+| `tools/vehicle-valuation/round_valuation.py` | active-plan | .py | 1069 | `e29ffc497cb0fc8ac38c08256327a7293cb9dd2615cda0e310a2c693a4a40da5` |  |  |
+| `tools/vehicle-valuation/sync_methodology.ps1` | normalized-derivative | .ps1 | 746 | `9bbc31af240c2b07f8adfe7a1e56b5a95f4a392295e63cb425787d07b1e12e28` |  |  |
+| `tools/vehicle-valuation/validate_evidence_pack.py` | active-plan | .py | 11543 | `95fb7ac207c78572aa7543c4f280b13d892d1fa0eca9c64b18a9e9ecdb03cf00` |  |  |
 | `tools/verify_scaffold.py` | active-plan | .py | 17399 | `97058c846872282345e0e6f16d4a04bc7e33245e147a4408fc05587af83470d0` |  |  |

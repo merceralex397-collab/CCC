@@ -13,7 +13,7 @@ Strengthen the 13-point diminution framework (`../projecttext.md`) with these so
 | --- | --- |
 | Challenge specialist charges / regional uplift in the opposing estimate | `abp-rates` → `abp-2026-rates.md` |
 | Challenge a salvage category decision (S/N, structural vs non-structural) | `salvage-categorisation` → `abi-salvage-cop.md` |
-| Challenge a thin / under-quoted opposing estimate (named failure modes, completeness) | `repair-estimate` → `estimate-framework.md` |
+| Challenge a thin / under-quoted opposing estimate (named failure modes, completeness) | `damage-estimating` → `estimate-framework.md` |
 | OEM constraint (e.g. reconditioned wheels not approved) relevant to damage characterisation | `manufacturer-standards` → `oem-index.md` |
 | Correct terminology (diminution, Cat S/N, BS 10125, CPR Pt 35) | `ce-domain-glossary` |
 

@@ -1,6 +1,6 @@
 ---
 name: manufacturer-standards
-description: Shared reference library of vehicle-manufacturer (OEM) repair position statements - wheel and tyre reconditioning prohibitions, genuine-parts policies, and authoritative repair-procedure sources (erWin, ElsaPro, VIDA). Use whenever a repair estimate, total-loss assessment, or roadworthy certificate must respect an OEM constraint, e.g. confirming a damaged alloy must be replaced (not refurbished) or that only genuine parts are approved. Consumed by roadworthy, repair-estimate and total-loss. Reference data, not an output-producing skill.
+description: Shared reference library of vehicle-manufacturer (OEM) repair position statements - wheel and tyre reconditioning prohibitions, genuine-parts policies, and authoritative repair-procedure sources (erWin, ElsaPro, VIDA). Use whenever a repair estimate, total-loss assessment, or roadworthy certificate must respect an OEM constraint, e.g. confirming a damaged alloy must be replaced (not refurbished) or that only genuine parts are approved. Consumed by roadworthy and damage-estimating. Reference data, not an output-producing skill.
 ---
 
 # Manufacturer Standards (shared reference)

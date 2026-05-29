@@ -2,7 +2,7 @@
 
 > **Source: AZT Automotive GmbH — Paint Calculation System Description (EN, 03 June 2020). Source PDF: `atzpaintcalculation.pdf` (this folder). Material costs are index-based (AZT Index 100) and country/currency/quarter adjusted.**
 
-Distilled method + rules for computing collision-repair **paint time (hours)** and **paint material cost**. Consumed by `total-loss` and `repair-estimate`. This is a method reference, not the data tables — the per-part hour/material values live in AZT's type-specific tables and are continuously updated (they are deliberately omitted from the source description).
+Distilled method + rules for computing collision-repair **paint time (hours)** and **paint material cost**. Consumed by `damage-estimating` modes. This is a method reference, not the data tables — the per-part hour/material values live in AZT's type-specific tables and are continuously updated (they are deliberately omitted from the source description).
 
 ---
 

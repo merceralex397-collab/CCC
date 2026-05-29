@@ -11,7 +11,7 @@ Applies the ABI Code of Practice to recommend a salvage category (A/B/S/N) with 
 
 - `references/abi-salvage-cop.md` — distilled decision reference (categories, 4-question framework, definitions, structural vs non-structural, EV HV-battery rules §8, water/fire §13, disposal §14, MIAFTR / V5C / V860 / retention).
 - `references/abi-salvage-cop.pdf` — the authoritative source (version-sensitive; 28.05.2025).
-- Vocabulary: `ce-domain-glossary`. Cost context (a separate insurer decision): `abp-rates`, `repair-estimate`/`total-loss`.
+- Vocabulary: `ce-domain-glossary`. Cost context (a separate insurer decision): `abp-rates`, `damage-estimating`.
 
 ## Workflow
 

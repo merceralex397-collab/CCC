@@ -4,12 +4,12 @@ When to read this: read when editing templates, CSS, or brand assets.
 
 Brand red: `#C80A32` for report table headings and section rules.
 
-The colour is sampled from the rendered `referencefiles/example_report.pdf` table/header accents. The logo itself contains a brighter red gradient from `referencefiles/logo.pdf`.
+The colour is sampled from the rendered example report table/header accents. The logo itself contains a brighter red gradient from the CE logo PDF.
 
 Logo assets:
 
-- `assets/brand/logo.svg`
-- `assets/brand/logo.png`
+- `src/skills/ce-house-style/assets/brand/logo.svg`
+- `src/skills/ce-house-style/assets/brand/logo.png`
 
 Footer string:
 

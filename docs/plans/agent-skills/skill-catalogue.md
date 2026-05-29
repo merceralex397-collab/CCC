@@ -1,38 +1,33 @@
 # CE Skill Catalogue
 
 Date: 2026-05-29
-Status: active catalogue (first wave; collisionplugin skills migrated to `src/skills/`)
+Status: active catalogue (consolidated first wave in `src/skills/`)
 Owner: unassigned
 Group: agent-skills (parallel track)
-Source links: `docs/plans/agent-skills/context.md`, `docs/plans/agent-skills/collisionplugin-migration.md`, `docs/superpowers/specs/2026-05-29-agent-skills-design.md`, `src/skills/README.md`
+Source links: `docs/plans/agent-skills/context.md`, `docs/plans/agent-skills/collisionplugin-migration.md`, `docs/superpowers/specs/2026-05-29-agent-skills-design.md`, `docs/superpowers/specs/2026-05-29-reference-data-skills-design.md`, `src/skills/README.md`, `docs/reference/case-corpus/README.md`
 
-Portable skills under CCC governance, now living in `src/skills/`. Contract format: Claude Code `SKILL.md`. Governance class: **expert** (legal/expert output → mandatory human sign-off, "AI-assisted draft" until signed, no autonomous send) or **assist** (operational drafting/aid). Release state: `migrated` (in repo, pre-lifecycle) / `in-review` / `released`.
+Portable skills under CCC governance, living in `src/skills/`. Contract format: `SKILL.md`. Governance class: **expert** (legal/expert output requiring mandatory human sign-off), **assist** (drafting/calculation aid), or **reference** (shared source material).
 
-| Skill | Location | Output | Governance | Tool / asset deps | Release |
+| Skill | Location | Modes / output | Governance | Dependencies | Release |
 | --- | --- | --- | --- | --- | --- |
-| `vehicle-valuation` | `src/skills/vehicle-valuation/` | Valuation report PDF + evidence pack PDF | expert | Autotrader Codex connector, DVSA-MOT MCP (`mcp-tooling`), `ce-branding`; `scripts/requirements.txt` | migrated → in-review |
-| `total-loss` | `src/skills/total-loss/` | Audatex/EVA damage-assessment PDF | expert | EVA routing rules (`intelligence/evidence`, `bridge/eva`), `ce-branding` | migrated → in-review |
-| `rebuttal` | `src/skills/rebuttal/` | Diminution rebuttal `.docx` (CPR Pt 35) | expert | `ce-branding`; case evidence | migrated → in-review |
-| `roadworthy` | `src/skills/roadworthy/` | HS roadworthy certificate `.docx` | expert | engineer-report input, docx template, `ce-branding` | migrated → in-review |
-| `ce-style` | `src/skills/ce-style/` | CE communication style/tone profile | assist | — | migrated |
-| `ce-branding` (new) | `src/skills/ce-branding/` | Shared logo + document layout | assist | consumed by all document skills | created (SKILL.md + assets); templates to consolidate |
-| `abp-rates` (new) | `src/skills/abp-rates/` | Shared UK repair-charge rate reference (ABP 2026) | assist/ref | consumed by total-loss, repair-estimate, paint-calculation, rebuttal, roadworthy, fee-note | created |
-| `manufacturer-standards` (new) | `src/skills/manufacturer-standards/` | Shared OEM repair/position-statement library (VW/Volvo seed; US-market) | assist/ref | consumed by roadworthy, repair-estimate, total-loss | created |
-| `ce-domain-glossary` (new) | `src/skills/ce-domain-glossary/` | Shared domain vocabulary + Audatex/ABP context | assist/ref | consumed by all document skills | created |
-| `paint-calculation` (new) | `src/skills/paint-calculation/` | Paint time + material costing (AZT method) | assist | `abp-rates`; consumed by repair-estimate, total-loss | created |
-| `repair-estimate` (new) | `src/skills/repair-estimate/` | Standalone desktop repair estimate (parts/labour/paint/extras) | expert | estimate-framework, `abp-rates`, `paint-calculation`, `manufacturer-standards`, `ce-branding` | created |
-| `salvage-categorisation` (new) | `src/skills/salvage-categorisation/` | ABI salvage category (A/B/S/N) + notifications | expert | ABI COP reference; cross-links total-loss, rebuttal | created |
-| `fee-note` (new) | `src/skills/fee-note/` | CE fee note / expert-services invoice | assist | `ce-branding`, `abp-rates`; business/finance owns the billing workflow | created |
-| `case-summary` | (planned) | Case summary/status draft | assist | work-item data (`casework`) | plan → build |
-| `missing-info` | (planned) | Missing-information checklist/chaser draft | assist | work-item state (`casework`) | plan → build |
+| `vehicle-valuation` | `src/skills/vehicle-valuation/` | `market-valuation`, `evidence-pack`, `valuation-explanation`, `dispute-response`; valuation report PDF + evidence pack PDF | expert | Autotrader connector, DVSA-MOT MCP, `ce-house-style` | in-review |
+| `damage-estimating` | `src/skills/damage-estimating/` | `repair-estimate`, `eva-total-loss`, `paint-costing`, `charge-review`; estimate and damage-assessment drafts | expert for estimates, assist for costing/review | `abp-rates`, `manufacturer-standards`, `ce-domain-glossary`, `ce-house-style` | in-review |
+| `salvage-categorisation` | `src/skills/salvage-categorisation/` | ABI category A/B/S/N and notification reasoning | expert/AQP | ABI COP reference, `damage-estimating` as cost context only | in-review |
+| `rebuttal` | `src/skills/rebuttal/` | diminution rebuttal `.docx` draft | expert/legal | `ce-house-style`, `damage-estimating`, case evidence | in-review |
+| `roadworthy` | `src/skills/roadworthy/` | HS roadworthy certificate draft | expert | engineer-report input, approved DOCX template, `ce-house-style`, `manufacturer-standards` | in-review |
+| `finance-document` | `src/skills/finance-document/` | `fee-note`, `standard-audatex-invoice`, `website-invoice`, `invoice-email-draft` | assist | `ce-house-style`, raw/normalized invoice templates | in-review |
+| `ce-house-style` | `src/skills/ce-house-style/` | `visual-layout`, `writing-tone`; logo/layout/tone support | assist/reference | CE brand assets and tone profile | in-review |
+| `abp-rates` | `src/skills/abp-rates/` | ABP 2026 rates and charge reference | reference | ABP PDF + Markdown distillation | in-review |
+| `manufacturer-standards` | `src/skills/manufacturer-standards/` | OEM repair-position reference | reference | VW/Volvo seed documents; UK applicability option paper | in-review |
+| `ce-domain-glossary` | `src/skills/ce-domain-glossary/` | CE vocabulary and Audatex/ABP context | reference | glossary references | in-review |
+| `case-status` | planned | `case-summary`, `missing-info`, `chaser-draft` | assist | canonical work-item data | planned |
 
-Later (not first wave): valuation-explanation, report-clause RAG (needs approved corpus + licensing), AI-literacy, provider-mapping.
+## Consolidation Record
 
-## Notes
+- `ce-house-style` owns the former visual branding and communication style material.
+- `damage-estimating` owns the former total-loss, repair-estimate, paint-calculation, and ABP charge-review material.
+- `finance-document` owns the former fee-note material plus raw and normalized invoice templates from `docs/reference/raw/collisionrelateddocs/collision_releated/`.
+- `salvage-categorisation`, `vehicle-valuation`, `rebuttal`, and `roadworthy` remain separate because they carry distinct expert or legal sign-off boundaries.
+- Worked-case corpus files stay in `docs/reference/case-corpus/` and are referenced by path because they contain PII.
 
-- Migration record: `docs/plans/agent-skills/collisionplugin-migration.md`. The DVSA connector config was **not** migrated (held a live token).
-- "migrated → in-review" = in `src/skills/` without behaviour change; review + bring under the lifecycle (`docs/plans/ai-platform/`) next.
-- Expert-class skills cannot auto-send; a named human signs off the document (`docs/security/role_model.md`).
-- `rebuttal`/`roadworthy` use their existing doc form; `total-loss` gained a `SKILL.md` wrapper (2026-05-29).
-- **Reference-data skills (2026-05-29):** added `abp-rates`, `manufacturer-standards`, `ce-domain-glossary` (shared references), `paint-calculation`, `repair-estimate`, `salvage-categorisation`, `fee-note` — draining the `src/skills/infointake/` staging folder (now removed). Design: `docs/superpowers/specs/2026-05-29-reference-data-skills-design.md`.
-- **Worked-case corpus:** real case artifacts (PII) live in the governed store `docs/reference/case-corpus/` and are referenced by each skill's `references/examples.md` by path. See `option-papers/reference-data-versioning.md` and `option-papers/oem-standards-uk-applicability.md`.
+Expert-class skills cannot auto-send; a named human signs off the final document (`docs/security/role_model.md`).

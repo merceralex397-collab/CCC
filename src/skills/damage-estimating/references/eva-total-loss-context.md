@@ -33,7 +33,7 @@ The engineer will drop in damage photos with a short brief like "Honda Jazz rear
 
 **5. Build the operations list** using the routing rules below. Be especially careful with the `specialist_wu` pattern.
 
-**6. Write the build script as a `.py` file.** Save to `/home/claude/work/build_AIXXXXXX.py`, run it, copy the resulting PDF to `/mnt/user-data/outputs/`, and present it. Always print totals, page count, and PAV ratio at the end so the engineer can sanity-check at a glance.
+**6. Write the build script as a `.py` file.** Save it under the repository `output/` workspace, run it, copy the resulting PDF to the case output folder, and present it. Always print totals, page count, and PAV ratio at the end so the engineer can sanity-check at a glance.
 
 **7. Summarise what you did and flag uncertainties.** In your chat reply: identify the vehicle, list the damage, give the breakdown by section, state PAV ratio if relevant, explicitly flag anything you guessed (part numbers, work units, decisions about renewal vs repair).
 
@@ -42,7 +42,7 @@ The engineer will drop in damage photos with a short brief like "Honda Jazz rear
 Files live in:
 - `/mnt/project/` — project knowledge files including `audatex_gen_v4.py` (read-only, available via the project filesystem)
 - `/home/claude/work/` — your scratch directory; copy the generator here at the start of a session if needed
-- `/mnt/user-data/outputs/` — final PDF goes here, then call `present_files`
+- `output/` — final PDFs and review artifacts go here.
 
 If `audatex_gen_v4.py` isn't accessible, ask the engineer to upload it again — don't try to rebuild it from memory.
 
@@ -98,7 +98,7 @@ t = result['totals']
 print(f"Grand inc VAT: £{t['grand_inc_vat']:,.2f}")
 ```
 
-After running, copy to `/mnt/user-data/outputs/` and call `present_files`.
+After running, copy to the relevant `output/` case folder and return the path.
 
 ## ABP 2026 rate matrix
 

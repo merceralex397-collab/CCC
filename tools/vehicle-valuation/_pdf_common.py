@@ -17,19 +17,19 @@ except ModuleNotFoundError as exc:  # pragma: no cover - exercised in missing de
     missing = exc.name or "required package"
     raise SystemExit(
         f"Missing Python dependency: {missing}. Install with: "
-        "python -m pip install -r skills/vehicle-valuation/scripts/requirements.txt"
+        "python -m pip install -r tools/vehicle-valuation/requirements.txt"
     ) from exc
 
 from validate_evidence_pack import validate_payload
 
 
-SKILL_DIR = Path(__file__).resolve().parents[1]
-REPO_ROOT = SKILL_DIR.parents[1]
-# Shared CE brand + layout live in the ce-branding skill (consolidated 2026-05-29).
-CE_BRANDING_DIR = SKILL_DIR.parent / "ce-branding"
-TEMPLATE_DIR = CE_BRANDING_DIR / "assets" / "templates"
+REPO_ROOT = Path(__file__).resolve().parents[2]
+SKILL_DIR = REPO_ROOT / "src" / "skills" / "vehicle-valuation"
+# Shared CE brand + layout live in the ce-house-style skill.
+CE_HOUSE_STYLE_DIR = REPO_ROOT / "src" / "skills" / "ce-house-style"
+TEMPLATE_DIR = CE_HOUSE_STYLE_DIR / "assets" / "templates"
 CSS_PATH = TEMPLATE_DIR / "styles.css"
-LOGO_PATH = CE_BRANDING_DIR / "assets" / "brand" / "logo.png"
+LOGO_PATH = CE_HOUSE_STYLE_DIR / "assets" / "brand" / "logo.png"
 _DLL_DIRECTORY_HANDLES: list[object] = []
 DESKTOP_CAPTURE_WIDTH = 1440
 DESKTOP_CAPTURE_VIEWPORT_HEIGHT = 1200
@@ -363,7 +363,7 @@ def _render_reportlab(payload: dict[str, Any], template_name: str, path: Path, t
     except ModuleNotFoundError as exc:  # pragma: no cover
         raise SystemExit(
             f"Missing Python dependency: {exc.name}. Install with: "
-            "python -m pip install -r skills/vehicle-valuation/scripts/requirements.txt"
+            "python -m pip install -r tools/vehicle-valuation/requirements.txt"
         ) from exc
 
     context = template_context(payload, title)

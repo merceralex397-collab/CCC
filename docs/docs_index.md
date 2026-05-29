@@ -39,6 +39,16 @@ This is the primary human navigation file for CCC documentation.
 | Original planning | `docs/reference/originalplanning/` | Historical/generated planning packs; reference-only unless promoted. |
 | Test context | `docs/reference/test-context/` | Historical test repositories and context packs. |
 
+## Skill Work
+
+| Area | Path | Use |
+| --- | --- | --- |
+| Production skills | `src/skills/` | Consolidated runnable skills and shared references. |
+| Skill catalogue | `docs/plans/agent-skills/skill-catalogue.md` | Governance class, modes, dependencies, and release state. |
+| Skill source map | `docs/plans/agent-skills/source_map.md` | Source evidence behind the skill catalogue. |
+| Skill material | `docs/reference/skill-material/` | Long-form skill references kept outside always-loaded skill folders. |
+| Skill tools | `tools/vehicle-valuation/` | Script-backed valuation render and validation helpers. |
+
 ## Quality Rules
 
 - At task start, read the roadmap, repo map, owning workspace plan, active tickets, and relevant source evidence before changing files.

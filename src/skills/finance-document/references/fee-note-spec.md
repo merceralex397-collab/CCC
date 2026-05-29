@@ -1,10 +1,10 @@
 # Fee Note — structure & house style
 
-Derived from the worked example `docs/reference/case-corpus/fee-note/GX18XEB-fee.pdf`. Branding/layout is owned by `ce-branding`; this spec covers the fee-note-specific content.
+Derived from the worked example `docs/reference/case-corpus/fee-note/GX18XEB-fee.pdf`. Branding/layout is owned by `ce-house-style`; this spec covers the fee-note-specific content.
 
 ## Layout (CE house style)
 
-- A4 portrait; CE logo top-left; matter refs + date top-right (via the `ce-branding` header).
+- A4 portrait; CE logo top-left; matter refs + date top-right (via the `ce-house-style` header).
 - Title: "Fee Note".
 - Addressee block: instructing solicitor / insurer / client.
 - Matter reference(s): our ref, your ref, claimant/vehicle (VRM) where used to identify the matter.
@@ -19,7 +19,7 @@ Derived from the worked example `docs/reference/case-corpus/fee-note/GX18XEB-fee
 
 ## Rules
 
-- Plain, professional register (consistent with `ce-style`).
+- Plain, professional register (consistent with `ce-house-style` writing tone).
 - Do not invent rates — quote agreed fees or cite `abp-rates`.
 - Numbers must total correctly; show VAT explicitly.
 - Assist class: a named human reviews before the fee note is sent. Ledger / payment tracking is a business/finance concern, not this skill's.

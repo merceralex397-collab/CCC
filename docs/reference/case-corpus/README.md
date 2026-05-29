@@ -9,17 +9,17 @@ These files contain **real claimant personal data** (names, addresses, phone num
 - **Access** is governed by the CE role model (`docs/security/role_model.md`, DRAFT).
 - **Retention** follows `docs/security/data_retention_policy.md` (DRAFT).
 - **Redact before external distribution.** The portable skills in `src/skills/` reference these files **by repo path** as examples — a skill can be packaged and shared without shipping this corpus. Anonymise/synthesise before any external use, model training, or skill distribution.
-- Logged in the cross-cutting governance backlog: `docs/plans/foundation/option-papers/cross-cutting-gaps-backlog.md`.
+- Logged in the governance/security planning track: `docs/plans/governance-security/`.
 
 ## Layout
 
 | Folder | Contents | Used by |
 | --- | --- | --- |
 | `vehicle-valuation/` | Autotrader comparable adverts, a Percayso companion report, internal EVA valuation-system screenshots (`eva-screenshots/`) | vehicle-valuation |
-| `total-loss/` | Audatex damage estimates + damage image packs | total-loss, repair-estimate |
-| `roadworthy/` | Instruction letters to the engineer + a roadworthiness/total-loss advisory report | roadworthy, repair-estimate |
+| `total-loss/` | Audatex damage estimates + damage image packs | damage-estimating |
+| `roadworthy/` | Instruction letters to the engineer + a roadworthiness/total-loss advisory report | roadworthy, damage-estimating |
 | `rebuttal/` | Court expert / diminution reports + report figures/images | rebuttal |
-| `fee-note/` | A Collision Engineers fee note (expert-services invoice) | fee-note |
+| `fee-note/` | A Collision Engineers fee note (expert-services invoice) | finance-document |
 
 ## Provenance
 

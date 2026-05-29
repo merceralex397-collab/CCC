@@ -1,6 +1,6 @@
 ---
 name: abp-rates
-description: Shared reference for current UK collision-repair charges from the ABP Club rate book (2026 edition). Use whenever a skill needs labour rates, the repair-plan fee, ADAS calibration charges, EV/hybrid handling, alloy/alignment/air-con/recovery/storage specialist charges, paint-protection or mobility charges, or the regional uplift - to build or challenge a repair estimate, total-loss assessment, fee note, or diminution rebuttal. Consumed by total-loss, repair-estimate, paint-calculation, rebuttal, roadworthy and fee-note. Reference data, not an output-producing skill.
+description: Shared reference for current UK collision-repair charges from the ABP Club rate book (2026 edition). Use whenever a skill needs labour rates, the repair-plan fee, ADAS calibration charges, EV/hybrid handling, alloy/alignment/air-con/recovery/storage specialist charges, paint-protection or mobility charges, or the regional uplift - to build or challenge a repair estimate, total-loss assessment, finance document, or diminution rebuttal. Consumed by damage-estimating, rebuttal, roadworthy, and finance-document. Reference data, not an output-producing skill.
 ---
 
 # ABP Rates (shared reference)
