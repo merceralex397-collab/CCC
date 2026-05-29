@@ -15,9 +15,9 @@ Portable, reusable staff/engineer **skill specs** (case summary, missing-info, C
 
 It does **not** own: workflow orchestration (`ai-platform/agents`); model hosting / global AI run logging (`ai-platform/platform-tools`); the business workflow where a skill is used (e.g. `intelligence/comms`); MCP tool exposure (`mcp-tooling`). Skills are **content**, not infrastructure.
 
-## Current state — collisionplugin already holds real skills
+## Current state — skills migrated into src/skills/ (2026-05-29)
 
-No skills are in the CCC repo yet, but `../collisionplugin` contains production / near-production skills (the raw material to adopt):
+Migrated from `../collisionplugin` into `src/skills/` (see `collisionplugin-migration.md`). The production / near-production skills:
 
 | Skill | What it is | Output | Maturity | Notes |
 | --- | --- | --- | --- | --- |

@@ -1,0 +1,466 @@
+@page {
+  size: A4 portrait;
+  margin: 1mm 12mm 22mm 12mm;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: #222;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 8.8pt;
+  line-height: 1.22;
+}
+
+.footer-rule {
+  border-top: 0.6pt solid #c80a32;
+  bottom: -7mm;
+  left: 17mm;
+  position: fixed;
+  right: 17mm;
+}
+
+.footer-text {
+  bottom: -14mm;
+  color: #555;
+  font-size: 8.5pt;
+  left: 12mm;
+  position: fixed;
+  right: 12mm;
+  text-align: center;
+}
+
+a {
+  color: #0057b8;
+  text-decoration: underline;
+}
+
+.document-header {
+  align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 9mm;
+  padding-top: 0;
+}
+
+.logo {
+  height: 30.3mm;
+  object-fit: contain;
+  margin-left: 7mm;
+  width: 53mm;
+}
+
+.reference-table {
+  border-collapse: collapse;
+  font-size: 8.8pt;
+  min-width: 54mm;
+  margin-top: 10mm;
+}
+
+.reference-table th {
+  background: transparent;
+  border: none;
+  color: #111;
+  font-weight: 700;
+  padding: 1mm 2mm;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.reference-table td {
+  border: none;
+  padding: 1mm 0 1mm 6mm;
+  font-weight: 700;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.reference-table tbody tr:nth-child(even) th,
+.reference-table tbody tr:nth-child(even) td {
+  background: transparent;
+}
+
+.title {
+  color: #111;
+  font-size: 14pt;
+  font-weight: 700;
+  letter-spacing: 0;
+  margin: 0 0 1mm 0;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 9.6pt;
+  font-weight: 700;
+  margin: 0 0 5mm 0;
+  text-align: center;
+}
+
+.intro {
+  margin: 0 0 4mm 0;
+}
+
+.section {
+  margin: 3.5mm 0 0 0;
+}
+
+.section h2 {
+  border-bottom: 1.5pt solid #c80a32;
+  color: #222;
+  font-size: 10.6pt;
+  font-weight: 700;
+  letter-spacing: 0;
+  margin: 0 0 2mm 0;
+  padding-bottom: 1mm;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+thead {
+  display: table-header-group;
+}
+
+tr {
+  break-inside: avoid;
+}
+
+th {
+  background: #c80a32;
+  color: #fff;
+  font-weight: 700;
+  padding: 1.4mm;
+  text-align: left;
+}
+
+td {
+  border: 0.4pt solid #bebebe;
+  padding: 1.4mm;
+  vertical-align: top;
+}
+
+tbody tr:nth-child(even) td {
+  background: #f5f5f5;
+}
+
+.kv-table th {
+  background: #fff;
+  border: 0.4pt solid #bebebe;
+  color: #222;
+  font-weight: 400;
+  padding: 1.5mm 2mm;
+  text-align: left;
+  width: 20%;
+}
+
+.kv-table td {
+  padding: 1.5mm 2mm;
+  width: 30%;
+}
+
+.value-box {
+  border: 0.4pt solid #bebebe;
+  break-inside: avoid;
+  margin-top: 2mm;
+}
+
+.value-box td {
+  border: 0.4pt solid #bebebe;
+  font-size: 9pt;
+  font-weight: 700;
+  padding: 3mm;
+  vertical-align: middle;
+}
+
+.value-box td:first-child {
+  background: #f2f2f2;
+}
+
+.value-box .value {
+  color: #c80a32;
+  font-size: 12pt;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.number {
+  text-align: center;
+  width: 8mm;
+}
+
+.price {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.year {
+  overflow-wrap: anywhere;
+}
+
+.mileage {
+  overflow-wrap: anywhere;
+}
+
+.small {
+  font-size: 8pt;
+}
+
+.advert-table {
+  table-layout: fixed;
+}
+
+.advert-table th {
+  white-space: nowrap;
+}
+
+.report-advert-table .number {
+  width: 8mm;
+}
+
+.report-advert-table .vehicle-cell {
+  width: 45mm;
+}
+
+.report-advert-table .year {
+  width: 17mm;
+}
+
+.report-advert-table .mileage {
+  width: 22mm;
+}
+
+.report-advert-table .seller-cell {
+  width: 23mm;
+}
+
+.report-advert-table .price {
+  width: 23mm;
+}
+
+.report-advert-table .comment-cell {
+  width: 41mm;
+}
+
+.report-advert-table .small {
+  font-size: 7.6pt;
+  line-height: 1.15;
+}
+
+.evidence-advert-table .advert-id {
+  width: 31mm;
+}
+
+.evidence-advert-table .vehicle-cell {
+  width: 56mm;
+}
+
+.evidence-advert-table .year {
+  width: 15mm;
+}
+
+.evidence-advert-table .mileage {
+  width: 21mm;
+}
+
+.evidence-advert-table .price {
+  width: 20mm;
+}
+
+.evidence-advert-table .link-cell {
+  width: 28mm;
+}
+
+.search-summary {
+  margin-top: 2mm;
+}
+
+.advert-detail-title {
+  font-weight: 700;
+  margin: 3mm 0 1mm 0;
+}
+
+.detail-table {
+  break-inside: avoid;
+  margin-bottom: 1mm;
+}
+
+.detail-table td {
+  padding: 1.2mm 1.6mm;
+}
+
+.detail-table .detail-label {
+  font-weight: 700;
+  width: 24%;
+}
+
+.report-compact {
+  font-size: 8pt;
+  line-height: 1.14;
+}
+
+.report-compact p {
+  margin: 0 0 1.6mm 0;
+}
+
+.report-compact .document-header {
+  margin-bottom: 7mm;
+}
+
+.report-compact .logo {
+  height: 27mm;
+  width: 47.2mm;
+}
+
+.report-compact .reference-table {
+  font-size: 8pt;
+  margin-top: 8mm;
+}
+
+.report-compact .title {
+  font-size: 12.8pt;
+}
+
+.report-compact .subtitle {
+  font-size: 8.8pt;
+  margin-bottom: 3mm;
+}
+
+.report-compact .intro {
+  margin-bottom: 2.5mm;
+}
+
+.report-compact .section {
+  margin-top: 2.2mm;
+}
+
+.report-compact .section h2 {
+  font-size: 9.6pt;
+  margin-bottom: 1mm;
+  padding-bottom: 0.7mm;
+}
+
+.report-compact th,
+.report-compact td {
+  padding: 0.9mm;
+}
+
+.report-compact .kv-table th,
+.report-compact .kv-table td {
+  padding: 1mm 1.5mm;
+}
+
+.report-compact .value-box {
+  margin-top: 1mm;
+}
+
+.report-compact .value-box td {
+  padding: 2mm;
+}
+
+.report-compact .value-box .value {
+  font-size: 11pt;
+}
+
+.report-compact .report-advert-table th,
+.report-compact .report-advert-table td {
+  padding: 0.75mm;
+}
+
+.report-compact .report-advert-table .vehicle-cell,
+.report-compact .report-advert-table .seller-cell {
+  font-size: 7pt;
+  line-height: 1.08;
+}
+
+.report-compact .report-advert-table .small {
+  font-size: 6.8pt;
+  line-height: 1.05;
+}
+
+.report-ultra-compact {
+  font-size: 7.5pt;
+  line-height: 1.08;
+}
+
+.report-ultra-compact p {
+  margin: 0 0 1.2mm 0;
+}
+
+.report-ultra-compact .document-header {
+  margin-bottom: 5mm;
+}
+
+.report-ultra-compact .logo {
+  height: 24mm;
+  width: 42mm;
+}
+
+.report-ultra-compact .reference-table {
+  font-size: 7.5pt;
+  margin-top: 7mm;
+}
+
+.report-ultra-compact .title {
+  font-size: 12pt;
+}
+
+.report-ultra-compact .subtitle {
+  font-size: 8.3pt;
+  margin-bottom: 2.2mm;
+}
+
+.report-ultra-compact .intro {
+  margin-bottom: 2mm;
+}
+
+.report-ultra-compact .section {
+  margin-top: 1.6mm;
+}
+
+.report-ultra-compact .section h2 {
+  font-size: 9pt;
+  margin-bottom: 0.8mm;
+  padding-bottom: 0.5mm;
+}
+
+.report-ultra-compact th,
+.report-ultra-compact td {
+  padding: 0.65mm;
+}
+
+.report-ultra-compact .kv-table th,
+.report-ultra-compact .kv-table td {
+  padding: 0.75mm 1.2mm;
+}
+
+.report-ultra-compact .value-box {
+  margin-top: 0.7mm;
+}
+
+.report-ultra-compact .value-box td {
+  padding: 1.5mm;
+}
+
+.report-ultra-compact .value-box .value {
+  font-size: 10.2pt;
+}
+
+.report-ultra-compact .report-advert-table th,
+.report-ultra-compact .report-advert-table td {
+  padding: 0.55mm;
+}
+
+.report-ultra-compact .report-advert-table .vehicle-cell,
+.report-ultra-compact .report-advert-table .seller-cell {
+  font-size: 6.5pt;
+  line-height: 1.02;
+}
+
+.report-ultra-compact .report-advert-table .small {
+  font-size: 6.2pt;
+  line-height: 1;
+}

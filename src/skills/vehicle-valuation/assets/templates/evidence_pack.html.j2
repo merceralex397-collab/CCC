@@ -1,0 +1,43 @@
+{% extends "_base.html.j2" %}
+{% block content %}
+<h1 class="title">ADVERT EVIDENCE PACK</h1>
+<p class="subtitle">RE: {{ subject_display }} - Registration {{ subject.registration }}</p>
+
+<p class="intro">Comparable advert references corresponding with the market valuation evidence report.</p>
+
+<section class="section">
+  <h2>ADVERT REFERENCES</h2>
+  <table class="advert-table evidence-advert-table">
+    <thead>
+      <tr>
+        <th class="number">No.</th>
+        <th class="advert-id">Advert ID</th>
+        <th class="vehicle-cell">Vehicle / Derivative</th>
+        <th class="year">Year</th>
+        <th class="mileage">Mileage</th>
+        <th class="price">Price</th>
+        <th class="link-cell">Link</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for advert in adverts %}
+      <tr>
+        <td class="number">{{ loop.index }}</td>
+        <td>{{ advert.advert_id or "Not stated" }}</td>
+        <td class="vehicle-cell">{{ advert.vehicle }}</td>
+        <td class="year">{{ advert.registration_year_display }}</td>
+        <td class="mileage">{{ advert.mileage_display }}</td>
+        <td class="price">{{ advert.price }}</td>
+        <td><a href="{{ advert.url }}">Open advert</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</section>
+
+<section class="section">
+  <h2>SEARCH SUMMARY</h2>
+  <p class="search-summary">{{ search_summary }}</p>
+  <p class="search-summary">The advert numbering above mirrors the numbering used in the valuation evidence report.</p>
+</section>
+{% endblock %}

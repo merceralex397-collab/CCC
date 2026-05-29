@@ -1,0 +1,74 @@
+{% extends "_base.html.j2" %}
+{% block content %}
+<h1 class="title">MARKET VALUATION EVIDENCE</h1>
+<p class="subtitle">RE: {{ subject_display }} - Registration {{ subject.registration }}</p>
+
+<p class="intro">{{ intro }}</p>
+
+<section class="section">
+  <h2>SUBJECT VEHICLE DETAILS</h2>
+  <table class="kv-table">
+    <tbody>
+      {% for row in subject_rows %}
+      <tr>
+        <th>{{ row[0].label }}</th><td>{{ row[0].value }}</td>
+        <th>{{ row[1].label }}</th><td>{{ row[1].value }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</section>
+
+<section class="section">
+  <h2>ASSESSED RETAIL MARKET VALUE</h2>
+  <table class="value-box">
+    <tbody>
+      <tr><td>Engineer's assessed retail value</td><td class="value">{{ assessed_value }}</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="section">
+  <h2>MARKET RESEARCH</h2>
+  <p>{{ market_research }}</p>
+  <table class="advert-table report-advert-table">
+    <thead>
+      <tr>
+        <th class="number">No.</th>
+        <th class="vehicle-cell">Vehicle / Derivative</th>
+        <th class="year">Year</th>
+        <th class="mileage">Mileage</th>
+        <th class="seller-cell">Seller</th>
+        <th class="price">Asking Price</th>
+        <th class="comment-cell">Comment</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for advert in adverts %}
+      <tr>
+        <td class="number">{{ loop.index }}</td>
+        <td class="vehicle-cell">{{ advert.vehicle }}</td>
+        <td class="year">{{ advert.registration_year_display }}</td>
+        <td class="mileage">{{ advert.mileage_display }}</td>
+        <td class="seller-cell">{{ advert.seller_type }}</td>
+        <td class="price">{{ advert.price }}</td>
+        <td class="small">{{ advert.report_comment }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</section>
+
+<section class="section">
+  <h2>VALUATION COMMENTARY</h2>
+  {% for paragraph in valuation_commentary %}
+  <p>{{ paragraph }}</p>
+  {% endfor %}
+  {% if vat_note %}<p>{{ vat_note }}</p>{% endif %}
+</section>
+
+<section class="section">
+  <h2>CONCLUSION</h2>
+  <p>{{ conclusion }}</p>
+</section>
+{% endblock %}
