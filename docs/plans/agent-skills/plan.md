@@ -22,33 +22,40 @@ Superseded-by: none
 
 This is the **agent-skills** broad workspace (parallel track). It owns portable skill specs + the prompt/version/eval/release lifecycle + portable skill contracts across approved AI front ends. Skills are content, not orchestration or hosting. See `docs/plans/_groups.md`.
 
-## This Iteration — Catalogue, Lifecycle, Adopt collisionplugin
+## This Iteration - Consolidated Skill Catalogue
 
-Approved design: `docs/superpowers/specs/2026-05-29-agent-skills-design.md`. Decisions (2026-05-29): deliver the portable catalogue + lifecycle and adopt the collisionplugin skills; standardise on the `SKILL.md` portable contract; first-wave skills below; expert/legal outputs require human sign-off.
+Approved design: `docs/superpowers/specs/2026-05-29-agent-skills-design.md`. Decisions (2026-05-29): deliver the portable catalogue + lifecycle, consolidate the first-wave skills into coherent runnable units, standardise on the `SKILL.md` portable contract, and keep expert/legal outputs behind human sign-off.
 
 Deliverables: this plan, `context.md`, `skill-catalogue.md`, `open-questions.md`, and `option-papers/skill-lifecycle-and-portable-contract.md`.
 
 ## First-Wave Skills
 
-vehicle-valuation; rebuttal; roadworthy; total-loss; CE style/tone; case-summary; missing-info; **ce-branding (new — logo + document layout, consumed by the document skills)**. Full table in `skill-catalogue.md`.
+Current first wave: `vehicle-valuation`, `damage-estimating`, `salvage-categorisation`, `rebuttal`, `roadworthy`, `finance-document`, `ce-house-style`, plus reference skills `abp-rates`, `manufacturer-standards`, and `ce-domain-glossary`. Planned future `case-status` will cover `case-summary`, `missing-info`, and `chaser-draft` after canonical work-item data is available. Full table in `skill-catalogue.md`.
 
 ## Sequential Plan
 
 ### Now (parallel with parser/bridge)
-- [ ] Write the catalogue + the lifecycle/portable-contract option-paper.
-- [ ] Define the `ce-branding` skill (assets/templates from collisionplugin) and point document skills at it.
+- [x] Write the consolidated catalogue and lifecycle/portable-contract option paper.
+- [x] Define `ce-house-style` with visual-layout and writing-tone modes and point document skills at it.
+- [x] Consolidate damage estimating into one runnable skill with repair-estimate, eva-total-loss, paint-costing, and charge-review modes.
+- [x] Consolidate fee note and invoice drafting into `finance-document`.
 
 ### Next
-- [ ] Formalise the first-wave skills under the lifecycle, coordinated with `ai-platform/platform-tools` (eval) and `mcp-tooling` (tools).
+- [ ] Formalise the first-wave skills under the lifecycle, coordinated with `ai-platform-tools` (eval) and `mcp-and-tooling` (tools).
+
+### Reference-data skills (2026-05-29 — done)
+- [x] Drained the former infointake staging material into shared references (`abp-rates`, `manufacturer-standards`, `ce-domain-glossary`) and consolidated runnable skills (`damage-estimating`, `salvage-categorisation`, `finance-document`).
+- [x] Committed the worked-case corpus to `docs/reference/case-corpus/` (governed; PII) and pointed each skill's `references/examples.md` at it.
+- [ ] Source UK OEM equivalents (`option-papers/oem-standards-uk-applicability.md`); add render scripts for `damage-estimating`/`finance-document`; bring the new skills under the lifecycle.
 
 ## Dependency Cross-Check
 
 | Workspace | Why it must be coordinated |
 | --- | --- |
-| `ai-platform/platform-tools` | Prompt/version governance, eval datasets, redaction, run logging — the lifecycle substrate skills consume. |
+| `ai-platform-tools` | Prompt/version governance, eval datasets, redaction, run logging — the lifecycle substrate skills consume. |
 | `governance-security` | Expert-boundary policy, privacy/redaction, autonomous-action gates. |
 | `intelligence/comms` (engineer-communications) | Where the drafting/communication skills are used; source ownership. |
-| `mcp-tooling` | Skills call approved tools (Autotrader Codex connector, DVSA-MOT MCP) via the gateway. |
+| `mcp-and-tooling` | Skills call approved tools (Autotrader Codex connector, DVSA-MOT MCP) via the gateway. |
 
 ## Non-Overlap Rules
 

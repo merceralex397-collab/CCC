@@ -5,12 +5,12 @@ description: Use when generating an HS (Hackney Solutions) roadworthy certificat
 
 # Roadworthy Certificate
 
-Generate an HS roadworthy certificate by extracting the required fields from an engineer's report and filling the docx template (the template is never edited in place).
+Generate an HS roadworthy certificate by extracting the required fields from an engineer's report and filling the approved template copy.
 
-**Governance: expert output.** Named-human sign-off; no autonomous external send. Uses `../ce-branding` for branding (see `docs/security/role_model.md`).
+**Governance: expert output.** Named-human sign-off; no autonomous external send. Uses `../ce-house-style` for layout and tone (see `docs/security/role_model.md`).
 
-The system prompt, the 14-field extraction guide, and the worked example are in `startingprompt.md`, `toolinstructions.md`, and `template.md`.
+The 14-field extraction guide and worked example are in `toolinstructions.md`, `startingprompt.md`, and `template.md`. The current repository does not contain a master DOCX template; use a supplied approved template copy or promote one through the source manifest before rendering.
 
 ## Status
 
-Adopted from collisionplugin (2026-05-29). Lifecycle pending the substrate in `docs/plans/ai-platform/`. Catalogue: `docs/plans/agent-skills/skill-catalogue.md`.
+Lifecycle pending the substrate in `docs/plans/ai-platform-tools/`. Catalogue: `docs/plans/agent-skills/skill-catalogue.md`.

@@ -7,10 +7,10 @@ description: Use when drafting a Collision Engineers rebuttal to a diminution-in
 
 Draft an expert rebuttal to a diminution-in-value claim, CPR Part 35-aware, in Collision Engineers house style.
 
-**Governance: expert/legal output.** Produces an "AI-assisted draft" until a named human (engineer) signs off; no autonomous external send. Uses `../ce-branding` for logo/layout and `../ce-style` for tone (see `docs/security/role_model.md`).
+**Governance: expert/legal output.** Produces an "AI-assisted draft" until a named human (engineer) signs off; no autonomous external send. Uses `../ce-house-style` for logo, layout, and tone (see `docs/security/role_model.md`).
 
 The full method, the 13-point argument framework, and the house-style rules are in `projecttext.md`.
 
 ## Status
 
-Adopted from collisionplugin (2026-05-29). Lifecycle (version / eval / redaction / run-logging) pending the substrate in `docs/plans/ai-platform/`. Catalogue: `docs/plans/agent-skills/skill-catalogue.md`.
+Lifecycle (version / eval / redaction / run-logging) pending the substrate in `docs/plans/ai-platform-tools/`. Catalogue: `docs/plans/agent-skills/skill-catalogue.md`.

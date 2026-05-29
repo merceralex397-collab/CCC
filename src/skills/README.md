@@ -1,23 +1,31 @@
 # CCC Skills
 
-Production, portable skills for Collision Engineers, migrated from `../collisionplugin` (2026-05-29). Planning + governance live in `docs/plans/agent-skills/`; the catalogue + lifecycle are `docs/plans/agent-skills/skill-catalogue.md` and `docs/plans/agent-skills/option-papers/skill-lifecycle-and-portable-contract.md`. Contract format: Claude Code `SKILL.md`.
+Production, portable skills for Collision Engineers. Planning and governance live in `docs/plans/agent-skills/`; the catalogue and lifecycle option paper are `docs/plans/agent-skills/skill-catalogue.md` and `docs/plans/agent-skills/option-papers/skill-lifecycle-and-portable-contract.md`.
 
-## Skills
+## Runnable Skills
 
-| Skill | Folder | Form | Governance |
+| Skill | Folder | Modes / role | Governance |
 | --- | --- | --- | --- |
-| vehicle-valuation | `vehicle-valuation/` | `SKILL.md` + scripts + references + assets | expert (named-human sign-off) |
-| total-loss (Audatex/EVA) | `total-loss/` | `context.md` + `tool.py.md` | expert |
-| rebuttal (diminution) | `rebuttal/` | `projecttext.md` | expert |
-| roadworthy | `roadworthy/` | `startingprompt.md` + `toolinstructions.md` + `template.md` | expert |
-| ce-style | `ce-style/` | style/tone profile (`.docx`) | assist (underpins drafting) |
-| ce-branding | `ce-branding/` | `SKILL.md` + brand assets | assist (shared brand/layout) |
+| vehicle-valuation | `vehicle-valuation/` | market valuation, evidence pack, valuation explanation, dispute response | expert; named-human sign-off |
+| damage-estimating | `damage-estimating/` | repair-estimate, eva-total-loss, paint-costing, charge-review | expert for estimate outputs; assist for costing/review inputs |
+| salvage-categorisation | `salvage-categorisation/` | ABI salvage category and notification obligations | expert/AQP; named-human sign-off |
+| rebuttal | `rebuttal/` | diminution rebuttal draft | expert/legal; named-human sign-off |
+| roadworthy | `roadworthy/` | HS roadworthy certificate draft | expert; named-human sign-off |
+| finance-document | `finance-document/` | fee-note, standard-audatex-invoice, website-invoice, invoice-email-draft | assist; named-human review |
+| ce-house-style | `ce-house-style/` | visual-layout, writing-tone support | assist/reference |
+
+## Shared Reference Skills
+
+| Skill | Folder | Role |
+| --- | --- | --- |
+| abp-rates | `abp-rates/` | ABP 2026 rate and charge reference |
+| manufacturer-standards | `manufacturer-standards/` | OEM repair constraint reference |
+| ce-domain-glossary | `ce-domain-glossary/` | CE vocabulary and Audatex/ABP context |
 
 ## Notes
 
-- **Expert/legal outputs** (valuation, rebuttal, roadworthy, total-loss) produce an "AI-assisted draft" until a named human signs off; no autonomous external send. See the CE role model (`docs/security/role_model.md`).
-- **Dependencies:** `vehicle-valuation/scripts/requirements.txt` lists the render deps (reportlab/jinja2/etc.); these are not yet added to the repo's `pyproject.toml`.
-- **Tool dependencies:** vehicle-valuation uses the Autotrader Codex connector + the DVSA-MOT MCP (see `docs/plans/mcp-tooling/`).
-- **Not migrated:** the DVSA connector config (`collisionplugin/connectors/dvladvsa/connectorurl.md`) — it held a live token; it is being rebuilt first-party and the token must be rotated (`docs/plans/mcp-and-tooling/option-papers/dvsa-mot-first-party-mcp.md`).
-- **Done (2026-05-29):** shared layout templates + brand logos consolidated into `ce-branding/assets/`; `vehicle-valuation` renders from there (path repoint static-verified; render test pending `[skills]` deps); `SKILL.md` wrappers added for `rebuttal`/`roadworthy`; render deps added to `pyproject.toml` (`pip install -e .[skills]`).
-- **Remaining:** wire skills into the lifecycle substrate (`docs/plans/ai-platform/`); rotate the DVSA token; run a valuation render to confirm the consolidated paths.
+- Worked-case examples with PII live in `docs/reference/case-corpus/` and are referenced by path, not bundled into portable skill packages.
+- Expert/legal outputs remain AI-assisted drafts until a named human signs off; no autonomous external send.
+- `vehicle-valuation` render dependencies are listed in `tools/vehicle-valuation/requirements.txt` and in `pyproject.toml` extras.
+- `damage-estimating` now owns the former repair estimate, total-loss/Audatex, paint costing, and ABP charge-review material.
+- `finance-document` now owns fee-note and invoice-template drafting; finance workflow, ledger, approvals, payment state, and chasing remain in `docs/plans/finance-billing/`.

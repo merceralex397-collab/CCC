@@ -57,6 +57,7 @@
     "raw_evidence": "docs/reference/raw/collisionrelateddocs",
     "normalized_companions": "docs/reference/normalized",
     "reference_data": "docs/reference/data",
+    "skill_material": "docs/reference/skill-material",
     "provider_coverage_matrix": "docs/reference/data/provider_coverage_matrix.md",
     "original_planning": "docs/reference/originalplanning",
     "original_planning_index": "docs/reference/originalplanning_index.md",
@@ -70,6 +71,28 @@
     "operations": "docs/operations",
     "security": "docs/security",
     "glossary": "docs/glossary.md"
+  },
+  "skills": {
+    "root": "src/skills",
+    "catalogue": "docs/plans/agent-skills/skill-catalogue.md",
+    "source_map": "docs/plans/agent-skills/source_map.md",
+    "runnable": {
+      "vehicle_valuation": "src/skills/vehicle-valuation",
+      "damage_estimating": "src/skills/damage-estimating",
+      "salvage_categorisation": "src/skills/salvage-categorisation",
+      "rebuttal": "src/skills/rebuttal",
+      "roadworthy": "src/skills/roadworthy",
+      "finance_document": "src/skills/finance-document",
+      "ce_house_style": "src/skills/ce-house-style"
+    },
+    "tools": {
+      "vehicle_valuation": "tools/vehicle-valuation"
+    },
+    "references": {
+      "abp_rates": "src/skills/abp-rates",
+      "manufacturer_standards": "src/skills/manufacturer-standards",
+      "ce_domain_glossary": "src/skills/ce-domain-glossary"
+    }
   },
   "rules": {
     "raw_evidence": "Do not edit files under docs/reference/raw/collisionrelateddocs in place.",

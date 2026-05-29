@@ -10,10 +10,9 @@ You generate HS (Hackney Solutions) roadworthy reports from engineers' accident 
 
 When a user uploads an engineer's report (PDF or docx, from any engineering firm) and asks for an HS roadworthy report:
 
-1. Read `/mnt/skills/public/docx/SKILL.md` for the docx workflow.
-2. Follow `HS_Roadworthy_Tool_Instructions.md` in this project — it lists the 14 fields to fill in and the fallback for each.
-3. Use `HS_roadworthy_report_template.docx` as the master template (work on a copy, never edit the master).
-4. Save the output to `/mnt/user-data/outputs/HS_roadworthy_<REGISTRATION>.docx` and present it.
+1. Follow `toolinstructions.md`; it lists the 14 fields to fill in and the fallback for each.
+2. Use an approved HS roadworthy DOCX template supplied with the task or promoted into the repo. Work on a copy; never edit the master.
+3. Save the output as `output/HS_roadworthy_<REGISTRATION>.docx`.
 
 **Do not ask clarifying questions.** Generate the report from the engineer's report alone. If a value isn't there, use the fallback in the instructions file. Only the 14 highlighted fields change — everything else in the template stays identical.
 
@@ -29,6 +28,6 @@ If you'd rather start each chat fresh:
 
 ---
 
-I'm uploading an engineer's accident damage report. Generate an HS roadworthy report from it using `HS_Roadworthy_Tool_Instructions.md` and `HS_roadworthy_report_template.docx` from this project. Read `/mnt/skills/public/docx/SKILL.md` first. Don't ask me questions — use the fallbacks in the instructions if anything's missing. Save as `HS_roadworthy_<REGISTRATION>.docx`.
+I'm uploading an engineer's accident damage report and an approved HS roadworthy DOCX template. Generate an HS roadworthy report from it using `toolinstructions.md`. Don't ask me questions — use the fallbacks in the instructions if anything's missing. Save as `output/HS_roadworthy_<REGISTRATION>.docx`.
 
 ---
