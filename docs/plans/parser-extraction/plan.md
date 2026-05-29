@@ -1,87 +1,74 @@
 # Parser Extraction Plan
 
-Date: 2026-05-24
+Date: 2026-05-29
 Status: active workspace plan
 Owner: unassigned
 Created: 2026-05-24
-Last reviewed: 2026-05-24
-Source links: `docs/plans/parser-extraction/parser-mvp/plan.md`, `docs/plans/parser-extraction/parser-mvp/adjacent-parser-and-inspection-location-review.md`, `docs/decisions/0004-ground-up-compatible-parser-rebuild.md`, `docs/decisions/0007-deterministic-first-parser.md`, `docs/reference/originalplanning/ce_system_plans_enhanced/ce_system_plans_enhanced/06_WORK_PACKAGE_DOCUMENT_MAPPER_AND_EXTRACTION.md`, `docs/contracts/extraction_adapter_contract_v1.md`
-Roadmap milestone: Whole-programme roadmap
-Dependencies: provider-principal-config, operations-quality, governance-security, user-experience-interfaces
+Last reviewed: 2026-05-29
+Group: parser
+Wave: G1 (spine)
+Layer: ingest-parse
+Source links: `docs/plans/parser-extraction/context.md`, `docs/plans/parser-extraction/parser-mvp/plan.md`, `docs/plans/parser-extraction/parser-mvp/adjacent-parser-and-inspection-location-review.md`, `docs/superpowers/specs/2026-05-29-parser-iteration-design.md`, `docs/decisions/0004-ground-up-compatible-parser-rebuild.md`, `docs/decisions/0007-deterministic-first-parser.md`, `docs/contracts/extraction_adapter_contract_v1.md`, `docs/reference/data/provider_coverage_matrix.md`
+Roadmap milestone: G1 parser (spine)
+Dependencies: provider-principal-config (sub-area `providers`), operations-quality, governance-security, user-experience-interfaces
 Expected outputs: source-backed todos, scoped tickets, option papers, roadmap updates, and archive records for `docs/plans/parser-extraction/`
 Acceptance criteria: each todo is promoted only with source citations, dependency links, ownership boundaries, verification, and governance/operations gates where required
-Verification required: `python tools/verify_scaffold.py`
+Verification required: `python tools/verify_scaffold.py`, parser corpus regression, UI/CLI parity, EVA field-order tests
 Archive target: `docs/plans/parser-extraction/archived_plans/implemented/`
 Supersedes: none
 Superseded-by: none
 
 ## Planning Decision
 
-`docs/plans/parser-extraction/` is a separate active workspace. It owns the items listed below and must coordinate with its dependency workspaces before any item becomes an implementation ticket.
+`docs/plans/parser-extraction/` is the **parser** broad workspace (group `parser`, wave G1, the start of the development spine). It owns deterministic-first extraction and the canonical parser result; the `providers` sub-area (← provider-principal-config) owns provider/principal/garage config and the provider-admin workflow. See `docs/plans/_groups.md` for the grouped roadmap.
 
-## Citeable Evidence
+## Current Baseline
 
-| Source | Planning evidence |
-| --- | --- |
-| `docs/plans/parser-extraction/parser-mvp/plan.md` | Active parser MVP implementation plan. |
-| `docs/plans/parser-extraction/parser-mvp/adjacent-parser-and-inspection-location-review.md` | Adjacent parser comparison, inspection-location decision register, and EVA/Sentry lookup constraint. |
-| `docs/decisions/0004-ground-up-compatible-parser-rebuild.md` | Accepted ground-up compatible parser rebuild decision. |
-| `docs/decisions/0007-deterministic-first-parser.md` | Accepted deterministic-first parser decision. |
-| `docs/reference/originalplanning/ce_system_plans_enhanced/ce_system_plans_enhanced/06_WORK_PACKAGE_DOCUMENT_MAPPER_AND_EXTRACTION.md` | Document Mapper and extraction work package. |
-| `docs/contracts/extraction_adapter_contract_v1.md` | Versioned extraction adapter contract. |
+`src/ccc_parser/` is an implemented, modular rebuild (core, triage, readers, providers, rules, normalization, models, validation, review, packaging, exporters/eva, cli, ui/app) at "implemented baseline, active hardening". The MVP implementation plan is `parser-mvp/plan.md`; the firsthand current-state summary is `context.md`. This already realises the architectural improvement over the legacy `cedocumentmapper` monolith (shared core + thin UI/CLI, canonical provenance/confidence, structured inspection-site model, contract-first validation).
 
-## Todo Areas
+## This Iteration — Local OCR, Coverage Parity, Extraction Hardening
 
-| Todo area | Specific source evidence | Required coordination | Acceptance check |
+Approved design: `docs/superpowers/specs/2026-05-29-parser-iteration-design.md`. Implementation ticket: `tickets/p2-local-ocr-coverage-and-extraction-iteration.md`.
+
+Deterministic-first and **local-only** (no cloud/AI). Five workstreams:
+
+| # | Workstream | Primary touch points | Acceptance check |
 | --- | --- | --- | --- |
-| - [ ] PDF, DOCX, DOC, MSG, EML, image, ZIP, and batch extraction | `docs/plans/parser-extraction/parser-mvp/plan.md`<br>`docs/plans/parser-extraction/parser-mvp/adjacent-parser-and-inspection-location-review.md`<br>`docs/decisions/0004-ground-up-compatible-parser-rebuild.md`<br>`docs/decisions/0007-deterministic-first-parser.md`<br>`docs/reference/originalplanning/ce_system_plans_enhanced/ce_system_plans_enhanced/06_WORK_PACKAGE_DOCUMENT_MAPPER_AND_EXTRACTION.md`<br>`docs/contracts/extraction_adapter_contract_v1.md` | `provider-principal-config`, `operations-quality`, `governance-security`, `user-experience-interfaces` | Promoted ticket or option paper cites source evidence, names dependencies, and does not duplicate an excluded owner. |
-| - [ ] deterministic-first parser core and provider-rule execution behavior | `docs/plans/parser-extraction/parser-mvp/plan.md`<br>`docs/plans/parser-extraction/parser-mvp/adjacent-parser-and-inspection-location-review.md`<br>`docs/decisions/0004-ground-up-compatible-parser-rebuild.md`<br>`docs/decisions/0007-deterministic-first-parser.md`<br>`docs/reference/originalplanning/ce_system_plans_enhanced/ce_system_plans_enhanced/06_WORK_PACKAGE_DOCUMENT_MAPPER_AND_EXTRACTION.md`<br>`docs/contracts/extraction_adapter_contract_v1.md` | `provider-principal-config`, `operations-quality`, `governance-security`, `user-experience-interfaces` | Promoted ticket or option paper cites source evidence, names dependencies, and does not duplicate an excluded owner. |
-| - [ ] OCR/cloud document-intelligence option papers | `docs/plans/parser-extraction/parser-mvp/plan.md`<br>`docs/plans/parser-extraction/parser-mvp/adjacent-parser-and-inspection-location-review.md`<br>`docs/decisions/0004-ground-up-compatible-parser-rebuild.md`<br>`docs/decisions/0007-deterministic-first-parser.md`<br>`docs/reference/originalplanning/ce_system_plans_enhanced/ce_system_plans_enhanced/06_WORK_PACKAGE_DOCUMENT_MAPPER_AND_EXTRACTION.md`<br>`docs/contracts/extraction_adapter_contract_v1.md` | `provider-principal-config`, `operations-quality`, `governance-security`, `user-experience-interfaces` | Promoted ticket or option paper cites source evidence, names dependencies, and does not duplicate an excluded owner. |
-| - [ ] parser CLI parity and extraction regression corpus | `docs/plans/parser-extraction/parser-mvp/plan.md`<br>`docs/plans/parser-extraction/parser-mvp/adjacent-parser-and-inspection-location-review.md`<br>`docs/decisions/0004-ground-up-compatible-parser-rebuild.md`<br>`docs/decisions/0007-deterministic-first-parser.md`<br>`docs/reference/originalplanning/ce_system_plans_enhanced/ce_system_plans_enhanced/06_WORK_PACKAGE_DOCUMENT_MAPPER_AND_EXTRACTION.md`<br>`docs/contracts/extraction_adapter_contract_v1.md` | `provider-principal-config`, `operations-quality`, `governance-security`, `user-experience-interfaces` | Promoted ticket or option paper cites source evidence, names dependencies, and does not duplicate an excluded owner. |
+| 1 | Local OCR via **ocrmypdf** (deskew/clean + text layer, then re-run the layout cascade) | `src/ccc_parser/readers.py` (PDF cascade, `should_ocr`, `OCR_PAGE_LIMIT`) | Multi-page scans previously blocked now extract; optional-runtime fallback when Ghostscript/Tesseract absent |
+| 2 | Provider coverage parity for `ACSP`, `OAK/AX`, `PRINCIPAL`, `WOODLANDS` (all confirmed real) | `docs/reference/data/parser_provider_presets_v1.json`, `provider_coverage_matrix.{md,csv}`, `tools/verify_scaffold.py` preset pin | Presets in the versioned fixture; coverage matrix updated; corpus covers them |
+| 3 | Table/layout extraction hardening | `src/ccc_parser/readers.py` (PyMuPDF blocks, pdfplumber tables) | Fixtures for table-heavy providers pass |
+| 4 | Confidence/provenance/OCR-used surfacing in the Tk UI | `src/ccc_parser/ui/app.py` (review screen); `models.py` (already carries the data) | Review screen shows per-field confidence, source evidence, OCR-used marker |
+| 5 | Batch/throughput (bounded parallelism, resumable, per-item failure reporting) | `src/ccc_parser/cli.py`, `core.py` | Batch resumable; per-item failures reported without discarding successes |
 
-## Sequential Plan
+Sequence: ocrmypdf stage → corpus re-run to measure rescued cases → presets for now-readable principals (+ verifier preset-pin update) → table/layout tuning → UI surfacing → batch/throughput.
 
-### S1
+## Sub-Areas
 
-- [ ] Maintain active parser MVP planning here, then deliver deterministic parser core and shared UI/CLI service behavior.
-
-### S2
-
-- [ ] Harden extraction adapters, provider corpus coverage, export blockers, and UI/CLI parity.
-
-### S3-S4
-
-- [ ] Evaluate OCR/cloud fallback and AI extraction only behind governance and measurable regression evidence.
+- `extraction` (this workspace's core; ← parser-extraction): triage, adapters, rules, canonical result, validation, EVA export, packaging inputs, UI/CLI.
+- `providers` (← provider-principal-config): provider/principal/garage/routing config, provider-admin workflow, coverage lifecycle. Coordinate preset authoring (workstream 2) here.
 
 ## Dependency Cross-Check
 
 | Workspace | Why it must be coordinated |
 | --- | --- |
-| `provider-principal-config` | Provider/principal presets, routing, aliases, and admin workflows must stay separate from parser mechanics. |
-| `operations-quality` | Release, rollback, regression, monitoring, runbooks, pilot, support, and decommissioning gates must be explicit. |
-| `governance-security` | Privacy, vendor, retention, licensing, expert-boundary, API security, and autonomous-action controls must be approved before activation. |
-| `user-experience-interfaces` | Human-facing surfaces must use shared domain contracts and keep UI thin over parser/work-item services. |
+| `providers` sub-area (provider-principal-config) | Preset authoring, coverage lifecycle, and provider-admin must stay coherent with extraction mechanics. |
+| `operations-quality` | Corpus regression, release/rollback, and the Ghostscript runtime-dependency packaging decision. |
+| `governance-security` | Confirms no new vendor/privacy surface (OCR stays local; no cloud) and that PI/KADOE remain out of scope. |
+| `user-experience-interfaces` | Tk UI confidence/provenance surfacing should align with the eventual platform review surface. |
+| `bridge` (intake-storage-integrations) | Consumes EVA JSON + evidence-package inputs; parser owns up to those contracts, not live integration. |
 
 ## Non-Overlap Rules
 
-The workspace explicitly does not own:
-
-- provider business routing metadata after extraction
-- case-state transitions after parse
-- human-facing UI design beyond parser-specific requirements
-
-If a proposed ticket touches one of those exclusions, link to the owning workspace and keep this workspace as a supporting dependency only.
+This workspace does not own: case-state transitions after parse; business UI design beyond parser needs; live Outlook/Box/EVA adapters; valuation automation. Cloud OCR/document intelligence remains out of scope for this iteration.
 
 ## Source Ownership Rules
 
 - Cite the source paths above in every promoted ticket, option paper, or roadmap change.
-- Use `source_map.md` to explain how the evidence supports the workspace boundary.
-- Keep generated and historical planning packs reference-only until a scoped ticket or option paper promotes them.
-- Do not edit raw evidence under `docs/reference/raw/collisionrelateddocs/`; create derivatives only under documented derivative paths.
+- New provider presets extend the versioned fixture `parser_provider_presets_v1.json`; do not edit the immutable raw `Settings Backup/providers.json`.
+- Keep generated and historical planning packs reference-only until a scoped ticket promotes them.
 
 ## Promotion Gates
 
-- Use `tickets/` for implementation-ready work with acceptance criteria and verification.
-- Use `option-papers/` before vendor, privacy, external access, autonomous send, payment automation, AI/RAG, cloud OCR/document intelligence, commercial data, or partner/API work.
-- Link governance/security approval where privacy, vendor, retention, licensing, expert-boundary, API security, or autonomous-action risk exists.
-- Link operations-quality approval where release, rollback, regression, monitoring, runbook, support, pilot, or decommissioning evidence is needed.
+- `tickets/` holds implementation-ready work with acceptance criteria and verification (see the iteration ticket).
+- `option-papers/` is required before any cloud OCR / document-intelligence, vendor, or external-write decision.
+- Link operations-quality for the Ghostscript packaging decision and corpus-regression gating; link governance-security only if a non-local extraction path is ever proposed.

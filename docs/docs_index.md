@@ -5,6 +5,7 @@ This is the primary human navigation file for CCC documentation.
 ## Quick Start
 
 - Product scope and current milestone: `README.md` and `docs/roadmap.md`.
+- Development groups and sequence: `docs/plans/_groups.md`.
 - Initial setup planning: `docs/plans/initial-repo-setup/README.md`.
 - Active programme plan: `docs/plans/operational-core/source_synthesis.md`.
 - Planned folder taxonomy: `docs/plans/initial-repo-setup/documentation-scaffold/plans-folder-expansion-plan.md`.
@@ -37,6 +38,16 @@ This is the primary human navigation file for CCC documentation.
 | Reference data | `docs/reference/data/` | Provider matrix and extracted Jam/FigJam derivatives. |
 | Original planning | `docs/reference/originalplanning/` | Historical/generated planning packs; reference-only unless promoted. |
 | Test context | `docs/reference/test-context/` | Historical test repositories and context packs. |
+
+## Skill Work
+
+| Area | Path | Use |
+| --- | --- | --- |
+| Production skills | `src/skills/` | Consolidated runnable skills and shared references. |
+| Skill catalogue | `docs/plans/agent-skills/skill-catalogue.md` | Governance class, modes, dependencies, and release state. |
+| Skill source map | `docs/plans/agent-skills/source_map.md` | Source evidence behind the skill catalogue. |
+| Skill material | `docs/reference/skill-material/` | Long-form skill references kept outside always-loaded skill folders. |
+| Skill tools | `tools/vehicle-valuation/` | Script-backed valuation render and validation helpers. |
 
 ## Quality Rules
 

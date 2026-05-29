@@ -1,0 +1,10 @@
+interface:
+  display_name: "Vehicle Valuation"
+  short_description: "UK vehicle valuation reports and evidence packs"
+  default_prompt: "Use $vehicle-valuation to prepare a defensible UK vehicle valuation report and evidence pack from vehicle details, an optional guide value, import/no-guide context where relevant, and live market adverts."
+
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "autotrader"
+      description: "Search live UK vehicle adverts for comparable market evidence"

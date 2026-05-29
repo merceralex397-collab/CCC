@@ -24,7 +24,7 @@ This is the initial CCC data map for planning and governance. It must be updated
 - Raw source files are immutable evidence and must not be edited in place.
 - Package manifests must include checksums and source references.
 - Secrets and credentials must not be committed to the repo.
-- Retention periods, deletion process, and legal hold handling remain open business decisions.
+- Retention periods, deletion process, and legal hold handling are defined as a draft (pending business/DPO sign-off) in `docs/security/data_retention_policy.md`.
 
 ## Out Of Scope
 

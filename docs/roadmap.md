@@ -29,6 +29,8 @@ Current known parser review items: local OCR now recovers the short MP image-onl
 
 Local repo skill status: installed in the user's local Codex skills home as `ccc-repo-task-start` and planned/evaluated in `docs/plans/initial-repo-setup/local-repo-task-start-skill-plan.md`. This local development skill is separate from `docs/plans/agent-skills/`, which is reserved for production Collision Engineers skills.
 
+Production skill status: first-wave skills are consolidated under `src/skills/` as `vehicle-valuation`, `damage-estimating`, `salvage-categorisation`, `rebuttal`, `roadworthy`, `finance-document`, `ce-house-style`, and shared reference skills. The active catalogue is `docs/plans/agent-skills/skill-catalogue.md`; next work is lifecycle/eval hardening and render validation.
+
 ## Source Basis
 
 | Source | Why it is used |

@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{ title }}</title>
+  <style>{{ css }}</style>
+</head>
+<body class="{{ body_class|default('') }}">
+  <div class="footer-rule"></div>
+  <div class="footer-text">Collision Engineers Ltd | www.CollisionEngineers.co.uk | engineers@collisionengineers.co.uk</div>
+  <header class="document-header">
+    <img class="logo" src="{{ logo_uri }}" alt="Collision Engineers Ltd">
+    <table class="reference-table">
+      <tbody>
+        <tr><th>Our Ref:</th><td>{{ subject.registration }}</td></tr>
+        {% if meta.your_ref %}<tr><th>Your Ref:</th><td>{{ meta.your_ref }}</td></tr>{% endif %}
+        <tr><th>Date:</th><td>{{ meta.report_date }}</td></tr>
+      </tbody>
+    </table>
+  </header>
+
+  {% block content %}{% endblock %}
+</body>
+</html>
