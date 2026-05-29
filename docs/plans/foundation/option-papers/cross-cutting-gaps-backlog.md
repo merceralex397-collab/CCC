@@ -18,6 +18,7 @@ The cross-cutting items the workspace interviews surfaced that foundation tracks
 | 6 | **Vendor register** (Graph, Box, DVSA, Autotrader/Codex, model providers) | bridge, mcp-tooling, intelligence, ai-platform | governance-security | UPDATED: `docs/security/vendor_register.md` — complete per-vendor reviews before live use |
 | 7 | **Work-item store access boundary** (shared SQLite vs Python service for the .NET UI) | casework | casework / operations-quality | OPEN — option-paper in casework |
 | 8 | **Store-access / role enforcement across stacks** (Python + .NET + gateway) | casework, mcp-tooling, ai-platform | governance-security / casework | OPEN — depends on the role model |
+| 9 | **Case-corpus PII committed in-repo** (real claimant data under `docs/reference/case-corpus/`) | agent-skills | governance-security / DPO | OPEN — by-decision (2026-05-29); redact before any external skill distribution; access per role model (#1), retention per policy (#3) |
 
 ## Rule
 

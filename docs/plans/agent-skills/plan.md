@@ -30,7 +30,7 @@ Deliverables: this plan, `context.md`, `skill-catalogue.md`, `open-questions.md`
 
 ## First-Wave Skills
 
-vehicle-valuation; rebuttal; roadworthy; total-loss; CE style/tone; case-summary; missing-info; **ce-branding (new — logo + document layout, consumed by the document skills)**. Full table in `skill-catalogue.md`.
+vehicle-valuation; rebuttal; roadworthy; total-loss; CE style/tone; case-summary; missing-info; **ce-branding (new — logo + document layout, consumed by the document skills)**. Plus the **reference-data skills (2026-05-29)**: `abp-rates`, `manufacturer-standards`, `ce-domain-glossary` (shared references), `paint-calculation` (costing aid), `repair-estimate`, `salvage-categorisation` (expert), `fee-note` (assist). Full table in `skill-catalogue.md`.
 
 ## Sequential Plan
 
@@ -40,6 +40,11 @@ vehicle-valuation; rebuttal; roadworthy; total-loss; CE style/tone; case-summary
 
 ### Next
 - [ ] Formalise the first-wave skills under the lifecycle, coordinated with `ai-platform/platform-tools` (eval) and `mcp-tooling` (tools).
+
+### Reference-data skills (2026-05-29 — done)
+- [x] Drained `src/skills/infointake/` into shared references (`abp-rates`, `manufacturer-standards`, `ce-domain-glossary`), `paint-calculation`, and new skills (`repair-estimate`, `salvage-categorisation`, `fee-note`); added the missing `total-loss` `SKILL.md`.
+- [x] Committed the worked-case corpus to `docs/reference/case-corpus/` (governed; PII) and pointed each skill's `references/examples.md` at it.
+- [ ] Source UK OEM equivalents (`option-papers/oem-standards-uk-applicability.md`); add render scripts for `repair-estimate`/`fee-note`; bring the new skills under the lifecycle.
 
 ## Dependency Cross-Check
 
