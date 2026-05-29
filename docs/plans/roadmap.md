@@ -17,6 +17,10 @@ Superseded-by: none
 
 CCC starts with vehicle-damage instruction parsing and evidence preparation, then expands through controlled workflow, integrations, intelligence, AI/tooling, external ecosystem, analytics, and mature platform convergence. Collision Engineers do not do personal injury or KADOE work; those workflows remain out of scope.
 
+## Development Groups And Sequence
+
+For the grouped, spine-plus-parallel view of these workspaces (parser → bridge → unified, with MCP and agent-skills as parallel tracks), see `docs/plans/_groups.md`.
+
 ## Current Status
 
 Current position: Section 0 complete for parser readiness. The next implementation phase is Section 2 parser MVP execution under `docs/plans/parser-extraction/parser-mvp/plan.md`.

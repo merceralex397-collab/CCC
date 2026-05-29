@@ -5,6 +5,7 @@ This is the primary human navigation file for CCC documentation.
 ## Quick Start
 
 - Product scope and current milestone: `README.md` and `docs/roadmap.md`.
+- Development groups and sequence: `docs/plans/_groups.md`.
 - Initial setup planning: `docs/plans/initial-repo-setup/README.md`.
 - Active programme plan: `docs/plans/operational-core/source_synthesis.md`.
 - Planned folder taxonomy: `docs/plans/initial-repo-setup/documentation-scaffold/plans-folder-expansion-plan.md`.

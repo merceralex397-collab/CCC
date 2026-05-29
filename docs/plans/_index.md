@@ -4,6 +4,7 @@
 
 | Plan Area | Path | Status |
 | --- | --- | --- |
+| Development Groups & Sequence | `docs/plans/_groups.md` | active grouping overlay (seamless development roadmap) |
 | Initial Repo Setup | `docs/plans/initial-repo-setup/` | active pre-code planning workspace |
 | Operational Core | `docs/plans/operational-core/` | active programme workspace |
 | Workspace Expansion Plan | `docs/plans/initial-repo-setup/documentation-scaffold/plans-folder-expansion-plan.md` | active taxonomy plan for future plan folders |
